@@ -1,46 +1,53 @@
 ---
 lab:
-    title: '演習 4 - データ コネクタを使用して脅威インテリジェンスを Microsoft Sentinel に接続する'
-    module: 'モジュール 6 – ログを Microsoft Sentinel に接続する'
+  title: 演習 4 ‐ データ コネクタを使用して Microsoft Sentinel に脅威インテリジェンスを接続する
+  module: Module 6 - Connect logs to Microsoft Sentinel
+ms.openlocfilehash: c106b8d5c651727d942e59ed4da7a45d0a5d18a5
+ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/05/2022
+ms.locfileid: "138025484"
 ---
+# <a name="module-6---lab-1---exercise-4---connect-threat-intelligence-to-microsoft-sentinel-using-data-connectors"></a>モジュール 6 - ラボ 1 - 演習 4 - データ コネクタを使用して脅威インテリジェンスを Microsoft Sentinel に接続する
 
-# モジュール 6 -ラボ 1 - 演習 4 - データ コネクタを使用して脅威インテリジェンスを Microsoft Sentinel に接続する
+## <a name="lab-scenario"></a>ラボのシナリオ
+
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 最後に、既知の脅威を検出して優先順位を付ける機能を強化するために、脅威インテリジェンス フィードを接続します。
 
 
-### タスク 1: 脅威インテリジェンスの接続
+### <a name="task-1-connect-threat-intelligence"></a>タスク 1:脅威インテリジェンスの接続
 
 このタスクでは、脅威インテリジェンス プロバイダーを脅威インテリジェンス - TAXII コネクタに接続します。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd** です。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
 
-2. Microsoft Edgeブラウザーで Azure portal (https://portal.azure.com) に移動します。
+1. Edge ブラウザーで、Azure portal (https://portal.azure.com) ) に移動します。
 
-3. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのメール** アカウントをコピーして貼り付け、「**次へ**」を選択します。
+1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
 
-4. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
+1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-5. Azure portal の検索バーに「*Sentinel*」と入力し、「**Microsoft Sentinel**」を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
 
-6. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
+1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
-7. データ コネクタ タブから、**脅威インテリジェンス - TAXII** コネクタを選択します。
+1. [データ コネクタ] タブで、 **[脅威インテリジェンス - TAXII]** コネクタを検索します。
 
-8. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
+1. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-9. 「構成」 領域で、**フレンドリ名 (サーバー用)** に *PhishURLs* と入力します。
+1. *[構成]* 領域の **[フレンドリ名 (サーバー)]** フィールドに「*PhishURLs*」と入力します。
 
-10. API ルート URL には、https://limo.anomali.com/api/v1/taxii2/feeds/ と入力します。
+1. API ルートの URL に「 https://limo.anomali.com/api/v1/taxii2/feeds/ 」と入力します。
 
-11. コレクションIDに「**107**」を入力します。
+1. コレクションIDに「**107**」を入力します。
 
-12. ユーザー名に「**guest**」を入力します。
+1. ユーザー名に「**ゲスト**」を入力します。
 
-13. パスワードに「**guest**」と入力します。
+1. パスワードに「**ゲスト**」と入力します。
 
-14. 次に、「**追加**」ボタンを選択します。  
+1. ここで **[追加]** ボタンを選択します。  フィッシング URL はプルされ、ThreatIntelligenceIndicator テーブルに入力されます。
 
-    フィッシング URL はプルされ、ThreatIntelligenceIndicator テーブルに入力されます。
+>**注:**  別のコレクションを追加する場合は、Edge ブラウザーで https://limo.anomali.com/api/v1/taxii2/feeds/collections/ を開き、ゲスト ユーザー名とパスワードを使用して、使用可能な別の ID を確認します。
 
->**注:** 追加のコレクションについては、ブラウザーで https://limo.anomali.com/api/v1/taxii2/feeds/collections/ を開き、ゲストユーザー名とパスワードを使用して、使用可能なさまざまな コレクション ID を確認してください。
-
-## これでラボは完了です。
+## <a name="you-have-completed-the-lab"></a>これでラボは完了です。

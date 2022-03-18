@@ -1,46 +1,49 @@
 ---
 lab:
-    title: '演習 1 - Microsoft セキュリティ ルールを有効化する'
-    module: 'モジュール 7 – Microsoft Sentinel を使用して脅威を検出し、調査を実行する'
+  title: 演習 1 ‐ Microsoft セキュリティ規則を変更する
+  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+ms.openlocfilehash: b96e2326ab5169c9ca6a8cd6e561d964c5d30201
+ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/05/2022
+ms.locfileid: "138025481"
 ---
+# <a name="module-7---lab-1---exercise-1---modify-a-microsoft-security-rule"></a>モジュール 7 - ラボ 1 - 演習 1 - Microsoft セキュリティ規則を有効にする
 
-# モジュール 7 - ラボ 1 - 演習 1 - Microsoft セキュリティ ルールを有効化する
+## <a name="lab-scenario"></a>ラボのシナリオ
 
-## ラボ シナリオ
-
-あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ オペレーションアナリストです。Microsoft Sentinelを使った脅威の検出と軽減方法を学習する必要があります。  他のMicrosoft 365とAzureサービスからのアラートを有効にする必要があります。  
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Azure Sentinel を使って脅威を検出および軽減する方法を学習する必要があります。 まず、Defender for Cloud から Microsoft Sentinel に送信されるアラートを重大度でフィルター処理する必要があります。 
 
 
-### タスク 1: Microsoft Security ルールの有効化
+### <a name="task-1-activate-a-microsoft-security-rule"></a>タスク 1:Microsoft Securityルールの有効化
 
-このタスクでは、Microsoft セキュリティルールを有効化します。
+このタスクでは、Microsoftセキュリティルールを有効化します。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
 
-2. Microsoft Edgeブラウザーで Azure portal　(https://portal.azure.com) に移動します。
+1. Edge ブラウザーで、Azure portal (https://portal.azure.com) ) に移動します。
 
-3. **サインイン**ダイアログボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール**アカウントをコピーして貼り付け、「**次へ**」を選択します。
+1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、「**次へ**」を選択します。
 
-4. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
+1. **パスワードの入力** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
 
-5. Azure portal の検索バーに「*Sentinel*」と入力し、「**Microsoft Sentinel**」を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
 
-6. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
+1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
-7. 構成領域から「**分析**」を選択し、「**規則のテンプレート**」を選択します。
+1. 構成領域から「**分析**」を選択します。 既定で、*アクティブな規則* が表示されます。
 
-8. 「ルール テンプレート」 タブの検索ボックスに、**defender** と入力します。
+1. **[インシデントを Azure Defender のアラートに基づいて作成する]** を選択します。 このアラートは、"モジュール 6 - 演習 1 - タスク 4" で構成した Defender for Cloud のコネクタによって自動的に作成されています。 
 
-9. 結果セットで、「**Create incidents based on Microsoft Defender for Endpoint alerts**」 を選択します。 
+1. 右側のブレードで、 **[編集]** ボタンを選択します。
 
-10. 右側のブレードで、「**ルールの作成**」ボタンを選択します。
+1. ページを下にスクロールし、[Analytics ルール ロジック - 重大度でフィルター処理する] の下の *[カスタム]* ドロップダウン リストを選択します。
 
-11. **重要度でフィルター処理**を「**カスタム**」に変更します。
+1. 重大度レベルで **[低]** を選択解除し、ルールに戻ります。
 
-12. 重要度 レベルに「**高**」 を選択します。
+1. 下部にある **[次: 自動応答]** ボタンを選択し、 **[次へ:Review]\(次へ: 確認\)** をクリックします。
 
-13. 「**次: 自動応答 >**」ボタンを選択し、「**次: レビュー >**」ボタンを選択します。
+1. 行った変更を確認し、 **[保存]** ボタンを選択します。 分析ルールが保存されます。
 
-14. 行った変更を確認し、「**作成**」 ボタンを選択します。  分析ルールが保存されます。
-
-# 演習 2 に進みます。
+# <a name="proceed-to-exercise-2"></a>演習 2 に進みます。
