@@ -2,12 +2,12 @@
 lab:
   title: 演習 6 - 検出を作成する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 6a6ca8f11f933f4e43a7c48b065bd646d0e4c501
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: a78585ad2c3b175ab0277ad76fe417307f8374f7
+ms.sourcegitcommit: 320cb9d3ce20c75731418e03eb86916841cecc69
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025472"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140742102"
 ---
 # <a name="module-7---lab-1---exercise-6---create-detections"></a>モジュール 7 - ラボ 1 - 演習 6 - 検出を作成する
 
@@ -305,9 +305,9 @@ ms.locfileid: "138025472"
     | where TargetAccount == "Builtin\\Administrators"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
-        SecurityEvent | summarize count() by TargetSid, SourceComputerId, TargetUserName | project Acct1 = TargetSid, MachId1 = SourceComputerId, UserName1 = TargetUserName
-
-    ) on $left.MachId == $right.MachId1, $left.Acct == $right.Acct1
+        SecurityEvent 
+        | summarize count() by TargetSid, SourceComputerId, TargetUserName 
+        | project Acct1 = TargetSid, MachId1 = SourceComputerId, UserName1 = TargetUserName) on $left.MachId == $right.MachId1, $left.Acct == $right.Acct1
     ```
 
    ![Screenshot](../Media/SC200_sysmon_attack3.png)
@@ -321,9 +321,9 @@ ms.locfileid: "138025472"
     | where TargetAccount == "Builtin\\Administrators"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
-        SecurityEvent | summarize count() by TargetSid, SourceComputerId, TargetUserName | project Acct1 = TargetSid, MachId1 = SourceComputerId, UserName1 = TargetUserName
-
-    ) on $left.MachId == $right.MachId1, $left.Acct == $right.Acct1
+        SecurityEvent 
+        | summarize count() by TargetSid, SourceComputerId, TargetUserName 
+        | project Acct1 = TargetSid, MachId1 = SourceComputerId, UserName1 = TargetUserName) on $left.MachId == $right.MachId1, $left.Acct == $right.Acct1
     | extend timestamp = TimeGenerated, HostCustomEntity = Computer, AccountCustomEntity = UserName1
     ```
 
