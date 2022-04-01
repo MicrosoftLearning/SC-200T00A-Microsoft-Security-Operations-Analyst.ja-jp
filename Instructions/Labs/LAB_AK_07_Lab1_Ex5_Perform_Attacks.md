@@ -2,12 +2,12 @@
 lab:
   title: 演習 5 - 攻撃の実施
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 6cdec4c87437cc8962c5386a9110f847c5ef944b
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: e884305f1880725d3308c1a594322ac8e301e3e5
+ms.sourcegitcommit: e0fd7a9cf2e15a900d71fccfca58a14cb967f474
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025469"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "141143187"
 ---
 # <a name="module-7---lab-1---exercise-5---conduct-attacks"></a>モジュール 7 - ラボ 1 - 演習 5 - 攻撃の実施
 
@@ -101,7 +101,7 @@ ms.locfileid: "138025469"
     >**注:**  新しい PowerShell ウィンドウが開き、解決エラーが表示されます。 これは予期されることです。
 
     ```CommandPrompt
-    Start PowerShell.exe c2.ps1
+    Start PowerShell.exe -file c2.ps1
     ```
 
 >**重要:** これらのウィンドウを閉じないでください。 この PowerShell スクリプトをバックグラウンドで実行させておきます。 コマンドは、数時間ログエントリを生成する必要があります。 このスクリプトの実行中に次のタスクや次の演習に進むことができます。 このタスクで作成したデータは、後で脅威の捜索ラボで使用します。 このプロセスでは、大量のデータや処理を作成することはありません。

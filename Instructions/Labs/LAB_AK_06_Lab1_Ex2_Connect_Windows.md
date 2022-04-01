@@ -2,12 +2,12 @@
 lab:
   title: 演習 2 - データ コネクタを使用して Microsoft Sentinel に Windows デバイスを接続する
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: 29c9fd18c97224093d52d6a5c796955c34223a49
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 91e038a226219fbd411855158f1449d92995ff5f
+ms.sourcegitcommit: 320cb9d3ce20c75731418e03eb86916841cecc69
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025403"
+ms.lasthandoff: 03/19/2022
+ms.locfileid: "140742096"
 ---
 # <a name="module-6---lab-1---exercise-2---connect-windows-devices-to-microsoft-sentinel-using-data-connectors"></a>モジュール 6 - ラボ 1 - 演習 2 - データ コネクタを使用して Microsoft Sentinel に Windows デバイスを接続する
 
@@ -184,7 +184,7 @@ ms.locfileid: "138025403"
 
 1. デバイス管理セクションで **「オンボーディング」** を選択します。
 
-1. 「**パッケージのダウンロード**」を選択します。
+1. **[オンボーディング パッケージのダウンロード]** を選択します。
 
 1. ダウンロードした.zipファイルを解凍します。
 
