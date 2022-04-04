@@ -2,12 +2,12 @@
 lab:
   title: '演習 1: Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する'
   module: Module 4 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
-ms.openlocfilehash: 1cc85bbf03b5cab48f400e98d07a0f71b97ddc3f
-ms.sourcegitcommit: e0fd7a9cf2e15a900d71fccfca58a14cb967f474
+ms.openlocfilehash: a9b6a745f40b18744bc520ca542c052ec28d5a11
+ms.sourcegitcommit: 1535118acb3c18e55bb160b79728a772a84f9fbe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/25/2022
-ms.locfileid: "141143196"
+ms.locfileid: "140880371"
 ---
 # <a name="module-4---lab-1---exercise-1---create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>モジュール 4 - ラボ 1 - 演習 1 - Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
 
@@ -276,9 +276,9 @@ ms.locfileid: "141143196"
 
 このタスクでは、マルチテーブルKQLステートメントを作成します。
 
-1. クエリ ウィンドウで、 **[時間の範囲]** を **[過去 1 時間]** に変更します。 これにより、次のステートメントの結果が制限されます。
-
 1. 次のステートメントは、2 つ以上のテーブルを取得し、すべての行を返す **union** 演算子を示しています。 結果を渡す方法、およびパイプ文字によってどのような影響があるかを理解することは重要です。 クエリ ウィンドウで、次のステートメントを入力し、クエリごとに **[実行]** を個別に選択して、結果を確認します。 
+
+1. クエリ ウィンドウで、 **[時間の範囲]** を **[過去 1 時間]** に変更します。 これにより、次のステートメントの結果が制限されます。
 
     1. **Query 1** で SecurityBaseline のすべての行と SecurityEvent のすべての行が返されます。
 
@@ -324,7 +324,7 @@ ms.locfileid: "141143196"
     ) on Account
     ```
 
-    >**重要:** 結合で指定した最初のテーブルが、左テーブルと見なされます。 **join** 演算子の後のテーブルが右テーブルです。 テーブルの列を操作する場合、$ left.Columnnameと$ right.Column nameは、参照されるテーブルの列を区別するためのものです。 **join** 演算子では、すべての型 (flouter、inner、innerunique、leftanti、leftantisemi、leftouter、leftsemi、rightanti、rightantisemi、rightouter、rightsemi) がサポートされます。
+>**重要:** 結合で指定した最初のテーブルが、左テーブルと見なされます。 **join** 演算子の後のテーブルが右テーブルです。 テーブルの列を操作する場合、$ left.Columnnameと$ right.Column nameは、参照されるテーブルの列を区別するためのものです。 **join** 演算子では、すべての型 (flouter、inner、innerunique、leftanti、leftantisemi、leftouter、leftsemi、rightanti、rightantisemi、rightouter、rightsemi) がサポートされます。
 
 1. クエリ ウィンドウで、 **[時間の範囲]** を **[過去 24 時間]** に戻します。
 
@@ -416,7 +416,7 @@ ms.locfileid: "141143196"
 
     ```KQL
     SecurityAlert  
-    | where TimeGenerated > ago(90d)
+    | where TimeGenerated >= ago(90d)
     | mv-apply entity = todynamic(Entities) on 
     ( where entity.Type == "host" | extend AffectedHost = strcat (entity.DnsDomain, "\\", entity.HostName))
     ```
