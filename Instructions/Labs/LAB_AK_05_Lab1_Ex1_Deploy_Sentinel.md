@@ -2,16 +2,18 @@
 lab:
   title: 演習 1 - Microsoft Sentinel 環境を構成する
   module: Module 5 - Configure your Microsoft Sentinel environment
-ms.openlocfilehash: e8d4347932306ebfab7b75dd110e3ae3a0e4cca9
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 3dc3670a58758c2d7de37878ba5b9413804596c4
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025409"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493965"
 ---
 # <a name="module-5---lab-1---exercise-1---configure-your-microsoft-sentinel-environment"></a>モジュール 5 - ラボ 1 - 演習 1 - Microsoft Sentinel 環境を構成する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod5_L1_Ex1.png)
 
 あなたは、Microsoft Sentinel を実装しようとしている会社で働いているセキュリティ運用アナリストです。 コストを最小限に抑え、コンプライアンス規制を満たし、セキュリティ チームが日常の職務を遂行するのに最も管理しやすい環境を提供するという会社の要件を満たすように、Microsoft Sentinel 環境を設定する責任があります。
 

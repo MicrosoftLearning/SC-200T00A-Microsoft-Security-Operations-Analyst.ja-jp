@@ -2,16 +2,19 @@
 lab:
   title: '演習 1: Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する'
   module: Module 4 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
-ms.openlocfilehash: a9b6a745f40b18744bc520ca542c052ec28d5a11
-ms.sourcegitcommit: 1535118acb3c18e55bb160b79728a772a84f9fbe
+ms.openlocfilehash: e96c19613f6379217a12392cd39ac916d022c880
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "140880371"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493908"
 ---
 # <a name="module-4---lab-1---exercise-1---create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>モジュール 4 - ラボ 1 - 演習 1 - Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod4_L1_Ex1.png)
+
 あなたは、Microsoft Sentinel を実装しようとしている会社で働いているセキュリティ運用アナリストです。 悪意のあるアクティビティを検索し、視覚化を表示し、脅威ハンティングを実行するためにログ データ分析を行う責任があります。 ログ データのクエリには、Kusto クエリ言語 (KQL) を使用します。
 
 >**重要:** このラボでは、多くの KQL スクリプトを Microsoft Sentinel に入力する必要があります。 これらのスクリプトは、このラボの最初にファイルで提供されます。 また、 https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles からダウンロードすることもできます。
@@ -276,9 +279,9 @@ ms.locfileid: "140880371"
 
 このタスクでは、マルチテーブルKQLステートメントを作成します。
 
-1. 次のステートメントは、2 つ以上のテーブルを取得し、すべての行を返す **union** 演算子を示しています。 結果を渡す方法、およびパイプ文字によってどのような影響があるかを理解することは重要です。 クエリ ウィンドウで、次のステートメントを入力し、クエリごとに **[実行]** を個別に選択して、結果を確認します。 
-
 1. クエリ ウィンドウで、 **[時間の範囲]** を **[過去 1 時間]** に変更します。 これにより、次のステートメントの結果が制限されます。
+
+1. 次のステートメントは、2 つ以上のテーブルを取得し、すべての行を返す **union** 演算子を示しています。 結果を渡す方法、およびパイプ文字によってどのような影響があるかを理解することは重要です。 クエリ ウィンドウで、次のステートメントを入力し、クエリごとに **[実行]** を個別に選択して、結果を確認します。 
 
     1. **Query 1** で SecurityBaseline のすべての行と SecurityEvent のすべての行が返されます。
 
@@ -324,7 +327,7 @@ ms.locfileid: "140880371"
     ) on Account
     ```
 
->**重要:** 結合で指定した最初のテーブルが、左テーブルと見なされます。 **join** 演算子の後のテーブルが右テーブルです。 テーブルの列を操作する場合、$ left.Columnnameと$ right.Column nameは、参照されるテーブルの列を区別するためのものです。 **join** 演算子では、すべての型 (flouter、inner、innerunique、leftanti、leftantisemi、leftouter、leftsemi、rightanti、rightantisemi、rightouter、rightsemi) がサポートされます。
+    >**重要:** 結合で指定した最初のテーブルが、左テーブルと見なされます。 **join** 演算子の後のテーブルが右テーブルです。 テーブルの列を操作する場合、$ left.Columnnameと$ right.Column nameは、参照されるテーブルの列を区別するためのものです。 **join** 演算子では、すべての型 (flouter、inner、innerunique、leftanti、leftantisemi、leftouter、leftsemi、rightanti、rightantisemi、rightouter、rightsemi) がサポートされます。
 
 1. クエリ ウィンドウで、 **[時間の範囲]** を **[過去 24 時間]** に戻します。
 
@@ -416,7 +419,7 @@ ms.locfileid: "140880371"
 
     ```KQL
     SecurityAlert  
-    | where TimeGenerated >= ago(90d)
+    | where TimeGenerated > ago(90d)
     | mv-apply entity = todynamic(Entities) on 
     ( where entity.Type == "host" | extend AffectedHost = strcat (entity.DnsDomain, "\\", entity.HostName))
     ```

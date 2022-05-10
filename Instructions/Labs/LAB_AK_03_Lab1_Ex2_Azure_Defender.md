@@ -2,16 +2,18 @@
 lab:
   title: 演習 2 ‐ Microsoft Defender for Cloud を使用して脅威を軽減する
   module: Module 3 - Mitigate threats using Microsoft Defender for Cloud
-ms.openlocfilehash: 5970d1d528ffc320e6b7e379b8deb011e58fca8c
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 50d77067c70634a4f887a7c8669b38fa7977b860
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025415"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493959"
 ---
 # <a name="module-3---lab-1---exercise-2---mitigate-threats-using-microsoft-defender-for-cloud"></a>モジュール 3 ‐ ラボ 1 ‐ 演習 2 ‐ Microsoft Defender for Cloud を使用して脅威を軽減する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod3_L1_Ex2.png)
 
 あなたは、Microsoft Defender for Cloud を実装した企業で働いているセキュリティ運用アナリストです。 Microsoft Defender for Cloud が生成するセキュリティ アラートに対応する必要があります。
 

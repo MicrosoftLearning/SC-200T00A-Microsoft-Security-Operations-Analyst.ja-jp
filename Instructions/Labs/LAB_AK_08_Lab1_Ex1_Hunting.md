@@ -2,16 +2,18 @@
 lab:
   title: 演習 1 - Microsoft Sentinel で脅威ハンティングを実行する
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 5fe3c20f10e420294fdb2b1048daec19ce359f02
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 04861267f93df1fe9a9adc019d553b436a4aeee5
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025499"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493939"
 ---
 # <a name="module-8---lab-1---exercise-1---perform-threat-hunting-in-microsoft-sentinel"></a>モジュール 8 - ラボ 1 - 演習 1 - Microsoft Sentinel で脅威ハンティングを実行する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod8_L1_Ex1.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 コマンドと制御 (C2 または C&C) 手法に関する脅威インテリジェンスを受け取りました。 その脅威に対して捜索とウォッチを実行する必要があります。
 
@@ -42,18 +44,18 @@ ms.locfileid: "138025499"
 
    >**重要:** 最初に KQL クエリをメモ帳に貼り付けて、そこから *[新しいクエリ 1]* ログ ウィンドウにコピーしてエラーを回避してください。
 
-   ```KQL
-   let lookback = 2d;
-   DeviceEvents | where TimeGenerated >= ago(lookback) 
-   | where ActionType == "DnsQueryResponse"
-   | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
-   | where c2 startswith "sub"
-   | summarize count() by bin(TimeGenerated, 3m), c2
-   | where count_ > 5
-   | render timechart 
-   ```
+    ```KQL
+    let lookback = 2d;
+    DeviceEvents | where TimeGenerated >= ago(lookback) 
+    | where ActionType == "DnsQueryResponse"
+    | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
+    | where c2 startswith "sub"
+    | summarize count() by bin(TimeGenerated, 3m), c2
+    | where count_ > 5
+    | render timechart 
+    ```
 
-   ![Screenshot](../Media/SC200_hunting1.png)
+    ![Screenshot](../Media/SC200_hunting1.png)
 
 1. 前の KQL クエリの目的は、常に C2 ビーコンの視覚化を提供することです。 bin() 内の *3m* の設定を **30s** に変更して、値のグループ化を調整し、クエリをもう一度 **実行** します。
 
@@ -61,19 +63,19 @@ ms.locfileid: "138025499"
 
 1. これで、C2 サーバーにビーコン送信されている　DNS　リクエストが特定できました。 次に、どのデバイスがビーコンになっているかを確認します。 以下の KQL ステートメントを **実行** します。
 
-   ```KQL
-   let lookback = 2d;
-   DeviceEvents | where TimeGenerated >= ago(lookback) 
-   | where ActionType == "DnsQueryResponse"
-   | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),".")) 
-   | where c2 startswith "sub"
-   | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-   | where cnt > 15
-   ```
+    ```KQL
+    let lookback = 2d;
+    DeviceEvents | where TimeGenerated >= ago(lookback) 
+    | where ActionType == "DnsQueryResponse"
+    | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),".")) 
+    | where c2 startswith "sub"
+    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
+    | where cnt > 15
+    ```
 
-   ![Screenshot](../Media/SC200_hunting2.png)
+    ![Screenshot](../Media/SC200_hunting2.png)
 
-   >**注:**  生成されるログ データは、WIN1 デバイスからのもののみです。
+    >**注:**  生成されるログ データは、WIN1 デバイスからのもののみです。
 
 1. ウィンドウの右上にある **[X]** を選択して *[ログ]* ウィンドウを閉じ、 **[OK]** を選択して変更を破棄します。 
 
@@ -85,15 +87,15 @@ ms.locfileid: "138025499"
 
 1. *カスタム クエリ* には、次の KQL ステートメントを入力します。
 
-   ```KQL
-   let lookback = 2d;
-   DeviceEvents | where TimeGenerated >= ago(lookback) 
-   | where ActionType == "DnsQueryResponse"
-   | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
-   | where c2 startswith "sub"
-   | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-   | where cnt > 15
-   ```
+    ```KQL
+    let lookback = 2d;
+    DeviceEvents | where TimeGenerated >= ago(lookback) 
+    | where ActionType == "DnsQueryResponse"
+    | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
+    | where c2 startswith "sub"
+    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
+    | where cnt > 15
+    ```
 
 1. 下にスクロールし、 *[エンティティ マッピング (プレビュー)]* で次のように選択します。
 
@@ -125,7 +127,7 @@ ms.locfileid: "138025499"
 
 1. 結果リストから、先ほど作成した **C2 Hunt** ブックマークを選択します。
 
-1. 右側のペインで下にスクロールし、 **[調査]** ボタンを選択します。
+1. 右側のペインで下にスクロールし、 **[調査]** ボタンを選択します。 **ヒント:** 調査グラフを表示するには数分かかる場合があります。
 
 1. 前のモジュールで行ったのと同じように調査グラフを調べます。
 

@@ -2,16 +2,18 @@
 lab:
   title: 演習 3 - スケジュールされたクエリを作成する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: c76ba6f5bdd5c1f380393b3f0ebbdb16c85626c1
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 6e8d5655639433928d1c52d7c49077dead6121b4
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025478"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493989"
 ---
 # <a name="module-7---lab-1---exercise-3---create-a-scheduled-query"></a>モジュール 7 - ラボ 1 - 演習 3 - スケジュールされたクエリを作成する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex3.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Azure Sentinel を使って脅威を検出および軽減する方法を学習する必要があります。 データ ソースを Microsoft Sentinel に接続した後、環境内の脅威や異常な動作を検出するのに役立つカスタム分析ルールを作成します。
 
@@ -87,7 +89,7 @@ ms.locfileid: "138025478"
 
 1. 下部にある **[次: インシデント設定 >]** ボタンを選択します。 
 
-1. *[インシデント設定 (プレビュー)]* タブで、既定のオプションを確認します。
+1. *[インシデント設定]* タブで、既定のオプションを確認します。
 
 1. 下部にある **[次: 自動応答 >]** ボタンを選択します。
 

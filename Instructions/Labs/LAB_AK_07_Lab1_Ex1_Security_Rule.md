@@ -2,16 +2,18 @@
 lab:
   title: 演習 1 ‐ Microsoft セキュリティ規則を変更する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: b96e2326ab5169c9ca6a8cd6e561d964c5d30201
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: d433e3425f961862a2f51538bb73bd9705c6cc03
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025481"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493848"
 ---
 # <a name="module-7---lab-1---exercise-1---modify-a-microsoft-security-rule"></a>モジュール 7 - ラボ 1 - 演習 1 - Microsoft セキュリティ規則を有効にする
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex1.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Azure Sentinel を使って脅威を検出および軽減する方法を学習する必要があります。 まず、Defender for Cloud から Microsoft Sentinel に送信されるアラートを重大度でフィルター処理する必要があります。 
 

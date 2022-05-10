@@ -2,16 +2,18 @@
 lab:
   title: 演習 2 - データ コネクタを使用して Microsoft Sentinel に Windows デバイスを接続する
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: 91e038a226219fbd411855158f1449d92995ff5f
-ms.sourcegitcommit: 320cb9d3ce20c75731418e03eb86916841cecc69
+ms.openlocfilehash: 9605e4624286654c8d99e1c1fdfc7c88e9508f54
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742096"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493926"
 ---
 # <a name="module-6---lab-1---exercise-2---connect-windows-devices-to-microsoft-sentinel-using-data-connectors"></a>モジュール 6 - ラボ 1 - 演習 2 - データ コネクタを使用して Microsoft Sentinel に Windows デバイスを接続する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex2.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 データの次のソースは、オンプレミス環境や他のパブリック クラウドなど、Azure の内部および外部にある Windows 仮想マシンです。
 
@@ -32,7 +34,7 @@ ms.locfileid: "140742096"
 
 1. **[サービスとマーケットプレースの検索]** ボックスに「*Windows 10*」と入力し、ドロップダウン リストから **[Microsoft Window 10]** を選択します。
 
-1. *[プラン]* ドロップダウン リストを開き、 **[Windows 10 Enterprise バージョン 20H2]** を選択します。 **[事前設定された構成で開始する]** を選択して続行します。
+1. *[プラン]* ドロップダウン リストを開き、 **[Windows 10 Enterprise バージョン 21H2]** を選択します。 **[事前設定された構成で開始する]** を選択して続行します。
 
 1. **[開発/テスト]** を選択してから、 **[VM の作成を続行する]** を選びます。
 
@@ -42,9 +44,9 @@ ms.locfileid: "140742096"
 
 1. *[仮想マシン名]* に、「AZWIN01」と入力します。
 
-1. *[リージョン]* を、ご自分の地域に適したリージョンに設定します。 適切なリージョンが既定になります。
+1. *[リージョン]* の既定値は **[(米国) 米国東部]** のままにします。
 
-1. 下にスクロールして、仮想マシンの *[サイズ]* を確認します。 空の場合は、 **[すべてのサイズを表示]** を選択し、 **[B2ms]** を選んで **[選択]** をクリックします。
+1. 下にスクロールして、仮想マシンの *[サイズ]* を確認します。 空の場合は、 **[すべてのサイズを表示]** を選択し、 *[Azure ユーザーが最もよく使用]* で VM のサイズを 1 つを選択し、 **[選択]** をクリックします。
 
 1. 任意の ''*ユーザー名*'' を入力します。 **ヒント:** admin や root のような予約語は避けてください。
 

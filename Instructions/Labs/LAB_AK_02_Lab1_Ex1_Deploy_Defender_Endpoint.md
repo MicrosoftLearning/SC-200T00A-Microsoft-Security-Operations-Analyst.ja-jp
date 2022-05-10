@@ -2,16 +2,18 @@
 lab:
   title: 演習 1 - Microsoft Defender for Endpoint のデプロイ
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 6db9e431414750e41f7caccc587bfdbc41071210
-ms.sourcegitcommit: 1535118acb3c18e55bb160b79728a772a84f9fbe
+ms.openlocfilehash: 7ecad955c59395014fbf39c2f9836d734137ed74
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "140880374"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493913"
 ---
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>モジュール 2 - ラボ 1 - 演習 1 - Microsoft Defender for Endpoint のデプロイ
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex1.png)
 
 あなたは Microsoft Defender for Endpoint を実装している企業で働いているセキュリティ運用アナリストです。 あなたの上司は、いくつかのデバイスをオンボードして、セキュリティ オペレーション (SecOps) チームの応答手順で必要な変更に関する情報を提供しようとしています。
 
@@ -75,7 +77,7 @@ ms.locfileid: "140880374"
 
 1. **[管理者: コマンド プロンプト]** ウィンドウでスクリプトを右クリックして貼り付け、**Enter** キーを押して実行します。 **注:**  スクリプトの実行後、ウィンドウは自動的に閉じます。
 
-1. Microsoft 365 Defender ポータルの左側のメニューの [エンドポイント] 領域で **[デバイス インベントリ]** を選択します。 デバイスが表示されていない場合は、次のタスクを完了し、後でもう一度確認してください。 最初のデバイスがポータルに表示されるまでに、最大 60 分かかることがあります。
+1. Microsoft 365 Defender ポータルの左側のメニューの [エンドポイント] 領域で **[デバイス インベントリ]** を選択します。 デバイスが表示されていない場合は、次のタスクを完了し、後でもう一度確認してください。 最初のデバイスがポータルに表示されるまでに最大で 60 分かかることがあります。
 
     >**注:**  オンボード プロセスを完了してから 1 時間経ってもデバイス一覧にデバイスが表示されない場合は、オンボードまたは接続に問題があるおそれがあります。
 
@@ -119,7 +121,7 @@ ms.locfileid: "140880374"
     |全般設定|値|
     |---|---|
     |デバイス グループ名|**Regular**|
-    |自動化レベル|Full - remediate threats automatically (完全 - 脅威を自動的に修復する)|
+    |自動化レベル|完全 - 脅威を自動的に修復する|
 
 1. **[次へ]** を選択します。
 

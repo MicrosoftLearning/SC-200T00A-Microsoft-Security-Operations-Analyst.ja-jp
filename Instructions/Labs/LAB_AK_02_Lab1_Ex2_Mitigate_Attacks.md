@@ -2,16 +2,18 @@
 lab:
   title: 演習 2 - Microsoft Defender for Endpoint を使用した攻撃の軽減
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 0f79ef27e27b989481d50b9ff617c21ba6770705
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 75d7cb14ee90aeaafd539a3cd7ad32163f53474f
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025412"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493854"
 ---
 # <a name="module-2---lab-1---exercise-2---mitigate-attacks-with-microsoft-defender-for-endpoint"></a>モジュール 2 - ラボ 1 - 演習 2 - Microsoft Defender for Endpoint を使用した攻撃の軽減
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex2.png)
 
 あなたは Microsoft Defender for Endpoint を実装している企業で働いているセキュリティ運用アナリストです。 あなたの上司は、いくつかのデバイスをオンボードして、セキュリティ オペレーション (SecOps) チームの応答手順で必要な変更に関する情報を提供しようとしています。
 
@@ -44,9 +46,9 @@ Defender for Endpoint の攻撃緩和機能を確認するため、シミュレ�
 
 1. **[自分に割り当て]** トグルを選択して、インシデントの所有者として自分のユーザー アカウントを追加します。 
 
-1. **[分類]** で、ドロップダウン メニューの **[True アラート]** を選択します。 
+1. **[分類]** で、ドロップダウン メニューを展開します。 
 
-1. **[決定]** で、ドロップダウン メニューの **[Security test]\(セキュリティ テスト\)** を選択します。 
+1. **[情報、予期されるアクティビティ]** で、 **[セキュリティ テスト]** を選択します。 
 
 1. 必要に応じてコメントを追加し、 **[保存]** をクリックして終了します。
 

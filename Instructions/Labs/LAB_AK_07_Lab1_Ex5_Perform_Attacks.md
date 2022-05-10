@@ -2,16 +2,18 @@
 lab:
   title: 演習 5 - 攻撃の実施
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: e884305f1880725d3308c1a594322ac8e301e3e5
-ms.sourcegitcommit: e0fd7a9cf2e15a900d71fccfca58a14cb967f474
+ms.openlocfilehash: ff595199e034f5779ecd1c982609858a6c677a87
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "141143187"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493842"
 ---
 # <a name="module-7---lab-1---exercise-5---conduct-attacks"></a>モジュール 7 - ラボ 1 - 演習 5 - 攻撃の実施
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex5.png)
 
 後で Microsoft Sentinel での検出と調査に使用する攻撃をシミュレートします。
 

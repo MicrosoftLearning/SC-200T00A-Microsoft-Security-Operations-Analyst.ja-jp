@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: df81f5e8d80eed38acc020e9c904d1bff1a70da2
-ms.sourcegitcommit: 20cbc7b52187d61fca294ac2c00146c2c7c6d337
+ms.openlocfilehash: fb8d611ee9301793d2f051799f9128892f868e25
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "137899224"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493891"
 ---
 
 # <a name="microsoft-security-operations-analyst"></a>Microsoft Security Operations Analyst
@@ -131,7 +131,7 @@ ms.locfileid: "137899224"
 4. 全般 タブに次の情報を入力します。
 
 - デバイス グループ名:定期
-- 自動化レベル:Full - remediate threats automatically (完全 - 脅威を自動的に修復する)
+- 自動化レベル:完全 - 脅威を自動的に修復する
 - メンバー:名前は TESTLAB と同じになります
 
 5. **[次へ]** を選択します。

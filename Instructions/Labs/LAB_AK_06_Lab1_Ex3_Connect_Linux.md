@@ -2,16 +2,18 @@
 lab:
   title: 演習 3 - データ コネクタを使用して Microsoft Sentinel に Linux ホストを接続する
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: 5d2aa7f11949f5fd011d6ca2ae612c158e8a1d58
-ms.sourcegitcommit: e0fd7a9cf2e15a900d71fccfca58a14cb967f474
+ms.openlocfilehash: bf3774978dc5c6cef158d5f1288577854000d944
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "141143190"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493971"
 ---
 # <a name="module-6---lab-1---exercise-3---connect-linux-hosts-to-microsoft-sentinel-using-data-connectors"></a>モジュール 6 - ラボ 1 - 演習 3 - データ コネクタを使用して Microsoft Sentinel に Linux ホストを接続する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex3.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 次のデータソースは、共通イベント形式 (CEF) と Syslog コネクタを使用した Linux 仮想マシンです。
 
