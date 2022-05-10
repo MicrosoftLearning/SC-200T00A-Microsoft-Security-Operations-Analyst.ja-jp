@@ -2,16 +2,18 @@
 lab:
   title: 演習 8 - ブックを作成する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: e57f2d5fbb83fbd88c51ca551cd2838d9a35411b
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 504b1964c0b950d4ddd76cb143b56d82858bec09
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025450"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493920"
 ---
 # <a name="module-7---lab-1---exercise-8---create-workbooks"></a>モジュール 7 - ラボ 1 - 演習 8 - ワークブックの作成
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex8.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Microsoft Sentinel にデータ ソースを接続した後、Microsoft Sentinel による Azure Monitor ブックの適用を使用して、データを視覚化および監視できます。これにより、多用途のカスタム ダッシュボードを作成できます。 
 
@@ -30,7 +32,7 @@ Microsoft Sentinel を使用すると、データ全体に対してカスタム 
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力し、 **[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
@@ -49,7 +51,7 @@ Microsoft Sentinel を使用すると、データ全体に対してカスタム 
 
 1. **[Microsoft Sentinel - ブック - テンプレート]** タブに戻る必要があります。 **[Azure AD 監査ログ]** を検索して選択し、右側のペインで下にスクロールし、 **[保存]** ボタンを選択します。 
 
-1. 適切な場所を選択し、 **[OK]** を選択します。 適切な場所が既定になります。
+1. *[リージョン]* の既定値は **[米国東部]** のままにして、 **[OK]** を選択します。
 
 1. 「**保存されたワークブックの表示**」ボタンを選択します。
 
@@ -75,7 +77,7 @@ Microsoft Sentinel を使用すると、データ全体に対してカスタム 
 
 1. 「*アイテムを選択したら、パラメーターをエクスポートする*」設定を確認します。 *UserInfo* フィールドが選択されていることに注意してください。
 
-1. 下にスクロールし、(上部のメニューではなく) クエリの下部にある **[編集完了]** を選択します。
+1. 下にスクロールし、(上部のメニューではなく) クエリの下部にある **[編集完了]** を選択します。 *操作数* と *傾向* の変更された色を確認します。
 
 1. 画面の右側に表示された円グラフ *上位アクティブ ユーザー* の下にある **[編集]** を選択します。  
 
@@ -100,7 +102,7 @@ Microsoft Sentinel を使用すると、データ全体に対してカスタム 
 
 1. ブックの最初の段落の下にある **[編集]** ボタンを選択します。 
 
-1. *# My workbook* と入力して、 *## New workbook* を置き換えます。
+1. *[## 新しいブック]* の上に「 *# マイブック*」とを入力します。
 
 1. [*テキスト項目の編集: テキスト - 2*] では、下部のメニューにある **[編集完了]** を選択します。 ヘッダーのサイズが大きくなり、名前が変更されたことに注意してください。
 

@@ -2,16 +2,18 @@
 lab:
   title: 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 78e9f168c1c512da4fe3217009b2d9f9ba90a5fd
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 27db8985c2581a04345396e47ee0f0d2e97eb931
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025493"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493954"
 ---
 # <a name="module-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>モジュール 8 - ラボ 1 - 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Microsoft Sentinel Notebooks を使った脅威ハンティングの利点を調査する必要があります。 Notebooks は次の用途に使用できます。
 
@@ -46,14 +48,14 @@ ms.locfileid: "138025493"
 
 1. ワークスペースの詳細 セクションで次の作業を行います。
 
-    - お使いのワークスペースに一意の名前を付けます。
-    - リージョンを選択します (または、適切な場合は既定値のままにします)
-    - 既定のストレージ アカウント、キーボールト、およびアプリケーション インサイト情報を保持します。
-    - 「コンテナー レジストリ」オプションは、「**なし**」のままにできます。
+     - お使いのワークスペースに一意の名前を付けます。
+     - *[リージョン]* の既定値は **[(米国) 米国東部]** のままにします。
+     - 既定のストレージ アカウント、キーボールト、およびアプリケーション インサイト情報を保持します。
+     - 「コンテナー レジストリ」オプションは、「**なし**」のままにできます。
 
 1. ページの下部で **[確認および作成]** を選択します。 *検証に成功しました* というメッセージが表示されたら、 **[作成]** を選択します。 
 
-    >**注:**  Machine Learning ワークスペースのデプロイには数分かかる場合があります。
+     >**注:**  Machine Learning ワークスペースのデプロイには数分かかる場合があります。
 
 1. *デプロイが完了しました* というメッセージが表示されたら、Microsoft Sentinel ポータルに戻ります。
 
