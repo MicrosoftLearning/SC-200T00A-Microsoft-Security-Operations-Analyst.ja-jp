@@ -80,7 +80,7 @@ ms.locfileid: "138025403"
 
 このタスクでは、非 Azure Windows 仮想マシンを Microsoft Sentinel に接続します。
 
->**重要:** 次の手順は、以前に作業していたものとは異なるマシンで行います。 仮想マシン名の参照を探します。
+>**重要:** 次の手順は、**WIN2** で行います。 仮想マシン名の参照を探します。
 
 1. 管理者として、次のパスワードを使用して WIN2 仮想マシンにログインします: **Pa55w.rd**。  
 
@@ -125,7 +125,7 @@ ms.locfileid: "138025403"
 
 ### <a name="task-4-install-and-collect-sysmon-logs"></a>タスク 4:Sysmon ログをインストールして収集する
 
-このタスクでは、Sysmonログをインストールして収集します。
+このタスクでは、WIN2 に Sysmonログをインストールして収集します。
 
 >**注:**  次の手順では、既定構成でSysmonをインストールします。 実稼働マシンで使用する Sysmon のコミュニティベースの構成を調査する必要があります。
 
@@ -168,7 +168,7 @@ ms.locfileid: "138025403"
 
 ### <a name="task-5-onboard-microsoft-defender-for-endpoint-device"></a>タスク 5:Microsoft Defender for Endpoint デバイスをオンボードする
 
-このタスクでは、デバイスを Microsoft Defender for Endpoint にオンボードします。
+このタスクでは、WIN1 デバイスを Microsoft Defender for Endpoint にオンボードします。
 
 >**非常に重要:** このコースの「モジュール 2 - 演習 1」のラボを完了し、これまで仮想マシンを保存してきた場合は、このタスクを省略できます。 それ以外の場合は、WIN1 マシンを Defender for Endpoint にもう一度オンボードする必要があります。
 
