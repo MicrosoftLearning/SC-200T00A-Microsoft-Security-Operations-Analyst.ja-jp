@@ -322,7 +322,6 @@ ms.locfileid: "138025472"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
         SecurityEvent | summarize count() by TargetSid, SourceComputerId, TargetUserName | project Acct1 = TargetSid, MachId1 = SourceComputerId, UserName1 = TargetUserName
-
     ) on $left.MachId == $right.MachId1, $left.Acct == $right.Acct1
     | extend timestamp = TimeGenerated, HostCustomEntity = Computer, AccountCustomEntity = UserName1
     ```
