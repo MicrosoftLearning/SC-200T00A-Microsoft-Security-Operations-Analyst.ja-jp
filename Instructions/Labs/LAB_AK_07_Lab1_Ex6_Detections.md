@@ -34,7 +34,7 @@ ms.locfileid: "141493944"
 
 1. **パスワードの入力** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された管理者用の **テナントパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
@@ -65,7 +65,7 @@ ms.locfileid: "141493944"
 
 1. 最初の行を展開して、レコードに関連するすべての列を表示します。 *EventData* や *ParameterXml* などのいくつかのフィールドには、構造化データとして格納された複数のデータ項目があります。 これにより、特定のフィールドでのクエリが困難になります。 
 
-1. そのため、各行からのデータを解析する KQL ステートメントを作成し、意味のあるフィールドを使用できるようにする必要があります。 GitHub の Microsoft Sentinel コミュニティでは、Parsers フォルダーに多くの例があります。 Edge ブラウザーで別のタブを開き、「 **https://github.com/Azure/Azure-Sentinel** 」と入力します。
+1. そのため、各行からのデータを解析する KQL ステートメントを作成し、意味のあるフィールドを使用できるようにする必要があります。 GitHub の Microsoft Sentinel コミュニティでは、Parsers フォルダーに多くの例があります。 Edge ブラウザーで別のタブを開き、「**https://github.com/Azure/Azure-Sentinel**」と入力します。
 
 1. **Parsers** フォルダーを選択し、次に **Sysmon** フォルダーを選択します。
 
@@ -158,7 +158,7 @@ ms.locfileid: "141493944"
 
 1. これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
 
-    |設定|値|
+    |設定|[値]|
     |---|---|
     |名前|**Sysmon Startup RegKey**|
     |説明|**c:\temp の Sysmon Startup Regkey**|
@@ -252,7 +252,7 @@ ms.locfileid: "141493944"
 
 1. これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
 
-    |設定|値|
+    |設定|[値]|
     |---|---|
     |名前|**MDE Startup RegKey**|
     |説明|**c:\temp の MDE Startup Regkey**|
@@ -333,7 +333,7 @@ ms.locfileid: "141493944"
 
 1. これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
 
-    |設定|値|
+    |設定|[値]|
     |---|---|
     |名前|**SecurityEvent Local Administrators User Add**|
     |説明|**ローカル管理者グループに追加されたユーザー**|
