@@ -27,7 +27,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t RE
 
 4. **パスワードの入力** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された管理者用の **テナントパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-5. Azure portal の検索バーに「*Sentinel*」と入力し、「**Azure Sentinel**」を選択します。
+5. Azure portal の検索バーに「*Sentinel*」と入力し、**[Azure Sentinel]** を選択します。
 
 6. 先ほど作成した Azure Sentinel ワークスペースを選択します。
 
@@ -75,7 +75,7 @@ Event
 
 17.  ここから引き続き検出ルールを作成できますが、このKQLステートメントは、他の検出ルールのKQLステートメントで再利用できるように見えます。  
     
-    「ログ」ウィンドウで、「**保存**」、「**関数として保存**」の順に選択します。
+    [ログ] ウィンドウで、**[保存]**、**[関数として保存]** の順に選択します。
     保存フライアウトで、次のように入力します。
 
     名前: Event_Reg_SetValue [名前を付けて保存]:Function [関数のエイリアス]:Event_Reg_SetValue [カテゴリ]:Sysmon
