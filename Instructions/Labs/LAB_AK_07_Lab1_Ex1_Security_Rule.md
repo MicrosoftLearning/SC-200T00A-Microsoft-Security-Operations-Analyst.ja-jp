@@ -2,12 +2,12 @@
 lab:
   title: 演習 1 ‐ Microsoft セキュリティ規則を変更する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: d433e3425f961862a2f51538bb73bd9705c6cc03
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 92e54277d1d8c51dd0ddde982409f991bfbe0766
+ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493848"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "145912162"
 ---
 # <a name="module-7---lab-1---exercise-1---modify-a-microsoft-security-rule"></a>モジュール 7 - ラボ 1 - 演習 1 - Microsoft セキュリティ規則を有効にする
 
@@ -26,17 +26,17 @@ ms.locfileid: "141493848"
 
 1. Edge ブラウザーで、Azure portal (https://portal.azure.com) ) に移動します。
 
-1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、「**次へ**」を選択します。
+1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
-1. **パスワードの入力** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
+1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナント パスワード** をコピーして貼り付け、**[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
-1. 構成領域から「**分析**」を選択します。 既定で、*アクティブな規則* が表示されます。
+1. 構成領域から **[分析]** を選択します。 既定で、*アクティブな規則* が表示されます。
 
-1. **[インシデントを Azure Defender のアラートに基づいて作成する]** を選択します。 このアラートは、"モジュール 6 - 演習 1 - タスク 4" で構成した Defender for Cloud のコネクタによって自動的に作成されています。 
+1. **[Microsoft Defender for CLoud に基づいてインシデントを作成する]** を選択します。 このアラートは、"モジュール 6 - 演習 1 - タスク 4" で構成した Defender for Cloud のコネクタによって自動的に作成されています。 
 
 1. 右側のブレードで、 **[編集]** ボタンを選択します。
 

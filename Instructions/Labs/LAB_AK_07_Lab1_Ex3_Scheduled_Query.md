@@ -2,12 +2,12 @@
 lab:
   title: 演習 3 - スケジュールされたクエリを作成する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 6e8d5655639433928d1c52d7c49077dead6121b4
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 97e0ead1d3b79493deda54a3e268fc8f72f4070f
+ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493989"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "145912153"
 ---
 # <a name="module-7---lab-1---exercise-3---create-a-scheduled-query"></a>モジュール 7 - ラボ 1 - 演習 3 - スケジュールされたクエリを作成する
 
@@ -30,11 +30,11 @@ ms.locfileid: "141493989"
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
-1. 構成領域から「**分析**」を選択します。
+1. 構成領域から **[分析]** を選択します。
 
 1. **[+ 作成]** ボタンを選択してから、 **[スケジュールされたクエリ ルール]** を選びます。
 
@@ -104,7 +104,7 @@ ms.locfileid: "141493989"
 
 このタスクでは、新しいスケジュールされたクエリルールをテストします
 
-1. Azureポータルの検索バーに「*Azure Active Directory*」と入力します。 「**Azure Active Directory**」を選択します。
+1. Azure portal の検索バーに「*Azure Active Directory*」と入力します。 その後、**[Azure Active Directory]** を選択します。
 
 1. [管理] 領域で **[ユーザー]** を選択し、[ユーザー - すべてのユーザー] ページが表示されるようにします。
 
@@ -114,9 +114,9 @@ ms.locfileid: "141493989"
 
 1. コマンド バーから **[+ 割り当ての追加]** を選択します。
 
-1. *[割り当ての追加]* ページの *[メンバーシップ]* タブで、 *[ロールの選択]* の下にある **[ユーザー管理者]** を選択します。 その後、 **[次へ >]** を選択します。
+1. *[割り当ての追加]* ページの *[メンバーシップ]* タブで、 *[ロールの選択]* の下にある **[ユーザー管理者]** を選択します。 **[追加]** を選択します。
 
-1. *[設定]* タブで既定の *[割り当ての種類]* を確認してから、 **[割り当て]** を選択します。 割り当ての完了に失敗した場合は、やり直してください。
+    >**注:**  場合によっては、 **[更新]** ボタンをクリックして、新しいロールの割り当てを表示する必要があります。 
 
 1. 右上にある [x] を 2 回選択して、[Christie Cline - 割り当てられたロール] および [ユーザー - すべてのユーザー] ページを閉じます。
 
@@ -130,7 +130,7 @@ ms.locfileid: "141493989"
 
 1. [Contoso - 監査ログ] に戻り、 **[更新]** を選択します。これは、 *[カテゴリ: RoleManagement]* のエントリ (以前行ったロールの変更を示す) が表示されるまで行います。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
@@ -140,6 +140,6 @@ ms.locfileid: "141493989"
 
 1. 新しく作成したインシデントが表示されます。 インシデントを選択し、右側のブレードの情報を確認します。
 
-1. Edge ブラウザーでタブを選択して、Microsoft Teams に戻ります。 閉じた場合は、単に新しいタブを開いて「 https://teams.microsoft.com 」と入力します。 *SOC* Teams に移動し、 *[新しいアラート]* チャネルを選択して、インシデントに関するメッセージ投稿を確認します。
+1. Edge ブラウザーでタブを選択して、Microsoft Teams に戻ります。 閉じた場合は、単に新しいタブを開いて「https://teams.microsoft.com」と入力します。 *SOC* Teams に移動し、 *[新しいアラート]* チャネルを選択して、インシデントに関するメッセージ投稿を確認します。
 
 ## <a name="proceed-to-exercise-4"></a>演習 4 に進む

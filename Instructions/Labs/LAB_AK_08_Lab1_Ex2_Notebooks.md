@@ -2,12 +2,12 @@
 lab:
   title: 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 27db8985c2581a04345396e47ee0f0d2e97eb931
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 3f48ff448906532c93fcb3a1b3478ca445dad777
+ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493954"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "145912156"
 ---
 # <a name="module-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>モジュール 8 - ラボ 1 - 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
 
@@ -34,7 +34,7 @@ ms.locfileid: "141493954"
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
@@ -44,14 +44,14 @@ ms.locfileid: "141493954"
 
 1. [サブスクリプション] ボックスでお使いのサブスクリプションを選択します。
 
-1. リソース グループの **[新規作成]** を選択し、名前として「*RG-MachineLearning*」と入力して、 **[OK]** を選択します。 
+1. リソース グループの **[新規作成]** を選択し、名前として「*RG-MachineLearning*」と入力して、**[OK]** を選択します。 
 
 1. ワークスペースの詳細 セクションで次の作業を行います。
 
      - お使いのワークスペースに一意の名前を付けます。
      - *[リージョン]* の既定値は **[(米国) 米国東部]** のままにします。
      - 既定のストレージ アカウント、キーボールト、およびアプリケーション インサイト情報を保持します。
-     - 「コンテナー レジストリ」オプションは、「**なし**」のままにできます。
+     - [コンテナー レジストリ] オプションは、**[なし]** のままにできます。
 
 1. ページの下部で **[確認および作成]** を選択します。 *検証に成功しました* というメッセージが表示されたら、 **[作成]** を選択します。 
 
@@ -63,7 +63,7 @@ ms.locfileid: "141493954"
 
 1. **[Microsoft Sentinel ML ノートブックのファースト ステップ ガイド]** を選択します。 
 
-1. 右側のペインで、下にスクロールし、 **[ノートブック テンプレートの複製]** ボタンを選択します。 既定のオプションを確認し、 **[保存]** を選択します。
+1. 右側のペインで下にスクロールし、 **[テンプレートから作成]** ボタンを選択します。 既定のオプションを確認し、 **[保存]** を選択します。
 
 1. 保存が完了したら、 **[ノートブックの起動]** ボタンを選択します。 これにより Microsoft Azure Machine Learning スタジオに移動します。
 

@@ -2,12 +2,12 @@
 lab:
   title: 演習 1 - Microsoft 365 Defender の確認
   module: Module 1 - Mitigate threats using Microsoft 365 Defender
-ms.openlocfilehash: dc37672bc32d41439aec72056ed1530196cbcfc6
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 675aa05339ee8b5f24e45aa17d737d2155d2a164
+ms.sourcegitcommit: ac5992dcbc64a608d24a33e084c71f456327b07d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493836"
+ms.lasthandoff: 05/26/2022
+ms.locfileid: "145892524"
 ---
 # <a name="module-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>モジュール 1 - ラボ 1 - 演習 1 - Microsoft 365 Defender の確認 
 
@@ -38,7 +38,7 @@ ms.locfileid: "141493836"
 
 1. Edge ブラウザーで、 https://security.microsoft.com) の Microsoft 365 Defender ポータルに移動します。
 
-1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、「**次へ**」を選択します。
+1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
 1. **パスワードの入力** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者のテナント パスワードをコピーして貼り付け、**サインイン** します。
 
@@ -54,19 +54,23 @@ ms.locfileid: "141493836"
 
     >**注:**  "クライアント エラー - bip ルールの取得時にエラーが発生しました" というメッセージが表示された場合は、 **[OK]** を選択して続行します。 このエラーは、既定では有効になっていない Office 365 のテナントのハイドレーション状態が原因です。
 
-1. [標準的な保護] の **[管理]** を選択します。
+1. *[標準的な保護]* で、 **[Standard ポリシーの適用]** を選択します。
 
 1. *[EOP protections apply to]\(EOP 保護の適用先\)* セクションの **[ドメイン]** で、テナントのドメイン名を記述し、 **[次へ]** を選択します。 **ヒント:** テナントのドメイン名は、管理者アカウントのドメイン名と同じです。例: *WWLx######.onmicrosoft.com*。 この構成では、スパム対策、送信スパム フィルター、マルウェア対策、フィッシング対策のポリシーが適用されます。 
 
 1. **[Defender for Office 365 protections apply to]\(Defender for Office 365 保護の適用先\)** セクションで、前の手順と同じ構成を適用し、 *[次へ]* を選択します。 この構成は、フィッシング対策、安全な添付ファイル、安全なリンクのポリシーに対して適用されることに注意してください。
 
+1. *[ポリシー モード]* セクションで、 **[Turn on the policy after I finish]\(完了したらポリシーを有効にする\)** ラジオ ボタンが選択されていることを確認し、 **[次へ]** を選択します。
+
 1. *[Review and confirm your changes]\(確認と変更の確認\)* の内容を読み、 **[確認]** を選択して変更を適用し、 **[完了]** を選択して完了します。
 
-1. *[厳密な保護]* で **[管理]** を選択します。 **ヒント:** *[厳密な保護]* は、"[電子メールとコラボレーション] - [Policies & rules]\(ポリシーとルール\) - [Threat policies]\(脅威ポリシー\) - [Preset Security Policies] (事前設定セキュリティ ポリシー)" の下に表示されます。
+1. *[厳重な保護]* で、 **[Standard ポリシーの適用]** を選択します。 **ヒント:** *[厳密な保護]* は、"[電子メールとコラボレーション] - [Policies & rules]\(ポリシーとルール\) - [Threat policies]\(脅威ポリシー\) - [Preset Security Policies] (事前設定セキュリティ ポリシー)" の下に表示されます。
 
 1. *[EOP protections apply to]\(EOP 保護の適用先\)* の **[グループ]** で、 **[リーダーシップ]** を記述し、それを選択して **[次へ]** を選択します。 この構成では、スパム対策、送信スパム フィルター、マルウェア対策、フィッシング対策のポリシーが適用されます。
 
 1. **[Defender for Office 365 protections apply to]\(Defender for Office 365 保護の適用先\)** セクションで、前の手順と同じ構成を適用し、 *[次へ]* を選択します。 この構成は、フィッシング対策、安全な添付ファイル、安全なリンクのポリシーに対して適用されることに注意してください。
+
+1. *[ポリシー モード]* セクションで、 **[Turn on the policy after I finish]\(完了したらポリシーを有効にする\)** ラジオ ボタンが選択されていることを確認し、 **[次へ]** を選択します。
 
 1. *[Review and confirm your changes]\(確認と変更の確認\)* の内容を読み、 **[確認]** を選択して変更を適用し、 **[完了]** を選択して完了します。
 
