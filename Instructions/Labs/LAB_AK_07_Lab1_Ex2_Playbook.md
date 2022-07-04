@@ -2,12 +2,12 @@
 lab:
   title: 演習 2 - プレイブックを作成する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 8017ba4ba215da42fce83151d80756e441e480df
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: db4d3e74419475539b412afdb1b3e935f89d95b1
+ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493932"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "145912159"
 ---
 # <a name="module-7---lab-1---exercise-2---create-a-playbook"></a>モジュール 7 - ラボ 1 - 演習 2 - プレイブックを作成する
 
@@ -40,15 +40,15 @@ ms.locfileid: "141493932"
 
 1. **[最初から]** ボタンを選択します。
 
-1. 「**プライベート**」ボタンを選択します。
+1. **[プライベート]** ボタンを選択します。
 
-1. チームに名前を付けます: 「**SOC**」と入力し、 **[作成]** ボタンを選択します。
+1. チームに名前を付けます: 「**SOC**」と入力し、**[作成]** ボタンを選択します。
 
 1. SOC にメンバーを追加 画面で、**スキップ** ボタンを選択します。 
 
 1. [Teams] ブレードを下にスクロールし、新しく作成された SOC チームを見つけ、名前の右側にある省略記号 **[...]** を選択し、 **[チャネルの追加]** を選択します。
 
-1. *新しいアラート* のチャネル名を入力し、「**追加**」ボタンを選択します。
+1. "新しいアラート" のチャネル名を入力し、**[追加]** ボタンを選択します。
 
 
 ### <a name="task-2-create-a-playbook-in-microsoft-sentinel"></a>タスク 2:Microsoft Sentinel プレイブックを作成する
@@ -61,7 +61,7 @@ ms.locfileid: "141493932"
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
@@ -69,9 +69,9 @@ ms.locfileid: "141493932"
 
 1. 右側のペインで、 **[コミュニティのコンテンツをオンボードする]** リンクを選択します。 これにより、Microsoft Sentinel GitHub コンテンツ用の Edge ブラウザーの新しいタブが開きます。
 
-1. 「**プレイブック**」フォルダーを選択します。
+1. "**プレイブック**" フォルダーを選択します。
 
-1. 「**Post-Message-Teams**」フォルダーを選択します。
+1. "**Post-Message-Teams**" フォルダーを選択します。
 
 1. readme.md ボックスで、2 番目の *[クイック デプロイ]* オプションの **[Deploy with alert trigger]/(アラート トリガーを使用してデプロイする)** まで下にスクロールし、 **[Azure に配置する]** ボタンを選択します。  
 
@@ -79,7 +79,7 @@ ms.locfileid: "141493932"
 
 1. [Azure サブスクリプション] が選択されていることを確認します。
 
-1. リソース グループで、 **[新規作成]** を選択し、「*RG-Playbooks*」と入力し、 **[OK]** を選択します。
+1. リソース グループで **[新規作成]** を選択し、「*RG-Playbooks*」と入力して **[OK]** を選択します。
 
 1. *[リージョン]* の既定値は **[(米国) 米国東部]** のままにします。
 
@@ -94,7 +94,7 @@ ms.locfileid: "141493932"
 
 このタスクでは、作成した新しいプレイブックを適切な接続情報で更新します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
@@ -104,7 +104,7 @@ ms.locfileid: "141493932"
 
 1. *PostMessageTeams-OnAlert* の Logic App ページで、コマンド メニューの **[編集]** を選択します。
 
-1. *最初の* ブロック、 **[When a response to an Microsoft Sentinel alert is triggered]\(Microsoft Sentinel アラートへの応答がトリガーされたとき\)** を選択します。
+1. *"最初"* のブロックの **[Microsoft Sentinel アラート]** を選択します。
 
 1. **[接続の変更]** リンクを選択します。
 
@@ -122,9 +122,9 @@ ms.locfileid: "141493932"
 
 1. ブロックの名前が **[メッセージを投稿する (V3)]** に変更されました。 *[Teams]* フィールドの最後にある **[X]** を選択して内容をクリアします。 フィールドは、Microsoft Teams から利用可能な Teams のリストを含むドロップダウンに変更されます。 **[SOC]** を選択します。
 
-1. *[チャネル]* フィールドでも同じ操作を行い、フィールドの末尾にある **[X]** を選択して内容をクリアします。 フィールドがドロップダウンに変更され、SOC チームのチャネルの一覧が表示されます。 「**新しいアラート**」を選択します。
+1. *[チャネル]* フィールドでも同じ操作を行い、フィールドの末尾にある **[X]** を選択して内容をクリアします。 フィールドがドロップダウンに変更され、SOC チームのチャネルの一覧が表示されます。 **[新しいアラート]** を選択します。
 
-1. コマンド バーの **「保存」** を選択します。
+1. コマンド バーの **[保存]** を選択します。
 
 これらはのちのラボで使用します。
 
