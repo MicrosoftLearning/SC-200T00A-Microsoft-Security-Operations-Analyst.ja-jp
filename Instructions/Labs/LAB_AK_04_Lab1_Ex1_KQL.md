@@ -2,12 +2,12 @@
 lab:
   title: '演習 1: Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する'
   module: Module 4 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
-ms.openlocfilehash: e96c19613f6379217a12392cd39ac916d022c880
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 15469ce769f9c3655c9c8c35ea33d70f43d8ef2e
+ms.sourcegitcommit: ac5992dcbc64a608d24a33e084c71f456327b07d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493908"
+ms.lasthandoff: 05/26/2022
+ms.locfileid: "145892527"
 ---
 # <a name="module-4---lab-1---exercise-1---create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>モジュール 4 - ラボ 1 - 演習 1 - Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
 
@@ -231,7 +231,7 @@ ms.locfileid: "141493908"
         | summarize arg_max(TimeGenerated, *) by Account
         ```
 
-    >**注:**  バー [完了] を選択して、"合計 CPU" と "処理されたクエリに使用するデータ" を確認し、両方のステートメント間のデータを比較することもできます。
+    >**注:**  右下の "クエリの詳細" リンクを選択して、"合計 CPU" と "処理されたクエリに使用するデータ" を確認し、両方のステートメント間のデータを比較することもできます。
 
 1. 次のステートメントは、グループ内のすべての値の *リスト* を返す **make_list()** 関数を示しています。 この KQL クエリでは、まず where 演算子を使用して EventID をフィルター処理します。 次に、各コンピューターについて、結果がアカウントの JSON 配列になります。 結果として得られる JSON 配列には、重複するアカウントが含まれます。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
