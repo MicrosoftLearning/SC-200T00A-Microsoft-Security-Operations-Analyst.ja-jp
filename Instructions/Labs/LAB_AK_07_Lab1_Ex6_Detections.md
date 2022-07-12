@@ -2,16 +2,18 @@
 lab:
   title: 演習 6 - 検出を作成する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 6a6ca8f11f933f4e43a7c48b065bd646d0e4c501
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 5512edc50ccfb34c75e4b5658d71f1d3042d7d2c
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025472"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493944"
 ---
 # <a name="module-7---lab-1---exercise-6---create-detections"></a>モジュール 7 - ラボ 1 - 演習 6 - 検出を作成する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex6.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Log Analytics KQL クエリを使用し、そこから、環境内の脅威や異常な動作を検出するのに役立つカスタム分析ルールを作成します。
 
@@ -44,7 +46,7 @@ ms.locfileid: "138025472"
     search "temp\\startup.bat"
     ```
 
-1. 結果には、次の 4 つの異なるテーブルからのデータが示されます。
+1. 結果には、次の 4 つの異なるテーブルのデータが表示されます。
 
     - *DeviceProcessEvents*。 出典:Defender for Endpoint コネクタ。
     - *DeviceRegistryEvents*。 出典:Defender for Endpoint コネクタ。
@@ -180,7 +182,7 @@ ms.locfileid: "138025472"
 
 1. 残りのオプションは既定値のままにします。 **[次へ: インシデント設定>]** ボタンを選択します。
 
-1. *[インシデント設定 (プレビュー)]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
+1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
 
 1. *[自動応答]* タブでは、 *[アラートの自動化]* で **[PostMessageTeams-OnAlert]** を選んでから、 **[次へ: レビュー >]** ボタンを選択します。
 
@@ -272,7 +274,7 @@ ms.locfileid: "138025472"
 
 1. 残りのオプションは既定値のままにします。 **[次へ: インシデント設定>]** ボタンを選択します。
 
-1. *[インシデント設定 (プレビュー)]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
+1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
 
 1. *[自動応答]* タブでは、 *[アラートの自動化]* で **[PostMessageTeams-OnAlert]** を選んでから、 **[次へ: レビュー]\(次へ: 確認\)** をクリックします。
 
@@ -305,9 +307,9 @@ ms.locfileid: "138025472"
     | where TargetAccount == "Builtin\\Administrators"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
-        SecurityEvent | summarize count() by TargetSid, SourceComputerId, TargetUserName | project Acct1 = TargetSid, MachId1 = SourceComputerId, UserName1 = TargetUserName
-
-    ) on $left.MachId == $right.MachId1, $left.Acct == $right.Acct1
+        SecurityEvent 
+        | summarize count() by TargetSid, SourceComputerId, TargetUserName 
+        | project Acct1 = TargetSid, MachId1 = SourceComputerId, UserName1 = TargetUserName) on $left.MachId == $right.MachId1, $left.Acct == $right.Acct1
     ```
 
    ![Screenshot](../Media/SC200_sysmon_attack3.png)
@@ -321,8 +323,9 @@ ms.locfileid: "138025472"
     | where TargetAccount == "Builtin\\Administrators"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
-        SecurityEvent | summarize count() by TargetSid, SourceComputerId, TargetUserName | project Acct1 = TargetSid, MachId1 = SourceComputerId, UserName1 = TargetUserName
-    ) on $left.MachId == $right.MachId1, $left.Acct == $right.Acct1
+        SecurityEvent 
+        | summarize count() by TargetSid, SourceComputerId, TargetUserName 
+        | project Acct1 = TargetSid, MachId1 = SourceComputerId, UserName1 = TargetUserName) on $left.MachId == $right.MachId1, $left.Acct == $right.Acct1
     | extend timestamp = TimeGenerated, HostCustomEntity = Computer, AccountCustomEntity = UserName1
     ```
 
@@ -352,7 +355,7 @@ ms.locfileid: "138025472"
 
 1. 残りのオプションは既定値のままにします。 **[次へ: インシデント設定>]** ボタンを選択します。
 
-1. *[インシデント設定 (プレビュー)]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
+1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
 
 1. *[自動応答]* タブでは、 *[アラートの自動化]* で **[PostMessageTeams-OnAlert]** を選んでから、 **[次へ: Review]\(次へ: 確認\)** をクリックします。
 

@@ -2,15 +2,16 @@
 lab:
   title: 演習 4 - 検出モデリングを理解する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: f2b41a44b3661f89f27ff8d22063244ce497fa5a
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 4b3da97ade23e0dbc1f7efb54ce830de21a4e194
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025496"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493830"
 ---
 # <a name="module-7---lab-1---exercise-4---understand-detection-modeling"></a>モジュール 7 - ラボ 1 - 演習 4 - 検出モデリングを理解する
 
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex4.png)
 ### <a name="task-1-understand-the-attacks"></a>タスク 1:攻撃を理解する
 
 >**重要:この演習では、アクションを実行しません。**  これらの手順は、次の演習で実行する攻撃について説明するものにすぎません。 このページをよくお読みください。

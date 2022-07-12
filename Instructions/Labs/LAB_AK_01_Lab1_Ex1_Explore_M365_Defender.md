@@ -2,16 +2,18 @@
 lab:
   title: 演習 1 - Microsoft 365 Defender の確認
   module: Module 1 - Mitigate threats using Microsoft 365 Defender
-ms.openlocfilehash: e49efce29c61889db8a0cafb012a714940dea563
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: dc37672bc32d41439aec72056ed1530196cbcfc6
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025418"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493836"
 ---
 # <a name="module-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>モジュール 1 - ラボ 1 - 演習 1 - Microsoft 365 Defender の確認 
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![M365 Defender](../Media/SC-200-Lab_M1_L1_Ex1.png)
 
 あなたは Microsoft 365 Defender を実装している企業で働くセキュリティ オペレーションアナリストです。 まず、EOP と Microsoft Defender for Office 365 で事前設定されたセキュリティ ポリシーを割り当てます。
 
@@ -22,7 +24,7 @@ ms.locfileid: "138025418"
 
 このコースは、学習パートナーが複数の認証済みラボ ホスティング プロバイダーのいずれかを使用して実施することもあり、お使いになっているテナントに関連のあるテナント ID を取得する実際の手順はラボ ホスティング プロバイダーに応じて異なります。 このため、コース内での当該情報の取得方法については、講師が必要な指示を行います。 後ほど使用できるよう以下の情報に留意してください。
 
-- **テナント サフィックス ID:** この ID は、ラボ全体で Microsoft 365 にサインインする際に使用する onmicrosoft.com アカウント用です。 形式は **{username}@ZZZZZZ.onmicrosoft.com** です。ZZZZZZ はラボ ホスティング プロバイダーの提供した一意のテナント サフィックス ID です。 後で使用できるよう、この ZZZZZZ を記録しておきます。 ラボの手順で Microsoft 365 ポータルにサインインするよう指示されたら、ここで取得した ZZZZZZ の値を入力してください。
+- **テナント サフィックス ID。** この ID は、ラボ全体で Microsoft 365 にサインインする際に使用する onmicrosoft.com アカウント用です。 これは **{username}@ZZZZZZ.onmicrosoft.com** の形式です。ここで、ZZZZZZ はラボ ホスティング プロバイダーから提供される一意のテナント サフィックス ID です。 後で使用できるよう、この ZZZZZZ を記録しておきます。 ラボの手順で Microsoft 365 ポータルにサインインするよう指示されたら、ここで取得した ZZZZZZ の値を入力してください。
 - **テナント パスワード:** これは、ラボ ホスティング プロバイダーの提供する管理者アカウント向けのパスワードです。
 
 

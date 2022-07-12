@@ -2,16 +2,18 @@
 lab:
   title: 演習 3 - データ コネクタを使用して Microsoft Sentinel に Linux ホストを接続する
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: b4ab3cbac9e48dbda18b9daa58739b878e5661a0
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: bf3774978dc5c6cef158d5f1288577854000d944
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025487"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493971"
 ---
 # <a name="module-6---lab-1---exercise-3---connect-linux-hosts-to-microsoft-sentinel-using-data-connectors"></a>モジュール 6 - ラボ 1 - 演習 3 - データ コネクタを使用して Microsoft Sentinel に Linux ホストを接続する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex3.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 次のデータソースは、共通イベント形式 (CEF) と Syslog コネクタを使用した Linux 仮想マシンです。
 
@@ -51,7 +53,7 @@ ms.locfileid: "138025487"
 
 1. LIN1 サーバー IP アドレスを書き留めます。 例として次のスクリーンショットをご覧ください。
 
-   ![Linux ログイン](../Media/LinuxLoginExample.png)
+    ![Linux ログイン](../Media/LinuxLoginExample.png)
 
 1. WIN1 仮想マシンに戻ります。 スタート メニュー アイコンを右クリックし、管理者としてコマンドプロンプト起動します。
 
@@ -63,18 +65,18 @@ ms.locfileid: "138025487"
 
 1. *[Yes]* を入力して接続を確認し、ユーザーのパスワードを入力して、Enter キーを押します。 画面は次のようになります。
 
-   ![Linux ログイン](../Media/PSconnectLinux.png)
+    ![Linux ログイン](../Media/PSconnectLinux.png)
 
 1. 前の手順の「*1.2 Linux マシンへの CEF コレクターのインストール*」でコピーしたコマンドをコマンドプロンプトに貼り付けます。
 
 1. 貼り付けてから Enter キーを押す前に、次に示すように、*python* の後に **3** を追加します。
 
-   ![ConnectorScript](../Media/ConnectorScript.png)
+    ![ConnectorScript](../Media/ConnectorScript.png)
 
 
 1. スクリプトが調整されたら、Enter キーを押します。 スクリプトは Linux サーバーに対してリモートで実行されます。 スクリプトが適切に処理されると、次の画面のようになります。
 
-   ![ConnectorScript](../Media/LinuxConnected.png)
+    ![ConnectorScript](../Media/LinuxConnected.png)
 
 1. 「**exit**」と入力して、LIN1 へのリモート シェル接続を閉じます。
 
@@ -105,19 +107,19 @@ ms.locfileid: "138025487"
 
 1. LIN2 サーバー IP アドレスを書き留めます。 例として次のスクリーンショットをご覧ください。
 
-   ![Linux ログイン](../Media/LinuxLoginExample.png)
+    ![Linux ログイン](../Media/LinuxLoginExample.png)
 
 1. WIN1 仮想マシンに戻ります。 前のタスクで使用した Windows PowerShell を選択します。
 
 1. 次の PowerShell コマンドを入力し、特定の Linux サーバー情報に合わせて調整し、Enter キーを押します。
 
-   ```PowerShell
-   ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
-   ```
+    ```PowerShell
+    ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
+    ```
 
 1. *[はい]* を入力して接続を確認し、ユーザーのパスワードを入力して、Enter キーを押します。 画面は次のようになります。
 
-   ![Linux ログイン](../Media/PSconnectLinux.png)
+    ![Linux ログイン](../Media/PSconnectLinux.png)
 
 1. これで、前の手順の *[Linux 用エージェントのダウンロードとオンボード]* のコマンドに貼り付ける準備ができました。 スクリプトがクリップボードにあることを確認してください。 PowerShell で、トップ バーを右クリックし、「**編集**」、「**貼り付け**」の順に選択します。
 

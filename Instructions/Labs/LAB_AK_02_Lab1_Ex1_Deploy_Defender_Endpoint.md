@@ -2,16 +2,18 @@
 lab:
   title: 演習 1 - Microsoft Defender for Endpoint のデプロイ
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 55d34a12be8028af19201a113d23ffbbd870a150
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 7ecad955c59395014fbf39c2f9836d734137ed74
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025421"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493913"
 ---
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>モジュール 2 - ラボ 1 - 演習 1 - Microsoft Defender for Endpoint のデプロイ
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex1.png)
 
 あなたは Microsoft Defender for Endpoint を実装している企業で働いているセキュリティ運用アナリストです。 あなたの上司は、いくつかのデバイスをオンボードして、セキュリティ オペレーション (SecOps) チームの応答手順で必要な変更に関する情報を提供しようとしています。
 
@@ -75,10 +77,10 @@ ms.locfileid: "138025421"
 
 1. **[管理者: コマンド プロンプト]** ウィンドウでスクリプトを右クリックして貼り付け、**Enter** キーを押して実行します。 **注:**  スクリプトの実行後、ウィンドウは自動的に閉じます。
 
-1. Microsoft 365 Defender ポータルの左側のメニューの [エンドポイント] 領域で **[デバイス インベントリ]** を選択します。 お使いになっているデバイスがリストに表示されます。
+1. Microsoft 365 Defender ポータルの左側のメニューの [エンドポイント] 領域で **[デバイス インベントリ]** を選択します。 デバイスが表示されていない場合は、次のタスクを完了し、後でもう一度確認してください。 最初のデバイスがポータルに表示されるまでに最大で 60 分かかることがあります。
 
     >**注:**  デバイスがポータルに表示されるまでに最大 5 分かかることがあります。 デバイスが表示されていない場合は、次のタスクを完了した後でもう一度確認してください。
-
+    >**注:**  オンボード プロセスを完了してから 1 時間経ってもデバイス一覧にデバイスが表示されない場合は、オンボードまたは接続に問題があるおそれがあります。
 
 ### <a name="task-3-configure-roles"></a>タスク 3:ロールの構成
 
@@ -125,7 +127,7 @@ ms.locfileid: "138025421"
 
 1. [デバイス] タブの OS 条件で、 **[Windows 10]** を選択し、 **[次へ]** を選択します。
 
-1. [デバイスのプレビュー] タブで、 **[プレビューを表示]** を選択して、WIN1 仮想マシンを表示します。  **[次へ]** を選択します。
+1. [デバイスのプレビュー] タブで、 **[プレビューを表示]** を選択して、WIN1 仮想マシンを表示します。 **[次へ]** を選択します。 **ヒント:** プレビューの一覧に仮想マシンが表示されない場合は、戻って、OS 条件として *[なし]* も選択してください。 VM のデータはまだ設定されていません。
 
 1. ユーザー アクセス タブで「**sg-IT**」を選び、「**選択したグループを追加**」ボタンを選択します。 これが *[Azure AD user groups with access to this device group]\(このデバイス グループへのアクセス権を持つ Azure AD ユーザー グループ\)* の下に表示されることを確認します。
 

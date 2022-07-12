@@ -2,16 +2,18 @@
 lab:
   title: 演習 2 - プレイブックを作成する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 8a8117e90593c1c2a022169551b7a13df2cfcff4
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 8017ba4ba215da42fce83151d80756e441e480df
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025475"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493932"
 ---
 # <a name="module-7---lab-1---exercise-2---create-a-playbook"></a>モジュール 7 - ラボ 1 - 演習 2 - プレイブックを作成する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
+
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex2.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Microsoft Sentinel を使って脅威を検出および軽減する方法を学習する必要があります。 ここで、Microsoft Sentinel からルーチンとして実行できるアクションに応答して修復する必要があります。
 
@@ -79,9 +81,9 @@ ms.locfileid: "138025475"
 
 1. リソース グループで、 **[新規作成]** を選択し、「*RG-Playbooks*」と入力し、 **[OK]** を選択します。
 
-1. 領域については、状況に適した領域を選択してください。 既定の領域が最適になります。
+1. *[リージョン]* の既定値は **[(米国) 米国東部]** のままにします。
 
-1. *プレイブック名* が "PostMessageTeams-OnAlert" であることを確認し、 **[確認と作成]** を選択します。
+1. *プレイブック名* が "PostMessageTeams-OnAlert" であることを確認し、 **[確認と作成]** を選択します。 **ヒント:** 名前が異なる場合は、GitHub に戻り、 **[アラート トリガーを使用してデプロイ]** プレイブックを選択します。
 
 1. ここで **[作成]** を選択します。 
 
