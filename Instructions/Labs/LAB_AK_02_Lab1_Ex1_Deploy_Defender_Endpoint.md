@@ -2,12 +2,12 @@
 lab:
   title: 演習 1 - Microsoft Defender for Endpoint のデプロイ
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 7ecad955c59395014fbf39c2f9836d734137ed74
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: ddc1d68a0d0a8f7df50ae3a6e0b6a6e205391905
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493913"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038008"
 ---
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>モジュール 2 - ラボ 1 - 演習 1 - Microsoft Defender for Endpoint のデプロイ
 
@@ -21,7 +21,7 @@ ms.locfileid: "141493913"
 
 >**重要:** ラボの Virtual Machines は、さまざまなモジュールで使用されます。 仮想マシンを保存します。 保存せずにラボを終了する場合は、構成を再実行する必要があります。
 
->**注:**  前のモジュールの最後の 3 つの手順が正常に完了していることを確認します。
+>**注:**  前のモジュールのタスク 3 の手順が正常に完了していることを確認します。
 
 
 ### <a name="task-1-initialize-microsoft-defender-for-endpoint"></a>タスク 1:Microsoft Defender for Endpoint の初期化
@@ -32,7 +32,7 @@ ms.locfileid: "141493913"
 
 1. Microsoft 365 Defender ポータルにまだ登録していない場合は、Microsoft Edge ブラウザーを起動します。
 
-1. Edge ブラウザーで、 https://security.microsoft.com) の Microsoft 365 Defender ポータルに移動します。
+1. Edge ブラウザーで、https://security.microsoft.com) の Microsoft 365 Defender ポータルに移動します。
 
 1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
@@ -57,11 +57,11 @@ ms.locfileid: "141493913"
 
 1. デバイス管理セクションで **[オンボーディング]** を選択します。
 
-1. 「1. オンボード デバイス] 領域で、デプロイ方法ドロップダウンにローカル スクリプト (最大 10 デバイス) が表示されていることを確認し、**[オンボーディング パッケージのダウンロード]** ボタンを選択します。 マウスを使用して "WindowsDefenderATPOnboardingPackage.zip" ファイルを強調表示し、フォルダー アイコン **[フォルダーに表示]** を選択します。 **ヒント:** 既定では、ファイルは c:\users\admin\downloads ディレクトリにあるはずです。
+1. [1. オンボード デバイス] 領域で、デプロイ方法ドロップダウンにローカル スクリプト (最大 10 デバイス) が表示されていることを確認し、**[オンボーディング パッケージのダウンロード]** ボタンを選択します。 マウスを使用して "WindowsDefenderATPOnboardingPackage.zip" ファイルを強調表示し、フォルダー アイコン **[フォルダーに表示]** を選択します。 **ヒント:** 既定では、ファイルは c:\users\admin\downloads ディレクトリにあるはずです。
 
 1. ダウンロードした zip ファイルを右クリックし、 **[すべて展開]** を選択し、 *[完了時に展開されたファイルを表示する]* チェックボックスがオンになっていることを確認し、 **[抽出]** を選択します。
 
-1. 抽出されたファイル "WindowsDefenderATPLocalOnboardingScript.cmd" を右クリックし、 **[プロパティ]** を選択します。 [プロパティ] ウィンドウの右下にある **[ブロック解除]** チェックボックスをオンにして、 **[OK]** を選択します。
+1. 抽出されたファイル "WindowsDefenderATPLocalOnboardingScript.cmd" を右クリックし、**[プロパティ]** を選択します。 [プロパティ] ウィンドウの右下にある **[ブロック解除]** チェックボックスをオンにして、**[OK]** を選択します。
 
 1. 抽出されたファイル "WindowsDefenderATPLocalOnboardingScript.cmd" を右クリックし、 **[管理者として実行]** を選択します。  **ヒント:** Windows SmartScreen ウィンドウが表示されたら、 **[詳細情報]** を選択し、 **[実行]** を選択します。 
     
@@ -88,7 +88,7 @@ ms.locfileid: "141493913"
 
 1. Microsoft 365 Defender ポータルで、左側のメニューバーから **[設定]** を選択し、 **[エンドポイント]** を選択します。 
 
-1. [アクセス許可] 領域で、 **[ロール]** を選択します。
+1. [アクセス許可] 領域で、**[ロール]** を選択します。
 
 1. **[ロールをオンにする]** ボタンを選択します。
 
@@ -121,13 +121,13 @@ ms.locfileid: "141493913"
     |全般設定|値|
     |---|---|
     |デバイス グループ名|**Regular**|
-    |自動化レベル|完全 - 脅威を自動的に修復する|
+    |自動化レベル|Full - remediate threats automatically (完全 - 脅威を自動的に修復する)|
 
 1. **[次へ]** を選択します。
 
-1. [デバイス] タブの OS 条件で、 **[Windows 10]** を選択し、 **[次へ]** を選択します。
+1. [デバイス] タブの OS 条件で、**[Windows 10]** を選択し、**[次へ]** を選択します。
 
-1. [デバイスのプレビュー] タブで、 **[プレビューを表示]** を選択して、WIN1 仮想マシンを表示します。 **[次へ]** を選択します。 **ヒント:** プレビューの一覧に仮想マシンが表示されない場合は、戻って、OS 条件として *[なし]* も選択してください。 VM のデータはまだ設定されていません。
+1. [デバイスのプレビュー] タブで、**[プレビューを表示]** を選択して、WIN1 仮想マシンを表示します。 **[次へ]** を選択します。 **ヒント:** プレビューの一覧に仮想マシンが表示されない場合は、戻って、OS 条件として *[なし]* も選択してください。 VM のデータはまだ設定されていません。
 
 1. ユーザー アクセス タブで **[sg-IT]** を選択し、**[選択したグループを追加]** ボタンを選択します。 これが *[Azure AD user groups with access to this device group]\(このデバイス グループへのアクセス権を持つ Azure AD ユーザー グループ\)* の下に表示されることを確認します。
 

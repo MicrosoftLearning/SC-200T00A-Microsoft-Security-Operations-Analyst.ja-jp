@@ -2,12 +2,12 @@
 lab:
   title: 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 3f48ff448906532c93fcb3a1b3478ca445dad777
-ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
+ms.openlocfilehash: 6691a1bec1d9499c8e7741332ea827260bc3b816
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "145912156"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038017"
 ---
 # <a name="module-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>モジュール 8 - ラボ 1 - 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
 
@@ -38,7 +38,7 @@ ms.locfileid: "145912156"
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
-1. Microsoft Sentinel ワークスペースで、 **[Notebooks]** を選択します。
+1. Microsoft Sentinel ワークスペースで、**[Notebooks]** を選択します。
 
 1. 次に、AzureML ワークスペースを作成する必要があります。 **[Azure Machine Learning の構成]** を選択し、コマンド バーの **[新しい Azure ML ワークスペースの作成]** ボタンを選択します。
 
@@ -49,7 +49,7 @@ ms.locfileid: "145912156"
 1. ワークスペースの詳細 セクションで次の作業を行います。
 
      - お使いのワークスペースに一意の名前を付けます。
-     - *[リージョン]* の既定値は **[(米国) 米国東部]** のままにします。
+     - *[リージョン]* の既定値は **[米国東部]** のままにします。
      - 既定のストレージ アカウント、キーボールト、およびアプリケーション インサイト情報を保持します。
      - [コンテナー レジストリ] オプションは、**[なし]** のままにできます。
 
@@ -63,11 +63,11 @@ ms.locfileid: "145912156"
 
 1. **[Microsoft Sentinel ML ノートブックのファースト ステップ ガイド]** を選択します。 
 
-1. 右側のペインで下にスクロールし、 **[テンプレートから作成]** ボタンを選択します。 既定のオプションを確認し、 **[保存]** を選択します。
+1. 右側のペインで下にスクロールし、**[テンプレートから作成]** ボタンを選択します。 既定のオプションを確認し、 **[保存]** を選択します。
 
-1. 保存が完了したら、 **[ノートブックの起動]** ボタンを選択します。 これにより Microsoft Azure Machine Learning スタジオに移動します。
+1. 保存が完了したら、**[ノートブックの起動]** ボタンを選択します。 これにより Microsoft Azure Machine Learning スタジオに移動します。
 
-1. Microsoft Azure Machine Learning スタジオで情報ウィンドウが表示されたら、 **[閉じる]** を選択します。
+1. Microsoft Azure Machine Learning スタジオで情報ウィンドウが表示されたら、**[閉じる]** を選択します。
 
 1. コマンド バーの **[コンピューティング]** インスタンス セレクターの右側にある **[+]** 記号を選択して、新しいコンピューティング インスタンスを作成します。
 

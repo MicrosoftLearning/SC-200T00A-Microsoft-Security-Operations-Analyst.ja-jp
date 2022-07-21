@@ -2,12 +2,12 @@
 lab:
   title: 演習 1 ‐ Microsoft セキュリティ規則を変更する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 92e54277d1d8c51dd0ddde982409f991bfbe0766
-ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
+ms.openlocfilehash: 266335a86b6ee3c1d86aaa4acf67cd1785aa5d2f
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "145912162"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038005"
 ---
 # <a name="module-7---lab-1---exercise-1---modify-a-microsoft-security-rule"></a>モジュール 7 - ラボ 1 - 演習 1 - Microsoft セキュリティ規則を有効にする
 
@@ -30,13 +30,13 @@ ms.locfileid: "145912162"
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナント パスワード** をコピーして貼り付け、**[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
 1. 構成領域から **[分析]** を選択します。 既定で、*アクティブな規則* が表示されます。
 
-1. **[Microsoft Defender for CLoud に基づいてインシデントを作成する]** を選択します。 このアラートは、"モジュール 6 - 演習 1 - タスク 4" で構成した Defender for Cloud のコネクタによって自動的に作成されています。 
+1. **[Microsoft Defender for Cloud に基づいてインシデントを作成する]** を選択します。 このルールは、"モジュール 6 - 演習 1 - タスク 4" で構成した Defender for Cloud のコネクタによってアクティブ化されました。 
 
 1. 右側のブレードで、 **[編集]** ボタンを選択します。
 
@@ -48,4 +48,4 @@ ms.locfileid: "145912162"
 
 1. 行った変更を確認し、 **[保存]** ボタンを選択します。 分析ルールが保存されます。
 
-# <a name="proceed-to-exercise-2"></a>演習 2 に進みます。
+## <a name="proceed-to-exercise-2"></a>演習 2 に進みます。
