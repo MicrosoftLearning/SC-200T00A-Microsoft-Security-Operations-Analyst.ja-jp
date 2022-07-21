@@ -2,12 +2,12 @@
 lab:
   title: 演習 1 - Microsoft Sentinel 環境を構成する
   module: Module 5 - Configure your Microsoft Sentinel environment
-ms.openlocfilehash: 3dc3670a58758c2d7de37878ba5b9413804596c4
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: c95a8bd0e358a7ca09dd2f7644c27779d3baa9f1
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493965"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038011"
 ---
 # <a name="module-5---lab-1---exercise-1---configure-your-microsoft-sentinel-environment"></a>モジュール 5 - ラボ 1 - 演習 1 - Microsoft Sentinel 環境を構成する
 
@@ -26,17 +26,17 @@ ms.locfileid: "141493965"
 
 1. Microsoft Edge ブラウザーを開きます。
 
-1. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
+1. Edge ブラウザーで、Azure portal (https://portal.azure.com) に移動します。
 
 1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. **[+ 作成]** を選択します。
 
-1. 次に、前に作成した Log Analytics ワークスペース (*uniquenameDefender* など) を選択し、 **[追加]** を選択します。 アクティブ化には数分かかることがあります。
+1. 次に、前に作成した Log Analytics ワークスペース (*uniquenameDefender* など) を選択し、**[追加]** を選択します。 アクティブ化には数分かかることがあります。
 
     >**注:**  ここに Log Analytics ワークスペースが表示されない場合は、モジュール 3、演習 1、タスク 2 を参照して作成してください。
 
@@ -108,7 +108,7 @@ ms.locfileid: "141493965"
 
 1. *[種類]* ドロップダウンで使用できるさまざまなインジケーターの種類を確認します。 **domain-name** を選択します。 ドメインボックスにイニシャルを入力します。 たとえば、*fmg.com* などです。
 
-1. *[脅威の種類]* として、 **[悪意のあるアクティビティ]** を選択します。
+1. *[脅威の種類]* として、**[悪意のあるアクティビティ]** を選択します。
 
 1. *[名前]* には、ドメインに使われているのと同じ値を入力します。 たとえば、*fmg.com* などです。
 
@@ -116,7 +116,7 @@ ms.locfileid: "141493965"
 
 1. **[適用]** を選びます。
 
-1. [全般] 領域で **[ログ]** オプションを選択します。 その方がよければ、[常にクエリを表示する] オプションを無効にし、 *[クエリ]* ウィンドウを閉じて KQL ステートメントを実行します。
+1. [全般] 領域で **[ログ]** オプションを選択します。 その方がよければ、[常にクエリを表示する] オプションを無効にし、*[クエリ]* ウィンドウを閉じて KQL ステートメントを実行します。
 
 1. 以下の KQL ステートメントを実行します。
 
@@ -131,5 +131,17 @@ ms.locfileid: "141493965"
     ```KQL
     ThreatIntelligenceIndicator | project DomainName
     ```
+
+### <a name="task-4-configure-log-retention"></a>タスク 4:ログ保持期間の構成
+
+このタスクでは、SecurityEvent テーブルの保持期間を変更します。
+
+1. Microsoft Sentinel で、 **[構成]** 領域の *[設定]* オプションを選択します。
+1. **[ワークスペースの設定]** を選択します。
+1. Log Analytics ワークスペースの、 *[設定]* 領域で **[テーブル (プレビュー)]** オプションを選択します。
+1. テーブル名 **[SecurityEvent]** 、 **[...]** の順に選択します。
+1. **[テーブルの管理]** を選択します。
+1. *[合計保有期間]* で **[180 日]** を選択します。 その後、 **[保存]** を選択します。
+
 
 ## <a name="you-have-completed-the-lab"></a>これでラボは完了です。
