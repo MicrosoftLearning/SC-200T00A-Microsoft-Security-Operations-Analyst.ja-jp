@@ -231,7 +231,7 @@ ms.locfileid: "141493908"
         | summarize arg_max(TimeGenerated, *) by Account
         ```
 
-    >**注:**  バー [完了] を選択して、"合計 CPU" と "処理されたクエリに使用するデータ" を確認し、両方のステートメント間のデータを比較することもできます。
+    >**注:**  実行結果の下に表示される「**Query Details**」クリックして、"Total CPU" と "Data used for processed query" を確認し、両方のステートメント間のクエリーの詳細を比較することもできます。
 
 1. 次のステートメントは、グループ内のすべての値の *リスト* を返す **make_list()** 関数を示しています。 この KQL クエリでは、まず where 演算子を使用して EventID をフィルター処理します。 次に、各コンピューターについて、結果がアカウントの JSON 配列になります。 結果として得られる JSON 配列には、重複するアカウントが含まれます。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
@@ -252,7 +252,7 @@ ms.locfileid: "141493908"
     ```
 
 
-### <a name="task-4-create-visualizations-in-kql-with-the-render-operator"></a>タスク 4:レンダー演算子を使用してKQLでビジュアライゼーションを作成します
+### <a name="task-4-create-visualizations-in-kql-with-the-render-operator"></a>タスク 4: Render 演算子を使用してKQLでビジュアライゼーションを作成します
 
 このタスクでは,KQLステートメントを使用した視覚化の生成を使用します
 
