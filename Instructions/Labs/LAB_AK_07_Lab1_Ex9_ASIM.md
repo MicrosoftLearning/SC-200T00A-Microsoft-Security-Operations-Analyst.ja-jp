@@ -2,12 +2,12 @@
 lab:
   title: 演習 9 - ASIM パーサーを作成する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: bd90c61e55ce8324ada00d2ac533c569c628f15a
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
+ms.openlocfilehash: 5f115627b8d915bfb31e34532d3a2a7d79a23499
+ms.sourcegitcommit: 8c0ae4aec8425a85e0ba6dc8964406bf5d79e4d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038045"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "147154480"
 ---
 # <a name="module-7---lab-1---exercise-9---create-asim-parsers"></a>モジュール 7 - ラボ 1 - 演習 9 - ASIM パーサーを作成する
 
@@ -15,10 +15,9 @@ ms.locfileid: "147038045"
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 特定の Windows レジストリ イベントに対して ASIM パーサーをモデル化する必要があります。  これらの簡素化されたパーサーは、後で ASIM パーサー レジストリ イベント正規化標準 (https://docs.microsoft.com/en-us/azure/sentinel/registry-event-normalization-schema) に従って最終処理されます。
 
+>**重要:** このラボでは、長い KQL ASIM パーサー スクリプトを Microsoft Sentinel に入力する必要があります。 これらのスクリプトは、このラボの最初でダウンロードしたファイルで提供されたものです。 また、 https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles からダウンロードすることもできます。
 
-
-
-### <a name="task-1-develop-kql-function-for-microsoft-365-defender-registry-event"></a>タスク 1:Microsoft 365 Defender レジストリ イベント用の KQL 関数を開発する 
+### <a name="task-1-develop-kql-function-for-microsoft-365-defender-registry-event"></a>タスク 1: Microsoft 365 Defender レジストリ イベント用の KQL 関数を開発する 
 
 このタスクでは、DeviceRegistryEvents のワークスペース パーサーである関数を作成します。 
 
@@ -30,12 +29,15 @@ ms.locfileid: "147038045"
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
 1. **[ログ]** ページを選択します。
-1. 新しいクエリ タブに、次の KQL ステートメントを入力します。
+
+1. ダウンロードした **SC200_module7_ASIM_Parser_scripts.txt** を開き、*Task 1 Script* の KQL ステートメントをコピーして新しいクエリ タブに貼り付けます。
+
+>**注** 以下のスクリプトは参考用としてのみ示されています。
 
     ```KQL
     let RegistryType = datatable (TypeCode: string, TypeName: string) [
@@ -118,10 +120,10 @@ ms.locfileid: "147038045"
     };
     RegistryEvents_M365D
     ```
->**注:**  時間をかけて KQL を 1 行ずつ確認してください。  
+>**注:** 時間をかけて KQL を 1 行ずつ確認してください。  
 1. **[実行]** を選択して、KQL が有効であることを確認します。
 1. **[保存]** を選択してから、 **[関数として保存]** を選択します。
-1. 下にスクロールし、 *[クエリのスケジュール設定]* で次のように設定します。
+1. 下にスクロールし、*[クエリのスケジュール設定]* で次のように設定します。
 
     |設定|値|
     |---|---|
@@ -131,12 +133,14 @@ ms.locfileid: "147038045"
 1. 新しいクエリ タブで、「**vimRegEvtM365D**」と入力して **[実行]** を選択します。
 
 
-### <a name="task-2-develop-kql-function-for-securityevent-table"></a>タスク 2:SecurityEvent テーブル用の KQL 関数を開発する。 
+### <a name="task-2-develop-kql-function-for-securityevent-table"></a>タスク 2: SecurityEvent テーブル用の KQL 関数を開発する。 
 
 このタスクでは、SecurityEvent のワークスペース パーサーである関数を作成します。
 
 1. 新しいクエリ タブを作成します。
-1. 新しいクエリ タブに、次の KQL ステートメントを入力します。
+1. ダウンロードした **SC200_module7_ASIM_Parser_scripts.txt** を開き、*Task 2 Script* の KQL ステートメントをコピーして新しいクエリ タブに貼り付けます。
+
+>**注** 以下のスクリプトは参考用としてのみ示されています。
 
     ```KQL
     let RegistryType = datatable (TypeCode: string, TypeName: string) [
@@ -224,10 +228,10 @@ ms.locfileid: "147038045"
     RegistryEvents
     ```
 
->**注:**  時間をかけて KQL を 1 行ずつ確認してください。  
+>**注:** 時間をかけて KQL を 1 行ずつ確認してください。  
 1. **[実行]** を選択して、KQL が有効であることを確認します。
 1. **[保存]** を選択してから、 **[関数として保存]** を選択します。
-1. 下にスクロールし、 *[クエリのスケジュール設定]* で次のように設定します。
+1. 下にスクロールし、*[クエリのスケジュール設定]* で次のように設定します。
 
     |設定|値|
     |---|---|
@@ -237,7 +241,7 @@ ms.locfileid: "147038045"
 1. 新しいクエリ タブで、「**vimRegEvtSecurityEvent**」と入力して **[実行]** を選択します
 
 
-### <a name="task-3-create-a-unifying-workspace-parser"></a>タスク 3:統一ワークスペース パーサーを作成する。 
+### <a name="task-3-create-a-unifying-workspace-parser"></a>タスク 3: 統一ワークスペース パーサーを作成する。 
 
 このタスクでは、前の 2 つの関数を組み合わせた統一パーサー関数を作成します。  
 
@@ -252,7 +256,7 @@ ms.locfileid: "147038045"
 
 1. **[実行]** を選択して、KQL が有効であることを確認します。
 1. **[保存]** を選択してから、 **[関数として保存]** を選択します。
-1. 下にスクロールし、 *[クエリのスケジュール設定]* で次のように設定します。
+1. 下にスクロールし、*[クエリのスケジュール設定]* で次のように設定します。
 
     |設定|値|
     |---|---|

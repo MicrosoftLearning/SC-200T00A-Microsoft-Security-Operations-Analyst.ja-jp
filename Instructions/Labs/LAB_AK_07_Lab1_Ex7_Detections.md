@@ -2,12 +2,12 @@
 lab:
   title: 演習 7 - 検出を作成する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 03e10d1275742f70b1b2871400a2002b4732f460
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
+ms.openlocfilehash: f94b4d459a9af82751b774f572db69df3c01bf7f
+ms.sourcegitcommit: 8c0ae4aec8425a85e0ba6dc8964406bf5d79e4d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038044"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "147154504"
 ---
 # <a name="module-7---lab-1---exercise-7---create-detections"></a>モジュール 7 - ラボ 1 - 演習 7 - 検出を作成する
 
@@ -19,7 +19,7 @@ ms.locfileid: "147038044"
 分析ルールでは、環境全体にわたる特定のイベントまたは一連のイベントを検索したり、特定のイベントしきい値または条件に達したときはユーザーに警告したり、SOC でトリアージと調査を行うためのインシデントを生成したり、自動化された追跡および修復プロセスを使用して脅威に対応したりします。
 
 
-### <a name="task-1-attack-1-detection-with-defender-for-endpoint"></a>タスク 1:エンドポイントのDefenderによる攻撃1の検出
+### <a name="task-1-attack-1-detection-with-defender-for-endpoint"></a>タスク 1: Defender for Endpoint を使用した攻撃 1 の検出
 
 このタスクでは、Microsoft Defender for Endpoint が構成されたホストで **攻撃 1** の検出を作成します。
 
@@ -78,7 +78,7 @@ ms.locfileid: "147038044"
     | extend timestamp = TimeGenerated, HostCustomEntity = DeviceName, AccountCustomEntity = InitiatingProcessAccountName
     ```
 
-1. 適切な検出ルールができたので、[ログ] ウィンドウで、コマンド バーの **[+ 新しいアラート ルール]** を選んでから、 **[Azure Sentinel アラートの作成]** を選択します。 これにより、新しいスケジュールされたルールが作成されます。
+1. 適切な検出ルールができたので、[ログ] ウィンドウで、コマンド バーの **[+ 新しいアラート ルール]** を選んでから、 **[Microsoft Sentinel アラートの作成]** を選びます。 これにより、新しいスケジュールされたルールが作成されます。
 
 1. これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
 
@@ -111,7 +111,7 @@ ms.locfileid: "147038044"
 1. *[確認]* タブで、 **[作成]** ボタンを選択して新しいスケジュール化された分析ルールを作成します。
 
 
-### <a name="task-2-attack-2-detection-with-securityevent"></a>タスク 2:SecurityEventによる攻撃2の検出
+### <a name="task-2-attack-2-detection-with-securityevent"></a>タスク 2: SecurityEvent を使用した攻撃 2 の検出
 
 このタスクでは、セキュリティ イベント コネクタがインストールされているホストで **攻撃 2** の検出を作成します。
 
@@ -159,7 +159,7 @@ ms.locfileid: "147038044"
     | extend timestamp = TimeGenerated, HostCustomEntity = Computer, AccountCustomEntity = UserName1
     ```
 
-1. 適切な検出ルールができたので、[ログ] ウィンドウで、コマンド バーの **[+ 新しいアラート ルール]** を選んでから、 **[Azure Sentinel アラートの作成]** を選択します。
+1. 適切な検出ルールができたので、[ログ] ウィンドウで、コマンド バーの **[+ 新しいアラート ルール]** を選んでから、 **[Microsoft Sentinel アラートの作成]** を選びます。
 
 1. これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
 
