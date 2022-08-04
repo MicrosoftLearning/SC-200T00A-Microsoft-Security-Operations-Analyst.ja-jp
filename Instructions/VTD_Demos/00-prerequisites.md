@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f0a0dac7e3f900c9c7f0a4a3f33de4d9ee06cdff
-ms.sourcegitcommit: 8c0ae4aec8425a85e0ba6dc8964406bf5d79e4d4
+ms.openlocfilehash: bac4babf32bbf62213da667426ce4644fdd88ef9
+ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "147154507"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "147449895"
 ---
 
 # <a name="microsoft-security-operations-analyst"></a>Microsoft Security Operations Analyst
@@ -17,7 +17,8 @@ ms.locfileid: "147154507"
 ## <a name="demo-prerequisites"></a>デモの前提条件
 
 このコースのラボでは、Microsoft 365 E5ライセンスのテナントと、Azureサブスクリプションの両方が必要です。
-* ご自身のために Microsoft Learning Azure Pass を要求できます
+
+* ご自身のために Microsoft Learning Azure Pass を要求できます。
 * デモを実行する少なくとも 2 週間前に、これらのパスを要求してください。 パスを受け取った後、そのパスを有効にする必要があります。 
 * Azure Pass は、一般に公開されている Microsoft Azure 試用版サブスクリプションと同じ方法で、効果的に機能します。 これは、パスで実行できる操作には制限があることを意味します。
 * ラボの手順は、[SC-200 Microsoft Learning Github](https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Instructions/VTD_Demos/) リポジトリにあります。
@@ -44,7 +45,7 @@ ms.locfileid: "147154507"
 
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
 
-1. Microsoft Edge ブラウザーを開いて、「edge ブラウザー更新」を検索し、新しい Microsoft Edge ブラウザーをダウンロードしてインストールします。 この手順は、ホスティングされている仮想マシンで確実に Microsoft Edge の最新版を実行する上で重要です。 新しいMicrosoft Edge ブラウザーを起動します。
+1. Microsoft Edge ブラウザーを開いて、"edge ブラウザー更新" を検索し、新しい Microsoft Edge ブラウザーをダウンロードしてインストールします。 この手順は、ホスティングされている仮想マシンで確実に Microsoft Edge の最新版を実行する上で重要です。 新しいMicrosoft Edge ブラウザーを起動します。
 
 1. Edge ブラウザーで、 https://security.microsoft.com) の Microsoft 365 Defender ポータルに移動します。
 
@@ -175,7 +176,7 @@ ms.locfileid: "147154507"
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. **[+ 作成]** を選択します。
 
@@ -209,13 +210,13 @@ ms.locfileid: "147154507"
 
 1. ブラウザを開き、新しいMicrosoft Edgeブラウザーを検索、ダウンロード、およびインストールします。 新しいMicrosoft Edge ブラウザーを起動します。
 
-1. Edge ブラウザーで、Azure portal (https://portal.azure.com) に移動します。
+1. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
 1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
@@ -373,7 +374,7 @@ ms.locfileid: "147154507"
 
 1. ブラウザーで Azure portal (https://portal.azure.com ) に移動します。 
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel で、[構成] 領域から **[設定]** を選択し、 **[ワークスペース設定]** タブを選択します。
 
