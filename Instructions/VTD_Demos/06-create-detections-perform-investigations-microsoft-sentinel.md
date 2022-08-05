@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 5e75d2ffcd04176cbb1957d6597c425efb693fd6
-ms.sourcegitcommit: 6934bbcd5d9774aa44dd949cf9523e8a43a505d1
+ms.openlocfilehash: 48e003310cefa01ba3d20f56d4aedf8855656e07
+ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "147168453"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "147449892"
 ---
-# <a name="module-5-create-detections-and-perform-investigations-with-microsoft-sentinel"></a>モジュール 5 Microsoft Sentinel を使用して検出を作成し、調査を実行する
+# <a name="module-6-create-detections-and-perform-investigations-with-microsoft-sentinel"></a>モジュール 6 Microsoft Sentinel を使用して検出を作成し、調査を実行する
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
 

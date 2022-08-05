@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 07c3dc62ff4e107dcbdd128825174a4dc0cd5305
-ms.sourcegitcommit: 6934bbcd5d9774aa44dd949cf9523e8a43a505d1
+ms.openlocfilehash: db32880d4180f36923dff34b1b2cd9e8640cd2ec
+ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "147168452"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "147449883"
 ---
-# <a name="module-3-create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>モジュール 3 Kusto 照会言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
+# <a name="module-4-create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>モジュール 4 Kusto 照会言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
 

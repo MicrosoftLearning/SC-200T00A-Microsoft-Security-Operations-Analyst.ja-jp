@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 9267efde7b1d184fa4201ba07be947ffff21311e
-ms.sourcegitcommit: 6934bbcd5d9774aa44dd949cf9523e8a43a505d1
+ms.openlocfilehash: 8b5dbb31b0de6f493d9eb51a4a2e998aa248ce46
+ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "147168454"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "147449886"
 ---
-# <a name="module-4-configure-your-microsoft-sentinel-environment"></a>モジュール 4 Microsoft Sentinel 環境を構成する
+# <a name="module-5-configure-your-microsoft-sentinel-environment"></a>モジュール 5 Microsoft Sentinel 環境を構成する
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
 
