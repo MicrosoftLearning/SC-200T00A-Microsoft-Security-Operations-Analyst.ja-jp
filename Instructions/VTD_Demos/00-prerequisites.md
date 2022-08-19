@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: bac4babf32bbf62213da667426ce4644fdd88ef9
-ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
+ms.openlocfilehash: 198d029e03950b40e9850b3552c5d448867b73f0
+ms.sourcegitcommit: 8bd0d3a1384dafb6db097ad5bff4ec65ee8b4d4b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "147449895"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "147541854"
 ---
 
 # <a name="microsoft-security-operations-analyst"></a>Microsoft Security Operations Analyst
@@ -110,14 +110,18 @@ ms.locfileid: "147449895"
 
 1. **[項目の追加]** を選択します。
 
-1. ロールの追加 ダイアログで以下を入力します。ロール名:Tier  [Live Response capabilities]\(ライブ応答機能\): チェックボックスをオン  [詳細]: オン
+1. ロールの追加 ダイアログで以下を入力します。
+
+    |全般設定|値|
+    |---|---|
+    |ロール名|**第一層サポート**|
+    |アクセス許可|ライブ応答機能 - 詳細設定|
 
 1. **[次へ]** を選択します。
 
 1. [割り当てられたユーザー グループ] タブで **[sg-IT]** を選択し、**[選択したグループを追加する]** を選択します。
 
 1. **[保存]** を選択します。
-
 
 ### <a name="configure-device-groups"></a>デバイス グループの構成
 
@@ -131,20 +135,28 @@ ms.locfileid: "147449895"
 
 1. 全般 タブに次の情報を入力します。
 
-- デバイス グループ名:定期
-- 自動化レベル:完全 - 脅威を自動的に修復する
-- メンバー:名前は TESTLAB と同じになります
+    |全般設定|値|
+    |---|---|
+    |デバイス グループ名|**Regular**|
+    |自動化レベル|Full - remediate threats automatically (完全 - 脅威を自動的に修復する)|
 
 1. **[次へ]** を選択します。
+
+1. . [デバイス] タブの OS 条件で、**[Windows 10]** を選択し、**[次へ]** を選択します。
+
+1. [デバイスのプレビュー] タブで、**[プレビューを表示]** を選択して、WIN1 仮想マシンを表示します。 **[次へ]** を選択します。 
+**ヒント:** プレビューの一覧に仮想マシンが表示されない場合は、戻って、OS 条件として *[なし]* も選択してください。 VM のデータはまだ設定されていません。
 
 1. [ユーザー アクセス] タブで、**[sg-IT]** を選択し、**[選択したグループを追加する]** を選択します
 
 1. **[完了]** を選択します。
 
-1. これでデバイス グループの構成が変わりました。 変更を適用して一致を確認し、グループ化を再計算します。
+1. これでデバイス グループの構成が変わりました。 **[変更を適用]** を選択して、一致を確認し、グループ化を再計算します。
+
+1. これで、先ほど作成した "Regular" と "グループに属していないデバイス (既定)" という 2 つのデバイス グループが同じ修復レベルで表示されます。
 
 
-## <a name="deploy-sample-alerts-for-demo-in-module-2"></a>モジュール　2　でデモのサンプル　アラートをデプロイする
+## <a name="deploy-sample-alerts-for-demo-in-module-3"></a>モジュール 3 でデモのサンプル アラートをデプロイする
 
 このタスクでは、サンプルのセキュリティアラートを読み込み、アラートの詳細を確認します。
 
@@ -170,7 +182,7 @@ ms.locfileid: "147449895"
 
 このタスクでは、Microsoft Sentinel ワークスペースを作成します。
 
-1.  Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
+1. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
 1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
 
@@ -312,7 +324,7 @@ ms.locfileid: "147449895"
 
 1. ブラウザーを開き、ご自身の資格情報を使用して Azure Portal (https://portal.azure.com ) にログインします。
 
-1. Azure Portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure Portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
@@ -368,7 +380,7 @@ ms.locfileid: "147449895"
 
 1. ブラウザーでタブを開き、https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml に移動します。
 
-1. そのファイルの内容をGithubから作成したsysmon.xmlメモ帳ファイルにコピーしてファイルを保存します。
+1. そのファイルの内容を Github から先ほど作成した sysmon.xml メモ帳ファイルにコピーしてファイルを保存します。
 
 1. コマンド プロンプトで、「sysmon.exe -accepteula -i sysmon.xml」と入力して Enter キーを押します
 
@@ -386,7 +398,7 @@ ms.locfileid: "147449895"
 
 1. **[Windows イベント ログの追加]** ボタンを選択します。
 
-1. [ログ名] フィールドに「**Microsoft-Windows-Sysmon/Operational**」と入力します。
+1. "ログ名" フィールドに「**Microsoft-Windows-Sysmon/Operational**」と入力します。
 
 1. **[適用]** を選択します。
 
@@ -412,7 +424,7 @@ cd temp
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
 
-1. 攻撃 3 -次のコマンドをコピーして実行します。
+1. 攻撃 2 - 次のコマンドをコピーして実行します。
 
 ```
 notepad c2.ps1
