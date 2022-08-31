@@ -63,16 +63,10 @@ ms.locfileid: "141493932"
 
 1. Azure portal の検索バーに「*Sentinel*」と入力してから、 **[Microsoft Sentinel]** を選択します。
 
-1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
+1. 別のタブで、以下の URL にアクセスする。
 
-1. ページの左側にある *[コンテンツ管理]* 領域の下にある **[コミュニティ]** ページを選択します。
-
-1. 右側のペインで、 **[コミュニティのコンテンツをオンボードする]** リンクを選択します。 これにより、Microsoft Sentinel GitHub コンテンツ用の Edge ブラウザーの新しいタブが開きます。
-
-1. 「**Playbooks**」フォルダーを選択します。
-
-1. 「**Post-Message-Teams**」フォルダーを選択します。
-
+  https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Teams/Playbooks/Post-Message-Teams
+  
 1. readme.md ボックスで、*[Quick Deployment]* オプションの 2 番目の **[Deploy with alert trigger]/(アラート トリガーを使用してデプロイする)** まで下にスクロールし、 **[Deploy to Azure]** ボタンを選択します。  
 
     >**非常に重要**: 必ず Deploy with **alert** trigger (2 つ目) を選択してください。
