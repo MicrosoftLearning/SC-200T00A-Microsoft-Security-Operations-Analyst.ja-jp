@@ -2,12 +2,12 @@
 lab:
   title: 演習 2 - プレイブックを作成する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: db4d3e74419475539b412afdb1b3e935f89d95b1
-ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
+ms.openlocfilehash: c06fe1fd5adcf236783083c2870249560f61e73c
+ms.sourcegitcommit: 5bf676e43973b883b6d350ee061b6bbc292e528e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "145912159"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "147718804"
 ---
 # <a name="module-7---lab-1---exercise-2---create-a-playbook"></a>モジュール 7 - ラボ 1 - 演習 2 - プレイブックを作成する
 
@@ -61,7 +61,7 @@ ms.locfileid: "145912159"
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
@@ -69,7 +69,9 @@ ms.locfileid: "145912159"
 
 1. 右側のペインで、 **[コミュニティのコンテンツをオンボードする]** リンクを選択します。 これにより、Microsoft Sentinel GitHub コンテンツ用の Edge ブラウザーの新しいタブが開きます。
 
-1. "**プレイブック**" フォルダーを選択します。
+1. **Solutions** フォルダーを選択します。
+
+1. 次に、**Teams** フォルダーを選択し、**Playbooks** フォルダーを選択します。
 
 1. "**Post-Message-Teams**" フォルダーを選択します。
 
