@@ -2,12 +2,12 @@
 lab:
   title: 演習 1 - Microsoft Defender for Endpoint のデプロイ
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: ddc1d68a0d0a8f7df50ae3a6e0b6a6e205391905
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
+ms.openlocfilehash: 70f7966e8584760ca61a7b15217b9db13bf1076d
+ms.sourcegitcommit: 8d2ac5382c9f5dc03a7171e0afa587fa84b0a8b2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038008"
+ms.lasthandoff: 09/06/2022
+ms.locfileid: "147854629"
 ---
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>モジュール 2 - ラボ 1 - 演習 1 - Microsoft Defender for Endpoint のデプロイ
 
@@ -28,11 +28,11 @@ ms.locfileid: "147038008"
 
 このタスクでは、Microsoft Defender for Endpoint ポータルの初期化を行います。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
+1. 管理者として **WIN1** 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
 1. Microsoft 365 Defender ポータルにまだ登録していない場合は、Microsoft Edge ブラウザーを起動します。
 
-1. Edge ブラウザーで、https://security.microsoft.com) の Microsoft 365 Defender ポータルに移動します。
+1. Edge ブラウザーで、 https://security.microsoft.com) の Microsoft 365 Defender ポータルに移動します。
 
 1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
@@ -77,7 +77,7 @@ ms.locfileid: "147038008"
 
 1. **[管理者: コマンド プロンプト]** ウィンドウでスクリプトを右クリックして貼り付け、**Enter** キーを押して実行します。 **注:**  スクリプトの実行後、ウィンドウは自動的に閉じます。
 
-1. Microsoft 365 Defender ポータルの左側のメニューの [エンドポイント] 領域で **[デバイス インベントリ]** を選択します。 デバイスが表示されていない場合は、次のタスクを完了し、後でもう一度確認してください。 最初のデバイスがポータルに表示されるまでに最大で 60 分かかることがあります。
+1. Microsoft 365 Defender ポータルの左側のメニューの **[アセット]** 領域で **[デバイス]** を選択します。 デバイスが表示されていない場合は、次のタスクを完了し、後でもう一度確認してください。 最初のデバイスがポータルに表示されるまでに最大で 60 分かかることがあります。
 
     >**注:**  オンボード プロセスを完了してから 1 時間経ってもデバイス一覧にデバイスが表示されない場合は、オンボードまたは接続に問題があるおそれがあります。
 
