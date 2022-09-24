@@ -1,26 +1,18 @@
----
-ms.openlocfilehash: 198d029e03950b40e9850b3552c5d448867b73f0
-ms.sourcegitcommit: 8bd0d3a1384dafb6db097ad5bff4ec65ee8b4d4b
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "147541854"
----
 
 # <a name="microsoft-security-operations-analyst"></a>Microsoft Security Operations Analyst
 講師用準備ガイド
 
 ## <a name="purpose"></a>目的 
 
-このドキュメントは、''脅威に対する防御とクラウド環境の保護'' のための Microsoft Security Virtual Training Day を教える準備をしている発表者向けです。 この資料は SC-200:Microsoft Security Operations Analyst 認定コースのサブセットです。
+This document is for presenters preparing to teach the Microsoft Security Virtual Training Day for "Defend against threats and Secure CLoud Environments". This material is a subset of the SC-200: Microsoft Security Operations Analyst certification course.
 
 ## <a name="demo-prerequisites"></a>デモの前提条件
 
 このコースのラボでは、Microsoft 365 E5ライセンスのテナントと、Azureサブスクリプションの両方が必要です。
 
 * ご自身のために Microsoft Learning Azure Pass を要求できます。
-* デモを実行する少なくとも 2 週間前に、これらのパスを要求してください。 パスを受け取った後、そのパスを有効にする必要があります。 
-* Azure Pass は、一般に公開されている Microsoft Azure 試用版サブスクリプションと同じ方法で、効果的に機能します。 これは、パスで実行できる操作には制限があることを意味します。
+* Ensure that you request these passes at least two weeks before you will be performing the demos. After receiving the pass, you will need to activate it. 
+* The Azure pass effectively functions in the same way as the publicly available Microsoft Azure Trial Subscription. This means there are limitations on what you can do with the pass.
 * ラボの手順は、[SC-200 Microsoft Learning Github](https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Instructions/VTD_Demos/) リポジトリにあります。
 * デモに使用するコンピューターに新しい Microsoft Edge ブラウザーがインストールされていることを確認してください。
 
@@ -30,12 +22,12 @@ ms.locfileid: "147541854"
 
 ### <a name="obtain-your-microsoft-365-credentials"></a>Microsoft 365 資格情報の取得
 
-ラボを起動すると、無料のトライアル テナントを利用して Microsoft Virtual Lab 環境にアクセスできるようになります。 このテナントには自動的に一意のユーザー名とパスワードが割り当てられます。 Microsoft Virtual Lab 環境で Azure と Microsoft 365 にサインインするには、このユーザー名とパスワードを取得する必要があります。 
+Once you launch the lab, a free trial tenant will be made available to you to access in the Microsoft Virtual Lab environment. This tenant will be automatically assigned a unique username and password. You must retrieve this username and password so that you can sign in to Azure and Microsoft 365 within the Microsoft Virtual Lab environment. 
 
-このコースは、学習パートナーが複数の認証済みラボ ホスティング プロバイダーのいずれかを使用して実施することもあり、お使いになっているテナントに関連のあるテナント ID を取得する実際の手順はラボ ホスティング プロバイダーに応じて異なります。 このため、コース内での当該情報の取得方法については、講師が必要な指示を行います。 後ほど使用できるよう以下の情報に留意してください。
+このドキュメントは、''脅威に対する防御とクラウド環境の保護'' のための Microsoft Security Virtual Training Day を教える準備をしている発表者向けです。
 
-    - **テナント サフィックス ID。** この ID は、ラボ全体で Microsoft 365 にサインインする際に使用する onmicrosoft.com アカウント用です。 形式は **{username}@M365xZZZZZZ.onmicrosoft.com** です。ZZZZZZ はラボ ホスティング プロバイダーの提供した一意のテナント サフィックス ID です。 後で使用できるよう、この ZZZZZZ を記録しておきます。 ラボの手順で Microsoft 365 ポータルにサインインするよう指示されたら、ここで取得した ZZZZZZ の値を入力してください。
-    - **テナント パスワード。** これは、ラボ ホスティング プロバイダーの提供する管理者アカウント向けのパスワードです。
+    - この資料は SC-200:Microsoft Security Operations Analyst 認定コースのサブセットです。
+    - <bpt id="p1">**</bpt>Tenant password.<ept id="p1">**</ept> This is the password for the admin account provided by your lab hosting provider.
     
 
 ### <a name="initialize-microsoft-defender-for-endpoint"></a>Microsoft Defender for Endpoint の初期化
@@ -43,17 +35,17 @@ ms.locfileid: "147541854"
 このタスクでは、Microsoft Defender for Endpoint の初期化を行います。
 
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
-1. Microsoft Edge ブラウザーを開いて、"edge ブラウザー更新" を検索し、新しい Microsoft Edge ブラウザーをダウンロードしてインストールします。 この手順は、ホスティングされている仮想マシンで確実に Microsoft Edge の最新版を実行する上で重要です。 新しいMicrosoft Edge ブラウザーを起動します。
+1. Open the Microsoft Edge browser, search for "edge browser update", download, and install the new Microsoft Edge browser. This is necessary to ensure you're running the latest version of Microsoft Edge in your hosted virtual machine. Start the new Edge browser.
 
 1. Edge ブラウザーで、 https://security.microsoft.com) の Microsoft 365 Defender ポータルに移動します。
 
 1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
-1. **パスワードの入力** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者のテナント パスワードをコピーして貼り付け、**サインイン** します。
+1. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者のテナント パスワードをコピーして貼り付け、**サインイン**します。
 
-**注**: "このセクションにアクセスできません" というメッセージが表示されたら、5 分待ってから再びお試しください。  アクセス ルールでテナントを広める必要があるかもしれません。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: if you receive a message "You can't access this section.",  wait 5 minutes and try again.  Sometimes the access rules need to propagate the tenant.
 
 1. Microsoft 365 Defender ポータルの左側のメニュー セクションで、[設定] まで下にスクロールします。
 
@@ -61,7 +53,7 @@ ms.locfileid: "147541854"
 
 1. [全般] セクションに [データ保有期間] の選択肢が表示されます。
 
-**注**:ホストされているラボ環境では、データ ストレージの場所を選択する必要があります。 また、このトレーニング テナントが管理されている場所に適した地域にある必要があります。 [データ保有期間] の長さは引き続き選択できますが、必須ではありません。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: In the hosted lab environment your data storage location should be selected for you. And, it should be in the appropriate Geography for where this training tenant is being managed. You can still select the Data Retention length, but it is not required.
 
 1. [エンドポイント]、[全般] で、[高度な機能] を選択します。
 
@@ -69,13 +61,13 @@ ms.locfileid: "147541854"
 
 1. そうでない場合は、スライダーを **[オン]** の位置に移動し、 **[ユーザー設定の保存]** を選択します。  
 
-**注**:セットアップは **完了** します。  次のタスクではデバイスのオンボードを行います。  
+デモを実行する少なくとも 2 週間前に、これらのパスを要求してください。  
 
 ### <a name="onboard-a-device"></a>デバイスのオンボード
 
 このタスクでは、デバイスを Microsoft Defender for Endpoint にオンボードします。
 
-1. Microsoft 365 Defender ポータル (https://security.microsoft.com) ) に移動し、現在ポータルにいない場合は、**テナントの電子メール** 資格情報を使用してログインします。
+1. Microsoft 365 Defender ポータル (https://security.microsoft.com) ) に移動し、現在ポータルにいない場合は、**テナントの電子メール**資格情報を使用してログインします。
 
 1. 左側のメニュー バーで **[設定]** を選択します。
 
@@ -85,15 +77,15 @@ ms.locfileid: "147541854"
 
 1. ダウンロードされた zip ファイルをローカル フォルダーに抽出します (［ドキュメント］ フォルダーなど)。
 
-1. 抽出されたファイル (WindowsDefenderATPLocalOnboardingScript.cmd) を右クリックし、**[管理者として実行]** を選択します。  Windows SmartScreen が表示されたら、[実行する] を選択します。
+1. パスを受け取った後、そのパスを有効にする必要があります。
 
 **注** 既定で、ファイルは [c:\users\admin\downloads] ディレクトリにあります。
     
-1. スクリプトの質問に対して、**[Y]** と回答します。 完了したら、コマンド画面に "マシンが正常にオンボードされました..." のような内容のメッセージが表示されます。 
+1. Answer <bpt id="p1">**</bpt>Y<ept id="p1">**</ept> to questions presented by the script. When complete you should see a message in the command screen that says something like "Successfully onboarded machine..." 
 
-1. ポータルの [オンボーディング] ページで、検出テスト スクリプトをコピーして、オープン コマンド ウィンドウで実行します。  新しい **[管理者: コマンド プロンプト]** ウィンドウを開く必要があるかもしれません。その場合は、Windows 検索バーで「*CMD*」と入力し、**[管理者として実行]** を選択します。
+1. Azure Pass は、一般に公開されている Microsoft Azure 試用版サブスクリプションと同じ方法で、効果的に機能します。
 
-1. Microsoft 365 Defender ポータル メニューで、 **[デバイス インベントリ]** を選択します。 お使いになっているデバイスがリストに表示されます。
+1. これは、パスで実行できる操作には制限があることを意味します。
 
 **注** デバイスがポータルに表示されるまでに最高 5 分かかることがあります。
 
@@ -142,16 +134,16 @@ ms.locfileid: "147541854"
 
 1. **[次へ]** を選択します。
 
-1. . [デバイス] タブの OS 条件で、**[Windows 10]** を選択し、**[次へ]** を選択します。
+1. . On the Devices tab, for the OS condition select <bpt id="p1">**</bpt>Windows 10<ept id="p1">**</ept> and select <bpt id="p2">**</bpt>Next<ept id="p2">**</ept>.
 
-1. [デバイスのプレビュー] タブで、**[プレビューを表示]** を選択して、WIN1 仮想マシンを表示します。 **[次へ]** を選択します。 
-**ヒント:** プレビューの一覧に仮想マシンが表示されない場合は、戻って、OS 条件として *[なし]* も選択してください。 VM のデータはまだ設定されていません。
+1. On the Preview devices tab, select <bpt id="p1">**</bpt>Show preview<ept id="p1">**</ept> to see the WIN1 virtual machine. Select <bpt id="p1">**</bpt>Next<ept id="p1">**</ept>. 
+<bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you do not see the virtual machine in the preview list, go back and select also <bpt id="p2">*</bpt>None<ept id="p2">*</ept> for the OS condition. The data for the VM is not populated yet.
 
 1. [ユーザー アクセス] タブで、**[sg-IT]** を選択し、**[選択したグループを追加する]** を選択します
 
 1. **[完了]** を選択します。
 
-1. これでデバイス グループの構成が変わりました。 **[変更を適用]** を選択して、一致を確認し、グループ化を再計算します。
+1. Device group configuration has changed. Select <bpt id="p1">**</bpt>Apply changes<ept id="p1">**</ept> to check matches and recalculate groupings.
 
 1. これで、先ほど作成した "Regular" と "グループに属していないデバイス (既定)" という 2 つのデバイス グループが同じ修復レベルで表示されます。
 
@@ -162,19 +154,19 @@ ms.locfileid: "147541854"
 
 1. Edge ブラウザーで Azure portal (https://portal.azure.com) を開きます。
 
-1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
+1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
 
-1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
+1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
 1. Azure portal の検索バーに「*Defender*」と入力し、**[Microsoft Defender for Cloud]** を選択します。
 
-1. **[作業の開始]** メニューの既定の選択肢は **[アップグレード]** です。これを選択するか、今は **スキップ** します。
+1. **[作業の開始]** メニューの既定の選択肢は **[アップグレード]** です。これを選択するか、今は**スキップ**します。
 
 1. ポータルメニューで **[セキュリティアラート]** を選択します。
 
 1. コマンド バーから **[サンプルアラート]** を選択します。
 
-1. サンプルアラートの作成（プレビュー）ペインで、サブスクリプションが選択されていることを確認します。  すべてのサンプルアラートが選択されていることを確認し、**[サンプルアラートの作成]** を選択します。  
+1. In the Create sample alerts (Preview) pane make sure your subscription is selected.  Make sure all sample alerts are selected and select <bpt id="p1">**</bpt>Create sample alerts<ept id="p1">**</ept>.  
 
 **注**: これは完了するまでに数分かかる場合があります。
 
@@ -184,9 +176,9 @@ ms.locfileid: "147541854"
 
 1. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
-1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
+1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
 
-1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
+1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
 1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
@@ -198,17 +190,17 @@ ms.locfileid: "147541854"
 
 1. 適切なサブスクリプションを選択します。
 
-1. リソースグループの **新規作成** リンクを選択し、選択した新しいリソースグループ名を入力します。
+1. リソースグループの**新規作成** リンクを選択し、選択した新しいリソースグループ名を入力します。
 
 1. 名前 フィールドの インスタンスの詳細 で、LogAnalyticsワークスペースに選択する名前を入力します。
 
 **注:**  この名前は一意である必要があり、Microsoft Sentinel ワークスペース名でもあります。
 
-1. 適切な領域を選択します。  適切な領域が既定になる場合や、インストラクターがどの領域を選択するかについて具体的なアドバイスをする場合があります。  
+1. Select the region that is appropriate for you.  The appropriate region may default or your instructor may have specific advice on which region to select.  
 
 1. **[確認および作成]** を選択します。
 
-1. **［作成］** を選択します 新しい Log Analytics ワークスペースが [Azure Sentinel をワークスペースに追加] ページのリストに表示されるのを待ちます。  これには時間がかかることがあります。
+1. Select <bpt id="p1">**</bpt>Create<ept id="p1">**</ept>. Wait for the new Log Analytics workspace to appear in the list on the Add Microsoft Sentinel to a workspace page.  This may take a minute.
 
 1. 新しく作成したワークスペースが表示されたら、それを選択し、**[追加]** を選択します。
 
@@ -218,15 +210,15 @@ ms.locfileid: "147541854"
 
 このタスクでは、Microsoft Sentinel ワークスペースにアクセスします。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
-1. ブラウザを開き、新しいMicrosoft Edgeブラウザーを検索、ダウンロード、およびインストールします。 新しいMicrosoft Edge ブラウザーを起動します。
+1. ラボを起動すると、無料のトライアル テナントを利用して Microsoft Virtual Lab 環境にアクセスできるようになります。
 
 1. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
-1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
+1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
 
-1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
+1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
 1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
@@ -236,7 +228,7 @@ ms.locfileid: "147541854"
 
 このタスクでは、Azure アクティビティ データ コネクタを接続します。
 
-1. 構成領域で、**[データ コネクタ]** を選択します。  データ コネクタ ページで、リストから **Azure Active Directory** タイルを選択します。
+1. このテナントには自動的に一意のユーザー名とパスワードが割り当てられます。
 
 1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
 
@@ -260,7 +252,7 @@ ms.locfileid: "147541854"
 
 1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
 
-1. 接続オプションを確認します。 接続しない。 これは情報提供のみを目的としています。
+1. Microsoft Virtual Lab 環境で Azure と Microsoft 365 にサインインするには、このユーザー名とパスワードを取得する必要があります。
 
 ### <a name="task-5-connect-the-microsoft-defender-for-cloud-apps-connector"></a>タスク 5:Microsoft Defender for Cloud Apps コネクタを接続する。
 
@@ -290,7 +282,7 @@ ms.locfileid: "147541854"
 
 1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
 
-1. 接続オプションを確認します。 接続しない。 これは情報提供のみを目的としています。
+1. Review the Connecting Options. Don't connect. This is for informational purposes only.
 
 ### <a name="task-8-connect-the-microsoft-defender-for-endpoint-connector"></a>タスク 8:Microsoft Defender for Endpointコネクタに接続する
 
@@ -320,7 +312,7 @@ ms.locfileid: "147541854"
 
 1. 管理者として、次のパスワードを使用して WIN2 仮想マシンにログインします:**Pa55w.rd**。  
 
-1. ブラウザを開き、新しいMicrosoft Edgeブラウザーを検索、ダウンロード、およびインストールします。 新しいMicrosoft Edge ブラウザーを起動します。
+1. このコースは、学習パートナーが複数の認証済みラボ ホスティング プロバイダーのいずれかを使用して実施することもあり、お使いになっているテナントに関連のあるテナント ID を取得する実際の手順はラボ ホスティング プロバイダーに応じて異なります。
 
 1. ブラウザーを開き、ご自身の資格情報を使用して Azure Portal (https://portal.azure.com ) にログインします。
 
@@ -336,7 +328,7 @@ ms.locfileid: "147541854"
 
 1. **[非 Azure Windows マシンにエージェントをインストールする]** を選択します。
 
-**注:**  Windows仮想マシンへのエージェントのインストールと非Azure　Windowsマシンへのエージェントのインストールの手順が逆になる場合があります。 リンクは、テキストが逆になっている場合でも、適切な場所に移動します。
+このため、コース内での当該情報の取得方法については、講師が必要な指示を行います。
 
 1. **[Azure 以外の Windows マシンのエージェントをダウンロードしてインストールする]** を選択します。 
 
@@ -346,13 +338,13 @@ ms.locfileid: "147541854"
 
 1. ウェルカム ダイアログで **[次へ]** を選択します。
 
-1. [Microsoft ソフトウェアライセンス条項] ページで **[同意する]** を選択します。  宛先プロンプトで、**[次へ]** を選択します。
+1. 後ほど使用できるよう以下の情報に留意してください。
 
 1. [エージェントのセットアップ オプション] プロンプトで、**[Azure ログ分析 (OMS) にエージェントを接続する]** オプションを選択し、**[次へ]** を選択します。
 
-1. ブラウザで、エージェントの管理ページから **ワークスペースID** をコピーし、ダイアログのワークスペースIDに貼り付けます。 
+1. ブラウザで、エージェントの管理ページから**ワークスペースID**をコピーし、ダイアログのワークスペースIDに貼り付けます。 
 
-1. ブラウザで、エージェントの管理ページから主キーをコピーし、ダイアログの **主キー** に貼り付けます。 
+1. ブラウザで、エージェントの管理ページから主キーをコピーし、ダイアログの**主キー**に貼り付けます。 
 
 1. **[次へ]** を選択します。
 
@@ -364,15 +356,15 @@ ms.locfileid: "147541854"
 
 このタスクでは、Sysmonログをインストールして収集します。
 
-引き続きWIN2 仮想マシンに接続する必要があります。  次の手順では、既定構成でSysmonをインストールします。  実稼働マシンで使用するSysmonのコミュニティベースの構成を調査する必要があります
+You should still be connected to the WIN2 virtual machine.  The following instructions will install Sysmon with the default configuration.  You should research community based configurations for Sysmon to be used on production machines.
 
 1. ブラウザーで、https://docs.microsoft.com/sysinternals/downloads/sysmon に移動します。
 
-1. **Sysmonのダウンロード** を選択して、ページからSysmonをダウンロードします。
+1. **Sysmonのダウンロード**を選択して、ページからSysmonをダウンロードします。
 
 1. ダウンロードしたファイルを開き、ファイルを新しいディレクトリc：\ sysmonに抽出します。
 
-1. WindowsのWIN2タスクバーの検索ボックスに *コマンド* を入力します。  検索結果には、コマンドプロンプトアプリが表示されます。  コマンドプロンプトアプリを右クリックし、**管理者として実行** を選択します。  表示されるユーザー アカウント制御のプロンプトを確認します。
+1. **テナント サフィックス ID。**
 
 1. *cd \sysmon* と入力します
 
@@ -386,7 +378,7 @@ ms.locfileid: "147541854"
 
 1. ブラウザーで Azure portal (https://portal.azure.com ) に移動します。 
 
-1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel で、[構成] 領域から **[設定]** を選択し、 **[ワークスペース設定]** タブを選択します。
 
@@ -408,9 +400,9 @@ ms.locfileid: "147541854"
 
 このタスクでは、Microsoft Defender for Endpoint が構成されているホストに対して攻撃を実行します。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
-1. タスク バーの検索で、*Command* と入力します。  検索結果にコマンド プロンプトが表示されます。  コマンド プロンプトを右クリックして、 **[管理者として実行]** を選択します。 表示されるユーザー アカウント制御のプロンプトを確認します。
+1. この ID は、ラボ全体で Microsoft 365 にサインインする際に使用する onmicrosoft.com アカウント用です。
 
 1. コマンドプロンプトで、各行の後に Enter キーを押して、各行にコマンドを入力します。
 ```
@@ -431,7 +423,7 @@ notepad c2.ps1
 ```
 **[はい]** を選択して新しいファイルを作成し、以下の PowerShell スクリプトを c2.ps1 にコピーして **[保存]** を選択します。
 
-**注** 仮想マシンへの貼り付けには長さの制限がある場合があります。  これを 3 つのセクションに貼り付けて、すべてのスクリプトが仮想マシンに貼り付けられるようにします。  スクリプトがメモ帳c2.ps1ファイル内のこれらの手順のように見えることを確認してください。
+形式は **{username}@M365xZZZZZZ.onmicrosoft.com** です。ZZZZZZ はラボ ホスティング プロバイダーの提供した一意のテナント サフィックス ID です。
 
 ```
 
@@ -495,8 +487,7 @@ Until ($TimeNow -ge $RunEnd)
 powershell
 .\c2.ps1
 ```
-**注:**  解決エラーが表示されます。 これは通常の動作で、エラーではありません。
-このコマンド/パワーシェルスクリプトをバックグラウンドで実行します。 ウィンドウを閉じないでください。  コマンドは、数時間ログエントリを生成する必要があります。  このスクリプトの実行中に次のタスクや次の演習に進むことができます。  このタスクで作成したデータは、後で脅威の捜索ラボで使用します。  このプロセスでは、大量のデータや処理を作成することはありません。
+後で使用できるよう、この ZZZZZZ を記録しておきます。
 
 ### <a name="task-2-attack-windows-configured-with-sysmon"></a>タスク 2:Sysmon で構成された攻撃ウィンドウ
 
@@ -504,7 +495,7 @@ powershell
 
 1. 管理者として、次のパスワードを使用して WIN2 仮想マシンにログインします:**Pa55w.rd**。  
 
-1. タスクバーの検索で、*CMD* と入力します。  検索結果にコマンド プロンプトが表示されます。  コマンド プロンプトを右クリックして、 **[管理者として実行]** を選択します。
+1. ラボの手順で Microsoft 365 ポータルにサインインするよう指示されたら、ここで取得した ZZZZZZ の値を入力してください。
 
 1. コマンドプロンプトで、各行の後に Enter キーを押して、各行にコマンドを入力します。
 ```

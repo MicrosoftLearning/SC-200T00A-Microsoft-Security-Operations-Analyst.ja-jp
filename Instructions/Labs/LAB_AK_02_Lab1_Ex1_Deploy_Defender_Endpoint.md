@@ -2,24 +2,19 @@
 lab:
   title: 演習 1 - Microsoft Defender for Endpoint のデプロイ
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 70f7966e8584760ca61a7b15217b9db13bf1076d
-ms.sourcegitcommit: 8d2ac5382c9f5dc03a7171e0afa587fa84b0a8b2
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2022
-ms.locfileid: "147854629"
 ---
+
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>モジュール 2 - ラボ 1 - 演習 1 - Microsoft Defender for Endpoint のデプロイ
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex1.png)
 
-あなたは Microsoft Defender for Endpoint を実装している企業で働いているセキュリティ運用アナリストです。 あなたの上司は、いくつかのデバイスをオンボードして、セキュリティ オペレーション (SecOps) チームの応答手順で必要な変更に関する情報を提供しようとしています。
+You are a Security Operations Analyst working at a company that is implementing Microsoft Defender for Endpoint. Your manager plans to onboard a few devices to provide insight into required changes to the Security Operations (SecOps) team response procedures.
 
-最初に、Defender for Endpoint 環境を初期化します。 次に、デバイスでオンボード スクリプトを実行し、デプロイ対象の初期デバイスをオンボードします。 環境のセキュリティを構成します。 最後に、デバイス グループを作成し、適切なデバイスを割り当てます。
+You start by initializing the Defender for Endpoint environment. Next, you onboard the initial devices for your deployment by running the onboarding script on the devices. You configure security for the environment. Lastly, you create Device groups and assign the appropriate devices.
 
->**重要:** ラボの Virtual Machines は、さまざまなモジュールで使用されます。 仮想マシンを保存します。 保存せずにラボを終了する場合は、構成を再実行する必要があります。
+><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept>  The lab Virtual Machines are used through different modules. SAVE your virtual machines. If you exit the lab without saving, you will be required to re-run some configurations again.
 
 >**注:**  前のモジュールのタスク 3 の手順が正常に完了していることを確認します。
 
@@ -36,48 +31,48 @@ ms.locfileid: "147854629"
 
 1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
-1. **パスワードの入力** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者のテナント パスワードをコピーして貼り付け、**サインイン** します。
+1. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者のテナント パスワードをコピーして貼り付け、**サインイン**します。
 
 1. **[Microsoft 365 Defender]** ポータルのナビゲーション メニューで、左側の **[設定]** を選択します。
 
 1. **[設定]** ページで、 **[デバイス検出]** を選択します。 
 
-    >**注:**  **[設定]** の下に **[デバイス検出]** オプションが表示されない場合は、ご自分のアカウントのイニシャルが表示された右上の円をクリックしてログアウトし、 **[サインアウト]** をクリックします。試すことのできるもう 1 つのオプションは、Ctrl + F5 キーを使用してページを更新するか、InPrivate ページを開くことです。 **テナントの電子メール** 資格情報を使用して再度ログインします。
+    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> If you do not see the <bpt id="p2">**</bpt>Device discovery<ept id="p2">**</ept> option under <bpt id="p3">**</bpt>Settings<ept id="p3">**</ept>, logout by selecting the top-right circle with your account initials and select <bpt id="p4">**</bpt>Sign out<ept id="p4">**</ept>. Other options that you might want to try is to refresh the page with Ctrl+F5 or open the page InPrivate. Login again with the <bpt id="p1">**</bpt>Tenant Email<ept id="p1">**</ept> credentials.
 
-1. [検出] 設定で、 **[Standard discovery (recommended)]\(標準検出 (推奨)\)** が選択されていることを確認します。 **ヒント:** オプションが表示されない場合は、ページを更新してください。
+1. In Discovery setup make sure <bpt id="p1">**</bpt>Standard discovery (recommended)<ept id="p1">**</ept> is selected. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you do not see the option, refresh the page.
 
 
 ### <a name="task-2-onboard-a-device"></a>タスク 2:デバイスのオンボード
 
 このタスクでは、オンボード スクリプトを使用してデバイスを Microsoft Defender for Endpoint にオンボードします。
 
-1. ブラウザーに Microsoft 365 Defender ポータルが表示されていない場合は、Microsoft Edge ブラウザーを起動し、(https://security.microsoft.com) にアクセスして、**テナントの電子メール** の資格情報でログインします。
+1. ブラウザーに Microsoft 365 Defender ポータルが表示されていない場合は、Microsoft Edge ブラウザーを起動し、(https://security.microsoft.com) にアクセスして、**テナントの電子メール**の資格情報でログインします。
 
 1. 左側のメニュー バーから **[設定]** を選択し、設定 ページから **[エンドポイント]** を選択します。
 
 1. デバイス管理セクションで **[オンボーディング]** を選択します。
 
-1. [1. オンボード デバイス] 領域で、デプロイ方法ドロップダウンにローカル スクリプト (最大 10 デバイス) が表示されていることを確認し、**[オンボーディング パッケージのダウンロード]** ボタンを選択します。 マウスを使用して "WindowsDefenderATPOnboardingPackage.zip" ファイルを強調表示し、フォルダー アイコン **[フォルダーに表示]** を選択します。 **ヒント:** 既定では、ファイルは c:\users\admin\downloads ディレクトリにあるはずです。
+1. あなたは Microsoft Defender for Endpoint を実装している企業で働いているセキュリティ運用アナリストです。
 
 1. ダウンロードした zip ファイルを右クリックし、 **[すべて展開]** を選択し、 *[完了時に展開されたファイルを表示する]* チェックボックスがオンになっていることを確認し、 **[抽出]** を選択します。
 
-1. 抽出されたファイル "WindowsDefenderATPLocalOnboardingScript.cmd" を右クリックし、**[プロパティ]** を選択します。 [プロパティ] ウィンドウの右下にある **[ブロック解除]** チェックボックスをオンにして、**[OK]** を選択します。
+1. あなたの上司は、いくつかのデバイスをオンボードして、セキュリティ オペレーション (SecOps) チームの応答手順で必要な変更に関する情報を提供しようとしています。
 
-1. 抽出されたファイル "WindowsDefenderATPLocalOnboardingScript.cmd" を右クリックし、 **[管理者として実行]** を選択します。  **ヒント:** Windows SmartScreen ウィンドウが表示されたら、 **[詳細情報]** を選択し、 **[実行]** を選択します。 
+1. Right-click on the extracted file "WindowsDefenderATPLocalOnboardingScript.cmd" again and choose <bpt id="p1">**</bpt>Run as Administrator<ept id="p1">**</ept>.  <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you encounter the Windows SmartScreen window, select on <bpt id="p2">**</bpt>More info<ept id="p2">**</ept>, and choose <bpt id="p3">**</bpt>Run anyway<ept id="p3">**</ept>. 
     
-1. [ユーザー アカウント制御] ウィンドウが表示されたら、 **[はい]** を選択してスクリプトの実行を許可し、スクリプトによって示される質問に **Y** と回答して、**Enter** キーを押します。 完了したら、コマンド画面に "マシンの Microsoft Defender for Endpoint へのオンボードに成功しました" という内容のメッセージが表示されます。
+1. 最初に、Defender for Endpoint 環境を初期化します。
 
-1. 任意のキーを押して続行します。 コマンド プロンプト ウィンドウを閉じます。
+1. 次に、デバイスでオンボード スクリプトを実行し、デプロイ対象の初期デバイスをオンボードします。
 
-1. 「2. 検出テストを実行する」セクションの下にある Microsoft 365 Defender ポータルからのオンボード ページに戻り、 **[コピー]** ボタンを選択して、検出テスト スクリプトをコピーします。  
+1. 環境のセキュリティを構成します。  
 
 1. WIN1 仮想マシンの Windows 検索バーで「**CMD**」と入力し、コマンド プロンプト アプリの右側のペインで **[管理者として実行]** を選択します。 
 
 1. [ユーザー アカウント制御] ウィンドウが表示されたら **[はい]** を選択し、アプリの実行を許可します。 
 
-1. **[管理者: コマンド プロンプト]** ウィンドウでスクリプトを右クリックして貼り付け、**Enter** キーを押して実行します。 **注:**  スクリプトの実行後、ウィンドウは自動的に閉じます。
+1. 最後に、デバイス グループを作成し、適切なデバイスを割り当てます。
 
-1. Microsoft 365 Defender ポータルの左側のメニューの **[アセット]** 領域で **[デバイス]** を選択します。 デバイスが表示されていない場合は、次のタスクを完了し、後でもう一度確認してください。 最初のデバイスがポータルに表示されるまでに最大で 60 分かかることがあります。
+1. In the Microsoft 365 Defender portal, in the left-hand menu, under the <bpt id="p1">**</bpt>Assets<ept id="p1">**</ept> area, select <bpt id="p2">**</bpt>Devices<ept id="p2">**</ept>. If the device is not shown, complete the next task and come back to check it back later. It can take up to 60 minutes for the first device to be displayed in the portal.
 
     >**注:**  オンボード プロセスを完了してから 1 時間経ってもデバイス一覧にデバイスが表示されない場合は、オンボードまたは接続に問題があるおそれがあります。
 
@@ -101,7 +96,7 @@ ms.locfileid: "147854629"
     |ロール名|**第一層サポート**|
     |アクセス許可|ライブ応答機能 - 詳細設定|
 
-1. 上部の **[割り当てられたユーザー グループ]** タブを選択します。 **[sg-IT]** を選択し、**[選択したグループを追加]** を選択します。 これが *[Azure AD user groups with this role]\(このロールを持つ Azure AD ユーザー グループ\)* の下に表示されることを確認します。
+1. **重要:** ラボの Virtual Machines は、さまざまなモジュールで使用されます。
 
 1. **[保存]** を選択します。
 
@@ -127,13 +122,13 @@ ms.locfileid: "147854629"
 
 1. [デバイス] タブの OS 条件で、**[Windows 10]** を選択し、**[次へ]** を選択します。
 
-1. [デバイスのプレビュー] タブで、**[プレビューを表示]** を選択して、WIN1 仮想マシンを表示します。 **[次へ]** を選択します。 **ヒント:** プレビューの一覧に仮想マシンが表示されない場合は、戻って、OS 条件として *[なし]* も選択してください。 VM のデータはまだ設定されていません。
+1. 仮想マシンを保存します。
 
-1. ユーザー アクセス タブで **[sg-IT]** を選択し、**[選択したグループを追加]** ボタンを選択します。 これが *[Azure AD user groups with access to this device group]\(このデバイス グループへのアクセス権を持つ Azure AD ユーザー グループ\)* の下に表示されることを確認します。
+1. 保存せずにラボを終了する場合は、構成を再実行する必要があります。
 
 1. **[完了]** を選択します。
 
-1. これでデバイス グループの構成が変わりました。 **[変更を適用]** を選択して、一致を確認し、グループ化を再計算します。
+1. Device group configuration has changed. Select <bpt id="p1">**</bpt>Apply changes<ept id="p1">**</ept> to check matches and recalculate groupings.
 
 1. これで、先ほど作成した "Regular" と "グループに属していないデバイス (既定)" という 2 つのデバイス グループが同じ修復レベルで表示されます。
 

@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 7153be471268ce4c563dd3445e17b58336850485
-ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "147449898"
----
 # <a name="module-3---mitigate-threats-using-microsoft-defender-for-cloud"></a>モジュール 3 - Microsoft Defender for Cloud を使用して脅威を軽減する
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
@@ -14,16 +6,16 @@ ms.locfileid: "147449898"
 
 このタスクでは、サンプルのセキュリティアラートを読み込み、アラートの詳細を確認します。
 
-1. **[Microsoft Defender for Cloud]**  >  **[セキュリティ アラート]** 画面に移動します。 サンプル アラートが[前提条件セクション](00-prerequisites.md#Deploy-sample-alerts-for-Demo-in-Module-2)の指示に従って作成された場合、この画面には複数のセキュリティ アラートが表示されます。
+1. Go the  <bpt id="p1">**</bpt>Microsoft Defender for Cloud<ept id="p1">**</ept><ph id="ph1"> &gt; </ph><bpt id="p2">**</bpt>Security Alerts<ept id="p2">**</ept> screen. If the sample alerts were created as directed in the <bpt id="p1">[</bpt>pre-requisites section<ept id="p1">](00-prerequisites.md#Deploy-sample-alerts-for-Demo-in-Module-2)</ept>, there should be multiple security alerts on this screen.
 
 1. 一覧表示されているアラートのいくつかについて、次のアクションを実行します。
 
-    A. アラートを選択すると、アラートに関する情報が右側のペインに表示されます。  **[詳細を表示]** をクリックします。
+    A. Select the alert, information about the alert should appear in a pane on the right.  Click <bpt id="p1">**</bpt>View full details<ept id="p1">**</ept>.
 
-    B. アラートの詳細を確認します。
+    B. Review the Alert details.
 
-    C. **[アクションの実行]** タブを選択します。
+    C. Select the <bpt id="p1">**</bpt>Take action<ept id="p1">**</ept> tab.
 
-    D. [アクションの実行] の情報を確認します。 アラートのタイプに応じてアクションを実行できるボタンに注意してください。
+    D. Review the Take action information. Notice the buttons available to take action depend on the type of alert.
 
 ## <a name="you-have-completed-the-lab"></a>これでラボは完了です。
