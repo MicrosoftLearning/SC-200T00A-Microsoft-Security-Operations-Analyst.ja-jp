@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 6d1aeaf4445af8d38a6fe9f1689771c8243e67ed
-ms.sourcegitcommit: 8bd0d3a1384dafb6db097ad5bff4ec65ee8b4d4b
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "147541857"
----
 # <a name="module-7---threat-hunting-in-microsoft-sentinel"></a>モジュール 7 - Microsoft Sentinel での脅威ハンティング
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
@@ -14,15 +6,15 @@ ms.locfileid: "147541857"
 
 このタスクでは、捜索クエリを作成し、結果をブックマークして、ライブ ストリームを作成します。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
 1. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
-1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
+1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
 
-1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
+1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
@@ -41,9 +33,9 @@ DeviceEvents | where TimeGenerated >= ago(lookback)
 | render timechart 
 ```
 
-1. このステートメントの目的は、C2 が一貫してビーコンを出しているかどうかを確認するための視覚化を提供することです。  3m の設定を 30 秒以上に調整してください。  count_ > 5 の設定を他のしきい値に変更して、影響を確認します。
+1. The goal of this statement is to provide a visualization to check for a C2 beaconing out on a consistent basis.  Take time to adjust the 3m setting to 30s and more.  Change the count_ &gt; 5 setting to other threshold counts to witness the impact.
 
-1. これで、C2 サーバーにビーコン送信されている　DNS　リクエストが特定できました。  次に、どのデバイスがビーコンになっているかを確認します。  次の　KQL　ステートメントを入力します。
+1. You have now identified DNS requests that are beaconing to a C2 server.  Next, determine which devices are beaconing.  Enter the following KQL Statement:
 
 ```KQL
 let lookback = 2d;
@@ -65,7 +57,7 @@ DeviceEvents | where TimeGenerated >= ago(lookback)
 
 1. *[カスタム クエリの作成]* ウィンドウで、*[名前]* に「**C2 Hunt**」と入力します
 
-1. *カスタム クエリ* には、次の KQL ステートメントを入力します。
+1. *カスタム クエリ*には、次の KQL ステートメントを入力します。
 
 ```KQL
 let lookback = 2d;
@@ -91,7 +83,7 @@ DeviceEvents | where TimeGenerated >= ago(lookback)
 
 1. 右ペインで下にスクロールし、**[クエリの実行]** ボタンを選択します。
 
-1. 結果の数は、中央のペインの *[結果]* 列に表示されます。 または、上にスクロールし、 *[結果]* ボックスで数を確認します。
+1. The number of results is shown in the middle pane under the <bpt id="p1">*</bpt>Results<ept id="p1">*</ept> column. Alternatively, scroll up to see the count over the <bpt id="p1">*</bpt>Results<ept id="p1">*</ept> box..
 
 1. **[結果を表示]** を選択します。
 

@@ -2,26 +2,21 @@
 lab:
   title: 演習 5 - 検出モデリングを理解する
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: c18f6a316629356bc831cef78f08fd6b6a26cefe
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038042"
 ---
+
 # <a name="module-7---lab-1---exercise-5---understand-detection-modeling"></a>モジュール 7 - ラボ 1 - 演習 5 - 検出モデリングを理解する
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex4.png)
 ### <a name="task-1-understand-the-attacks"></a>タスク 1:攻撃を理解する
 
->**重要:この演習では、アクションを実行しません。**  これらの手順は、次の演習で実行する攻撃について説明するものにすぎません。 このページをよくお読みください。
+><bpt id="p1">**</bpt>Important: You will perform no actions in this exercise.<ept id="p1">**</ept>  These instructions are only an explanation of the attacks you will perform in the next exercise. Please carefully read this page.
 
 攻撃パターンは、オープン ソース プロジェクトに基づいています。 https://github.com/redcanaryco/atomic-red-team
 
 
 #### <a name="attack-1---persistence-with-registry-key-add"></a>攻撃 1 - レジストリ キーの追加による永続性
 
-攻撃者は、Run レジストリ キーにプログラムを追加します。 これにより、ユーザーがログオンするたびにプログラムが実行されるため、永続化が実現します。
+Attackers will add a program in the Run Registry key. This achieves persistence by making the program run every time the user logs on.
 
 ```
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
@@ -29,7 +24,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t RE
 
 #### <a name="attack-2---user-add-and-elevate-privilege"></a>攻撃 2 - ユーザーが特権を追加および昇格
 
-攻撃者は新しいユーザーを追加し、新しいユーザーを Administrators グループに昇格させます。 これにより、攻撃者は特権のある別のアカウントでログオンできます。
+Attackers will add new users and elevate the new user to the Administrators group. This enables the attacker to logon with a different account that is privileged.
 
 ```
 net user theusernametoadd /add
@@ -39,7 +34,7 @@ net localgroup administrators theusernametoadd /add
 
 #### <a name="attack-3---dns--c2"></a>攻撃 3 - ドメイン ネーム サービスおよびコマンド & コントロール 
 
-攻撃者は、コマンド & コントロール (C2) サーバーに大量の DNS クエリを送信します。 この目的は、単一ソースのシステムまたは単一ターゲットのドメインからの DNS クエリの数に対して、しきい値ベースの検出をトリガーすることです。
+Attacker will send a large volume of DNS queries to a command and control (C2) server. The intent is to trigger threshold-based detection on the number of DNS queries either from a single source system or to a single target domain.
 
 ```
 param(
@@ -88,7 +83,7 @@ Until ($TimeNow -ge $RunEnd)
 
 このラボで使用されている攻撃検出構成サイクルは、2つの特定のデータソースのみに焦点を当てている場合でも、すべてのデータソースを表します。
 
-検出を構築するには、最初に KQL ステートメントの構築から始めます。 ホストを攻撃するため、KQL ステートメントの作成を開始するための代表的なデータがあります。
+To build a detection, you first start with building a KQL statement. Since you will attack a host, you will have representative data to start building the KQL statement.
 
 
 KQL ステートメントを取得したら、分析ルールを作成します。

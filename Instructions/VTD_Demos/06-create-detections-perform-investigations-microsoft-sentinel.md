@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 48e003310cefa01ba3d20f56d4aedf8855656e07
-ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "147449892"
----
 # <a name="module-6-create-detections-and-perform-investigations-with-microsoft-sentinel"></a>モジュール 6 Microsoft Sentinel を使用して検出を作成し、調査を実行する
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
@@ -19,21 +11,21 @@ ms.locfileid: "147449892"
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
 2. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
-3. **サインイン** ダイアログ ボックスで、ラボのホスティングプロバイダーから提供された管理者用の **テナント電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
+3. **サインイン** ダイアログ ボックスで、ラボのホスティングプロバイダーから提供された管理者用の**テナント電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
 
-4. **パスワードの入力** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された管理者用の **テナントパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
+4. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された管理者用の**テナントパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
 5. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 6. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
-7. 一般セクションから **Log** を選択します。
+7. 一般セクションから**Log**を選択します。
 
-8. まず、データが保存されている場所を確認する必要があります。 攻撃を行ったばかりなので  ログの時間範囲を **過去24時間** に設定します。
+8. First, you need to see where the data is stored. Since you just performed the attacks.  Set the Log Time Range to <bpt id="p1">**</bpt>Last 24 hours<ept id="p1">**</ept>.
 
 9. 次のKQLステートメントを実行します
 
@@ -43,18 +35,18 @@ search "temp\\startup.bat"
 
 10. 結果は、3つの異なるテーブルについて示しています。DeviceProcessEvents DeviceRegistryEvents Event
 
-    Device* テーブルは、Defender for Endpoint (データ コネクター - Microsoft 365 Defender) からのものです。  イベントは、データコネクタのセキュリティイベントからのものです。 
+    The Device* tables are from Defender for Endpoint (Data Connector - Microsoft 365 Defender).  Event is from our Data Connector Security Events. 
 
-    SysmonとDefender for Endpointの2つの異なるソースからデータを受信しているため、後で結合できる2つのKQLステートメントを作成する必要があります。  最初の調査では、それぞれを個別に確認していきます。
+    Since we are receiving data from two different sources - Sysmon and Defender for Endpoint,  we will need to build two KQL statements that could be unioned later.  In our initial investigation, you will look at each separately.
 
-11. 最初のデータソースは、WindowsホストからのSysmonです。  以下のKQLステートメントを実行します。
+11. Our first data source is Sysmon from Windows hosts.  Run the following KQL Statement.
 
 ```KQL
 search in (Event) "temp\\startup.bat"
 ```
 結果は、イベントテーブルに対してのみ表示されるようになりました。  
 
-16. 独自の KQL ステートメントを作成し、すべてのレジストリ キー セット値の行を表示します。  次の KQL クエリを実行します。
+16. Create your own KQL statement to display all Registry Key Set Value rows.  Run the following KQL query:
 
 ```KQL
 
@@ -75,8 +67,8 @@ Event
 
 17.  ここから引き続き検出ルールを作成できますが、このKQLステートメントは、他の検出ルールのKQLステートメントで再利用できるように見えます。  
     
-    [ログ] ウィンドウで、**[保存]**、**[関数として保存]** の順に選択します。
-    保存フライアウトで、次のように入力します。
+    In the Log window, select <bpt id="p1">**</bpt>Save<ept id="p1">**</ept>, then <bpt id="p2">**</bpt>Save as function<ept id="p2">**</ept>.
+    In the Save flyout, enter the following:
 
     名前: Event_Reg_SetValue [名前を付けて保存]:Function [関数のエイリアス]:Event_Reg_SetValue [カテゴリ]:Sysmon
 
@@ -87,7 +79,7 @@ Event
 Event_Reg_SetValue
 
 ```
-現在のデータ収集によっては、多くの行を受け取る可能性があります。  これは予期されることです。  次のタスクは、特定のシナリオにフィルターをかけることです
+Depending on the current data collection, you could receive many rows.  This is expected.  Our next task is to filter to our specific scenario.
 
 19. 以下の　KQL　ステートメントを実行します:
 
@@ -97,7 +89,7 @@ Event_Reg_SetValue | search "startup.bat"
 
 ```
 
-22. アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティ運用アナリストを支援することが重要です。 これには、調査グラフで使用するエンティティの投影が含まれます。  次のクエリを実行します。
+22. It is important to help the Security Operations Analyst by providing as much context about the alert as you can. This includes projecting Entities for use in the investigation graph.  Run the following query:
 
 ```KQL
 Event_Reg_SetValue 

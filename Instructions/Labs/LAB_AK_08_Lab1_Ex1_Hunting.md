@@ -2,22 +2,17 @@
 lab:
   title: 演習 1 - Microsoft Sentinel で脅威ハンティングを実行する
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 3e2631435122423265dbef3f56f06340706abc9f
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038020"
 ---
+
 # <a name="module-8---lab-1---exercise-1---perform-threat-hunting-in-microsoft-sentinel"></a>モジュール 8 - ラボ 1 - 演習 1 - Microsoft Sentinel で脅威ハンティングを実行する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod8_L1_Ex1.png)
 
-あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 コマンドと制御 (C2 または C&C) 手法に関する脅威インテリジェンスを受け取りました。 その脅威に対して捜索とウォッチを実行する必要があります。
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You have received threat intelligence about a Command and Control (C2 or C&amp;C) technique. You need to perform a hunt and watch for the threat.
 
->**重要:** このラボで使用されるログ データは、前のモジュールで作成されたものです。 演習 5 の WIN1 サーバーの **攻撃 3** を参照してください。
+><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> The log data used in the lab was created in the previous module. See <bpt id="p1">**</bpt>Attack 3<ept id="p1">**</ept> on WIN1 server in Exercise 5.
 
 >**注:**  前のモジュールでデータを探索するプロセスを既に経験しているため、このラボでは最初に KQL ステートメントが提供されます。 
 
@@ -26,13 +21,13 @@ ms.locfileid: "147038020"
 
 このタスクでは、捜索クエリを作成し、結果をブックマークして、ライブ ストリームを作成します。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
 1. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
-1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
+1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
 
-1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントのパスワード** をコピーして貼り付け、 **[サインイン]** を選択します。
+1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
 1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
@@ -57,11 +52,11 @@ ms.locfileid: "147038020"
 
     ![Screenshot](../Media/SC200_hunting1.png)
 
-1. 前の KQL クエリの目的は、常に C2 ビーコンの視覚化を提供することです。 bin() 内の *3m* の設定を **30s** に変更して、値のグループ化を調整し、クエリをもう一度 **実行** します。
+1. The goal of the previous KQL query is to provide a visualization for a C2 beaconing on a consistent basis. Adjust grouping of values by changing the <bpt id="p1">*</bpt>3m<ept id="p1">*</ept> setting to <bpt id="p2">**</bpt>30s<ept id="p2">**</ept> within bin() and <bpt id="p3">**</bpt>Run<ept id="p3">**</ept> the query again.
 
-1. それを *3m* に戻します。 次に *count_* のしきい値を **10** に変更し、クエリをもう一度 **実行** して影響を監視します。
+1. Change it back to <bpt id="p1">*</bpt>3m<ept id="p1">*</ept>. Now change the <bpt id="p1">*</bpt>count_<ept id="p1">*</ept> threshold to <bpt id="p2">**</bpt>10<ept id="p2">**</ept> and <bpt id="p3">**</bpt>Run<ept id="p3">**</ept> the query again to witness the impact.
 
-1. これで、C2 サーバーにビーコン送信されている　DNS　リクエストが特定できました。 次に、どのデバイスがビーコンになっているかを確認します。 以下の KQL ステートメントを **実行** します。
+1. You have now identified DNS requests that are beaconing to a C2 server. Next, determine which devices are beaconing. <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> the following KQL Statement:
 
     ```KQL
     let lookback = 2d;
@@ -85,7 +80,7 @@ ms.locfileid: "147038020"
 
 1. *[カスタム クエリの作成]* ウィンドウで、*[名前]* に「**C2 Hunt**」と入力します
 
-1. *カスタム クエリ* には、次の KQL ステートメントを入力します。
+1. *カスタム クエリ*には、次の KQL ステートメントを入力します。
 
     ```KQL
     let lookback = 2d;
@@ -111,9 +106,9 @@ ms.locfileid: "147038020"
 
 1. 右ペインで下にスクロールし、**[クエリの実行]** ボタンを選択します。
 
-1. 結果の数は、中央のペインの *[結果]* 列に表示されます。 または、上にスクロールし、*[結果]* ボックスで数を確認します。
+1. あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。
 
-1. **[結果の表示]** ボタンを選択します。 KQL クエリが自動的に実行されます。
+1. コマンドと制御 (C2 または C&C) 手法に関する脅威インテリジェンスを受け取りました。
 
 1. 結果の最初の行のチェックボックスをオンにします。 
 
@@ -127,7 +122,7 @@ ms.locfileid: "147038020"
 
 1. 結果リストから、先ほど作成した **C2 Hunt** ブックマークを選択します。
 
-1. 右側のペインで下にスクロールし、 **[調査]** ボタンを選択します。 **ヒント:** 調査グラフを表示するには数分かかる場合があります。
+1. その脅威に対して捜索とウォッチを実行する必要があります。
 
 1. 前のモジュールで行ったのと同じように調査グラフを調べます。
 
@@ -137,22 +132,22 @@ ms.locfileid: "147038020"
 
 1. もう一度 **C2 Hunt** クエリを探して選択します。
 
-1. クエリを右クリックし、 **[ライブストリームに追加]** を選択します。 **ヒント:** これは、右にスライドし、行の末尾にある省略記号 **(...)** を選択してコンテキスト メニューを開くことで行うこともできます。
+1. Right-click your query and select <bpt id="p1">**</bpt>Add to livestream<ept id="p1">**</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> This also can be done by sliding right and selecting the ellipsis <bpt id="p2">**</bpt>(...)<ept id="p2">**</ept> at the end of the row to open a context menu.
 
-1. *[状態]* が *[実行中]* になったことを確認します。 結果が見つかった場合は、Azure Portal に通知 (ベル アイコン) が示されます。
+1. **重要:** このラボで使用されるログ データは、前のモジュールで作成されたものです。
 
 
 ### <a name="task-2-create-a-nrt-query-rule"></a>タスク 2:NRT クエリ ルールを作成する
 
-このタスクでは、LiveStream を使用する代わりに、NRT 分析クエリ ルールを作成します。 NRT ルールは 1 分ごとに実行され、1 分間ルックバックされます。  NRT ルールの利点は、アラートとインシデント作成ロジックを使用できることです。
+演習 5 の WIN1 サーバーの**攻撃 3** を参照してください。
 
 
 1. Microsoft Sentinel で **[分析]** ページを選択します。 
 
 1. **[作成]** タブを選択し、 **[NRT クエリ ルール]** を選択します
-1. これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
+1. This starts the "Analytics rule wizard". For the <bpt id="p1">*</bpt>General<ept id="p1">*</ept> tab type:
 
-    |設定|値|
+    |設定|[値]|
     |---|---|
     |名前|**NRT C2 ハント**|
     |説明|**NRT C2 ハント**|
@@ -173,9 +168,9 @@ ms.locfileid: "147038020"
     | where cnt > 15
     ```
 
->**注:**  同じデータに対して意図的に多くのインシデントを生成しています。 これにより、ラボはこれらのアラートを使用できるようになります。
+><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> We are purposely generating many incidents for the same data. This enables the Lab to use these alerts.
 
-1. 残りのオプションは既定値のままにします。 **[次へ: インシデント設定>]** ボタンを選択します。
+1. Leave the rest of the options with the defaults. Select <bpt id="p1">**</bpt>Next: Incident settings&gt;<ept id="p1">**</ept> button.
 
 1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
 
@@ -194,14 +189,14 @@ ms.locfileid: "147038020"
 
 1. **[復元]** タブを選択します。
 
->**注:**  ラボには復元元となるアーカイブ済みのテーブルがありません。  通常のプロセスでは、アーカイブ済みのテーブルを復元して検索ジョブに含めます。
+><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> The lab will not have Archived tables to restore from.  The normal process would restore archived tables to include in the Search job.
 1. **[キャンセル]** を選択します。
 1. **[検索]** タブを選択します。
 1. *Table* を選択し、**DeviceRegistryEvents** に変更します
 1. 検索ボックスに「**reg.exe**」と入力します。  
 1. **[保存した検索]** を選択します。 
 1. 検索ジョブにより、**DeviceRegistryEvents_####_SRCH** という名前の新しいテーブルが作成されます。 
-1. 検索ジョブが完了するまで待ちます。  状態に *[更新中]* と表示されます。 次に *[処理中]* になります。 次に *[検索が完了しました]* になります。 
+1. Wait for the search job to complete.  The status will display <bpt id="p1">*</bpt>Updating<ept id="p1">*</ept>. Then <bpt id="p1">*</bpt>In progress<ept id="p1">*</ept>. Then <bpt id="p1">*</bpt>Search completed<ept id="p1">*</ept>. 
 1. **[検索結果の表示]** を選択します。
 1. *[ログ]* で新しいタブを開きます。
 1. 新しいテーブル名 **DeviceRegistryEvents_####_SRCH** を入力して実行します。

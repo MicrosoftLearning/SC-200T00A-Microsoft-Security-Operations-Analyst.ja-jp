@@ -2,37 +2,32 @@
 lab:
   title: 演習 1 - データ コネクタを使用して Microsoft Sentinel にデータを接続する
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: ba1ab1fbfbc322357395fc6d78ba124eda9d00cc
-ms.sourcegitcommit: 190d5d493301a8c8d98c86772d2500128637ad2d
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "146650237"
 ---
+
 # <a name="module-6---lab-1---exercise-1---connect-data-to-microsoft-sentinel-using-data-connectors"></a>モジュール 6 - ラボ 1 - 演習 1 - データ コネクタを使用して Microsoft Sentinel にデータを接続する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex1.png)
 
-あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 組織には、Microsoft 365、Microsoft 365 Defender、Azure リソース、Azure 以外の仮想マシンなどからのデータがあります。最初に、Microsoft のソースに接続します。
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to connect log data from the many data sources in your organization. The organization has data from Microsoft 365, Microsoft 365 Defender, Azure resources, non-azure virtual machines, etc. You start connecting the Microsoft sources first.
 
 
 ### <a name="task-1-access-the-microsoft-sentinel-workspace"></a>タスク 1:Microsoft Sentinel ワークスペースにアクセスする
 
 このタスクでは、Microsoft Sentinel ワークスペースにアクセスします。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd**。  
+1. 管理者として **WIN1** 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
 1. Microsoft Edge ブラウザーを開きます。
 
 1. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
-1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
+1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
-1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された **テナント パスワード** をコピーして貼り付け、**[サインイン]** を選択します。
+1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナント パスワード**をコピーして貼り付け、**[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
@@ -41,7 +36,7 @@ ms.locfileid: "146650237"
 
 このタスクでは、Azure Active Directory コネクタを Microsoft Sentinel に接続します。
 
-1. 構成領域で、[**データ コネクタ]** を選択します。 [データ コネクタ] ページで、一覧から **Azure Active Directory** コネクタを探して選択します。
+1. Under the Configuration area select <bpt id="p1">**</bpt>Data connectors<ept id="p1">**</ept>. In the Data Connectors page, search for the <bpt id="p1">**</bpt>Azure Active Directory<ept id="p1">**</ept> connector and select it from the list.
 
 1. コネクタ情報ブレードで **[コネクタ ページを開く]** を選択します。
 
@@ -67,11 +62,11 @@ ms.locfileid: "146650237"
 
 1. コネクタ情報ブレードで **[コネクタ ページを開く]** を選択します。
 
-1. 構成領域の [サブスクリプション] で、[Azure Pass - スポンサー プラン] サブスクリプションのチェック ボックスをオンにし、**[状態]** オプションを右側にスライドして **[接続済み]** を示します。
+1. 構成領域の [サブスクリプション] で、[Azure Pass - スポンサー プラン] サブスクリプションのチェック ボックスをオンにし、 **[状態]** オプションを右側にスライドして **[接続済み]** を示します。
 
 1. [状態] が *[接続済み]* になり、[双方向の同期] が *[有効]* になるはずです。
 
-1. 下にスクロールし、[Create incidents - Recommended!]\(インシデントの作成 - 推奨\) 領域で、 **[有効]** を選択します。 このオプションを選択すると、このサービスに対して分析ルールが自動的に作成されます。 ここで有効にしなくても、後で *[分析]* ブレードを使って、手動で追加したり、構成を変更したりできます。
+1. Scroll down and under the "Create incidents - Recommended!" area, select <bpt id="p1">**</bpt>Enable<ept id="p1">**</ept>. This option creates an Analytics rule automatically for this service. You can manually add it later if not enabled here or change its configuration within the <bpt id="p1">*</bpt>Analytics<ept id="p1">*</ept> blade.
 
 
 ### <a name="task-5-connect-the-microsoft-365-defender-connector"></a>タスク 5:Microsoft 365 Defender コネクタを接続する
@@ -82,7 +77,7 @@ ms.locfileid: "146650237"
 
 1. コネクタ情報ブレードで **[コネクタ ページを開く]** を選択します。
 
-1. [構成] 領域で **[Connect Incident and Alerts]\(インシデントとアラートの接続\)** を選択します。 
+1. [構成] 領域で **[Connect Incident and Alerts](インシデントとアラートの接続)** を選択します。 
 
 1. [イベントの接続] で、 **[名前]** チェック ボックスをオンにして、"Microsoft Defender for Endpoint" のすべてのチェック ボックスをオンにします。
 
@@ -99,7 +94,7 @@ ms.locfileid: "146650237"
 
 1. コネクタ情報ブレードで **[コネクタ ページを開く]** を選択します。
 
-1. 構成 領域で、下にスクロールして、2. 診断設定の新しい... で **Azure Policy の割り当て ウィザードの起動>** を選択します。
+1. In the Configuration area, scroll down and under "2. Connect your subscriptions..." select <bpt id="p1">**</bpt>Launch Azure Policy Assignment Wizard&gt;<ept id="p1">**</ept>.
 
 1. **[基本]** タブで、 **[スコープ]** の下にある省略記号ボタン [...] を選択し、ドロップダウン リストから [Azure Pass - スポンサーシップ] サブスクリプションを選択して、 **[選択]** をクリックします。
 
