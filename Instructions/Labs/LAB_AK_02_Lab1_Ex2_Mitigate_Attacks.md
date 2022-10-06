@@ -10,9 +10,11 @@ lab:
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex2.png)
 
-You are a Security Operations Analyst working at a company that is implementing Microsoft Defender for Endpoint. Your manager plans to onboard a few devices to provide insight into required changes to the Security Operations (SecOps) team response procedures.
+あなたは Microsoft Defender for Endpoint を実装している企業で働いているセキュリティ運用アナリストです。 あなたの上司は、いくつかのデバイスをオンボードして、セキュリティ オペレーション (SecOps) チームの応答手順で必要な変更に関する情報を提供しようとしています。
 
 Defender for Endpoint の攻撃緩和機能を確認するため、シミュレーション攻撃を 2 回行います。
+
+>**大事な：** 続行する前に、[デバイス] ページに WIN1 が表示されるまで待ってください。 それ以外の場合は、後で生成されるアラートを表示するには、このタスクを繰り返す必要があります。
 
 
 ### <a name="task-1-simulated-attacks"></a>タスク 1:シミュレーション攻撃
@@ -25,15 +27,18 @@ Defender for Endpoint の攻撃緩和機能を確認するため、シミュレ�
 
 1. **[チュートリアル]** タブを選択します。
 
-1. Under <bpt id="p1">*</bpt>Automated investigation (backdoor)<ept id="p1">*</ept> you will see a message describing the scenario. Below this paragraph, click <bpt id="p1">**</bpt>Read the walkthrough<ept id="p1">**</ept>. A new browser tab opens which includes instructions to perform the simulation.
+1. *[Automated investigation (backdoor)]\(自動調査 (バックドア)\)* に、シナリオを説明するメッセージが表示されます。 この段落の下にある **[Read the walkthrough]\(チュートリアルの読み取り\)** をクリックします。 シミュレーションを実行する手順を含む新しいブラウザー タブが開きます。
 
-1. In the new browser tab, locate the section named <bpt id="p1">**</bpt>Run the simulation<ept id="p1">**</ept> (page 5, starting at step 2) and follow the steps to run the attack. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> The simulation file <bpt id="p2">*</bpt>RS4_WinATP-Intro-Invoice.docm<ept id="p2">*</ept> can be found back in portal, just below the <bpt id="p3">**</bpt>Read the walkthrough<ept id="p3">**</ept> you selected in the previous step by selecting the <bpt id="p4">**</bpt>Get simulation file<ept id="p4">**</ept> button. 
+1. 新しいブラウザー タブで、 **[シミュレーションの実行]** という名前のセクション (5 ページの手順 2 から) を見つけ、次の手順に従って攻撃を実行します。 **ヒント:** シミュレーション ファイル *RS4_WinATP-Intro-Invoice.docm* は、ポータルに戻り、 **[Get simulation file]\(シミュレーション ファイルの取得\)** ボタンを選択して、前の手順で選択した **[Read the walkthrough]\(チュートリアルを読み取る\)** の下に表示されます。 
 
 1. 最後の 3 つの手順を繰り返して、 *[Automated investigation (fileless attack)]\(自動調査 (ファイルレス攻撃)\)* を今すぐ実行します。
 
+
+### <a name="task-2-investigate-the-attacks"></a>タスク 2: 攻撃を調査する
+
 1. Microsoft 365 Defender ポータルで、左側のメニュー バーから **[インシデントとアラート]** を選択し、 **[インシデント]** を選択します。
 
-1. A new incident called "Multi-stage incident..." will appear in the right pane. Allow at least 5 minutes for the incident to appear. Click the incident name to load its details.
+1. "マルチステージ インシデント..." という新しいインシデントが、右側のペインに表示されます。 インシデント名をクリックして詳細を読み込みます。
 
 1. **[インシデントの管理]** ボタンを選択すると、新しいウィンドウ ブレードが表示されます。 
 
@@ -47,8 +52,8 @@ Defender for Endpoint の攻撃緩和機能を確認するため、シミュレ�
 
 1. 必要に応じてコメントを追加し、 **[保存]** をクリックして終了します。
 
-1. Review the contents of the Alerts, Devices, Users, Investigations, Evidence and Response, Graph tabs. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> Some tabs might be hidden due the size of your display. Select the ellipsis tab (...) to make them appear.
+1. [アラート]、[デバイス]、[ユーザー]、[調査]、[Evidence and Response]\(証拠と応答\)、[グラフ] タブの内容を確認します。 **ヒント:** 一部のタブは、ディスプレイのサイズが原因で非表示になる場合があります。 省略記号タブ (...) を選択して表示します。
 
->あなたは Microsoft Defender for Endpoint を実装している企業で働いているセキュリティ運用アナリストです。
+>**警告:** ここでのシミュレーションとチュートリアルは、実践を通して学ぶための優れた情報源です。  シミュレーションとチュートリアルは、ポータルで定期的に追加および編集されています。  ただし、これらのシミュレーションとチュートリアルの一部は、このトレーニングコース用に設計されたラボのパフォーマンスを妨げる可能性があります。  コースで提供される Azure テナントを使用する場合は、このラボで提供されている手順で推奨されているシミュレーションとチュートリアルのみを実行してください。  このテナントでこのトレーニング コースが完了した*後*、他のシミュレーションやチュートリアルを実行できます。
 
 ## <a name="you-have-completed-the-lab"></a>これでラボは完了です。
