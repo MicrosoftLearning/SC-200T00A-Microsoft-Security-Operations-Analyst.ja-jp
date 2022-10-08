@@ -10,17 +10,17 @@ lab:
 
 ![M365 Defender](../Media/SC-200-Lab_M1_L1_Ex1.png)
 
-You are a Security Operations Analyst working at a company that is implementing Microsoft 365 Defender. You start by assigning preset security policies in EOP and Microsoft Defender for Office 365.
+あなたは Microsoft 365 Defender を実装している企業で働くセキュリティ オペレーションアナリストです。 まず、EOP と Microsoft Defender for Office 365 で事前設定されたセキュリティ ポリシーを割り当てます。
 
 
 ### <a name="task-1-obtain-your-microsoft-365-credentials"></a>タスク 1:Microsoft 365 資格情報の取得
 
-Once you launch the lab, a free trial tenant will be made available to you to access in the Microsoft virtual Lab environment. This tenant will be automatically assigned a unique username and password. You must retrieve this username and password so that you can sign into Azure and Microsoft 365 within the Microsoft Virtual Lab environment. 
+ラボを起動すると、無料のトライアル テナントを利用して Microsoft Virtual Lab 環境にアクセスできるようになります。 このテナントには自動的に一意のユーザー名とパスワードが割り当てられます。 Microsoft Virtual Lab 環境で Azure と Microsoft 365 にサインインするには、このユーザー名とパスワードを取得する必要があります。 
 
-Because this course can be offered by learning partners using any one of several Authorized Lab Hosting (ALH) providers, the actual steps involved to retrieve the tenant ID associated with your tenant may vary by lab hosting provider. Therefore, your instructor will provide you with the necessary instructions for how to retrieve this information for your course. The information that you should note for later use includes:
+このコースは、学習パートナーが複数の認証済みラボ ホスティング プロバイダーのいずれかを使用して実施することもあり、お使いになっているテナントに関連のあるテナント ID を取得する実際の手順はラボ ホスティング プロバイダーに応じて異なります。 このため、コース内での当該情報の取得方法については、講師が必要な指示を行います。 後ほど使用できるよう以下の情報に留意してください。
 
-- <bpt id="p1">**</bpt>Tenant suffix ID.<ept id="p1">**</ept> This ID is for the onmicrosoft.com accounts that you will use to sign into Microsoft 365 throughout the labs. This is in the format of <bpt id="p1">**</bpt>{username}<ph id="ph1">@ZZZZZZ.onmicrosoft.com</ph><ept id="p1">**</ept>, where ZZZZZZ is your unique tenant suffix ID provided by your lab hosting provider. Record this ZZZZZZ value for later use. When any of the lab steps direct you to sign into Microsoft 365 portals, you must enter the ZZZZZZ value that you obtained here.
-- <bpt id="p1">**</bpt>Tenant password.<ept id="p1">**</ept> This is the password for the admin account provided by your lab hosting provider.
+- **テナント サフィックス ID。** この ID は、ラボ全体で Microsoft 365 にサインインする際に使用する onmicrosoft.com アカウント用です。 形式は **{username}@ZZZZZZ.onmicrosoft.com** です。ZZZZZZ はラボ ホスティング プロバイダーの提供した一意のテナント サフィックス ID です。 後で使用できるよう、この ZZZZZZ を記録しておきます。 ラボの手順で Microsoft 365 ポータルにサインインするよう指示されたら、ここで取得した ZZZZZZ の値を入力してください。
+- **テナント パスワード:** これは、ラボ ホスティング プロバイダーの提供する管理者アカウント向けのパスワードです。
 
 
 ### <a name="task-2-apply-microsoft-defender-for-office-365-preset-security-policies"></a>タスク 2:Microsoft Defender for Office 365 の事前設定セキュリティ ポリシーを適用する
@@ -37,7 +37,7 @@ Because this course can be offered by learning partners using any one of several
 
 1. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者のテナント パスワードをコピーして貼り付け、**サインイン**します。
 
-    >あなたは Microsoft 365 Defender を実装している企業で働くセキュリティ オペレーションアナリストです。  
+    >**注:**  "操作を完了できませんでした。 後で再度お試しください。 問題が解決しない場合は、Microsoft サポートにお問い合わせください" というメッセージが表示された場合は、単に **[OK]** をクリックして続行します。  
 
 1. 表示されている場合は、Microsoft 365 Defender クイック ツアーを閉じます。
 
@@ -47,29 +47,15 @@ Because this course can be offered by learning partners using any one of several
 
 1. *[Threat policies]\(脅威ポリシー\)]* ダッシュボードで、**[Preset Security Policies] (事前設定セキュリティ ポリシー)** を選択します。
 
-    >まず、EOP と Microsoft Defender for Office 365 で事前設定されたセキュリティ ポリシーを割り当てます。
+    >**注:**  "*クライアント エラー - bip ルールの取得時にエラーが発生しました*" というメッセージが表示された場合は、 **[OK]** を選択して続行します。 このエラーは、既定では有効になっていない Office 365 のテナントのハイドレーション状態が原因です。
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> If you receive the message <bpt id="p2">*</bpt>"Client Error - An error occurred when retrieving preset security policies. Please try again later."<ept id="p2">*</ept> select <bpt id="p1">**</bpt>OK<ept id="p1">**</ept> to continue. Refresh your browser using <bpt id="p1">**</bpt>Ctrl+F5<ept id="p1">**</ept>.
+    >**注:**  "*クライアント エラー - 事前設定されたセキュリティ ポリシーを取得するときにエラーが発生しました。後でもう一度やり直してください。* " というエラーが表示されることがあります。 続行するには **[OK]** を選択します。 **Ctrl + F5** キーを使用して、ブラウザーを更新します。
 
-1. Under <bpt id="p1">*</bpt>Standard protection<ept id="p1">*</ept>, select <bpt id="p2">**</bpt>Manage protection settings<ept id="p2">**</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you see this option grayed out, refresh your browser using <bpt id="p2">**</bpt>Ctrl+F5<ept id="p2">**</ept>.
+1. *[標準的な保護]* の **[保護設定の管理]** を選択します。 **ヒント:** このオプションが淡色表示されている場合は、**Ctrl + F5** キーを押してブラウザーを更新します。
 
-1. ラボを起動すると、無料のトライアル テナントを利用して Microsoft Virtual Lab 環境にアクセスできるようになります。 
+1. *[Exchange Online Protection の適用]* セクションで **[特定の受信者]** を選択し、 **[ドメイン]** でテナントのドメイン名の書き込みを開始し、それを選んで、 **[次へ]** を選択します。 **ヒント:** テナントのドメイン名は、管理者アカウントのドメイン名と同じです。例: *WWLx######.onmicrosoft.com*。 この構成では、スパム対策、送信スパム フィルター、マルウェア対策、フィッシング対策のポリシーが適用されます。 
 
-1. このテナントには自動的に一意のユーザー名とパスワードが割り当てられます。
-
-1. *[偽装保護]* セクションで、 **[次へ]** を 4 回 (4x) 選択して続行します。
-
-1. *[ポリシー モード]* セクションで、 **[Turn on the policy after I finish]\(完了したらポリシーを有効にする\)** ラジオ ボタンが選択されていることを確認し、 **[次へ]** を選択します。
-
-1. *[変更のレビューと確認]* の内容を読み、 **[確認]** を選択して変更を適用してから、 **[完了]** を選択して完了します。
-
-    >Microsoft Virtual Lab 環境で Azure と Microsoft 365 にサインインするには、このユーザー名とパスワードを取得する必要があります。
-
-1. Under <bpt id="p1">*</bpt>Strict protection<ept id="p1">*</ept>, select <bpt id="p2">**</bpt>Manage protection settings<ept id="p2">**</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> <bpt id="p2">*</bpt>Strict protection<ept id="p2">*</ept> is found under "Email &amp; Collaboration - Policies &amp; rules - Threat policies - Preset security policies".
-
-1. このコースは、学習パートナーが複数の認証済みラボ ホスティング プロバイダーのいずれかを使用して実施することもあり、お使いになっているテナントに関連のあるテナント ID を取得する実際の手順はラボ ホスティング プロバイダーに応じて異なります。
-
-1. このため、コース内での当該情報の取得方法については、講師が必要な指示を行います。
+1. *[Defender for Office 365 保護の適用]* セクションで、前の手順と同じ構成を適用し、 **[次へ]** を選択します。 この構成は、フィッシング対策、安全な添付ファイル、安全なリンクのポリシーに対して適用されることに注意してください。
 
 1. *[偽装保護]* セクションで、 **[次へ]** を 4 回 (4x) 選択して続行します。
 
@@ -77,13 +63,29 @@ Because this course can be offered by learning partners using any one of several
 
 1. *[変更のレビューと確認]* の内容を読み、 **[確認]** を選択して変更を適用してから、 **[完了]** を選択して完了します。
 
-    >後ほど使用できるよう以下の情報に留意してください。
+    >**注:**  "*URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' は PUT 操作に対して無効です。PUT 操作では、1 つのリソースを URI で参照する必要があります*" [ **OK] を** 選択し、[ **キャンセル** ] を選択してメイン ページに戻ります。 *"標準的な保護が有効になっている"* オプションが表示されます。
+
+1. *[厳密な保護]* で **[保護設定の管理]** を選択します。 **ヒント:** *[厳密な保護]* は、"[電子メールとコラボレーション] - [Policies & rules]\(ポリシーとルール\) - [Threat policies]\(脅威ポリシー\) - [Preset Security Policies] (事前設定セキュリティ ポリシー)" の下に表示されます。
+
+1. *[Exchange Online Protection の適用]* で **[特定の受信者]** を選択し、 **[グループ]** で **[リーダーシップ]** の書き込みを開始し、 **[次へ]** を選択します。 この構成では、スパム対策、送信スパム フィルター、マルウェア対策、フィッシング対策のポリシーが適用されます。
+
+1. *[Defender for Office 365 保護の適用]* セクションで、前の手順と同じ構成を適用し、 **[次へ]** を選択します。 この構成は、フィッシング対策、安全な添付ファイル、安全なリンクのポリシーに対して適用されることに注意してください。
+
+1. *[偽装保護]* セクションで、 **[次へ]** を 4 回 (4x) 選択して続行します。
+
+1. *[ポリシー モード]* セクションで、 **[Turn on the policy after I finish]\(完了したらポリシーを有効にする\)** ラジオ ボタンが選択されていることを確認し、 **[次へ]** を選択します。
+
+1. *[変更のレビューと確認]* の内容を読み、 **[確認]** を選択して変更を適用してから、 **[完了]** を選択して完了します。
+
+    >**注:**  "*URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' は PUT 操作に対して無効です。PUT 操作では、1 つのリソースを URI で参照する必要があります*" [ **OK] を** 選択し、[ **キャンセル** ] を選択してメイン ページに戻ります。 *''[厳密な保護] が有効になっている''* オプションが表示されます。
+
+### <a name="task-3-preparing-the-microsoft-365-defender-workspace"></a>タスク 3: Microsoft 365 Defender ワークスペースの準備
 
 1. **[Microsoft 365 Defender]** ポータルのナビゲーション メニューで、左側の **[設定]** を選択します。
 
-1. On the <bpt id="p1">**</bpt>Settings<ept id="p1">**</ept> page select <bpt id="p2">**</bpt>Microsoft 365 Defender<ept id="p2">**</ept>. You are going to see an image of a coffee mug and a message that reads: "Hang on! We're preparing new spaces for your data and connecting them". It will take several minutes to finish, so leave the page open until the next lab. 
+1. **[設定]** ページで、 **[Microsoft 365 Defender]** を選択します。 コーヒー マグの画像と次のメッセージが表示 *されます。データ用に新しいスペースを準備し、接続しています*。. 完了するまで数分かかるので、ページを開いたままにしておきますが、次のラボに必要になるため、完了していることを確認してください。 
 
-    >**テナント サフィックス ID。**
+    >**注:**  "失敗するつもりはありませんでしたが、問題が発生しました" というエラー メッセージが表示された場合は、 後で手順を再試行するか、次のラボの前に実行します。
 
 1. 新しいスペースが正常に完了すると、アカウント、電子メール通知、プレビュー機能、ストリーミング API の Microsoft 365 Defender 設定が表示されます。
 
