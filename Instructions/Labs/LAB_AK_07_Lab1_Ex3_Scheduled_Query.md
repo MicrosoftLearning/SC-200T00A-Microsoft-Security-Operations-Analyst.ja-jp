@@ -10,7 +10,7 @@ lab:
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex3.png)
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to detect and mitigate threats using Microsoft Sentinel. After connecting your data sources to Microsoft Sentinel, you create custom analytics rules to help discover threats and anomalous behaviors in your environment.
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Azure Sentinel を使って脅威を検出および軽減する方法を学習する必要があります。 データ ソースを Microsoft Sentinel に接続した後、環境内の脅威や異常な動作を検出するのに役立つカスタム分析ルールを作成します。
 
 分析ルールでは、環境全体にわたる特定のイベントまたは一連のイベントを検索したり、特定のイベントしきい値または条件に達したときはユーザーに警告したり、SOC でトリアージと調査を行うためのインシデントを生成したり、自動化された追跡および修復プロセスを使用して脅威に対応したりします。
 
@@ -43,7 +43,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. ルールクエリの場合は、次のKQLステートメントを貼り付けます。
 
-    ><bpt id="p1">**</bpt>Warning:<ept id="p1">**</ept> When using the Paste function to the virtual machine extra (pipe) characters could be added. Make sure you use Notepad first to paste the following query.
+    >**警告:** 仮想マシンへの貼り付け機能を使用すると、余分な (パイプ) 文字が追加される場合があります。 必ず、最初にメモ帳を使用して、次のクエリを貼り付けてください。
 
     ```KQL
     AuditLogs  
@@ -55,7 +55,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
     | project TimeGenerated, InitiatedByUPN, InitiatedFromIP, TargetUser, TargetRoleName, AADOperationType, OperationName
     ```
 
-1. Select <bpt id="p1">**</bpt>View query results<ept id="p1">**</ept>. You should not receive any results nor any errors. If you receive an error, please review that the query appears just like the previous KQL statement. Close the <bpt id="p1">*</bpt>Logs<ept id="p1">*</ept> window by selecting the upper right <bpt id="p2">**</bpt>X<ept id="p2">**</ept> and select <bpt id="p3">**</bpt>OK<ept id="p3">**</ept> to discard to save changes to go back to the wizard.
+1. **[View query results](クエリ結果の表示)** を選択します。 結果やエラーは表示されないはずです。 エラーが表示される場合は、前の KQL ステートメントと同じようにクエリが表示されていることを確認してください。 右上の **[X]** を選択して *[ログ]* ウィンドウを閉じ、 **[OK]** を選択して変更を破棄して保存し、ウィザードに戻ります。
 
 1. [分析ルール ウィザード - 新しいスケジュールされたルールの作成] ブレードの *[アラート エンリッチメント]* 領域で、**[エンティティ マッピング]** を選び、次の値を選択します。 
 
@@ -76,7 +76,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
     |クエリの実行間隔|5 分|
     |過去のデータを見る|1 日|
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> We are purposely generating many incidents for the same data. This enables the Lab to use these alerts.
+    >**注:**  同じデータに対して意図的に多くのインシデントを生成しています。 これにより、ラボはこれらのアラートを使用できるようになります。
 
 1. *[アラートのしきい値]* 領域では、アラートですべてのイベントを登録するため、値はそのままにしておきます。
 
@@ -92,7 +92,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 1. [インシデントの自動化] タブで、 **[新規追加]** を選択します。
 1. *[Automation ルール名]* に「**Tier 2**」と入力します。
 1. *[アクション]* で、 **[所有者の割り当て]** を選択します。
-1. Then select <bpt id="p1">**</bpt>Assign to me<ept id="p1">**</ept>. Then select <bpt id="p1">**</bpt>Apply<ept id="p1">**</ept>.
+1. 次に、 **[自分に割り当てる]** を選択します。 次に、**[適用]** を選択します。
 
 1. 下部にある **[次: 確認 >]** ボタンを選択します。
   
@@ -103,7 +103,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 このタスクでは、新しいスケジュールされたクエリルールをテストします
 
-1. あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。
+1. Azure portal の検索バーに「*Azure Active Directory*」と入力します。 その後、**[Azure Active Directory]** を選択します。
 
 1. [管理] 領域で **[ユーザー]** を選択し、[ユーザー - すべてのユーザー] ページが表示されるようにします。
 
@@ -113,7 +113,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. コマンド バーから **[+ 割り当ての追加]** を選択します。
 
-1. Azure Sentinel を使って脅威を検出および軽減する方法を学習する必要があります。
+1. *[割り当ての追加]* ページの *[メンバーシップ]* タブで、 *[ロールの選択]* の下にある **[ユーザー管理者]** を選択します。 **[追加]** を選択します。
 
     >**注:**  場合によっては、 **[更新]** ボタンをクリックして、新しいロールの割り当てを表示する必要があります。 
 
@@ -121,7 +121,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. [Contoso - 概要] Azure Active Directory ページで、*[監視]* の **[監査ログ]** を選択します。
 
-1. データ ソースを Microsoft Sentinel に接続した後、環境内の脅威や異常な動作を検出するのに役立つカスタム分析ルールを作成します。
+1. **[データ設定のエクスポート]** を選択します。 Microsoft Sentinel の "Azure Active Directory" データ コネクタにより、Log Analytics ワークスペースにデータを送信するように構成が正しく設定されていることを確認します。これを行うには、*[診断設定]* の情報を確認します。
 
 1. 以前に Sentinel 用に作成した ''*Log Analytics ワークスペース*'' の *[診断設定]* エントリがあることを確認します。
 
@@ -135,10 +135,10 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. **インシデント** メニュー オプションを選択します。
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> The alert triggered may take 5+ minutes to process. You may continue with the next exercise and return to this point later. For automatic updating of the Incidents page, select the <bpt id="p1">**</bpt>Auto-refresh incidents<ept id="p1">**</ept> toggle.
+    >**注:**  トリガーされたアラートの処理には 5 分以上かかる場合があります。 次の演習を続けて、後でこのポイントに戻ることができます。 [インシデント] ページを自動更新するには、**[インシデントの自動更新]** トグルをオンにします。
 
-1. You should see the newly created Incident. Select the Incident and review the information in the right blade.
+1. 新しく作成したインシデントが表示されます。 インシデントを選択し、右側のブレードの情報を確認します。
 
-1. Go back to Microsoft Teams by selecting the tab in your Edge browser. If you closed it, just open a new tab and type <ph id="ph1">https://teams.microsoft.com</ph>. Go to the <bpt id="p1">*</bpt>SOC<ept id="p1">*</ept> Teams, select the <bpt id="p2">*</bpt>New Alerts<ept id="p2">*</ept> channel and see the message post about the incident.
+1. Edge ブラウザーでタブを選択して、Microsoft Teams に戻ります。 閉じた場合は、単に新しいタブを開いて「https://teams.microsoft.com」と入力します。 *SOC* Teams に移動し、*[新しいアラート]* チャネルを選択して、インシデントに関するメッセージ投稿を確認します。
 
 ## <a name="proceed-to-exercise-4"></a>演習 4 に進む

@@ -10,10 +10,10 @@ lab:
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex3.png)
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to connect log data from the many data sources in your organization. The next source of data are Linux virtual machines using the Common Event Formatting (CEF) and Syslog connectors.
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 次のデータソースは、共通イベント形式 (CEF) と Syslog コネクタを使用した Linux 仮想マシンです。
 
 
-><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> There are steps within the next Tasks that are done in different virtual machines. Look for the Virtual Machine name references.
+>**重要:** 別の仮想マシンで実行される次のタスク内の手順があります。 仮想マシン名の参照を探します。
 
 ### <a name="task-1-access-the-microsoft-sentinel-workspace"></a>タスク 1:Microsoft Sentinel ワークスペースにアクセスする
 
@@ -38,19 +38,19 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 このタスクでは、共通イベント形式 (CEF) コネクタを使用して Linux ホストを Microsoft Sentinel に接続します。
 
-1. Select <bpt id="p1">**</bpt>Data connectors<ept id="p1">**</ept> from the Configuration area in Microsoft Sentinel. From the Data Connectors tab, search for the <bpt id="p1">**</bpt>Common Event Format (CEF)<ept id="p1">**</ept> connector and select it from the list.
+1. Microsoft Sentinel の [構成] 領域から **[データ コネクタ]** を選択します。 [データ コネクタ] タブで、リストから **[共通イベント形式 (CEF)]** コネクタを選択します。
 
 1. コネクタ情報ブレードで **[コネクタページを開く]** を選択します。
 
 1. *[構成]* で、「*1.2 Linux マシンへの CEF コレクターのインストール*」に示されているコマンドをクリップボードにコピーします。
 
-1. Launch your <bpt id="p1">**</bpt>LIN1<ept id="p1">**</ept> virtual machine. Login with the username and password provided by your lab hoster. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> You might need to press the Enter key to see the login prompt. 
+1. **LIN1** 仮想マシンを起動します。 ラボ ホスト側によって提供されるユーザー名とパスワードを使用してログインします。 **ヒント:** ログイン プロンプトを表示するには、Enter キーを押す必要があります。 
 
-1. Note the IP address for your LIN1 server. See the screenshot below as an example:
+1. LIN1 サーバー IP アドレスを書き留めます。 例として次のスクリーンショットをご覧ください。
 
     ![Linux ログイン](../Media/LinuxLoginExample.png)
 
-1. あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。
+1. **WIN1** 仮想マシンに戻ります。 スタート メニュー アイコンを右クリックし、管理者として Windows PowerShell を起動し、 **[Windows PowerShell (管理者)]** を選択します。 **[はい]** を選択し、表示される [ユーザー アカウント制御] ウィンドウでアプリを実行できるようにします。 **ヒント:** 前の演習で Windows PowerShell ウィンドウが既に開いている可能性があります。
 
 1. 次の PowerShell コマンドを入力し、特定の Linux サーバー情報に合わせて調整し、Enter キーを押します。
 
@@ -58,18 +58,18 @@ You are a Security Operations Analyst working at a company that implemented Micr
     ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
     ```
 
-1. 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。
+1. *[はい]* を入力して接続を確認し、ユーザーのパスワードを入力して、Enter キーを押します。 画面は次のようになります。
 
     ![Linux ログイン](../Media/PSconnectLinux.png)
 
-1. 次のデータソースは、共通イベント形式 (CEF) と Syslog コネクタを使用した Linux 仮想マシンです。 
+1. これで、前の手順の「*1.2 Linux マシンへの CEF コレクターのインストール*」のコマンドに貼り付ける準備ができました。 Azure のスクリプトがクリップボードにあることを確認してください。 PowerShell で、トップ バーを右クリックし、**[編集]**、**[貼り付け]** の順に選択します。 
 
 1. 貼り付けてから Enter キーを押す前に、次に示すように、文字 **3** を *python* という単語に追加します。
 
     ![ConnectorScript](../Media/ConnectorScript.png)
 
 
-1. Once the script is adjusted press Enter. The script will run against your Linux server remotely. When the script processes properly it should look like this screen:
+1. スクリプトが調整されたら、Enter キーを押します。 スクリプトは Linux サーバーに対してリモートで実行されます。 スクリプトが適切に処理されると、次の画面のようになります。
 
     ![ConnectorScript](../Media/LinuxConnected.png)
 
@@ -90,21 +90,21 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. **非 Azure Linux マシン用のエージェントをダウンロードしてインストールする**リンクを選択します。 
 
-    >**重要:** 別の仮想マシンで実行される次のタスク内の手順があります。
+    >**注:**  Log Analytics ワークスペースに、''*3 台の Windows コンピューターが接続されている*'' ことが示されるはずです。 これは、以前に接続された WIN2、WINServer および AZWIN01 仮想マシンに対応しています。
 
 1. **[Linux サーバー]** のタブを選択します。
 
-    >仮想マシン名の参照を探します。
+    >**注:**  Log Analytics ワークスペースに、''*1 台の Linux コンピューターが接続されている*'' ことが示されるはずです。 これは、以前に CEF コネクタを使用して接続された LIN1 (ubuntu1) 仮想マシンに対応しています。
 
 1. *Linux 用のダウンロードおよびオンボード エージェント*領域のコマンドをクリップボードにコピーします。
 
-1. Launch your LIN2 virtual machine. Login with the username as password provided by your lab hoster. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> You might need to press the Enter key to see the login prompt.
+1. LIN2 仮想マシンを起動します。 ラボ ホスト側によって提供されるユーザー名とパスワードを使用してログインします。 **ヒント:** ログイン プロンプトを表示するには、Enter キーを押す必要があります。
 
-1. Note the IP address for your LIN2 server. See the screenshot below as an example:
+1. LIN2 サーバー IP アドレスを書き留めます。 例として次のスクリーンショットをご覧ください。
 
     ![Linux ログイン](../Media/LinuxLoginExample.png)
 
-1. Go back to the <bpt id="p1">**</bpt>WIN1<ept id="p1">**</ept> virtual machine. Select the Windows PowerShell used in the previous task.
+1. **WIN1** 仮想マシンに戻ります。 前のタスクで使用した Windows PowerShell を選択します。
 
 1. 次の PowerShell コマンドを入力し、特定の Linux サーバー情報に合わせて調整し、Enter キーを押します。
 
@@ -112,13 +112,13 @@ You are a Security Operations Analyst working at a company that implemented Micr
     ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
     ```
 
-1. Enter <bpt id="p1">*</bpt>yes<ept id="p1">*</ept> to confirm the connection and then type the user's password and press enter. Your screen should look something like this:
+1. *[はい]* を入力して接続を確認し、ユーザーのパスワードを入力して、Enter キーを押します。 画面は次のようになります。
 
     ![Linux ログイン](../Media/PSconnectLinux.png)
 
-1. You are now ready to paste the <bpt id="p1">*</bpt>Download and onboard agent for Linux<ept id="p1">*</ept> command from the earlier step. Make sure that script is in the clipboard. In PowerShell right-click the top bar and choose <bpt id="p1">**</bpt>Edit<ept id="p1">**</ept> and then <bpt id="p2">**</bpt>Paste<ept id="p2">**</ept>.
+1. これで、前の手順の *[Linux 用エージェントのダウンロードとオンボード]* のコマンドに貼り付ける準備ができました。 スクリプトがクリップボードにあることを確認してください。 PowerShell で、トップ バーを右クリックし、**[編集]**、**[貼り付け]** の順に選択します。
 
-1. Once the script is pasted, press Enter. The script will run against your Linux server remotely. Wait
+1. スクリプトが貼り付けられたら、Enter キーを押します。 スクリプトは Linux サーバーに対してリモートで実行されます。 Wait
 
 1. 終了したら、「**exit**」と入力して、LIN2 へのリモート シェル接続を閉じます。
 

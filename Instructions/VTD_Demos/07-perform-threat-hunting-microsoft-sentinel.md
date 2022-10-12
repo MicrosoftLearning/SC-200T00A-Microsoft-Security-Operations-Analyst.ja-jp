@@ -33,9 +33,9 @@ DeviceEvents | where TimeGenerated >= ago(lookback)
 | render timechart 
 ```
 
-1. The goal of this statement is to provide a visualization to check for a C2 beaconing out on a consistent basis.  Take time to adjust the 3m setting to 30s and more.  Change the count_ &gt; 5 setting to other threshold counts to witness the impact.
+1. このステートメントの目的は、C2 が一貫してビーコンを出しているかどうかを確認するための視覚化を提供することです。  3m の設定を 30 秒以上に調整してください。  count_ > 5 の設定を他のしきい値に変更して、影響を確認します。
 
-1. You have now identified DNS requests that are beaconing to a C2 server.  Next, determine which devices are beaconing.  Enter the following KQL Statement:
+1. これで、C2 サーバーにビーコン送信されている　DNS　リクエストが特定できました。  次に、どのデバイスがビーコンになっているかを確認します。  次の　KQL　ステートメントを入力します。
 
 ```KQL
 let lookback = 2d;
@@ -83,7 +83,7 @@ DeviceEvents | where TimeGenerated >= ago(lookback)
 
 1. 右ペインで下にスクロールし、**[クエリの実行]** ボタンを選択します。
 
-1. The number of results is shown in the middle pane under the <bpt id="p1">*</bpt>Results<ept id="p1">*</ept> column. Alternatively, scroll up to see the count over the <bpt id="p1">*</bpt>Results<ept id="p1">*</ept> box..
+1. 結果の数は、中央のペインの *[結果]* 列に表示されます。 または、上にスクロールし、 *[結果]* ボックスで数を確認します。
 
 1. **[結果を表示]** を選択します。
 

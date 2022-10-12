@@ -9,14 +9,14 @@ lab:
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex4.png)
 ### <a name="task-1-understand-the-attacks"></a>タスク 1:攻撃を理解する
 
-><bpt id="p1">**</bpt>Important: You will perform no actions in this exercise.<ept id="p1">**</ept>  These instructions are only an explanation of the attacks you will perform in the next exercise. Please carefully read this page.
+>**重要:この演習では、アクションを実行しません。**  これらの手順は、次の演習で実行する攻撃について説明するものにすぎません。 このページをよくお読みください。
 
 攻撃パターンは、オープン ソース プロジェクトに基づいています。 https://github.com/redcanaryco/atomic-red-team
 
 
 #### <a name="attack-1---persistence-with-registry-key-add"></a>攻撃 1 - レジストリ キーの追加による永続性
 
-Attackers will add a program in the Run Registry key. This achieves persistence by making the program run every time the user logs on.
+攻撃者は、Run レジストリ キーにプログラムを追加します。 これにより、ユーザーがログオンするたびにプログラムが実行されるため、永続化が実現します。
 
 ```
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
@@ -24,7 +24,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t RE
 
 #### <a name="attack-2---user-add-and-elevate-privilege"></a>攻撃 2 - ユーザーが特権を追加および昇格
 
-Attackers will add new users and elevate the new user to the Administrators group. This enables the attacker to logon with a different account that is privileged.
+攻撃者は新しいユーザーを追加し、新しいユーザーを Administrators グループに昇格させます。 これにより、攻撃者は特権のある別のアカウントでログオンできます。
 
 ```
 net user theusernametoadd /add
@@ -34,7 +34,7 @@ net localgroup administrators theusernametoadd /add
 
 #### <a name="attack-3---dns--c2"></a>攻撃 3 - ドメイン ネーム サービスおよびコマンド & コントロール 
 
-Attacker will send a large volume of DNS queries to a command and control (C2) server. The intent is to trigger threshold-based detection on the number of DNS queries either from a single source system or to a single target domain.
+攻撃者は、コマンド & コントロール (C2) サーバーに大量の DNS クエリを送信します。 この目的は、単一ソースのシステムまたは単一ターゲットのドメインからの DNS クエリの数に対して、しきい値ベースの検出をトリガーすることです。
 
 ```
 param(
@@ -83,7 +83,7 @@ Until ($TimeNow -ge $RunEnd)
 
 このラボで使用されている攻撃検出構成サイクルは、2つの特定のデータソースのみに焦点を当てている場合でも、すべてのデータソースを表します。
 
-To build a detection, you first start with building a KQL statement. Since you will attack a host, you will have representative data to start building the KQL statement.
+検出を構築するには、最初に KQL ステートメントの構築から始めます。 ホストを攻撃するため、KQL ステートメントの作成を開始するための代表的なデータがあります。
 
 
 KQL ステートメントを取得したら、分析ルールを作成します。

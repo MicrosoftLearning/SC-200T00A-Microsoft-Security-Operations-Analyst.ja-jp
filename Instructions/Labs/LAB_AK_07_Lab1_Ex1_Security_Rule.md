@@ -10,7 +10,7 @@ lab:
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex1.png)
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to detect and mitigate threats using Microsoft Sentinel. First, you need to filter the alerts coming from Defender for Cloud into Microsoft Sentinel, by Severity. 
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Azure Sentinel を使って脅威を検出および軽減する方法を学習する必要があります。 まず、Defender for Cloud から Microsoft Sentinel に送信されるアラートを重大度でフィルター処理する必要があります。 
 
 
 ### <a name="task-1-activate-a-microsoft-security-rule"></a>タスク 1:Microsoft Securityルールの有効化
@@ -29,9 +29,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
-1. Select <bpt id="p1">**</bpt>Analytics<ept id="p1">**</ept> from the Configuration area. By default, you will see the <bpt id="p1">*</bpt>Active rules<ept id="p1">*</ept>. Click on <bpt id="p1">*</bpt>Rule templates<ept id="p1">*</ept>.
+1. 構成領域から **[分析]** を選択します。 既定で、*アクティブな規則*が表示されます。 *[ルール テンプレート]* をクリックします。
 
-1. Search for and select <bpt id="p1">**</bpt>Create incidents based on Microsoft Defender for Cloud<ept id="p1">**</ept>. This rule was activated by the Defender for Cloud connector we configured in "Module 6 - Exercise 1 - Task 4". 
+1. **[Microsoft Defender for Cloud に基づいてインシデントを作成する]** を検索し、選択します。 このルールは、"モジュール 6 - 演習 1 - タスク 4" で構成した Defender for Cloud のコネクタによってアクティブ化されました。 
 
 1. 右側のブレードで、 **[編集]** ボタンを選択します。
 
@@ -41,6 +41,6 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. 下部にある **[次: 自動応答]** ボタンを選択し、 **[次へ:Review](次へ: 確認)** をクリックします。
 
-1. Review the changes made and select the <bpt id="p1">**</bpt>Save<ept id="p1">**</ept> button. The Analytics rule will be saved.
+1. 行った変更を確認し、 **[保存]** ボタンを選択します。 分析ルールが保存されます。
 
 ## <a name="proceed-to-exercise-2"></a>演習 2 に進みます。

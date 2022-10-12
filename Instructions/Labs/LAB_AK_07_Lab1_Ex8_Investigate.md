@@ -9,9 +9,9 @@ lab:
 ## <a name="lab-scenario"></a>ラボのシナリオ
 
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You already created Scheduled and Microsoft Security Analytics rules. The Fusion and Anomalies Analytics rules are also enabled in your environment. Now is the time to investigate the Incidents created by them.
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 あなたはスケジュール済みおよび Microsoft セキュリティ分析ルールを既に作成しています。 Fusion と異常分析ルールも環境で有効になっています。 ここで、それらによって作成されたインシデントを調査します。
 
-An incident can include multiple alerts. It is an aggregation of all the relevant evidence for a specific investigation. The properties related to the alerts, such as severity and status, are set at the incident level. After you let Microsoft Sentinel know what kinds of threats you are looking for and how to find them, you can monitor detected threats by investigating incidents.
+インシデントには複数のアラートを含めることができます。 これは、特定の調査に関連するすべての証拠を集計したものです。 重大度や状態など、アラートに関連するプロパティはインシデント レベルで設定されます。 検出対象となる脅威の種類と検出方法を Microsoft Sentinel に通知したら、インシデントを調査して、検出された脅威を監視できます。
 
 
 ### <a name="task-1-investigate-an-incident"></a>タスク 1:問題を調査する
@@ -34,11 +34,11 @@ An incident can include multiple alerts. It is an aggregation of all the relevan
 
 1. インシデントの一覧を確認します。
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> The Analytics rules are generating alerts and incidents on the same specific log entry. Remember that this was done in the <bpt id="p1">*</bpt>Query scheduling<ept id="p1">*</ept> configuration to generate more alerts and incidents to be utilized in the lab.
+    >**注:**  分析ルールは、同じ特定のログ エントリに対してアラートやインシデントを生成しています。 これは、ラボで使用するアラートやインシデントをさらに生成するために、 *[クエリのスケジュール設定]* 構成で行われていることに注意してください。
   
 1. *[MDE Startup RegKey]* インシデントのいずれかを選択します。
 
-1. Review the incident details on the right blade that opened. Scroll down and select the <bpt id="p1">**</bpt>View full details<ept id="p1">**</ept> button.
+1. 開いた右側のブレードでインシデントの詳細を確認します。 下にスクロールし、 **[すべての詳細を表示]** ボタンを選択します。
 
 1. インシデントの左側のブレードで、状態を **[アクティブ]** に変更し、 **[適用]** を選択します。
 
@@ -48,24 +48,24 @@ An incident can include multiple alerts. It is an aggregation of all the relevan
 
 1. コメント ボックスに、「*I will research this*」と入力して **[コメント]** ボタンを選択し、新しいコメントを送信します。
 
-1. あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。
+1. **[エンティティ]** タブを選択し、前の演習で KQL クエリ内でマップした *アカウント* と *ホスト* エンティティを確認します。 **ヒント:** エンティティが表示されない場合は、ページを更新します。
 
-1. あなたはスケジュール済みおよび Microsoft セキュリティ分析ルールを既に作成しています。
+1. 「**アラート** 」タブを選択します。 *[MDE Startup RegKey]* のアラートの場合は、バーを使用して右にスライドし、 **[プレイブックの表示]** リンクを確認します。 これにより、分析ルール内の [*自動応答*] タブからプレイブックをトリガーするのではなく、手動でアラートからプレイブックを実行できます。
 
-1. Fusion と異常分析ルールも環境で有効になっています。
+1. 左側のペインで下にスクロールし、 **[調査]** ボタンを選択します。 **ヒント:** アイコンが画面に対して小さすぎる場合は、 **[+]** を選択して拡大します。
 
-1. ここで、それらによって作成されたインシデントを調査します。
+1. **WIN1** エンティティ アイコンをポイントし、新しい "*探索クエリ*" が表示されるまで待ちます。 [*関連するアラート*] により多くのデータがあることが確認されます。 探索クエリ **[関連するアラート]** の名前を選択して調査グラフに表示するか、 **[イベント >]** を選択して KQL クエリで調査します。
 
-1.  When you select an entity, a window on the right opens for more detailed information. Review the <bpt id="p1">**</bpt>Info<ept id="p1">**</ept> page.
+1.  エンティティを選択すると、右側のウィンドウが開き、詳細情報が表示されます。 **[情報]** ページを確認します。
 
-1. インシデントには複数のアラートを含めることができます。
+1. **[タイムライン]** ボタンを選択します。 最初の 2 つのインシデントをポイントし、グラフのどの項目がどの時点で発生したかを確認します。
 
 1. **[エンティティ]** ボタンを選択し、*WIN1* に関連する *[エンティティ]* と *[アラート]* を確認します。
 
 1. ページの右上にある **[X]** を選択して、調査グラフを閉じます。
 
-1. これは、特定の調査に関連するすべての証拠を集計したものです。
+1. [インシデント] ページに戻り、左側のペインで **[Unassigned Owner]\(未割り当ての所有者\)** を選択し、 **[割り当て]** を選択して **[適用]** を選択します。 これで、アカウントがインシデントの所有者として表示されるようになります。
 
-1. 重大度や状態など、アラートに関連するプロパティはインシデント レベルで設定されます。
+1. 最後に、 **[アクティブな状態]** を選択し、 **[終了]** を選択します。 *[分類を選択する]* で、さまざまなオプションを確認します。 その後、 **[真陽性 - 疑わしいアクティビティ]** を選択し、 **[適用]** を選択します。
 
 ## <a name="proceed-to-exercise-9"></a>演習 9 に進む

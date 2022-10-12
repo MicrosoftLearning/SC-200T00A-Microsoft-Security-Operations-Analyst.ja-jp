@@ -12,7 +12,7 @@
 
 このタスクでは、ウォッチリストを作成します。
 
-1. In the search box at the bottom of the screen, enter <ph id="ph1">`Notepad`</ph>.  Select <bpt id="p1">**</bpt>Notepad<ept id="p1">**</ept> from the results.
+1. 画面下部の検索ボックスに「`Notepad`」と入力します。  結果から、**[Notepad]** を選択します。
 
 1. 「`Hostname`」と入力し、新しい行を入力します。
 
@@ -25,7 +25,7 @@
     Host5
     ```
 
-1. From the menu select, <bpt id="p1">**</bpt>File - Save As<ept id="p1">**</ept>, Name the file <ph id="ph1">`HighValue.csv`</ph>.  Then change the file type to <bpt id="p1">**</bpt>All files(<bpt id="p2">*</bpt>.<ept id="p2">*</ept>)<ept id="p1">**</ept>.  Then select <bpt id="p1">**</bpt>Save<ept id="p1">**</ept>.
+1. メニューから **[ファイル] - [名前を付けて保存]** を選択し、ファイルに「`HighValue.csv`」という名前を付けます。  その後、ファイル タイプを **[すべてのファイル( *.* )]** に変更します。  次に、 **[保存]** を選択します。
 
 1. メモ帳を閉じます。
 
@@ -47,7 +47,7 @@
 
 1. 画面がウォッチリストリストに戻ります。
 
-1. Select your new watchlist.  On the right tab, select <bpt id="p1">**</bpt>View in Log Analytics<ept id="p1">**</ept>.
+1. 新しいウォッチリストを選択します。  右側のタブで、**[ログ分析で表示]** を選択します。
 
 1. 次のKQLステートメントが自動的に実行され、結果が表示されます。
 
@@ -56,7 +56,7 @@ _GetWatchlist('HighValueHosts')
 ```
 **注**完了するまで少し時間がかかります。
 
-You can now use the _GetWatchlist('HighValueHosts') in your own KQL statements to access the list. The column to reference would be <bpt id="p1">*</bpt>Hostname<ept id="p1">*</ept>.
+独自のKQLステートメントで_GetWatchlist（ 'HighValueHosts'）を使用して、リストにアクセスできるようになりました。 参照する列は*Hostname*になります。
 
 ## <a name="create-a-threat-indicator"></a>脅威インジケーターを作成する。
 
@@ -66,11 +66,11 @@ You can now use the _GetWatchlist('HighValueHosts') in your own KQL statements t
 
 1. コマンド バーから **[新規追加]** を選択します。
 
-1. Review the different indicator types available in the Types dropdown.  Then select <bpt id="p1">**</bpt>domain-name<ept id="p1">**</ept>. Enter your initials in the Domain box. An example would be fmg.com.
+1. タイプドロップダウンで使用可能なさまざまなインジケータータイプを確認します。  そして、**[domain-name]** を選択します。 ドメインボックスにイニシャルを入力します。 たとえば、fmg.com.などです。
 
 1. 脅威の種類については、 **[+ 追加]** を選択し、**悪意のあるアクティビティ**をコピーしてフィールドに貼り付けます。
 
-1. For the name, enter the same value used for the Domain. An example would be fmg.com.
+1. 名前には、ドメインに使用されているのと同じものを入力します。 たとえば、fmg.com.などです。
 
 1. **[有効開始日]** フィールドを今日の日付に設定します。
 
@@ -78,14 +78,14 @@ You can now use the _GetWatchlist('HighValueHosts') in your own KQL statements t
 
 **注**インジケーターが表示されるまで少し時間がかかる場合があります。
 
-1. Select <bpt id="p1">**</bpt>Logs<ept id="p1">**</ept> option in the General area.  You may have to disable the "Always show queries" option to get to the query window.
+1. 一般領域で **[ログ]** オプションを選択します。  クエリウィンドウを表示するには、[常にクエリを表示する]オプションを無効にする必要がある場合があります。
 
 1. 以下の KQL ステートメントを実行します。
 
 ```KQL
 ThreatIntelligenceIndicator 
 ```
-Scroll the results to the right to see the DomainName column. You can also run the following KQL statement to just see the DomainName column.  
+結果を右にスクロールして、DomainName 列を表示します。 次の KQL ステートメントを実行して、DomainName 列だけを表示することもできます。  
 
 ```KQL
 ThreatIntelligenceIndicator 
