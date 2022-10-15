@@ -10,7 +10,7 @@ lab - Do not use. Temporarily not operational!:
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex4.png)
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to connect log data from the many data sources in your organization. Finally, you connect a threat intelligence feed to enhance your ability to detect and prioritize known threats.
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 最後に、既知の脅威を検出して優先順位を付ける機能を強化するために、脅威インテリジェンス フィードを接続します。
 
 ### <a name="task-1-connect-threat-intelligence"></a>タスク 1:脅威インテリジェンスの接続
 
@@ -42,7 +42,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. パスワードに「**guest**」と入力します。
 
-1. Now select the <bpt id="p1">**</bpt>Add<ept id="p1">**</ept> button.  Phishing URLs will be pulled and populate the ThreatIntelligenceIndicator table.
+1. ここで **[追加]** ボタンを選択します。  フィッシング URL はプルされ、ThreatIntelligenceIndicator テーブルに入力されます。
 
 >**注:**  別のコレクションを追加する場合は、Edge ブラウザーで <https://limo.anomali.com/api/v1/taxii2/feeds/collections/> を開き、ゲスト ユーザー名とパスワードを使用して、使用可能な別の ID を確認します。
 

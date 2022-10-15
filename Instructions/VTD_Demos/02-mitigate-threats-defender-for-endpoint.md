@@ -14,12 +14,12 @@
 
 1. **[チュートリアル]** タブを選択します。
 
-1. Under <bpt id="p1">*</bpt>Automated investigation (backdoor)<ept id="p1">*</ept> you will see a message describing the scenario. Below this paragraph, click <bpt id="p1">**</bpt>Read the walkthrough<ept id="p1">**</ept>. A new browser tab opens which includes instructions to perform the simulation.
+1. *[Automated investigation (backdoor)]\(自動調査 (バックドア)\)* に、シナリオを説明するメッセージが表示されます。 この段落の下にある **[Read the walkthrough]\(チュートリアルの読み取り\)** をクリックします。 シミュレーションを実行する手順を含む新しいブラウザー タブが開きます。
 
-1. In the new browser tab, locate the section named <bpt id="p1">**</bpt>Run the simulation<ept id="p1">**</ept> (page 5, starting at step 2) and follow the steps to run the attack. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> The simulation file <bpt id="p2">*</bpt>RS4_WinATP-Intro-Invoice.docm<ept id="p2">*</ept> can be found back in portal, just below the <bpt id="p3">**</bpt>Read the walkthrough<ept id="p3">**</ept> you selected in the previous step by selecting the <bpt id="p4">**</bpt>Get simulation file<ept id="p4">**</ept> button.
+1. 新しいブラウザー タブで、 **[シミュレーションの実行]** という名前のセクション (5 ページの手順 2 から) を見つけ、次の手順に従って攻撃を実行します。 **ヒント:** シミュレーション ファイル *RS4_WinATP-Intro-Invoice.docm* は、ポータルに戻り、 **[Get simulation file]\(シミュレーション ファイルの取得\)** ボタンを選択して、前の手順で選択した **[Read the walkthrough]\(チュートリアルを読み取る\)** の下に表示されます。
 
-    1. <bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> After executing the file with the  exploit, you can return to the <bpt id="p2">[</bpt>Microsoft 365 Defender Security Center<ept id="p2">](https://security.microsoft.com)</ept> and click on the <bpt id="p3">**</bpt>Incidents<ept id="p3">**</ept> tab to see the alerts. The guide incorrectly references the <bpt id="p1">*</bpt>Microsoft Defender ATP portal<ept id="p1">*</ept> which has been migrated and rebranded.
-    1. Open the incident page and click <bpt id="p1">**</bpt>Manage Incident<ept id="p1">**</ept>. Click <bpt id="p1">**</bpt>Resolve incident<ept id="p1">**</ept> to resolve all of the active alerts.
+    1. **注:** エクスプロイトを使用してファイルを実行した後、[Microsoft 365 Defender セキュリティ センター](https://security.microsoft.com)に戻り、**[インシデント]** タブをクリックしてアラートを表示できます。 このガイドでは、移行およびブランド変更された *Microsoft Defender ATP ポータル*を誤って参照しています。
+    1. [インシデント] ページを開き、**[インシデントの管理]** をクリックします。 **[インシデントの解決]** をクリックして、アクティブなアラートをすべて解決します。
 
 
 ## <a name="you-have-completed-the-demo"></a>デモが完了しました。

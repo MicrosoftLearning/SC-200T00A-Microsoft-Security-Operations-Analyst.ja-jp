@@ -9,7 +9,7 @@ lab:
 ## <a name="lab-scenario"></a>ラボのシナリオ
 
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You are going to work with Log Analytics KQL queries and from there, you will create custom analytics rules to help discover threats and anomalous behaviors in your environment.
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Log Analytics KQL クエリを使用し、そこから、環境内の脅威や異常な動作を検出するのに役立つカスタム分析ルールを作成します。
 
 分析ルールでは、環境全体にわたる特定のイベントまたは一連のイベントを検索したり、特定のイベントしきい値または条件に達したときはユーザーに警告したり、SOC でトリアージと調査を行うためのインシデントを生成したり、自動化された追跡および修復プロセスを使用して脅威に対応したりします。
 
@@ -26,15 +26,15 @@ You are a Security Operations Analyst working at a company that implemented Micr
     search "temp\\startup.bat"
     ```
 
-1. This detection will focus on data from Defender for Endpoint. <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> the following KQL Statement:
+1. この検出は、Defender forEndpointからのデータに焦点を当てます。 以下の KQL ステートメントを**実行**します。
 
     ```KQL
     search in (Device*) "temp\\startup.bat"
     ```
 
-1. The table <bpt id="p1">*</bpt>DeviceRegistryEvents<ept id="p1">*</ept> looks to have the data already normalized and easy for us to query. Expand the row to see all the columns related to the record.
+1. テーブル *DeviceRegistryEvents* は、データが既に正規化されており、簡単にクエリを実行できるように見えます。 行を展開して、レコードに関連するすべての列を表示します。
 
-    ><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> If you do not see the <bpt id="p2">*</bpt>DeviceRegistryEvents<ept id="p2">*</ept> table in the results, an alternative for the following queries is to use the <bpt id="p3">*</bpt>DeviceProcessEvents<ept id="p3">*</ept> table as replacement. Being that said, use one of the two provided examples below.
+    >**重要:** 結果に *DeviceRegistryEvents* テーブルが表示されない場合は、次のクエリの代替手段として、*DeviceProcessEvents* テーブルを代わりに使用します。 したがって、以下に示す 2 つの例のいずれかを使用します。
 
 1. 結果から、脅威アクターが reg.exe を使用してレジストリ キーにキーを追加し、プログラムが C:\temp にあることがわかりました。次のステートメントを**実行**し、クエリの *search* 演算子を *where* 演算子に置き換えます。
 
@@ -52,7 +52,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
     | where ProcessCommandLine contains "c:\\temp"
     ```
 
-1. あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。
+1. アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティオペレーションセンターアナリストを支援することが重要です。 これには、調査グラフで使用するエンティティの投影が含まれます。 次のクエリを**実行**します。
 
     ```KQL
     DeviceRegistryEvents
@@ -73,11 +73,11 @@ You are a Security Operations Analyst working at a company that implemented Micr
     | extend timestamp = TimeGenerated, HostCustomEntity = DeviceName, AccountCustomEntity = InitiatingProcessAccountName
     ```
 
-1. Log Analytics KQL クエリを使用し、そこから、環境内の脅威や異常な動作を検出するのに役立つカスタム分析ルールを作成します。
+1. 適切な検出ルールができたので、[ログ] ウィンドウで、コマンド バーの **[+ 新しいアラート ルール]** を選んでから、 **[Microsoft Sentinel アラートの作成]** を選びます。 これにより、新しいスケジュールされたルールが作成されます。
 
-1. This starts the "Analytics rule wizard". For the <bpt id="p1">*</bpt>General<ept id="p1">*</ept> tab type:
+1. これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
 
-    |設定|[値]|
+    |設定|値|
     |---|---|
     |名前|**MDE Startup RegKey**|
     |説明|**c:\temp の MDE Startup Regkey**|
@@ -95,9 +95,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
     |クエリの実行間隔|5 分|
     |過去のデータを見る|1 日|
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> We are purposely generating many incidents for the same data. This enables the Lab to use these alerts.
+    >**注:**  同じデータに対して意図的に多くのインシデントを生成しています。 これにより、ラボはこれらのアラートを使用できるようになります。
 
-1. Leave the rest of the options with the defaults. Select <bpt id="p1">**</bpt>Next: Incident settings&gt;<ept id="p1">**</ept> button.
+1. 残りのオプションは既定値のままにします。 **[次へ: インシデント設定>]** ボタンを選択します。
 
 1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
 
@@ -118,14 +118,14 @@ You are a Security Operations Analyst working at a company that implemented Micr
     search "administrators" | summarize count() by $table
     ```
 
-1. The result might show events from different tables, but in our case, we want to investigate the SecurityEvent table. The EventID and Event that we are looking is "4732 - A member was added to a security-enabled local group". With this, we will identify adding a member to a privileged group. <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> the following KQL query to confirm:
+1. 結果には異なるテーブルからのイベントが表示される場合がありますが、ここでは、SecurityEvent テーブルを調査する必要があります。 目的の EventID および Event は "4732 - セキュリティが有効なローカル グループにメンバーが追加されました" です。 これを使用して、特権グループへのメンバーの追加を特定します。 次の KQL クエリを**実行**して確認します。
 
     ```KQL
     SecurityEvent | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     ```
 
-1. Expand the row to see all the columns related to the record. The username of the account added as Administrator does not show. The issue is that instead of storing the username, we have the Security IDentifier (SID). <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> the following KQL to match the SID to the username that was added to the Administrators group:
+1. 行を展開して、レコードに関連するすべての列を表示します。 Administrator として追加されたアカウントのユーザー名は表示されません。 問題は、ユーザー名ではなく、セキュリティ識別子 (SID) が格納されることです。 次の KQL を**実行**して、SID と、Administrators グループに追加されたユーザー名を照合します。
 
     ```KQL
     SecurityEvent | where EventID == 4732
@@ -141,7 +141,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
     >**注:**  ラボで使用されるデータセットが小さいため、このKQLは期待される結果を返さない場合があります。
 
-1. Extend the row to show the resulting columns, in the last one, we see the name of the added user under the <bpt id="p1">*</bpt>UserName1<ept id="p1">*</ept> column we <bpt id="p2">*</bpt>project<ept id="p2">*</ept> within the KQL query. It is important to help the Security Operations Analyst by providing as much context about the alert as you can. This includes projecting Entities for use in the investigation graph. <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> the following query:
+1. 行を拡張して、結果の列を表示します。最後のものには、KQL クエリ内で ''*投影*'' する *UserName1* 列の下に追加されたユーザーの名前が示されます。 アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティ運用アナリストを支援することが重要です。 これには、調査グラフで使用するエンティティの投影が含まれます。 次のクエリを**実行**します。
 
     ```KQL
     SecurityEvent | where EventID == 4732
@@ -156,9 +156,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. 適切な検出ルールができたので、[ログ] ウィンドウで、コマンド バーの **[+ 新しいアラート ルール]** を選んでから、 **[Microsoft Sentinel アラートの作成]** を選びます。
 
-1. この検出は、Defender forEndpointからのデータに焦点を当てます。
+1. これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
 
-    |設定|[値]|
+    |設定|値|
     |---|---|
     |名前|**SecurityEvent Local Administrators User Add**|
     |説明|**ローカル管理者グループに追加されたユーザー**|
@@ -176,9 +176,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
     |クエリの実行間隔|5 分|
     |過去のデータを見る|1 日|
 
-    >以下の KQL ステートメントを**実行**します。
+    >**注:**  同じデータに対して意図的に多くのインシデントを生成しています。 これにより、ラボはこれらのアラートを使用できるようになります。
 
-1. Leave the rest of the options with the defaults. Select <bpt id="p1">**</bpt>Next: Incident settings&gt;<ept id="p1">**</ept> button.
+1. 残りのオプションは既定値のままにします。 **[次へ: インシデント設定>]** ボタンを選択します。
 
 1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
 

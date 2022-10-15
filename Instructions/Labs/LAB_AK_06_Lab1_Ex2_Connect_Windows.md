@@ -10,7 +10,7 @@ lab:
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex2.png)
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to connect log data from the many data sources in your organization. The next source of data are Windows virtual machines inside and outside of Azure, like On-Premises environments or other Public Clouds.
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 データの次のソースは、オンプレミス環境や他のパブリック クラウドなど、Azure の内部および外部にある Windows 仮想マシンです。
 
 
 ### <a name="task-1-create-a-windows-virtual-machine-in-azure"></a>タスク 1:Azure で Windows 仮想マシンを作成する
@@ -25,11 +25,11 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナント パスワード**をコピーして貼り付け、**[サインイン]** を選択します。
 
-1. Select <bpt id="p1">**</bpt>+ Create a Resource<ept id="p1">**</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you were already in the Azure Portal, you might need to select <bpt id="p2">*</bpt>Microsoft Azure<ept id="p2">*</ept> from the top bar to go Home.
+1. **[+ リソースの作成]** を選択します。 **ヒント:** 既に Azure Portal にいた場合は、上部のバーから *[Microsoft Azure]* を選択してホームに移動する必要があることがあります。
 
 1. **[サービスとマーケットプレースの検索]** ボックスに「*Windows 10*」と入力し、ドロップダウン リストから **[Microsoft Window 10]** を選択します。
 
-1. Open the <bpt id="p1">*</bpt>Plan<ept id="p1">*</ept> drop-down list and select <bpt id="p2">**</bpt>Windows 10 Enterprise, version 21H2<ept id="p2">**</ept>. Select <bpt id="p1">**</bpt>Start with a pre-set configuration<ept id="p1">**</ept> to continue.
+1. *[プラン]* ドロップダウン リストを開き、**[Windows 10 Enterprise バージョン 21H2]** を選択します。 **[事前設定された構成で開始する]** を選択して続行します。
 
 1. **[開発/テスト]** を選択してから、**[VM の作成を続行する]** を選びます。
 
@@ -41,24 +41,24 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. *[リージョン]* の既定値は **[(米国) 米国東部]** のままにします。
 
-1. Scroll down and review the <bpt id="p1">*</bpt>Size<ept id="p1">*</ept> for the virtual machine. If it appears empty, select <bpt id="p1">**</bpt>See all sizes<ept id="p1">**</ept>, choose one of the VM sizes under <bpt id="p2">*</bpt>Most used by Azure users<ept id="p2">*</ept> and click <bpt id="p3">**</bpt>Select<ept id="p3">**</ept>.
+1. 下にスクロールして、仮想マシンの *[サイズ]* を確認します。 空の場合は、**[すべてのサイズを表示]** を選択し、*[Azure ユーザーが最もよく使用]* で VM のサイズを 1 つを選択し、**[選択]** をクリックします。
 
-1. Enter a <bpt id="p1">*</bpt>Username<ept id="p1">*</ept> of your choosing. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> Avoid reserved words like admin or root.
+1. 任意の ''*ユーザー名*'' を入力します。 **ヒント:** admin や root のような予約語は避けてください。
 
-1. あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。
+1. 任意の ''*パスワード*'' を入力します。 **ヒント:** テナント パスワードを再利用する方が簡単な場合があります。 これはリソース タブにあります。
 
 1. ページの下部まで下にスクロールし、*[ライセンス]* の下にあるチェックボックスをオンにして、対象ライセンスがあることを確認します。
 
 1. **[確認と作成]** を選択し、検証に合格するまで待ちます。
 
-1. 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。
+1. **［作成］** を選択します リソースが作成されるのを待ちますこれには数分かかることがあります。
 
 
 ### <a name="task-2-connect-an-azure-windows-virtual-machine"></a>タスク 2:Azure Windows 仮想マシンを接続する
 
 このタスクでは、Azure Windows 仮想マシンを Microsoft Sentinel に接続します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
@@ -80,7 +80,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 このタスクでは、Azure Arc をインストールし、非 Azure Windows 仮想マシンを Microsoft Sentinel に接続します。  
 
->データの次のソースは、オンプレミス環境や他のパブリック クラウドなど、Azure の内部および外部にある Windows 仮想マシンです。
+>**重要:** 次の手順は、以前に作業していたものとは異なるマシンで行います。 仮想マシン名の参照を探します。
 
 >**重要:** *AMA を使用した Windows セキュリティ イベント* データ コネクタには非 Azure デバイス用の Azure Arc が必要です。 
 
@@ -105,11 +105,11 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. **[次へ]** を選択して [リソースの詳細] タブに移動します。
 
-1. Select the Resource group you created earlier. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> <bpt id="p2">*</bpt>RG-Defender<ept id="p2">*</ept>
+1. 先ほど作成したリソース グループを選択します。 **ヒント:** *RG-Defender*
 
     >**注:**  リソース グループをまだ作成していない場合は、別のタブを開き、リソース グループを作成して最初からやり直します。
 
-1. Review the <bpt id="p1">*</bpt>Server details<ept id="p1">*</ept> and <bpt id="p2">*</bpt>Connectivity method<ept id="p2">*</ept> options. Keep the default values and select <bpt id="p1">**</bpt>Next<ept id="p1">**</ept> to get to the Tags tab.
+1. *[サーバーの詳細]* と *[接続方法]* のオプションを確認します。 既定値のままにして **[次へ]** を選択し、[タグ] タブに移動します。
 
 1. **[次へ]** を選択して、[スクリプトのダウンロードと実行] タブに移動します。
 
@@ -117,11 +117,11 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
     >**注:**  処理のために少なくとも 3 分待ちます。
 
-1. Scroll down and select the <bpt id="p1">**</bpt>Download<ept id="p1">**</ept> button. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> if your browser blocks the download, take action in the browser to allow it. In Edge Browser, select the ellipsis button (...) if needed and then select <bpt id="p1">**</bpt>Keep<ept id="p1">**</ept>. 
+1. 下にスクロールし、 **[ダウンロード]** ボタンを選択します。 **ヒント:** ブラウザーでダウンロードがブロックされた場合は、ブラウザーでダウンロードを許可するように対処してください。 Edge ブラウザーで、必要に応じて省略記号ボタン ([...]) を選択し、**[保存]** を選択します。 
 
 1. Windows の [スタート] ボタンを右クリックし、**[Windows PowerShell (管理者)]** を選択します。
 
-1. In case you get a UAC prompt, enter <bpt id="p1">*</bpt>Administrator<ept id="p1">*</ept> for "Username" and <bpt id="p2">*</bpt>Passw0rd!<ept id="p2">*</ept> for "Password", else skip to next step.
+1. UAC プロンプトが表示された場合は、"Username" に「*Administrator*」と入力し、「*Passw0rd!* 」と "パスワード" に入力するか、次の手順に進みます。
 
 1. 「cd C:\Users\Admin\Downloads」と入力します。
 
@@ -131,7 +131,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. 「*.\OnboardingScript.ps1*」と入力し、Enter キーを押します。  
 
-    ><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> If you get the error <bpt id="p2">*</bpt>"The term .\OnboardingScript.ps1 is not recognized..."<ept id="p2">*</ept>, make sure you are doing the steps for Task 4 in the WINServer virtual machine. Other issue might be that the name of the file changed due to multiple downloads, search for <bpt id="p1">*</bpt>".\OnboardingScript (1).ps1"<ept id="p1">*</ept> or other file numbers in the running directory.
+    >**重要:** *用語 .\OnboardingScript.ps1 が認識されません...* というエラーが表示された場合は、タスク 4 を WINServer 仮想マシンで行っていることを確認してください。 他の問題として、複数回ダウンロードしたためにファイルの名前が変更された可能性があります。実行中のディレクトリで *".\OnboardingScript (1).ps1"* またはその他のファイル番号を検索してください。
 
 1. **R** を入力して 1 回実行し、Enter キーを押します (これには数分かかる場合があります)。
 
@@ -139,11 +139,11 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. [Windows PowerShell] ウィンドウに戻り、スクリプトの最後の行で "... コードの入力" の後に表示されている、エージェントを認証するためのコードをコピーします。**
 
-1. Go back to the Edge browser and paste it in the <bpt id="p1">**</bpt>Code<ept id="p1">**</ept> box and select <bpt id="p2">**</bpt>Next<ept id="p2">**</ept>. Select your tenant admin account and select <bpt id="p1">**</bpt>Continue<ept id="p1">**</ept> in the <bpt id="p2">*</bpt>Are you trying to sign in to Azure Connected Machine Agent?<ept id="p2">*</ept> window. 
+1. Edge ブラウザーに戻り、**[コード]** ボックスに貼り付けて、**[次へ]** を選択します。 ご自分のテナント管理者アカウントを選択し、*[Azure Connected Machine Agent にサインインしますか?]* ウィンドウで **[続行]** を選択します。 
 
-1. Go back to the Windows PowerShell window and wait for the message <bpt id="p1">*</bpt>"Successfully Onboarded Resource to Azure"<ept id="p1">*</ept>. <bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> If you see a message line with a new authentication code, you need to repeat the last 3 steps again.
+1. Windows PowerShell ウィンドウに戻り、"リソースが Azure に正常にオンボードされました" というメッセージが表示されるまで待ちます。** **注:**  新しい認証コードを含むメッセージ行が表示された場合は、最後の 3 つの手順を繰り返す必要があります。
 
-1. **[+ リソースの作成]** を選択します。
+1. スクリプトをダウンロードした Azure portal ページに戻り、 **[閉じる]** を選択します。 **[Azure Arc を使用してサーバーを追加]** を閉じて、Azure Arc の **[サーバー]** ページに戻ります。
 
 1. **WIN2** の名前が表示されるまで、 **[更新]** を選択します。
 
@@ -174,9 +174,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 このタスクでは、デバイスを Microsoft Defender for Endpoint にオンボードします。
 
->**ヒント:** 既に Azure Portal にいた場合は、上部のバーから *[Microsoft Azure]* を選択してホームに移動する必要があることがあります。
+>**非常に重要:** このコースの「モジュール 2 - 演習 1」のラボを完了し、かつこれまでにも Virtual Machines を保存してきた場合は、このタスクを省略できます。 それ以外の場合は、**WIN1** マシンを Defender for Endpoint にもう一度オンボードする必要があります。
 
-><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> The next steps are done in a different machine than the one you were previously working. Look for the Virtual Machine name references.
+>**重要:** 次の手順は、以前に作業していたものとは異なるマシンで行います。 仮想マシン名の参照を探します。
 
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
@@ -192,10 +192,10 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. **管理者**としてWindowsコマンドプロンプトを実行し、表示されるユーザーアカウント制御プロンプトに同意します。
 
-1. Run the WindowsDefenderATPLocalOnboardingScript.cmd file that you just extracted as administrator. <bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> By default the file should be in the c:\users\admin\downloads directory. Answer Y to questions presented by the script. 
+1. 管理者として抽出したばかりの WindowsDefenderATPLocalOnboardingScript.cmd ファイルを実行します。 **注:**  既定では、ファイルは c:\users\admin\downloads ディレクトリにあるはずです。 スクリプトの質問に対して [Y] と回答します。 
 
-1. *[プラン]* ドロップダウン リストを開き、**[Windows 10 Enterprise バージョン 21H2]** を選択します。
+1. ポータルの [オンボーディング] ページで、検出テスト スクリプトをコピーして、オープン コマンド ウィンドウで実行します。 新しい **[管理者: コマンド プロンプト]** ウィンドウを開く必要があるかもしれません。その場合は、Windows 検索バーで「*CMD*」と入力し、**[管理者として実行]** を選択します。
 
-1. **[事前設定された構成で開始する]** を選択して続行します。
+1. エンドポイント 領域の Microsoft 365 Defender ポータルで、**デバイス インベントリ** を選択します。 お使いになっているデバイスがリストに表示されます。
 
 ## <a name="proceed-to-exercise-3"></a>演習 3 に進む

@@ -10,7 +10,7 @@ lab:
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex2.png)
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to detect and mitigate threats using Microsoft Sentinel. Now, you want to respond and reMediate actions that can be run from Microsoft Sentinel as a routine.
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Microsoft Sentinel を使って脅威を検出および軽減する方法を学習する必要があります。 ここで、Microsoft Sentinel からルーチンとして実行できるアクションに応答して修復する必要があります。
 
 プレイブックを使用すると、脅威への対応を自動化および調整したり、内部と外部両方の他のシステムと統合したり、分析ルールまたは自動化ルールによってそれぞれトリガーされた場合に、特定のアラートやインシデントに応答して自動的に実行されるように設定できます。 
 
@@ -62,7 +62,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. ページの左側にある *[コンテンツ管理]* 領域の下にある **[コミュニティ]** ページを選択します。
 
-1. On the right pane, select the <bpt id="p1">**</bpt>Onboard community content<ept id="p1">**</ept> link. This will open a new tab in the Edge Browser for Microsoft Sentinel GitHub content.
+1. 右側のペインで、 **[コミュニティのコンテンツをオンボードする]** リンクを選択します。 これにより、Microsoft Sentinel GitHub コンテンツ用の Edge ブラウザーの新しいタブが開きます。
 
 1. **Solutions** フォルダーを選択します。
 
@@ -72,7 +72,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. readme.md ボックスで、2 番目の *[クイック デプロイ]* オプションの **[Deploy with alert trigger]/(アラート トリガーを使用してデプロイする)** まで下にスクロールし、 **[Azure に配置する]** ボタンを選択します。  
 
-    ><bpt id="p1">**</bpt>VERY IMPORTANT<ept id="p1">**</ept>: Be aware that they are two different Microsoft Sentinel triggers to use, Incident and Alert. Make sure you are selecting the Alert (second) one.
+    >**非常に重要**: 使用する 2 つの異なる Microsoft Sentinel トリガーであるインシデントとアラートであることに注意してください。 アラート (2 つ目) を選択してください。
 
 1. [Azure サブスクリプション] が選択されていることを確認します。
 
@@ -80,7 +80,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. *[リージョン]* の既定値は **[(米国) 米国東部]** のままにします。
 
-1. Make sure the <bpt id="p1">*</bpt>Playbook Name<ept id="p1">*</ept> is "PostMessageTeams-OnAlert" and select <bpt id="p2">**</bpt>Review + create<ept id="p2">**</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If the name is different, go back to GitHub and select the <bpt id="p2">**</bpt>Deploy with alert trigger<ept id="p2">**</ept> playbook.
+1. *プレイブック名* が "PostMessageTeams-OnAlert" であることを確認し、 **[確認と作成]** を選択します。 **ヒント:** 名前が異なる場合は、GitHub に戻り、 **[アラート トリガーを使用してデプロイ]** プレイブックを選択します。
 
 1. ここで **[作成]** を選択します。 
 
@@ -97,7 +97,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. *[構成]* 領域から **[自動化]** を選択し、 **[アクティブなプレイブック]** タブを選択します。
 
-1. Select the <bpt id="p1">**</bpt>PostMessageTeams-OnAlert<ept id="p1">**</ept> playbook. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you do not see the playbook, refresh the Azure portal page by pressing Ctrl+F5.
+1. **PostMessageTeams-OnAlert** プレイブックを選択します。 **ヒント:** プレイブックが表示されない場合は、Ctrl + F5 キーを押して Azure portal ページを更新します。
 
 1. *PostMessageTeams-OnAlert* の Logic App ページで、コマンド メニューの **[編集]** を選択します。
 
@@ -105,21 +105,21 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. **[接続の変更]** リンクを選択します。
 
-1. あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。
+1. **[新規追加]** を選択し、 **[サインイン]** を選択します。 新しいウィンドウで、メッセージが表示されたら、Azure サブスクリプション管理者の資格情報を選択します。 ブロックの最後の行に "Connected to your-admin-username" (管理者ユーザー名に接続済み) と表示されます。
 
 1. 次に、*2 番目の* ブロック、 **[アラート - インシデントの取得]** を選択します。
 
 1. **[接続の変更]** リンクを選択します。
 
-1. Microsoft Sentinel を使って脅威を検出および軽減する方法を学習する必要があります。
+1. *[表示名]* で、Azure 管理者ユーザー名を持つ接続を選択します。 **ヒント:** admin@ZZZZZZ.onmicrosoft.com. ブロックの最後の行に "Connected to your-admin-username" (管理者ユーザー名に接続済み) と表示されます。
 
 1. 次に、*3 番目の* ブロック、 **[接続]** を選択します。
 
-1. ここで、Microsoft Sentinel からルーチンとして実行できるアクションに応答して修復する必要があります。
+1. **[新規追加]** を選択し、メッセージが表示されたら Azure 管理者の資格情報を選択します。 ブロックの最後の行に "Connected to your-admin-username" (管理者ユーザー名に接続済み) と表示されます。
 
-1. The block has now been renamed to <bpt id="p1">**</bpt>Post a message (V3)<ept id="p1">**</ept>, at the end of the <bpt id="p2">*</bpt>Team<ept id="p2">*</ept> field, select the <bpt id="p3">**</bpt>X<ept id="p3">**</ept> to clear the contents. The field will be changed to a drop-down with a listing of the available Teams from Microsoft Teams. Select <bpt id="p1">**</bpt>SOC<ept id="p1">**</ept>.
+1. ブロックの名前が **[メッセージを投稿する (V3)]** に変更されました。 *[Teams]* フィールドの最後にある **[X]** を選択して内容をクリアします。 フィールドは、Microsoft Teams から利用可能な Teams のリストを含むドロップダウンに変更されます。 **[SOC]** を選択します。
 
-1. Do the same for the <bpt id="p1">*</bpt>Channel<ept id="p1">*</ept> field, select the <bpt id="p2">**</bpt>X<ept id="p2">**</ept> at the end of the field to clear the contents. The field will be changed to a drop-down with a listing of the Channels of the SOC Teams. Select <bpt id="p1">**</bpt>New Alerts<ept id="p1">**</ept>.
+1. *[チャネル]* フィールドでも同じ操作を行い、フィールドの末尾にある **[X]** を選択して内容をクリアします。 フィールドがドロップダウンに変更され、SOC チームのチャネルの一覧が表示されます。 **[新しいアラート]** を選択します。
 
 1. コマンド バーの **[保存]** を選択します。
 

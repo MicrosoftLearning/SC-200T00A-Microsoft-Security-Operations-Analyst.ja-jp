@@ -25,7 +25,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t RE
 
 7. 一般セクションから**Log**を選択します。
 
-8. First, you need to see where the data is stored. Since you just performed the attacks.  Set the Log Time Range to <bpt id="p1">**</bpt>Last 24 hours<ept id="p1">**</ept>.
+8. まず、データが保存されている場所を確認する必要があります。 攻撃を行ったばかりなので  ログの時間範囲を**過去24時間**に設定します。
 
 9. 次のKQLステートメントを実行します
 
@@ -35,18 +35,18 @@ search "temp\\startup.bat"
 
 10. 結果は、3つの異なるテーブルについて示しています。DeviceProcessEvents DeviceRegistryEvents Event
 
-    The Device* tables are from Defender for Endpoint (Data Connector - Microsoft 365 Defender).  Event is from our Data Connector Security Events. 
+    Device* テーブルは、Defender for Endpoint (データ コネクター - Microsoft 365 Defender) からのものです。  イベントは、データコネクタのセキュリティイベントからのものです。 
 
-    Since we are receiving data from two different sources - Sysmon and Defender for Endpoint,  we will need to build two KQL statements that could be unioned later.  In our initial investigation, you will look at each separately.
+    SysmonとDefender for Endpointの2つの異なるソースからデータを受信しているため、後で結合できる2つのKQLステートメントを作成する必要があります。  最初の調査では、それぞれを個別に確認していきます。
 
-11. Our first data source is Sysmon from Windows hosts.  Run the following KQL Statement.
+11. 最初のデータソースは、WindowsホストからのSysmonです。  以下のKQLステートメントを実行します。
 
 ```KQL
 search in (Event) "temp\\startup.bat"
 ```
 結果は、イベントテーブルに対してのみ表示されるようになりました。  
 
-16. Create your own KQL statement to display all Registry Key Set Value rows.  Run the following KQL query:
+16. 独自の KQL ステートメントを作成し、すべてのレジストリ キー セット値の行を表示します。  次の KQL クエリを実行します。
 
 ```KQL
 
@@ -67,8 +67,8 @@ Event
 
 17.  ここから引き続き検出ルールを作成できますが、このKQLステートメントは、他の検出ルールのKQLステートメントで再利用できるように見えます。  
     
-    In the Log window, select <bpt id="p1">**</bpt>Save<ept id="p1">**</ept>, then <bpt id="p2">**</bpt>Save as function<ept id="p2">**</ept>.
-    In the Save flyout, enter the following:
+    [ログ] ウィンドウで、**[保存]**、**[関数として保存]** の順に選択します。
+    保存フライアウトで、次のように入力します。
 
     名前: Event_Reg_SetValue [名前を付けて保存]:Function [関数のエイリアス]:Event_Reg_SetValue [カテゴリ]:Sysmon
 
@@ -79,7 +79,7 @@ Event
 Event_Reg_SetValue
 
 ```
-Depending on the current data collection, you could receive many rows.  This is expected.  Our next task is to filter to our specific scenario.
+現在のデータ収集によっては、多くの行を受け取る可能性があります。  これは予期されることです。  次のタスクは、特定のシナリオにフィルターをかけることです
 
 19. 以下の　KQL　ステートメントを実行します:
 
@@ -89,7 +89,7 @@ Event_Reg_SetValue | search "startup.bat"
 
 ```
 
-22. It is important to help the Security Operations Analyst by providing as much context about the alert as you can. This includes projecting Entities for use in the investigation graph.  Run the following query:
+22. アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティ運用アナリストを支援することが重要です。 これには、調査グラフで使用するエンティティの投影が含まれます。  次のクエリを実行します。
 
 ```KQL
 Event_Reg_SetValue 

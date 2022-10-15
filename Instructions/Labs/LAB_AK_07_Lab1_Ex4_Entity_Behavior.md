@@ -8,7 +8,7 @@ lab:
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You already created Scheduled and Microsoft Security Analytics rules. 
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 あなたはスケジュール済みおよび Microsoft セキュリティ分析ルールを既に作成しています。 
 
 
 エンティティ行動分析を実行して異常を検出し、エンティティ分析ページが提供されるように、Microsoft Sentinel を構成する必要があります。
@@ -26,7 +26,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
@@ -34,7 +34,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 1. *[Entity behavior settings]\(エンティティの行動の設定\)* のポップアップで、 **[Set EUBA]\(EUBA の設定\)** を選択します。
 1. 次のページで、 **[Set UEBA]\(UEBA の設定\)** を選択します。
 1. *"エンティティの行動の構成ページ"* で、#1 の機能を **[オン]** に切り替えます。 
-1. For <bpt id="p1">*</bpt>2.<ept id="p1">*</ept>, select <bpt id="p2">**</bpt>Azure Active Directory<ept id="p2">**</ept>. Then select <bpt id="p1">**</bpt>Apply<ept id="p1">**</ept>.
+1. *2.* で、 **[Azure Active Directory]** を選択します。 次に、**[適用]** を選択します。
 1. *3.* で、 **[監査ログ]** 、 **[Azure アクティビティ]** 、 **[セキュリティ イベント]** 、 **[Signin Logs]\(サインイン ログ\)** を選択します。 
 1. 次に、**[適用]** を選択します。
 1. ラボの間、頻繁にこのページに戻り、取り込まれたログ データと作成されたアラートに基づいて設定されたエンティティを確認します。
@@ -47,9 +47,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
 1. **[分析]** ページを選択します。
 1. **[Anomalies]\(異常\)** タブを選択します。
 1. ルールの状態列が *[有効]* になっていることを確認します。
-1. Select any rule. Then select <bpt id="p1">**</bpt>Edit<ept id="p1">**</ept> on the rule blade.
-1. Review the <bpt id="p1">*</bpt>General<ept id="p1">*</ept> tab information. Then select <bpt id="p1">**</bpt>Next : Configuration<ept id="p1">**</ept>
-1. あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。
+1. 任意のルールを選択します。 次に、ルール ブレードで **[編集]** を選択します。
+1. *[全般]* タブの情報を確認します。 次に、**次へ:構成**
+1. *[構成]* タブの情報を確認します。 次に、右上隅にある **[X]** を選択して、分析ルール ウィザードを終了します。
 
 
 ## <a name="proceed-to-exercise-5"></a>演習 5 に進みます
