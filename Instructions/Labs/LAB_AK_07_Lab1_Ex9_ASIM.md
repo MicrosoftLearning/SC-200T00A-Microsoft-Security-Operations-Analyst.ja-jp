@@ -32,7 +32,7 @@ lab:
 
 1. ダウンロードした **SC200_module7_ASIM_Parser_scripts.txt** を開き、*Task 1 Script* の KQL ステートメントをコピーして新しいクエリ タブに貼り付けます。
 
->**注** 以下のスクリプトは参考用としてのみ示されています。
+    >**注** 以下のスクリプトは参考用としてのみ示されています。
 
     ```KQL
     let RegistryType = datatable (TypeCode: string, TypeName: string) [
@@ -48,9 +48,9 @@ lab:
     DeviceRegistryEvents
     | extend
         // Event
-        EventOriginalUid = tostring(ReportId), 
+        EventOriginalUid = tostring(ReportId),
         EventCount = int(1), 
-        EventProduct = 'M365 Defender for Endpoint', 
+        EventProduct = 'M365 Defender for Endpoint',
         EventVendor = 'Microsoft', 
         EventSchemaVersion = '0.1.0', 
         EventStartTime = TimeGenerated, 
@@ -59,8 +59,8 @@ lab:
         // Registry
         RegistryKey = iff (ActionType in ("RegistryKeyDeleted", "RegistryValueDeleted"), PreviousRegistryKey, RegistryKey),
         RegistryValue = iff (ActionType == "RegistryValueDeleted", PreviousRegistryValueName, RegistryValueName),
-        // RegistryValueType -- original name is fine 
-        // RegistryValueData -- original name is fine 
+        // RegistryValueType -- original name is fine
+        // RegistryValueData -- original name is fine
         RegistryKeyModified = iff (ActionType == "RegistryKeyRenamed", PreviousRegistryKey, ""),
         RegistryValueModified = iff (ActionType == "RegistryValueSet", PreviousRegistryValueName, ""),
         // RegistryValueTypeModified -- Not provided by Defender
@@ -74,9 +74,9 @@ lab:
         PreviousRegistryValueData
     // Device
     | extend
-        DvcHostname = DeviceName, 
-        DvcId = DeviceId, 
-        Dvc = DeviceName 
+        DvcHostname = DeviceName,
+        DvcId = DeviceId,
+        Dvc = DeviceName
     // Users
     | extend
         ActorUsername = iff (InitiatingProcessAccountDomain == '', InitiatingProcessAccountName, strcat(InitiatingProcessAccountDomain, '\\', InitiatingProcessAccountName)), 
@@ -115,27 +115,32 @@ lab:
     };
     RegistryEvents_M365D
     ```
->**注:** 時間をかけて KQL を 1 行ずつ確認してください。  
+
+1. **注:** 時間をかけて KQL を 1 行ずつ確認してください。
+
 1. **[実行]** を選択して、KQL が有効であることを確認します。
+
 1. **[保存]** を選択してから、 **[関数として保存]** を選択します。
-1. 下にスクロールし、*[クエリのスケジュール設定]* で次のように設定します。
 
-    |設定|値|
+    |下にスクロールし、*[クエリのスケジュール設定]* で次のように設定します。|設定|
     |---|---|
-    |関数名|vimRegEvtM365D|
-    |レガシ カテゴリ|MyASIM|
+    |値|関数名|
+    |vimRegEvtM365D|レガシ カテゴリ|
+
+1. MyASIM
+
 1. 次に、 **[保存]** を選択します。
-1. 新しいクエリ タブで、「**vimRegEvtM365D**」と入力して **[実行]** を選択します。
 
 
-### <a name="task-2-develop-kql-function-for-securityevent-table"></a>タスク 2: SecurityEvent テーブル用の KQL 関数を開発する。 
+### <a name="task-2-develop-kql-function-for-securityevent-table"></a>新しいクエリ タブで、「**vimRegEvtM365D**」と入力して **[実行]** を選択します。 
 
-このタスクでは、SecurityEvent のワークスペース パーサーである関数を作成します。
+タスク 2: SecurityEvent テーブル用の KQL 関数を開発する。
+
+1. このタスクでは、SecurityEvent のワークスペース パーサーである関数を作成します。
 
 1. 新しいクエリ タブを作成します。
-1. ダウンロードした **SC200_module7_ASIM_Parser_scripts.txt** を開き、*Task 2 Script* の KQL ステートメントをコピーして新しいクエリ タブに貼り付けます。
 
->**注** 以下のスクリプトは参考用としてのみ示されています。
+    >ダウンロードした **SC200_module7_ASIM_Parser_scripts.txt** を開き、*Task 2 Script* の KQL ステートメントをコピーして新しいクエリ タブに貼り付けます。
 
     ```KQL
     let RegistryType = datatable (TypeCode: string, TypeName: string) [
@@ -223,25 +228,29 @@ lab:
     RegistryEvents
     ```
 
->**注:** 時間をかけて KQL を 1 行ずつ確認してください。  
+1. **注** 以下のスクリプトは参考用としてのみ示されています。
+
+1. **注:** 時間をかけて KQL を 1 行ずつ確認してください。
+
 1. **[実行]** を選択して、KQL が有効であることを確認します。
-1. **[保存]** を選択してから、 **[関数として保存]** を選択します。
-1. 下にスクロールし、*[クエリのスケジュール設定]* で次のように設定します。
 
-    |設定|値|
+    |**[保存]** を選択してから、 **[関数として保存]** を選択します。|下にスクロールし、*[クエリのスケジュール設定]* で次のように設定します。|
     |---|---|
+    |設定|値|
     |関数名|vimRegEvtSecurityEvent|
-    |レガシ カテゴリ|MyASIM|
-1. 次に、 **[保存]** を選択します。
-1. 新しいクエリ タブで、「**vimRegEvtSecurityEvent**」と入力して **[実行]** を選択します
+
+1. レガシ カテゴリ
+
+1. MyASIM
 
 
-### <a name="task-3-create-a-unifying-workspace-parser"></a>タスク 3: 統一ワークスペース パーサーを作成する。 
+### <a name="task-3-create-a-unifying-workspace-parser"></a>次に、 **[保存]** を選択します。 
 
-このタスクでは、前の 2 つの関数を組み合わせた統一パーサー関数を作成します。  
+新しいクエリ タブで、「**vimRegEvtSecurityEvent**」と入力して **[実行]** を選択します  
 
-1. 新しいクエリ タブを作成します。
-1. 新しいクエリ タブに、次の KQL ステートメントを入力します。
+1. タスク 3: 統一ワークスペース パーサーを作成する。
+
+1. このタスクでは、前の 2 つの関数を組み合わせた統一パーサー関数を作成します。
 
     ```KQL
     union isfuzzy=true
@@ -249,18 +258,27 @@ lab:
     vimRegEvtSecurityEvent
     ```
 
+1. 新しいクエリ タブを作成します。
+
+1. 新しいクエリ タブに、次の KQL ステートメントを入力します。
+
 1. **[実行]** を選択して、KQL が有効であることを確認します。
-1. **[保存]** を選択してから、 **[関数として保存]** を選択します。
-1. 下にスクロールし、*[クエリのスケジュール設定]* で次のように設定します。
 
-    |設定|値|
+    |**[保存]** を選択してから、 **[関数として保存]** を選択します。|下にスクロールし、*[クエリのスケジュール設定]* で次のように設定します。|
     |---|---|
+    |設定|値|
     |関数名|imRegEvt|
-    |レガシ カテゴリ|MyASIM|
+
+1. レガシ カテゴリ
+
+1. MyASIM
+
 1. 次に、 **[保存]** を選択します。
-1. 新しいクエリ タブで、「**imRegEvt**」と入力して **[実行]** を選択します
-1. クエリを **imRegEvt | where ActionType == 'RegistryValueSet'** に更新し、 **[実行]** を選択します
 
+    ```KQL
+    imRegEvt
+    | where ActionType == 'RegistryValueSet'
+    ```
 
-## <a name="proceed-to-exercise-10"></a>演習 10 に進む
+## <a name="proceed-to-exercise-10"></a>新しいクエリ タブで、「**imRegEvt**」と入力して **[実行]** を選択します
 

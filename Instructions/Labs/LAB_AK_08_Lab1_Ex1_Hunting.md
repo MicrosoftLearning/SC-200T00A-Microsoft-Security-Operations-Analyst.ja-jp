@@ -64,8 +64,8 @@ lab:
     | where ActionType == "DnsQueryResponse"
     | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),".")) 
     | where c2 startswith "sub"
-    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-    | where cnt > 15
+    | summarize cnt=count() by bin(TimeGenerated, 3m), c2, DeviceName
+    | where cnt > 5
     ```
 
     ![Screenshot](../Media/SC200_hunting2.png)
@@ -88,8 +88,8 @@ lab:
     | where ActionType == "DnsQueryResponse"
     | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
     | where c2 startswith "sub"
-    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-    | where cnt > 15
+    | summarize cnt=count() by bin(TimeGenerated, 3m), c2, DeviceName
+    | where cnt > 5
     ```
 
 1. 下にスクロールし、*[エンティティ マッピング (プレビュー)]* で次のように選択します。
@@ -134,30 +134,40 @@ lab:
 
 1. クエリを右クリックし、 **[ライブストリームに追加]** を選択します。 **ヒント:** これは、右にスライドし、行の末尾にある省略記号 **(...)** を選択してコンテキスト メニューを開くことで行うこともできます。
 
-1. *[状態]* が *[実行中]* になったことを確認します。 結果が見つかった場合は、Azure Portal に通知 (ベル アイコン) が示されます。
+1. *[状態]* が *[実行中]* になったことを確認します。 
+
+1. 結果が見つかった場合は、Azure Portal に通知 (ベル アイコン) が示されます。 タスク 2:NRT クエリ ルールを作成する 
+
+    >このタスクでは、LiveStream を使用する代わりに、NRT 分析クエリ ルールを作成します。 NRT ルールは 1 分ごとに実行され、1 分間ルックバックされます。
+
+    ```CommandPrompt
+    Start PowerShell.exe -file c2.ps1
+    ```
+
+1. NRT ルールの利点は、アラートとインシデント作成ロジックを使用できることです。
 
 
-### <a name="task-2-create-a-nrt-query-rule"></a>タスク 2:NRT クエリ ルールを作成する
+### <a name="task-2-create-a-nrt-query-rule"></a>Microsoft Sentinel で **[分析]** ページを選択します。
 
-このタスクでは、LiveStream を使用する代わりに、NRT 分析クエリ ルールを作成します。 NRT ルールは 1 分ごとに実行され、1 分間ルックバックされます。  NRT ルールの利点は、アラートとインシデント作成ロジックを使用できることです。
+**[作成]** タブを選択し、 **[NRT クエリ ルール]** を選択します これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
 
 
-1. Microsoft Sentinel で **[分析]** ページを選択します。 
+1. 設定 
 
-1. **[作成]** タブを選択し、 **[NRT クエリ ルール]** を選択します
-1. これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
+1. 値
 
-    |設定|値|
-    |---|---|
-    |名前|**NRT C2 ハント**|
+1. 名前 **NRT C2 ハント**
+
     |説明|**NRT C2 ハント**|
+    |---|---|
     |方針|**コマンドとコントロール**|
     |Severity|**高**|
+    |**[次へ: ルール ロジックを設定]** ボタンを選択します。|*[ルール クエリ]* に次の KQL ステートメントを入力します。|
+    |**注:**  同じデータに対して意図的に多くのインシデントを生成しています。|これにより、ラボはこれらのアラートを使用できるようになります。|
 
-1. **[次へ: ルール ロジックを設定]** ボタンを選択します。 
+1. 残りのオプションは既定値のままにします。 
 
-
-1. *[ルール クエリ]* に次の KQL ステートメントを入力します。
+1. **[次へ: インシデント設定>]** ボタンを選択します。
 
     ```KQL
     let lookback = 2d;
@@ -165,41 +175,46 @@ lab:
     | where ActionType == "DnsQueryResponse"
     | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
     | where c2 startswith "sub"
-    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-    | where cnt > 15
+    | summarize cnt=count() by bin(TimeGenerated, 3m), c2, DeviceName
+    | where cnt > 5
     ```
 
->**注:**  同じデータに対して意図的に多くのインシデントを生成しています。 これにより、ラボはこれらのアラートを使用できるようになります。
-
-1. 残りのオプションは既定値のままにします。 **[次へ: インシデント設定>]** ボタンを選択します。
-
-1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
-
-1. *[自動応答]* タブでは、 *[アラートの自動化]* で **[PostMessageTeams-OnAlert]** を選んでから、 **[次へ: Review]\(次へ: 確認\)** をクリックします。
+1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。 *[自動応答]* タブでは、 *[アラートの自動化]* で **[PostMessageTeams-OnAlert]** を選んでから、 **[次へ: Review]\(次へ: 確認\)** をクリックします。
 
 1. *[確認]* タブで、 **[作成]** ボタンを選択して新しいスケジュール化された分析ルールを作成します。
 
+1. タスク 3:検索の作成
+
+1. このタスクでは、検索ジョブを使用して C2 を検索します。
+
+1. Microsoft Sentinel で **[検索]** ページを選択します。
 
 
-### <a name="task-3-create-a-search"></a>タスク 3:検索の作成
+### <a name="task-3-create-a-search"></a>**[復元]** タブを選択します。
 
-このタスクでは、検索ジョブを使用して C2 を検索します。 
+**注:**  ラボには復元元となるアーカイブ済みのテーブルがありません。 
 
+1. 通常のプロセスでは、アーカイブ済みのテーブルを復元して検索ジョブに含めます。 
 
-1. Microsoft Sentinel で **[検索]** ページを選択します。 
-
-1. **[復元]** タブを選択します。
-
->**注:**  ラボには復元元となるアーカイブ済みのテーブルがありません。  通常のプロセスでは、アーカイブ済みのテーブルを復元して検索ジョブに含めます。
 1. **[キャンセル]** を選択します。
-1. **[検索]** タブを選択します。
-1. *Table* を選択し、**DeviceRegistryEvents** に変更します
-1. 検索ボックスに「**reg.exe**」と入力します。  
-1. **[保存した検索]** を選択します。 
-1. 検索ジョブにより、**DeviceRegistryEvents_####_SRCH** という名前の新しいテーブルが作成されます。 
-1. 検索ジョブが完了するまで待ちます。  状態に *[更新中]* と表示されます。 次に *[処理中]* になります。 次に *[検索が完了しました]* になります。 
-1. **[検索結果の表示]** を選択します。
-1. *[ログ]* で新しいタブを開きます。
-1. 新しいテーブル名 **DeviceRegistryEvents_####_SRCH** を入力して実行します。
+
+    >**[検索]** タブを選択します。 *Table* を選択し、**DeviceRegistryEvents** に変更します
+
+1. 検索ボックスに「**reg.exe**」と入力します。
+
+1. **[保存した検索]** を選択します。
+
+1. 検索ジョブにより、**DeviceRegistryEvents_####_SRCH** という名前の新しいテーブルが作成されます。
+
+1. 検索ジョブが完了するまで待ちます。
+
+1. 状態に *[更新中]* と表示されます。
+
+1. 次に *[処理中]* になります。
+
+1. 次に *[検索が完了しました]* になります。 **[検索結果の表示]** を選択します。
+
+1. *[ログ]* で新しいタブを開きます。 新しいテーブル名 **DeviceRegistryEvents_####_SRCH** を入力して実行します。
+
 
 ## <a name="proceed-to-exercise-2"></a>演習 2 に進みます。
