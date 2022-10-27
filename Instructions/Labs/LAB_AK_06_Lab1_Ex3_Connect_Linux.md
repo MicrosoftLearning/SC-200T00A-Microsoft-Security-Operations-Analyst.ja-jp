@@ -98,36 +98,36 @@ lab:
 
 1. *Linux 用のダウンロードおよびオンボード エージェント*領域のコマンドをクリップボードにコピーします。
 
-1. LIN2 仮想マシンを起動します。 ラボ ホスト側によって提供されるユーザー名とパスワードを使用してログインします。 **ヒント:** ログイン プロンプトを表示するには、Enter キーを押す必要があります。
+1. LIN2 仮想マシンを起動します。
 
-1. LIN2 サーバー IP アドレスを書き留めます。 例として次のスクリーンショットをご覧ください。
+1. ラボ ホスト側によって提供されるユーザー名とパスワードを使用してログインします。 **ヒント:** ログイン プロンプトを表示するには、Enter キーを押す必要があります。 LIN2 サーバー IP アドレスを書き留めます。
 
-    ![Linux ログイン](../Media/LinuxLoginExample.png)
+1. 例として次のスクリーンショットをご覧ください。 Linux ログイン
 
-1. **WIN1** 仮想マシンに戻ります。 前のタスクで使用した Windows PowerShell を選択します。
+    ![**WIN1** 仮想マシンに戻ります。](../Media/LinuxLoginExample.png)
 
-1. 次の PowerShell コマンドを入力し、特定の Linux サーバー情報に合わせて調整し、Enter キーを押します。
+1. 前のタスクで使用した Windows PowerShell を選択します。 次の PowerShell コマンドを入力し、特定の Linux サーバー情報に合わせて調整し、Enter キーを押します。
+
+1. *[はい]* を入力して接続を確認し、ユーザーのパスワードを入力して、Enter キーを押します。
 
     ```PowerShell
     ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
     ```
 
-1. *[はい]* を入力して接続を確認し、ユーザーのパスワードを入力して、Enter キーを押します。 画面は次のようになります。
+1. 画面は次のようになります。 Linux ログイン
 
-    ![Linux ログイン](../Media/PSconnectLinux.png)
+    ![これで、前の手順の *[Linux 用エージェントのダウンロードとオンボード]* のコマンドに貼り付ける準備ができました。](../Media/PSconnectLinux.png)
 
-1. これで、前の手順の *[Linux 用エージェントのダウンロードとオンボード]* のコマンドに貼り付ける準備ができました。 スクリプトがクリップボードにあることを確認してください。 PowerShell で、トップ バーを右クリックし、**[編集]**、**[貼り付け]** の順に選択します。
+1. スクリプトがクリップボードにあることを確認してください。 PowerShell で、トップ バーを右クリックし、**[編集]**、**[貼り付け]** の順に選択します。 スクリプトが貼り付けられたら、Enter キーを押します。
 
-1. スクリプトが貼り付けられたら、Enter キーを押します。 スクリプトは Linux サーバーに対してリモートで実行されます。 Wait
+1. スクリプトは Linux サーバーに対してリモートで実行されます。 Wait 終了したら、「**exit**」と入力して、LIN2 へのリモート シェル接続を閉じます。
 
-1. 終了したら、「**exit**」と入力して、LIN2 へのリモート シェル接続を閉じます。
+1. タスク 4:収集する設備とその重大度を Syslog コネクタ用に設定する
 
 
-### <a name="task-4-configure-the-facilities-you-want-to-collect-and-their-severities-for-the-syslog-connector"></a>タスク 4:収集する設備とその重大度を Syslog コネクタ用に設定する
+### <a name="task-4-configure-the-facilities-you-want-to-collect-and-their-severities-for-the-syslog-connector"></a>このタスクでは、Syslog収集機能を構成します。
 
-このタスクでは、Syslog収集機能を構成します。
-
-1. Microsoft Sentinel ポータルが開いている Edge ブラウザーに戻り、右上隅にある [x] を 2 回選択して [Log Analytics ワークスペース] ページと [Syslog] データ コネクタ ページを閉じます。
+Microsoft Sentinel ポータルが開いている Edge ブラウザーに戻り、右上隅にある [x] を 2 回選択して [Log Analytics ワークスペース] ページと [Syslog] データ コネクタ ページを閉じます。
 
 1. Microsoft Sentinel ポータルで、 *[構成]* の下の **[設定]** を選択し、 **[ワークスペースの設定]** タブをクリックします。
 
@@ -145,4 +145,6 @@ lab:
 
 1. **[適用]** を選択して変更を保存します。
 
-## <a name="proceed-to-exercise-4"></a>演習 4 に進む
+1. 演習 4 に進む
+
+## <a name="proceed-to-exercise-4"></a>Proceed to Exercise 4

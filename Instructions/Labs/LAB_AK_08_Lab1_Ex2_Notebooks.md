@@ -76,6 +76,8 @@ lab:
 
 1. コマンド バーの**消しゴム** アイコンを選んで、ノートブックのすべての結果をクリアし、*作業の開始* のチュートリアルに従います。
 
->**注:**  上記の手順を完了してノートブックにアクセスできない場合、代わりにその GitHub ページの手順に従うことができます。 ノートブックファイルをここでご覧ください:[GitHub の Microsoft Sentinel Notebooks](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb) 
+1. **注:**  上記の手順を完了してノートブックにアクセスできない場合、代わりにその GitHub ページの手順に従うことができます。 ノートブックファイルをここでご覧ください:[GitHub の Microsoft Sentinel Notebooks](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb)
 
-## <a name="you-have-completed-the-lab"></a>これでラボは完了です。
+>これでラボは完了です。 See the notebook file here: <bpt id="p1">[</bpt>Microsoft Sentinel Notebooks on GitHub<ept id="p1">](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb)</ept> 
+
+## <a name="you-have-completed-the-lab"></a>You have completed the lab.

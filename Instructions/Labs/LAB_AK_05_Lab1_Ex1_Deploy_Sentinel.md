@@ -127,15 +127,21 @@ lab:
     ThreatIntelligenceIndicator | project DomainName
     ```
 
+
 ### <a name="task-4-configure-log-retention"></a>タスク 4:ログ保持期間の構成
 
 このタスクでは、SecurityEvent テーブルの保持期間を変更します。
 
 1. Microsoft Sentinel で、 **[構成]** 領域の *[設定]* オプションを選択します。
+
 1. **[ワークスペースの設定]** を選択します。
+
 1. Log Analytics ワークスペースの、 *[設定]* 領域で **[テーブル (プレビュー)]** オプションを選択します。
+
 1. テーブル名 **[SecurityEvent]** 、 **[...]** の順に選択します。
+
 1. **[テーブルの管理]** を選択します。
+
 1. *[合計保有期間]* で **[180 日]** を選択します。 その後、 **[保存]** を選択します。
 
 
