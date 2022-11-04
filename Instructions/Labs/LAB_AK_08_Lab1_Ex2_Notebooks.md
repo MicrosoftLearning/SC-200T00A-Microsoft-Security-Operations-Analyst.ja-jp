@@ -74,10 +74,10 @@ lab:
 
 1. コンピューティングが作成されて実行されたら、使用するカーネルが *Python 3.8 - AzureML* であることを確認します。 **ヒント:** これは、コマンド バーの右側に表示されます。 *[Notebooks]* メニューの下の **[<<]** を選択して、画面のサイズを大きくすることもできます。
 
-1. コマンド バーの**消しゴム** アイコンを選んで、ノートブックのすべての結果をクリアし、*作業の開始* のチュートリアルに従います。
+1. **[認証]** ボタンを選択し、認証が完了するまで待ちます。
 
-1. **注:**  上記の手順を完了してノートブックにアクセスできない場合、代わりにその GitHub ページの手順に従うことができます。 ノートブックファイルをここでご覧ください:[GitHub の Microsoft Sentinel Notebooks](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb)
+1. コマンド バーの **[すべての出力のクリア]** を選んで、ノートブックのすべての結果をクリアし、"*作業の開始*" のチュートリアルに従います。 **ヒント:** これは、コマンド バーから省略記号 (...) を選択することで確認できます。
 
->これでラボは完了です。 See the notebook file here: <bpt id="p1">[</bpt>Microsoft Sentinel Notebooks on GitHub<ept id="p1">](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb)</ept> 
+>**注:**  上記の手順を完了してノートブックにアクセスできない場合、代わりにその GitHub ページの手順に従うことができます。 ノートブックファイルをここでご覧ください:[GitHub の Microsoft Sentinel Notebooks](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb) 
 
-## <a name="you-have-completed-the-lab"></a>You have completed the lab.
+## <a name="you-have-completed-the-lab"></a>これでラボは完了です。
