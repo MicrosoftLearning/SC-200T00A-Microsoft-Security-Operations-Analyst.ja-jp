@@ -66,7 +66,7 @@ lab:
 
 1. **Solutions** フォルダーを選択します。
 
-1. 次に、**Teams** フォルダーを選択し、**Playbooks** フォルダーを選択します。
+1. 次に、''**SentinelSOARessentials**'' フォルダー、''**Playbooks**'' フォルダーの順に選択します。
 
 1. "**Post-Message-Teams**" フォルダーを選択します。
 
