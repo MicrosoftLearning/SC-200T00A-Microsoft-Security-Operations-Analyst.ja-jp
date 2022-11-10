@@ -3,9 +3,6 @@
 このリポジトリには、以下のコースのラボ手順が含まれています。
 
 - SC-200T00:Microsoft セキュリティ オペレーション アナリスト
- 
-
-**[最新の学生ハンドブックと AllFiles コンテンツをダウンロードする](../../releases/latest)**
 
 **あなたは MCT ですか?** - [MCT 向けの GitHub ユーザー ガイド](https://microsoftlearning.github.io/MCT-User-Guide/)をご覧ください
 
