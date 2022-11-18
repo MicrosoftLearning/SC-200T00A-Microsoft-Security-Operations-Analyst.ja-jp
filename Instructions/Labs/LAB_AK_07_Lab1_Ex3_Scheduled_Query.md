@@ -54,9 +54,9 @@ ms.locfileid: "141493989"
     AuditLogs  
     | where isnotempty(InitiatedBy.user.userPrincipalName) and Result == 'success' and OperationName contains "member to role" and AADOperationType startswith "Assign"
     | extend InitiatedByUPN = tostring(InitiatedBy.user.userPrincipalName)
-    | extend InitiatedFromIP = iff(tostring(AdditionalDetails.[7].value) == '', tostring(AdditionalDetails.[6].value), tostring(AdditionalDetails.[7].value))
-    | extend TargetUser = tostring(TargetResources.[2].displayName)
-    | extend TargetRoleName = tostring(TargetResources.[0].displayName)
+    | extend InitiatedFromIP = tostring(InitiatedBy.user.ipAddress)
+    | extend TargetUser = tostring(TargetResources.[0].userPrincipalName)
+    | extend TargetRoleName = tostring(TargetResources.[0].modifiedProperties.[1].newValue)
     | project TimeGenerated, InitiatedByUPN, InitiatedFromIP, TargetUser, TargetRoleName, AADOperationType, OperationName
     ```
 
