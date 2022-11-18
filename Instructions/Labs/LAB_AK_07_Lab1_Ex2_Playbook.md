@@ -65,7 +65,7 @@ ms.locfileid: "141493932"
 
 1. 別のタブで、以下の URL にアクセスする。
 
-  https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Teams/Playbooks/Post-Message-Teams
+  https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/SentinelSOARessentials/Playbooks/Post-Message-Teams
   
 1. readme.md ボックスで、*[Quick Deployment]* オプションの 2 番目の **[Deploy with alert trigger]/(アラート トリガーを使用してデプロイする)** まで下にスクロールし、 **[Deploy to Azure]** ボタンを選択します。  
 
