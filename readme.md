@@ -1,12 +1,8 @@
 # <a name="sc-200-microsoft-security-operations-analyst"></a>SC-200: Microsoft Security Operations Analyst
 
-このリポジトリには、以下のコースのラボ手順が含まれています。
-
-- SC-200T00:Microsoft セキュリティ オペレーション アナリスト
-
-**あなたは MCT ですか?** - [MCT 向けの GitHub ユーザー ガイド](https://microsoftlearning.github.io/MCT-User-Guide/)をご覧ください
-
-**ラボの手順を手動で作成する必要がありますか?** - 手順は、[MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) リポジトリで確認できます
+- **[ラボへのリンク (HTML 形式)](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/)**
+- **あなたは MCT ですか?** - [MCT 向けの GitHub ユーザー ガイド](https://microsoftlearning.github.io/MCT-User-Guide/)をご覧ください
+- **ラボの手順を手動で作成する必要がありますか?** - 手順は、[MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) リポジトリで確認できます
 
 ## <a name="what-are-we-doing"></a>説明
 
