@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 1 - Microsoft Defender for Cloud の有効化
-  module: Module 3 - Mitigate threats using Microsoft Defender for Cloud
+  module: Learning Path 3 - Mitigate threats using Microsoft Defender for Cloud
 ---
 
-# <a name="module-3---lab-1---exercise-1---enable-microsoft-defender-for-cloud"></a>モジュール 3 - ラボ 1 - 演習 1 - Microsoft Defender for Cloud の有効化
+# <a name="learning-path-3---lab-1---exercise-1---enable-microsoft-defender-for-cloud"></a>ラーニング パス 3 - ラボ 1 - 演習 1 - Microsoft Defender for Cloud の有効化
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

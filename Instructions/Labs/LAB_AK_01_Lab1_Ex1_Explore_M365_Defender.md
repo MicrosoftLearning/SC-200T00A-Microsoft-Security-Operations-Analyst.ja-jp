@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 1 - Microsoft 365 Defender の確認
-  module: Module 1 - Mitigate threats using Microsoft 365 Defender
+  module: Learning Path 1 - Mitigate threats using Microsoft 365 Defender
 ---
 
-# <a name="module-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>モジュール 1 - ラボ 1 - 演習 1 - Microsoft 365 Defender の確認 
+# <a name="learning-path-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>ラーニング パス 1 - ラボ 1 - 演習 1 - Microsoft 365 Defender の確認
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

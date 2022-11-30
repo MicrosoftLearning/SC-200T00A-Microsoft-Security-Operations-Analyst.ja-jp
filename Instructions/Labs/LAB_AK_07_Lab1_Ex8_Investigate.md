@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 8 - インシデントを調査する
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-8---investigate-incidents"></a>モジュール 7 - ラボ 1 - 演習 8 - インシデントを調査する
+# <a name="learning-path-7---lab-1---exercise-8---investigate-incidents"></a>ラーニング パス 7 - ラボ 1 - 演習 8 - インシデントを調査する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 
@@ -64,7 +64,7 @@ lab:
 
 1. ページの右上にある **[X]** を選択して、調査グラフを閉じます。
 
-1. [インシデント] ページに戻り、左側のペインで **[Unassigned Owner]\(未割り当ての所有者\)** を選択し、 **[割り当て]** を選択して **[適用]** を選択します。 これで、アカウントがインシデントの所有者として表示されるようになります。
+1. [インシデント] ページに戻り、左側のペインで **[Unassigned Owner](未割り当ての所有者)** を選択し、 **[割り当て]** を選択して **[適用]** を選択します。 これで、アカウントがインシデントの所有者として表示されるようになります。
 
 1. 最後に、 **[アクティブな状態]** を選択し、 **[終了]** を選択します。 *[分類を選択する]* で、さまざまなオプションを確認します。 その後、 **[真陽性 - 疑わしいアクティビティ]** を選択し、 **[適用]** を選択します。
 

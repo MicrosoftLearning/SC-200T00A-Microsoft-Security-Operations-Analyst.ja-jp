@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 5 - 検出モデリングを理解する
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-5---understand-detection-modeling"></a>モジュール 7 - ラボ 1 - 演習 5 - 検出モデリングを理解する
+# <a name="learning-path-7---lab-1---exercise-5---understand-detection-modeling"></a>ラーニング パス 7 - ラボ 1 - 演習 5 - 検出モデリングを理解する
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex4.png)
 ### <a name="task-1-understand-the-attacks"></a>タスク 1:攻撃を理解する

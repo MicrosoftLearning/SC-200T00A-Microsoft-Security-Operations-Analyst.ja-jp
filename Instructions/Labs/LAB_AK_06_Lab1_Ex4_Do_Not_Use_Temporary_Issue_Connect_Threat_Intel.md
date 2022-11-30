@@ -1,10 +1,10 @@
 ---
 lab - Do not use. Temporarily not operational!:
   title: 演習 4 ‐ データ コネクタを使用して Microsoft Sentinel に脅威インテリジェンスを接続する
-  module: Module 6 - Connect logs to Microsoft Sentinel
+  module: Learning Path 6 - Connect logs to Microsoft Sentinel
 ---
 
-# <a name="module-6---lab-1---exercise-4---connect-threat-intelligence-to-microsoft-sentinel-using-data-connectors"></a>モジュール 6 - ラボ 1 - 演習 4 - データ コネクタを使用して脅威インテリジェンスを Microsoft Sentinel に接続する
+# <a name="learning-path-6---lab-1---exercise-4---connect-threat-intelligence-to-microsoft-sentinel-using-data-connectors"></a>ラーニング パス 6 - ラボ 1 - 演習 4 - データ コネクタを使用して脅威インテリジェンスを Microsoft Sentinel に接続する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

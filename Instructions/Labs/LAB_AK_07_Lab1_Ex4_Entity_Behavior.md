@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 4 - エンティティの行動分析を調べる
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-4---explore-entity-behavior-analytics"></a>モジュール 7 - ラボ 1 - 演習 4 - エンティティの行動分析を調べる
+# <a name="learning-path-7---lab-1---exercise-4---explore-entity-behavior-analytics"></a>ラーニング パス 7 - ラボ 1 - 演習 4 - エンティティの行動分析を調べる
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

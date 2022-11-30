@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 1 - Microsoft Sentinel 環境を構成する
-  module: Module 5 - Configure your Microsoft Sentinel environment
+  module: Learning Path 5 - Configure your Microsoft Sentinel environment
 ---
 
-# <a name="module-5---lab-1---exercise-1---configure-your-microsoft-sentinel-environment"></a>モジュール 5 - ラボ 1 - 演習 1 - Microsoft Sentinel 環境を構成する
+# <a name="learning-path-5---lab-1---exercise-1---configure-your-microsoft-sentinel-environment"></a>ラーニング パス 5 - ラボ 1 - 演習 1 - Microsoft Sentinel 環境を構成する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

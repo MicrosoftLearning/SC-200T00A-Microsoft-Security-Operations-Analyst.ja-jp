@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 10 - ブックを作成する
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-10---create-workbooks"></a>モジュール 7 - ラボ 1 - 演習 10 - ワークブックの作成
+# <a name="learning-path-7---lab-1---exercise-10---create-workbooks"></a>ラーニング パス 7 - ラボ 1 - 演習 10 - ワークブックの作成
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

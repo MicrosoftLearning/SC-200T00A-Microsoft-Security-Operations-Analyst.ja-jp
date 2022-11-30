@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 11 - Microsoft Sentinel でリポジトリを使用する
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-11---use-repositories-in-microsoft-sentinel"></a>モジュール 7 - ラボ 1 - 演習 11 - Microsoft Sentinel でリポジトリを使用する
+# <a name="learning-path-7---lab-1---exercise-11---use-repositories-in-microsoft-sentinel"></a>ラーニング パス 7 - ラボ 1 - 演習 11 - Microsoft Sentinel でリポジトリを使用する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 
@@ -21,7 +21,7 @@ lab:
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
