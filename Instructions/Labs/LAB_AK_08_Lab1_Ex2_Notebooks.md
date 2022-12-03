@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
-  module: Module 8 - Perform threat hunting in Microsoft Sentinel
+  module: Learning Path 8 - Perform threat hunting in Microsoft Sentinel
 ---
 
-# <a name="module-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>モジュール 8 - ラボ 1 - 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
+# <a name="learning-path-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>ラーニング パス 8 - ラボ 1 - 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

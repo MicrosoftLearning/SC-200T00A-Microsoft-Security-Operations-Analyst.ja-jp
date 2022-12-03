@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 3 - スケジュールされたクエリを作成する
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-3---create-a-scheduled-query"></a>モジュール 7 - ラボ 1 - 演習 3 - スケジュールされたクエリを作成する
+# <a name="learning-path-7---lab-1---exercise-3---create-a-scheduled-query"></a>ラーニング パス 7 - ラボ 1 - 演習 3 - スケジュールされたクエリを作成する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

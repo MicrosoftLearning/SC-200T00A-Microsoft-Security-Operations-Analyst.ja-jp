@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 2 - データ コネクタを使用して Microsoft Sentinel に Windows デバイスを接続する
-  module: Module 6 - Connect logs to Microsoft Sentinel
+  module: Learning Path 6 - Connect logs to Microsoft Sentinel
 ---
 
-# <a name="module-6---lab-1---exercise-2---connect-windows-devices-to-microsoft-sentinel-using-data-connectors"></a>モジュール 6 - ラボ 1 - 演習 2 - データ コネクタを使用して Microsoft Sentinel に Windows デバイスを接続する
+# <a name="learning-path-6---lab-1---exercise-2---connect-windows-devices-to-microsoft-sentinel-using-data-connectors"></a>ラーニング パス 6 - ラボ 1 - 演習 2 - データ コネクタを使用して Microsoft Sentinel に Windows デバイスを接続する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 2 - Microsoft Defender for Endpoint を使用した攻撃の軽減
-  module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
+  module: Learning Path 2 - Mitigate threats using Microsoft Defender for Endpoint
 ---
 
-# <a name="module-2---lab-1---exercise-2---mitigate-attacks-with-microsoft-defender-for-endpoint"></a>モジュール 2 - ラボ 1 - 演習 2 - Microsoft Defender for Endpoint を使用した攻撃の軽減
+# <a name="learning-path-2---lab-1---exercise-2---mitigate-attacks-with-microsoft-defender-for-endpoint"></a>ラーニング パス 2 - ラボ 1 - 演習 2 - Microsoft Defender for Endpoint を使用した攻撃の軽減
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

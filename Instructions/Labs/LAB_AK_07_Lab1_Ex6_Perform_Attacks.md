@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 6 - 攻撃の実施
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-6---conduct-attacks"></a>モジュール 7 - ラボ 1 - 演習 6 - 攻撃の実施
+# <a name="learning-path-7---lab-1---exercise-6---conduct-attacks"></a>ラーニング パス 7 - ラボ 1 - 演習 6 - 攻撃の実施
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 

@@ -1,10 +1,10 @@
 ---
 lab:
   title: 演習 1 - Microsoft Sentinel で脅威ハンティングを実行する
-  module: Module 8 - Perform threat hunting in Microsoft Sentinel
+  module: Learning Path 8 - Perform threat hunting in Microsoft Sentinel
 ---
 
-# <a name="module-8---lab-1---exercise-1---perform-threat-hunting-in-microsoft-sentinel"></a>モジュール 8 - ラボ 1 - 演習 1 - Microsoft Sentinel で脅威ハンティングを実行する
+# <a name="learning-path-8---lab-1---exercise-1---perform-threat-hunting-in-microsoft-sentinel"></a>ラーニング パス 8 - ラボ 1 - 演習 1 - Microsoft Sentinel で脅威ハンティングを実行する
 
 ## <a name="lab-scenario"></a>ラボのシナリオ
 
@@ -64,8 +64,8 @@ lab:
     | where ActionType == "DnsQueryResponse"
     | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),".")) 
     | where c2 startswith "sub"
-    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-    | where cnt > 15
+    | summarize cnt=count() by bin(TimeGenerated, 3m), c2, DeviceName
+    | where cnt > 5
     ```
 
     ![Screenshot](../Media/SC200_hunting2.png)
@@ -88,8 +88,8 @@ lab:
     | where ActionType == "DnsQueryResponse"
     | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
     | where c2 startswith "sub"
-    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-    | where cnt > 15
+    | summarize cnt=count() by bin(TimeGenerated, 3m), c2, DeviceName
+    | where cnt > 5
     ```
 
 1. 下にスクロールし、*[エンティティ マッピング (プレビュー)]* で次のように選択します。
@@ -134,71 +134,87 @@ lab:
 
 1. クエリを右クリックし、 **[ライブストリームに追加]** を選択します。 **ヒント:** これは、右にスライドし、行の末尾にある省略記号 **(...)** を選択してコンテキスト メニューを開くことで行うこともできます。
 
-1. *[状態]* が *[実行中]* になったことを確認します。 "モジュール 7 - ラボ 1 - 演習 6 - タスク 1 - 攻撃 3" では、C2 攻撃をシミュレートするために PowerShell スクリプトを実行しました。
+1. *[状態]* が *[実行中]* になったことを確認します。 
+
+1. "モジュール 7 - ラボ 1 - 演習 6 - タスク 1 - 攻撃 3" では、C2 攻撃をシミュレートするために PowerShell スクリプトを実行しました。 コマンド プロンプト ウィンドウに戻り、C:\Temp から次のコマンドを入力して Enter キーを押します。 
+
+    >**注:**  新しい PowerShell ウィンドウが開き、解決エラーが表示されます。 これは予期されることです。
+
+    ```CommandPrompt
+    Start PowerShell.exe -file c2.ps1
+    ```
+
+1. 結果が見つかった場合は、Azure Portal に通知 (ベル アイコン) が示されます。
 
 
-### <a name="task-2-create-a-nrt-query-rule"></a>コマンド プロンプト ウィンドウに戻り、C:\Temp から次のコマンドを入力して Enter キーを押します。
+### <a name="task-2-create-a-nrt-query-rule"></a>タスク 2:NRT クエリ ルールを作成する
 
-**注:**  新しい PowerShell ウィンドウが開き、解決エラーが表示されます。 これは予期されることです。  結果が見つかった場合は、Azure Portal に通知 (ベル アイコン) が示されます。
+このタスクでは、LiveStream を使用する代わりに、NRT 分析クエリ ルールを作成します。 NRT ルールは 1 分ごとに実行され、1 分間ルックバックされます。 NRT ルールの利点は、アラートとインシデント作成ロジックを使用できることです。
 
 
-1. タスク 2:NRT クエリ ルールを作成する 
+1. Microsoft Sentinel で **[分析]** ページを選択します。 
 
-1. このタスクでは、LiveStream を使用する代わりに、NRT 分析クエリ ルールを作成します。
-1. NRT ルールは 1 分ごとに実行され、1 分間ルックバックされます。 NRT ルールの利点は、アラートとインシデント作成ロジックを使用できることです。
+1. **[作成]** タブを選択し、 **[NRT クエリ ルール (プレビュー)]** を選択します。
 
-    |Microsoft Sentinel で **[分析]** ページを選択します。|**[作成]** タブを選択し、 **[NRT クエリ ルール (プレビュー)]** を選択します。|
-    |---|---|
-    |これで [分析ルール ウィザード] が起動します。|*[全般]* タブで、次のように入力します。|
+1. これで [分析ルール ウィザード] が起動します。 *[全般]* タブで、次のように入力します。
+
     |設定|値|
+    |---|---|
     |名前|**NRT C2 ハント**|
     |説明|**NRT C2 ハント**|
+    |方針|**コマンドとコントロール**|
+    |Severity|**高**|
 
-1. 方針 
+1. **[次へ: ルール ロジックを設定]** ボタンを選択します。 
 
-
-1. **コマンドとコントロール**
+1. *[ルール クエリ]* に次の KQL ステートメントを入力します。
 
     ```KQL
+    let lookback = 2d;
     DeviceEvents | where TimeGenerated >= ago(lookback) 
     | where ActionType == "DnsQueryResponse"
     | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
     | where c2 startswith "sub"
-    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-    | where cnt > 15
+    | summarize cnt=count() by bin(TimeGenerated, 3m), c2, DeviceName
+    | where cnt > 5
     ```
 
->Severity **高**
-
-1. **[次へ: ルール ロジックを設定]** ボタンを選択します。 *[ルール クエリ]* に次の KQL ステートメントを入力します。
-
-1. 残りのオプションは既定値のままにします。
-
-1. **[次へ: インシデント設定>]** ボタンを選択します。
+1. 残りのオプションは既定値のままにします。 **[次へ: インシデント設定>]** ボタンを選択します。
 
 1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
 
+1. *[自動応答]* タブでは、 **[アラートのオートメーション (クラシック)]** で *[PostMessageTeams-OnAlert]* を選んでから、 **[次へ: 確認]** をクリックします。
+
+1. *[確認]* タブで、 **[作成]** ボタンを選択して新しいスケジュール化された分析ルールを作成します。
+
+1. Microsoft Sentinel の **[インシデント]** ページの *[脅威の管理]* セクションを選択し、新しい *C2 Hunt* アラートが表示されるまで待ちます。
 
 
-### <a name="task-3-create-a-search"></a>*[自動応答]* タブでは、 **[アラートのオートメーション (クラシック)]** で *[PostMessageTeams-OnAlert]* を選んでから、 **[次へ: 確認]** をクリックします。
+### <a name="task-3-create-a-search"></a>タスク 3:検索の作成
 
-*[確認]* タブで、 **[作成]** ボタンを選択して新しいスケジュール化された分析ルールを作成します。 
+このタスクでは、検索ジョブを使用して C2 を検索します。 
 
+1. Microsoft Sentinel で **[検索 (プレビュー)]** ページを選択します。 
 
-1. Microsoft Sentinel の **[インシデント]** ページの *[脅威の管理]* セクションを選択し、新しい *C2 Hunt* アラートが表示されるまで待ちます。 
-
-1. タスク 3:検索の作成
-
->このタスクでは、検索ジョブを使用して C2 を検索します。  Microsoft Sentinel で **[検索 (プレビュー)]** ページを選択します。
 1. コマンド バーから **[復元]** ボタンを選択します。
-1. **注:** ラボには復元元となるアーカイブ済みのテーブルがありません。
-1. 通常のプロセスでは、アーカイブ済みのテーブルを復元して検索ジョブに含めます。
-1. 使用可能なオプションを確認し、 **[キャンセル]** ボタンを選択します。  
-1. **[検索]** タブを選択します。 
-1. 検索ボックスの下にある "*テーブル*" フィルターを選択し、**DeviceRegistryEvents** に変更し、 **[適用]** を選択します。 
-1. 検索ボックスに「**reg.exe**」と入力し、 **[検索の実行]** を選択します。  **[保存した検索]** タブを選択します。 検索ジョブにより、**DeviceRegistryEvents_####_SRCH** という名前の新しいテーブルが作成されます。 検索ジョブが完了するまで待ちます。 
-1. 状態に *[更新中]* 、 *[処理中]* 、 *[検索が完了しました]* の順に表示されます。
-1. **[View search results](検索結果の表示)** を選択します。
-1. これにより、"*ログ*" で新しいタブが開き、新しいテーブル名 **DeviceRegistryEvents_####_SRCH** クエリが実行され、結果が表示されます。
+
+    >**注:** ラボには復元元となるアーカイブ済みのテーブルがありません。 通常のプロセスでは、アーカイブ済みのテーブルを復元して検索ジョブに含めます。
+
+1. 使用可能なオプションを確認し、 **[キャンセル]** ボタンを選択します。
+
+1. **[検索]** タブを選択します。
+
+1. 検索ボックスの下にある "*テーブル*" フィルターを選択し、**DeviceRegistryEvents** に変更し、 **[適用]** を選択します。
+
+1. 検索ボックスに「**reg.exe**」と入力し、 **[検索の実行]** を選択します。
+
+1. **[保存した検索]** タブを選択します。
+
+1. 検索ジョブにより、**DeviceRegistryEvents_####_SRCH** という名前の新しいテーブルが作成されます。
+
+1. 検索ジョブが完了するまで待ちます。 状態に *[更新中]* 、 *[処理中]* 、 *[検索が完了しました]* の順に表示されます。
+
+1. **[View search results](検索結果の表示)** を選択します。 これにより、"*ログ*" で新しいタブが開き、新しいテーブル名 **DeviceRegistryEvents_####_SRCH** クエリが実行され、結果が表示されます。
+
 
 ## <a name="proceed-to-exercise-2"></a>演習 2 に進みます。
