@@ -80,7 +80,7 @@ lab:
  
     ```
 
-1. 次のステートメントは、**let** ステートメントを使用して *変数* を宣言する方法を示しています。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
+1. 次のステートメントは、**let** ステートメントを使用して *変数* を宣言する方法を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
 
     ```KQL
     let timeOffset = 1h;
@@ -125,7 +125,7 @@ lab:
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
     ```
 
-1. 次のステートメントは、入力テーブルの行を 1 つ以上の列で昇順または降順に並べ替える **order by** 演算子を示しています。 **order by** 演算子は、**sort by** 演算子のエイリアスです。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
+1. 次のステートメントは、入力テーブルの行を 1 つ以上の列で昇順または降順に並べ替える **order by** 演算子を示しています。 **order by** 演算子は、**sort by** 演算子のエイリアスです。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
 
     ```KQL
     SecurityEvent  
@@ -135,7 +135,7 @@ lab:
     | order by StartDir desc, Process asc
     ```
 
-1. 次のステートメントは、指定された順序で含める列を選択する **project** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
+1. 次のステートメントは、指定された順序で含める列を選択する **project** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
 
     ```KQL
     SecurityEvent  
@@ -170,7 +170,7 @@ lab:
     | summarize count() by Process, Computer
     ```
 
-1. 次のステートメントも **count()** 関数を示していますが、今度の例では、列に *cnt* という名前が付けられています。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
+1. 次のステートメントも **count()** 関数を示していますが、今度の例では、列に *cnt* という名前が付けられています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
 
     ```KQL
     SecurityEvent  
@@ -186,31 +186,31 @@ lab:
     | summarize dcount(IpAddress)
     ```
 
-1. 次のステートメントは、同じアカウントに対する複数のアプリケーション間で MFA エラーを検出するルールです。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
+1. 次のステートメントは、同じアカウントに対する複数のアプリケーション間での無効パスワード エラーを検出するルールです。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
     let timeframe = 30d;
     let threshold = 1;
     SigninLogs
     | where TimeGenerated >= ago(timeframe)
-    | where ResultDescription has "MFA"
+    | where ResultDescription has "Invalid password"
     | summarize applicationCount = dcount(AppDisplayName) by UserPrincipalName, IPAddress
     | where applicationCount >= threshold
     ```
 
-1. 次のステートメントは、引数が最大化される場合に 1 つ以上の式を返す **arg_max()** 関数を示しています。 次のステートメントでは、SQL12.NA.contosohotels.com コンピューターの SecurityEvent テーブルから最新の行を返します。 arg_max 関数の * で、その行のすべての列を要求します。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
+1. 次のステートメントは、引数が最大化される場合に 1 つ以上の式を返す **arg_max()** 関数を示しています。 次のステートメントでは、SQL10.NA.contosohotels.com コンピューターの SecurityEvent テーブルから最新の行を返します。 arg_max 関数の * で、その行のすべての列を要求します。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
     SecurityEvent  
-    | where Computer == "SQL12.na.contosohotels.com"
+    | where Computer == "SQL10.na.contosohotels.com"
     | summarize arg_max(TimeGenerated,*) by Computer
     ```
 
-1. 次のステートメントは、引数が最小化される場合に 1 つ以上の式を返す **arg_min()** 関数を示しています。 このステートメントでは、SQL12.NA.contosohotels.com コンピューターの最も古い SecurityEvent を結果セットとして返します。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
+1. 次のステートメントは、引数が最小化される場合に 1 つ以上の式を返す **arg_min()** 関数を示しています。 このステートメントでは、SQL10.NA.contosohotels.com コンピューターの最も古い SecurityEvent を結果セットとして返します。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
 
     ```KQL
     SecurityEvent  
-    | where Computer == "SQL12.na.contosohotels.com"
+    | where Computer == "SQL10.na.contosohotels.com"
     | summarize arg_min(TimeGenerated,*) by Computer
     ```
 
@@ -306,7 +306,7 @@ lab:
         | union (SigninLogs | summarize count() | project count_)
         ```
 
-1. 次のステートメントは、ワイルドカードを使用して複数のテーブルの和集合を求める **union** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
+1. 次のステートメントは、ワイルドカードを使用して複数のテーブルの和集合を求める **union** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
 
     ```KQL
     union Security*  
@@ -354,7 +354,7 @@ lab:
     | where LoginCount < 10
     ```
 
-1. 次のステートメントは、文字列式を評価して、その値を 1 つ以上の計算列に解析する **parse** 演算子を示しています。 非構造化データを構造化するために使用されます。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
+1. 次のステートメントは、文字列式を評価して、その値を 1 つ以上の計算列に解析する **parse** 演算子を示しています。 非構造化データを構造化するために使用されます。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
 
     ```KQL
     let Traces = datatable(EventText:string)
