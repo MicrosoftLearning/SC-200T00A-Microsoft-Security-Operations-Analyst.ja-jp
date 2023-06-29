@@ -4,18 +4,19 @@ lab:
   module: Learning Path 6 - Connect logs to Microsoft Sentinel
 ---
 
-# <a name="learning-path-6---lab-1---exercise-3---connect-linux-hosts-to-microsoft-sentinel-using-data-connectors"></a>ラーニング パス 6 - ラボ 1 - 演習 3 - データ コネクタを使用して Microsoft Sentinel に Linux ホストを接続する
+# ラーニング パス 6 - ラボ 1 - 演習 3 - データ コネクタを使用して Microsoft Sentinel に Linux ホストを接続する
 
-## <a name="lab-scenario"></a>ラボのシナリオ
+## ラボのシナリオ
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex3.png)
 
-あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 次のデータソースは、共通イベント形式 (CEF) と Syslog コネクタを使用した Linux 仮想マシンです。
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 次のデータのソースは、レガシ エージェントを介した Common Event Format (CEF) と Syslog コネクタを使用した Linux 仮想マシンです。
 
+>                **メモ:** このラボをご自分のペースでクリックして進めることができる、 **[ラボの対話型シミュレーション](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Connect%20Linux%20hosts%20to%20Microsoft%20Sentinel%20using%20data%20connectors)** が用意されています。 対話型シミュレーションとホストされたラボの間に若干の違いがある場合がありますが、示されている主要な概念とアイデアは同じです。
 
 >**重要:** 別の仮想マシンで実行される次のタスク内の手順があります。 仮想マシン名の参照を探します。
 
-### <a name="task-1-access-the-microsoft-sentinel-workspace"></a>タスク 1:Microsoft Sentinel ワークスペースにアクセスする
+### タスク 1:Microsoft Sentinel ワークスペースにアクセスする
 
 このタスクでは、Microsoft Sentinel ワークスペースにアクセスします。
 
@@ -34,11 +35,11 @@ lab:
 1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
 
-### <a name="task-2-connect-a-linux-host-using-the-common-event-format-connector"></a>タスク 2:共通イベント形式のコネクタを使用して Linux ホストを接続する
+### タスク 2:共通イベント形式のコネクタを使用して Linux ホストを接続する
 
-このタスクでは、共通イベント形式 (CEF) コネクタを使用して Linux ホストを Microsoft Sentinel に接続します。
+このタスクでは、レガシ エージェントを介した Common Event Format (CEF) コネクタを使用して Linux ホストを Microsoft Sentinel に接続します。
 
-1. Microsoft Sentinel の [構成] 領域から **[データ コネクタ]** を選択します。 [データ コネクタ] タブで、リストから **[共通イベント形式 (CEF)]** コネクタを選択します。
+1. Microsoft Sentinel の [構成] 領域から **[データ コネクタ]** を選択します。 [データ コネクタ] タブで、リストから **[レガシ エージェントを介した Common Event Format (CEF)]** コネクタを探して選択します。
 
 1. コネクタ情報ブレードで **[コネクタページを開く]** を選択します。
 
@@ -76,11 +77,11 @@ lab:
 1. 「**exit**」と入力して、LIN1 へのリモート シェル接続を閉じます。
 
 
-### <a name="task-3-connect-a-linux-host-using-the-syslog-connector"></a>タスク 3:Syslog コネクタを使用して Linux ホストを接続する
+### タスク 3:Syslog コネクタを使用して Linux ホストを接続する
 
 このタスクでは、Linux ホストを Syslog コネクタを使用して Microsoft Sentinel に接続します。
 
-1. Microsoft Sentinel ポータルが開いている Edge ブラウザーに戻り、右上隅にある [x] を選択して [共通イベント形式 (CEF)] データ コネクタ ページを閉じます。 
+1. Microsoft Sentinel ポータルが開いている Edge ブラウザーに戻り、右上隅にある [x] を選択して [レガシ エージェントを介した Common Event Format (CEF)] データ コネクタ ページを閉じます。 
 
 1. [データ コネクタ] タブで、一覧から **Syslog** コネクタを探して選択します。
 
@@ -90,7 +91,7 @@ lab:
 
 1. **非 Azure Linux マシン用のエージェントをダウンロードしてインストールする**リンクを選択します。 
 
-    >**注:**  Log Analytics ワークスペースに、''*3 台の Windows コンピューターが接続されている*'' ことが示されるはずです。 これは、以前に接続された WIN2、WINServer および AZWIN01 仮想マシンに対応しています。
+    >**注:**  Log Analytics ワークスペースに、''*2 台の Windows コンピューターが接続されている*'' ことが示されるはずです。 これは、以前に接続された WINServer および AZWIN01 仮想マシンに対応しています。
 
 1. **[Linux サーバー]** のタブを選択します。
 
@@ -125,7 +126,7 @@ lab:
 1. 終了したら、「**exit**」と入力して、LIN2 へのリモート シェル接続を閉じます。
 
 
-### <a name="task-4-configure-the-facilities-you-want-to-collect-and-their-severities-for-the-syslog-connector"></a>タスク 4:収集する設備とその重大度を Syslog コネクタ用に設定する
+### タスク 4:収集する設備とその重大度を Syslog コネクタ用に設定する
 
 このタスクでは、Syslog収集機能を構成します。
 
@@ -133,7 +134,7 @@ lab:
 
 1. Microsoft Sentinel ポータルで、 *[構成]* の下の **[設定]** を選択し、 **[ワークスペースの設定]** タブをクリックします。
 
-1. **[設定]** 領域で、 **[レガシ エージェントの管理]** を選びます。
+1. *[クラシック]* 領域で、 **[レガシ エージェントの管理]** を選びます。
 
 1. **[Syslog]** タブを選択します。
 
@@ -143,8 +144,8 @@ lab:
 
 1. **[+ 設備の追加]** ボタンをもう一度選択します。
 
-1. *[施設名]* ドロップダウン メニューから **[authpriv]** を選択します。
+1. *[施設名]* のドロップダウン メニューから **syslog** を選択します。
 
 1. **[適用]** を選択して変更を保存します。
 
-## <a name="proceed-to-exercise-4"></a>演習 4 に進む
+## 演習 4 に進む
