@@ -4,16 +4,18 @@ lab:
   module: Learning Path 6 - Connect logs to Microsoft Sentinel
 ---
 
-# <a name="learning-path-6---lab-1---exercise-1---connect-data-to-microsoft-sentinel-using-data-connectors"></a>ラーニング パス 6 - ラボ 1 - 演習 1 - データ コネクタを使用して Microsoft Sentinel にデータを接続する
+# ラーニング パス 6 - ラボ 1 - 演習 1 - データ コネクタを使用して Microsoft Sentinel にデータを接続する
 
-## <a name="lab-scenario"></a>ラボのシナリオ
+## ラボのシナリオ
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex1.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 組織には、Microsoft 365、Microsoft 365 Defender、Azure リソース、Azure 以外の仮想マシンなどからのデータがあります。最初に、Microsoft のソースに接続します。
 
+>                **メモ:** このラボをご自分のペースでクリックして進めることができる、 **[ラボの対話型シミュレーション](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Connect%20data%20to%20Microsoft%20Sentinel%20using%20data%20connectors)** が用意されています。 対話型シミュレーションとホストされたラボの間に若干の違いがある場合がありますが、示されている主要な概念とアイデアは同じです。 
 
-### <a name="task-1-access-the-microsoft-sentinel-workspace"></a>タスク 1:Microsoft Sentinel ワークスペースにアクセスする
+
+### タスク 1:Microsoft Sentinel ワークスペースにアクセスする
 
 このタスクでは、Microsoft Sentinel ワークスペースにアクセスします。
 
@@ -27,34 +29,12 @@ lab:
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード**をコピーして貼り付け、**[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
 
-### <a name="task-2-connect-the-azure-active-directory-connector"></a>タスク 2:Azure Active Directory コネクタを接続する
-
-このタスクでは、Azure Active Directory コネクタを Microsoft Sentinel に接続します。
-
-1. 構成領域で、[**データ コネクタ]** を選択します。 [データ コネクタ] ページで、一覧から **Azure Active Directory** コネクタを探して選択します。
-
-1. コネクタ情報ブレードで **[コネクタ ページを開く]** を選択します。
-
-1. 構成領域から **[サインイン ログ]** と **[監査ログ]** オプションを選択し、**[変更の適用]** を選択します。
-
-
-### <a name="task-3-connect-the-azure-active-directory-identity-protection-connector"></a>タスク 3:Azure Active Directory Identity Protection コネクタを接続する
-
-このタスクでは、Azure Active Directory Identity Protection コネクタを Microsoft Sentinel に接続します。
-
-1. [データ コネクタ] タブで、一覧から **Azure Active Directory Identity Protection** コネクタを探して選択します。
-
-1. コネクタ情報ブレードで **[コネクタ ページを開く]** を選択します。
-
-1. 構成 領域から **接続** ボタンを選択します。
-
-
-### <a name="task-4-connect-the-microsoft-defender-for-cloud-connector"></a>タスク 4:Microsoft Defender for Cloud に接続する
+### タスク 2: Microsoft Defender for Cloud コネクタを接続する
 
 このタスクでは、Microsoft Defender for Cloud コネクタを接続します。
 
@@ -62,31 +42,18 @@ lab:
 
 1. コネクタ情報ブレードで **[コネクタ ページを開く]** を選択します。
 
-1. 構成領域の [サブスクリプション] で、[Azure Pass - スポンサー プラン] サブスクリプションのチェック ボックスをオンにし、 **[状態]** オプションを右側にスライドして **[接続済み]** を示します。
+1. 構成領域の [サブスクリプション] で、[Azure Pass - スポンサー プラン] サブスクリプションのチェック ボックスを**オン**にし、 **[状態]** オプションを右側にスライドします。
 
-1. [状態] が *[接続済み]* になり、[双方向の同期] が *[有効]* になるはずです。
+    >**注:** 切断に戻る場合は、ラーニング パス 3、演習 1、タスク 1 を確認して、アカウントに適切なアクセス許可を割り当ててください。
 
-1. 下にスクロールし、[Create incidents - Recommended!](インシデントの作成 - 推奨) 領域で、 **[有効]** を選択します。 このオプションを選択すると、このサービスに対して分析ルールが自動的に作成されます。 ここで有効にしなくても、後で *[分析]* ブレードを使って、手動で追加したり、構成を変更したりできます。
+1. [状態] が **[接続済み]** になり、[双方向の同期] が [有効] になるはずです。** **
 
+1. 下にスクロールし、[Create incidents - Recommended!](インシデントの作成 - 推奨) 領域で、 **[有効]** を選択します。 
 
-### <a name="task-5-connect-the-microsoft-365-defender-connector"></a>タスク 5:Microsoft 365 Defender コネクタを接続する
-
-このタスクでは、Microsoft 365 Directory コネクタを接続します。
-
-1. [データ コネクタ] タブで、一覧から **Microsoft 365 Defender (プレビュー)** コネクタを探して選択します。
-
-1. コネクタ情報ブレードで **[コネクタ ページを開く]** を選択します。
-
-1. [構成] 領域で **[Connect Incident and Alerts](インシデントとアラートの接続)** を選択します。 
-
-1. [イベントの接続] で、 **[名前]** チェック ボックスをオンにして、"Microsoft Defender for Endpoint" のすべてのチェック ボックスをオンにします。
-
-1. "Microsoft Defender for Office 365" について同じことを繰り返します。
-
-1. ページの下部までスクロールし、 **[変更の適用]** を選択します。
+    >**注:** このオプションを選ぶと、このコネクタに関する分析ルールが自動的に作成されます。 ここで有効にしなくても、後で *[分析]* ブレードを使って、手動で追加したり、構成を変更したりできます。
 
 
-### <a name="task-6-connect-the-azure-activity-connector"></a>タスク 6:Azure Activity コネクタを接続する
+### タスク 3: Azure Activity コネクタを接続する
 
 このタスクでは、Azure Activity コネクタを接続します。
 
@@ -100,10 +67,10 @@ lab:
 
 1. **[パラメーター]** タブを選択し、 **[プライマリ Log Analytics ワークスペース]** ドロップダウン リストから自分の *uniquenameDefender* ワークスペースを選択します。
 
-1. **[修復]** タブを選択し、 **[修復タスクの作成]** チェック ボックスをオンにします。
+1. **[修復]** タブを選択し、 **[修復タスクの作成]** チェック ボックスをオンにします。 このアクションにより、Log Analytics ワークスペースに情報を送信するサブスクリプション構成が適用されます。
 
 1. **[確認と作成]** ボタンを選択して構成を確認します。
 
 1. **[作成]** を選択して完了します。
 
-## <a name="proceed-to-exercise-2"></a>演習 2 に進みます。
+## 演習 2 に進みます。

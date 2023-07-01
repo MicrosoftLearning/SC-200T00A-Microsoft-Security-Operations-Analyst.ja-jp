@@ -4,9 +4,9 @@ lab:
   module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="learning-path-7---lab-1---exercise-2---create-a-playbook"></a>ラーニング パス 7 - ラボ 1 - 演習 2 - プレイブックを作成する
+# ラーニング パス 7 - ラボ 1 - 演習 2 - プレイブックを作成する
 
-## <a name="lab-scenario"></a>ラボのシナリオ
+## ラボのシナリオ
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex2.png)
 
@@ -14,8 +14,10 @@ lab:
 
 プレイブックを使用すると、脅威への対応を自動化および調整したり、内部と外部両方の他のシステムと統合したり、分析ルールまたは自動化ルールによってそれぞれトリガーされた場合に、特定のアラートやインシデントに応答して自動的に実行されるように設定できます。 
 
+>                **メモ:** このラボをご自分のペースでクリックして進めることができる、 **[ラボの対話型シミュレーション](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20a%20playbook)** が用意されています。 対話型シミュレーションとホストされたラボの間に若干の違いがある場合がありますが、示されている主要な概念とアイデアは同じです。 
 
-### <a name="task-1-create-a-security-operations-center-team-in-microsoft-teams"></a>タスク 1:Microsoft Teams でセキュリティ オペレーション センター チームを作成する
+
+### タスク 1:Microsoft Teams でセキュリティ オペレーション センター チームを作成する
 
 このタスクでは、このラボ用のMicrosoft Teamsを作成します。
 
@@ -46,7 +48,7 @@ lab:
 1. "新しいアラート" のチャネル名を入力し、**[追加]** ボタンを選択します。**
 
 
-### <a name="task-2-create-a-playbook-in-microsoft-sentinel"></a>タスク 2:Microsoft Sentinel プレイブックを作成する
+### タスク 2:Microsoft Sentinel プレイブックを作成する
 
 このタスクでは、Microsoft Sentinel でプレイブックとして使用されるロジック アプリを作成します。
 
@@ -56,13 +58,13 @@ lab:
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
 1. ページの左側にある *[コンテンツ管理]* 領域の下にある **[コミュニティ]** ページを選択します。
 
-1. 右側のペインで、 **[コミュニティのコンテンツをオンボードする]** リンクを選択します。 これにより、Microsoft Sentinel GitHub コンテンツ用の Edge ブラウザーの新しいタブが開きます。
+1. 右側のペインで、 **[コミュニティのコンテンツをオンボードする]** リンクを選択します。 これにより、Microsoft Sentinel GitHub コンテンツ用の Edge ブラウザーの新しいタブが開きます。 **ヒント:** リンクを表示するには、右にスクロールする必要がある場合があります。 または、代わりにこの [GitHub の Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel) リンクに従います。
 
 1. **Solutions** フォルダーを選択します。
 
@@ -70,9 +72,7 @@ lab:
 
 1. "**Post-Message-Teams**" フォルダーを選択します。
 
-1. readme.md ボックスで、2 番目の *[クイック デプロイ]* オプションの **[Deploy with alert trigger]/(アラート トリガーを使用してデプロイする)** まで下にスクロールし、 **[Azure に配置する]** ボタンを選択します。  
-
-    >**非常に重要**: 使用する 2 つの異なる Microsoft Sentinel トリガーであるインシデントとアラートであることに注意してください。 アラート (2 つ目) を選択してください。
+1. readme.md ボックスで、[Quick Deployment] (クイック デプロイ) セクションの **[Deploy with incident trigger (recommended)] (インシデント トリガーでデプロイする (推奨))** まで下にスクロールして、 **[Azure へのデプロイ]** ボタンを選びます。**  
 
 1. [Azure サブスクリプション] が選択されていることを確認します。
 
@@ -80,14 +80,16 @@ lab:
 
 1. *[リージョン]* の既定値は **[(米国) 米国東部]** のままにします。
 
-1. *プレイブック名* が "PostMessageTeams-OnAlert" であることを確認し、 **[確認と作成]** を選択します。 **ヒント:** 名前が異なる場合は、GitHub に戻り、 **[アラート トリガーを使用してデプロイ]** プレイブックを選択します。
+1. [プレイブック名] を "PostMessageTeams-OnIncident" に変更して、 **[確認と作成]** を選びます。**
 
 1. ここで **[作成]** を選択します。 
 
     >**注:**  次のタスクに進む前に、デプロイが完了するまで待機します。
 
+1. タスクを繰り返しますが、[Deploy with incident trigger (recommended)] (インシデント トリガーでデプロイする (推奨)) を選ぶ代わりに、 **[Deploy with alert trigger] (アラート トリガーでデプロイする)** プレイブックを選びます。** **ヒント:** プレイブックは、GitHub でデプロイしたものの下に表示されます。
 
-### <a name="task-3-update-a-playbook-in-microsoft-sentinel"></a>タスク 3:Microsoft Sentinel プレイブックを更新する
+
+### タスク 3:Microsoft Sentinel プレイブックを更新する
 
 このタスクでは、作成した新しいプレイブックを適切な接続情報で更新します。
 
@@ -97,7 +99,9 @@ lab:
 
 1. *[構成]* 領域から **[自動化]** を選択し、 **[アクティブなプレイブック]** タブを選択します。
 
-1. **PostMessageTeams-OnAlert** プレイブックを選択します。 **ヒント:** プレイブックが表示されない場合は、Ctrl + F5 キーを押して Azure portal ページを更新します。
+1. プレイブックが表示されない場合は、コマンド バーの **[最新の情報に更新]** を選びます。 前のステップで作成した 2 つのプレイブックが表示されるはずですが、"トリガーの種類" が異なります。**
+
+1. **PostMessageTeams-OnAlert** というプレイブック名を選びます。
 
 1. *PostMessageTeams-OnAlert* の Logic App ページで、コマンド メニューの **[編集]** を選択します。
 
@@ -121,8 +125,9 @@ lab:
 
 1. *[チャネル]* フィールドでも同じ操作を行い、フィールドの末尾にある **[X]** を選択して内容をクリアします。 フィールドがドロップダウンに変更され、SOC チームのチャネルの一覧が表示されます。 **[新しいアラート]** を選択します。
 
-1. コマンド バーの **[保存]** を選択します。
+1. コマンド バーの **[保存]** を選択します。 これらはのちのラボで使用します。
 
-これらはのちのラボで使用します。
+1. タスクを繰り返しますが、*PostMessageTeams-OnAlert* を選ぶ代わりに、**PostMessageTeams-OnIncident** プレイブックを選びます。 **ヒント:** 接続を作成する必要はなく、このタスク用に作成した接続を再利用するだけです。
 
-## <a name="proceed-to-exercise-3"></a>演習 3 に進む
+
+## 演習 3 に進む
