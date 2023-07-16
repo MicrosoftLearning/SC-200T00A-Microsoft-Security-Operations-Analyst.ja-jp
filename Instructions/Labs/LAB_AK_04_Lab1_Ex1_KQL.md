@@ -386,13 +386,15 @@ lab:
 1. 次のステートメントは、**dynamic** 型フィールドの操作を示しています。これらは、他のデータ型の任意の値を取ることができる特殊なフィールドです。 この例では、SigninLogs テーブルの DeviceDetail フィールドの型は**動的**です。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
-    SigninLogs | extend OS = DeviceDetail.operatingSystem
+    SigninLogs 
+    | extend OS = DeviceDetail.operatingSystem
     ```
 
 1. 次の例では、SigninLogs のパックされたフィールドを分割する方法を示します。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
-    SigninLogs | extend OS = DeviceDetail.operatingSystem, Browser = DeviceDetail.browser 
+    SigninLogs 
+    | extend OS = DeviceDetail.operatingSystem, Browser = DeviceDetail.browser 
     | extend StatusCode = tostring(Status.errorCode), StatusDetails = tostring(Status.additionalDetails) 
     | extend Date = startofday(TimeGenerated) 
     | summarize count() by Date, Identity, UserDisplayName, UserPrincipalName, IPAddress, ResultType, ResultDescription, StatusCode, StatusDetails 
@@ -404,7 +406,8 @@ lab:
 1. 次のステートメントは、文字列フィールドに格納された JSON を操作する演算子を示しています。 多くのログでは、データを JSON 形式で送信します。このため、JSON データをクエリ可能なフィールドに変換する方法を知っておく必要があります。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
-    SigninLogs | extend AuthDetails =  todynamic(AuthenticationDetails) 
+    SigninLogs 
+    | extend AuthDetails =  todynamic(AuthenticationDetails) 
     | extend AuthMethod =  AuthDetails[0].authenticationMethod 
     | extend AuthResult = AuthDetails[0].["authenticationStepResultDetail"] 
     | project AuthMethod, AuthResult, AuthDetails 
@@ -413,7 +416,8 @@ lab:
 1. 次のステートメントは、動的配列を行に変換する **mv-expand** 演算子を示しています (複数値の展開)。
 
     ```KQL
-    SigninLogs | mv-expand AuthDetails = todynamic(AuthenticationDetails) 
+    SigninLogs 
+    | mv-expand AuthDetails = todynamic(AuthenticationDetails) 
     | project AuthDetails
     ```
 
@@ -422,7 +426,8 @@ lab:
 1. 次のステートメントは、サブクエリを各レコードに適用し、すべてのサブクエリの結果の和集合を返す **mv-apply** 演算子を示しています。
 
     ```KQL
-    SigninLogs | mv-apply AuthDetails = todynamic(AuthenticationDetails) on
+    SigninLogs 
+    | mv-apply AuthDetails = todynamic(AuthenticationDetails) on
     (where AuthDetails.authenticationMethod == "Password")
     ```
 

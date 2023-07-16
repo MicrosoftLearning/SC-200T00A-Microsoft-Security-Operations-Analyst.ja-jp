@@ -49,7 +49,8 @@ lab:
 1. 結果から、脅威アクターが reg.exe を使用してレジストリ キーにキーを追加し、プログラムが C:\temp にあることがわかりました。次のステートメントを**実行**し、クエリの *search* 演算子を *where* 演算子に置き換えます。
 
     ```KQL
-    SecurityEvent | where Activity startswith "4688" 
+    SecurityEvent 
+    | where Activity startswith "4688" 
     | where Process == "reg.exe" 
     | where CommandLine startswith "REG" 
     ```
@@ -57,7 +58,8 @@ lab:
 1. アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティオペレーションセンターアナリストを支援することが重要です。 これには、調査グラフで使用するエンティティの投影が含まれます。 次のクエリを**実行**します。
 
     ```KQL
-    SecurityEvent | where Activity startswith "4688" 
+    SecurityEvent 
+    | where Activity startswith "4688" 
     | where Process == "reg.exe" 
     | where CommandLine startswith "REG" 
     | extend timestamp = TimeGenerated, HostCustomEntity = Computer, AccountCustomEntity = SubjectUserName
@@ -110,20 +112,23 @@ lab:
 1. 次の KQL ステートメントを**実行**して、管理者を指すエントリを特定します。
 
     ```KQL
-    search "administrators" | summarize count() by $table
+    search "administrators" 
+    | summarize count() by $table
     ```
 
 1. 結果には異なるテーブルからのイベントが表示される場合がありますが、ここでは、SecurityEvent テーブルを調査する必要があります。 目的の EventID および Event は "4732 - セキュリティが有効なローカル グループにメンバーが追加されました" です。 これを使用して、特権グループへのメンバーの追加を特定します。 次の KQL クエリを**実行**して確認します。
 
     ```KQL
-    SecurityEvent | where EventID == 4732
+    SecurityEvent 
+    | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     ```
 
 1. 行を展開して、レコードに関連するすべての列を表示します。 Administrator として追加されたアカウントのユーザー名は表示されません。 問題は、ユーザー名ではなく、セキュリティ識別子 (SID) が格納されることです。 次の KQL を**実行**して、SID と、Administrators グループに追加されたユーザー名を照合します。
 
     ```KQL
-    SecurityEvent | where EventID == 4732
+    SecurityEvent 
+    | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
@@ -137,7 +142,8 @@ lab:
 1. 行を拡張して、結果の列を表示します。最後のものには、KQL クエリ内で ''*投影*'' する *UserName1* 列の下に追加されたユーザーの名前が示されます。 アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティ運用アナリストを支援することが重要です。 これには、調査グラフで使用するエンティティの投影が含まれます。 次のクエリを**実行**します。
 
     ```KQL
-    SecurityEvent | where EventID == 4732
+    SecurityEvent 
+    | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
