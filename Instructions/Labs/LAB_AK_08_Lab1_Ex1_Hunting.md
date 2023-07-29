@@ -43,7 +43,8 @@ lab:
 
     ```KQL
     let lookback = 2d; 
-    SecurityEvent | where TimeGenerated >= ago(lookback) 
+    SecurityEvent 
+    | where TimeGenerated >= ago(lookback) 
     | where EventID == 4688 and Process =~ "powershell.exe"
     | extend PwshParam = trim(@"[^/\\]*powershell(.exe)+" , CommandLine) 
     | project TimeGenerated, Computer, SubjectUserName, PwshParam 
@@ -77,7 +78,8 @@ lab:
 
     ```KQL
     let lookback = 2d; 
-    SecurityEvent | where TimeGenerated >= ago(lookback) 
+    SecurityEvent 
+    | where TimeGenerated >= ago(lookback) 
     | where EventID == 4688 and Process =~ "powershell.exe"
     | extend PwshParam = trim(@"[^/\\]*powershell(.exe)+" , CommandLine) 
     | project TimeGenerated, Computer, SubjectUserName, PwshParam 
@@ -149,7 +151,8 @@ lab:
 
     ```KQL
     let lookback = 2d; 
-    SecurityEvent | where TimeGenerated >= ago(lookback) 
+    SecurityEvent 
+    | where TimeGenerated >= ago(lookback) 
     | where EventID == 4688 and Process =~ "powershell.exe"
     | extend PwshParam = trim(@"[^/\\]*powershell(.exe)+" , CommandLine) 
     | project TimeGenerated, Computer, SubjectUserName, PwshParam 
@@ -170,12 +173,9 @@ lab:
 
 1. 下にスクロールし、 **[次へ: インシデント設定>]** ボタンを選択します。
 
-1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
+1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 確認と作成 >]** ボタンを選択します。
 
-1. *[自動応答]* タブでは、 **[アラートのオートメーション (クラシック)]** で *[PostMessageTeams-OnAlert]* を選んでから、 **[次へ: 確認]** をクリックします。
-
-1. *[確認]* タブで、 **[作成]** ボタンを選択して新しいスケジュール化された分析ルールを作成します。
-
+1. *[確認と作成]* タブで、 **[保存]** ボタンを選択して、新しいスケジュール化された分析ルールを作成して保存します。
 
 ### タスク 3:検索の作成
 

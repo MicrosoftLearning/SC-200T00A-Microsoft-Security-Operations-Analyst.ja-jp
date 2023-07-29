@@ -49,7 +49,8 @@ lab:
 1. 結果から、脅威アクターが reg.exe を使用してレジストリ キーにキーを追加し、プログラムが C:\temp にあることがわかりました。次のステートメントを**実行**し、クエリの *search* 演算子を *where* 演算子に置き換えます。
 
     ```KQL
-    SecurityEvent | where Activity startswith "4688" 
+    SecurityEvent 
+    | where Activity startswith "4688" 
     | where Process == "reg.exe" 
     | where CommandLine startswith "REG" 
     ```
@@ -57,7 +58,8 @@ lab:
 1. アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティオペレーションセンターアナリストを支援することが重要です。 これには、調査グラフで使用するエンティティの投影が含まれます。 次のクエリを**実行**します。
 
     ```KQL
-    SecurityEvent | where Activity startswith "4688" 
+    SecurityEvent 
+    | where Activity startswith "4688" 
     | where Process == "reg.exe" 
     | where CommandLine startswith "REG" 
     | extend timestamp = TimeGenerated, HostCustomEntity = Computer, AccountCustomEntity = SubjectUserName
@@ -69,10 +71,10 @@ lab:
 
     |設定|値|
     |---|---|
-    |名前|**Startup RegKey**|
-    |説明|**c:\temp の Startup Regkey**|
-    |方針|**永続化**|
-    |Severity|**高**|
+    |名前|Startup RegKey|
+    |説明|c:\temp の Startup RegKey|
+    |方針|永続性|
+    |重大度|高|
 
 1. **[次へ: ルール ロジックを設定]** ボタンを選択します。
 
@@ -83,12 +85,14 @@ lab:
     |Account|FullName|AccountCustomEntity|
     |Host|Hostname (ホスト名)|HostCustomEntity|
 
+1. *[ホスト]* に **[ホスト名]** が選択されていない場合は、ドロップダウン リストから選択します。
+
 1. *[クエリのスケジュール設定]* では、次のように設定します。
 
     |設定|値|
     |---|---|
     |クエリの実行間隔|5 分|
-    |過去のデータを見る|1 日|
+    |次の時間分の過去のデータを参照します|1 日|
 
     >**注:**  同じデータに対して意図的に多くのインシデントを生成しています。 これにより、ラボはこれらのアラートを使用できるようになります。
 
@@ -96,10 +100,24 @@ lab:
 
 1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
 
-1. *[自動応答]* タブでは、 **[アラートのオートメーション (クラシック)]** で *[PostMessageTeams-OnAlert]* を選んでから、 **[次へ: 確認]** をクリックします。
+1. [自動応答] タブの [Automation rules] (自動化ルール) で、 **[新規追加]** を選びます。** **
 
-1. *[確認]* タブで、 **[作成]** ボタンを選択して新しいスケジュール化された分析ルールを作成します。
+1. テーブルの設定を使用して、自動化ルールを構成します。
 
+    |設定|値|
+    |:----|:----|
+    |自動化ルール名|Startup RegKey|
+    |トリガー|インシデント作成時|
+    |アクション |プレイブックを実行する|
+    |playbook |PostMessageTeams-OnAlert|
+
+    >**注:** プレイブックに既にアクセス許可を割り当てているため、使用可能になります。
+
+1. **[適用]** を選択します
+
+1. **[次へ: 確認と作成 >]** ボタンを選択します。
+  
+1. *[確認と作成]* タブで、 **[作成]** ボタンを選択して新しいスケジュール化された分析ルールを作成します。
 
 ### タスク 2: 特権昇格攻撃の検出
 
@@ -110,20 +128,23 @@ lab:
 1. 次の KQL ステートメントを**実行**して、管理者を指すエントリを特定します。
 
     ```KQL
-    search "administrators" | summarize count() by $table
+    search "administrators" 
+    | summarize count() by $table
     ```
 
 1. 結果には異なるテーブルからのイベントが表示される場合がありますが、ここでは、SecurityEvent テーブルを調査する必要があります。 目的の EventID および Event は "4732 - セキュリティが有効なローカル グループにメンバーが追加されました" です。 これを使用して、特権グループへのメンバーの追加を特定します。 次の KQL クエリを**実行**して確認します。
 
     ```KQL
-    SecurityEvent | where EventID == 4732
+    SecurityEvent 
+    | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     ```
 
 1. 行を展開して、レコードに関連するすべての列を表示します。 Administrator として追加されたアカウントのユーザー名は表示されません。 問題は、ユーザー名ではなく、セキュリティ識別子 (SID) が格納されることです。 次の KQL を**実行**して、SID と、Administrators グループに追加されたユーザー名を照合します。
 
     ```KQL
-    SecurityEvent | where EventID == 4732
+    SecurityEvent 
+    | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
@@ -137,7 +158,8 @@ lab:
 1. 行を拡張して、結果の列を表示します。最後のものには、KQL クエリ内で ''*投影*'' する *UserName1* 列の下に追加されたユーザーの名前が示されます。 アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティ運用アナリストを支援することが重要です。 これには、調査グラフで使用するエンティティの投影が含まれます。 次のクエリを**実行**します。
 
     ```KQL
-    SecurityEvent | where EventID == 4732
+    SecurityEvent 
+    | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
@@ -167,7 +189,7 @@ lab:
     |設定|値|
     |---|---|
     |クエリの実行間隔|5 分|
-    |過去のデータを見る|1 日|
+    |次の時間分の過去のデータを参照します|1 日|
 
     >**注:**  同じデータに対して意図的に多くのインシデントを生成しています。 これにより、ラボはこれらのアラートを使用できるようになります。
 
@@ -175,8 +197,23 @@ lab:
 
 1. *[インシデント設定]* タブについては、既定値のままにし、 **[次へ: 自動応答 >]** ボタンを選択します。
 
-1. *[自動応答]* タブでは、 **[アラートのオートメーション (クラシック)]** で *[PostMessageTeams-OnAlert]* を選んでから、 **[次へ: 確認]** をクリックします。
+1. [自動応答] タブの [Automation rules] (自動化ルール) で、 **[新規追加]** を選びます。** **
 
-1. *[確認]* タブで、 **[作成]** ボタンを選択して新しいスケジュール化された分析ルールを作成します。
+1. テーブルの設定を使用して、自動化ルールを構成します。
+
+   |設定|値|
+   |:----|:----|
+   |自動化ルール名|SecurityEvent Local Administrators User Add|
+   |トリガー|インシデント作成時|
+   |アクション |プレイブックを実行する|
+   |playbook |PostMessageTeams-OnAlert|
+
+   >**注:** プレイブックに既にアクセス許可を割り当てているため、使用可能になります。
+
+1. **[適用]** を選択します
+
+1. **[次へ: 確認と作成 >]** ボタンを選択します。
+  
+1. *[確認と作成]* タブで、 **[作成]** ボタンを選択して新しいスケジュール化された分析ルールを作成します。
 
 ## 演習 8 に進む
