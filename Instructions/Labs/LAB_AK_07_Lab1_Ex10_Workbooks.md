@@ -8,7 +8,7 @@ lab:
 
 ## ラボのシナリオ
 
-![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex8.png)
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex10.png)
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 Microsoft Sentinel にデータ ソースを接続した後、Microsoft Sentinel による Azure Monitor ブックの適用を使用して、データを視覚化および監視できます。これにより、多用途のカスタム ダッシュボードを作成できます。 
 

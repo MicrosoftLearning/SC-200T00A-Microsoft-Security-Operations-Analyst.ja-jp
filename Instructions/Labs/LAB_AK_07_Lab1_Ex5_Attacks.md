@@ -4,17 +4,17 @@ lab:
   module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="learning-path-7---lab-1---exercise-5---understand-detection-modeling"></a>ラーニング パス 7 - ラボ 1 - 演習 5 - 検出モデリングを理解する
+# ラーニング パス 7 - ラボ 1 - 演習 5 - 検出モデリングを理解する
 
-![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex4.png)
-### <a name="task-1-understand-the-attacks"></a>タスク 1:攻撃を理解する
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex5.png)
+### タスク 1:攻撃を理解する
 
 >**重要:この演習では、アクションを実行しません。**  これらの手順は、次の演習で実行する攻撃について説明するものにすぎません。 このページをよくお読みください。
 
 攻撃パターンは、オープン ソース プロジェクトに基づいています。 https://github.com/redcanaryco/atomic-red-team
 
 
-#### <a name="attack-1---persistence-with-registry-key-add"></a>攻撃 1 - レジストリ キーの追加による永続性
+#### 攻撃 1 - レジストリ キーの追加による永続性
 
 攻撃者は、Run レジストリ キーにプログラムを追加します。 これにより、ユーザーがログオンするたびにプログラムが実行されるため、永続化が実現します。
 
@@ -22,7 +22,7 @@ lab:
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
 
-#### <a name="attack-2---user-add-and-elevate-privilege"></a>攻撃 2 - ユーザーが特権を追加および昇格
+#### 攻撃 2 - ユーザーが特権を追加および昇格
 
 攻撃者は新しいユーザーを追加し、新しいユーザーを Administrators グループに昇格させます。 これにより、攻撃者は特権のある別のアカウントでログオンできます。
 
@@ -32,7 +32,7 @@ net user theusernametoadd ThePassword1!
 net localgroup administrators theusernametoadd /add
 ```
 
-#### <a name="attack-3---dns--c2"></a>攻撃 3 - ドメイン ネーム サービスおよびコマンド & コントロール 
+#### 攻撃 3 - ドメイン ネーム サービスおよびコマンド & コントロール 
 
 攻撃者は、コマンド & コントロール (C2) サーバーに大量の DNS クエリを送信します。 この目的は、単一ソースのシステムまたは単一ターゲットのドメインからの DNS クエリの数に対して、しきい値ベースの検出をトリガーすることです。
 
@@ -79,7 +79,7 @@ Until ($TimeNow -ge $RunEnd)
 ```
 
 
-### <a name="task-2-understand-detection-modeling"></a>タスク 2:検出モデリングの理解
+### タスク 2:検出モデリングの理解
 
 このラボで使用されている攻撃検出構成サイクルは、2つの特定のデータソースのみに焦点を当てている場合でも、すべてのデータソースを表します。
 
@@ -94,4 +94,4 @@ KQL ステートメントを取得したら、分析ルールを作成します�
 
 >**注:**  一部のアラートは、ラボの目的のためだけに、より短い時間枠でトリガーされます。
 
-## <a name="proceed-to-exercise-6"></a>演習 6 に進みます
+## 演習 6 に進みます
