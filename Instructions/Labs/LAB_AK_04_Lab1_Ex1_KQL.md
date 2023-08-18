@@ -54,7 +54,7 @@ lab:
     search "new"
     ```
 
-1. 次のステートメントは、**in** 句でリストされたテーブル全体を検索する **search** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
+1. 次のステートメントは、**in** 句でリストされたテーブル全体を検索する **search** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
     search in (SecurityEvent,App*) "new"
@@ -127,7 +127,7 @@ lab:
 
 1. クエリ ウィンドウで、 **[時間の範囲]** を **[過去 1 時間]** に変更します。 これにより、次のステートメントの結果が制限されます。
 
-1. 次のステートメントは、計算列を作成し、それを結果セットに追加する **extend** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
+1. 次のステートメントは、計算列を作成し、それを結果セットに追加する **extend** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
     SecurityEvent  
@@ -136,7 +136,7 @@ lab:
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
     ```
 
-1. 次のステートメントは、入力テーブルの行を 1 つ以上の列で昇順または降順に並べ替える **order by** 演算子を示しています。 **order by** 演算子は、**sort by** 演算子のエイリアスです。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
+1. 次のステートメントは、入力テーブルの行を 1 つ以上の列で昇順または降順に並べ替える **order by** 演算子を示しています。 **order by** 演算子は、**sort by** 演算子のエイリアスです。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
     SecurityEvent  
@@ -173,7 +173,7 @@ lab:
 
 このタスクでは、データを集計するための KQL ステートメントを作成します。 **summarize** は、**by** グループ列別に行をグループ化し、各グループの集計を計算します。
 
-1. 次のステートメントは、グループ数を返す **count()** 関数を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
+1. 次のステートメントは、グループ数を返す **count()** 関数を示しています。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
     SecurityEvent  
@@ -181,7 +181,7 @@ lab:
     | summarize count() by Process, Computer
     ```
 
-1. 次のステートメントも **count()** 関数を示していますが、今度の例では、列に *cnt* という名前が付けられています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
+1. 次のステートメントも **count()** 関数を示していますが、今度の例では、列に *cnt* という名前が付けられています。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
     SecurityEvent  
@@ -245,7 +245,7 @@ lab:
 
     >**注:**  右下の "クエリの詳細" リンクを選択して、"合計 CPU" と "処理されたクエリに使用するデータ" を確認し、両方のステートメント間のデータを比較することもできます。
 
-1. 次のステートメントは、グループ内のすべての値の *リスト* を返す**make_list()** 関数を示しています。 この KQL クエリでは、まず where 演算子を使用して EventID をフィルター処理します。 次に、各コンピューターについて、結果がアカウントの JSON 配列になります。 結果として得られる JSON 配列には、重複するアカウントが含まれます。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
+1. 次のステートメントは、グループ内のすべての値の *リスト* を返す**make_list()** 関数を示しています。 この KQL クエリでは、まず where 演算子を使用して EventID をフィルター処理します。 次に、各コンピューターについて、結果がアカウントの JSON 配列になります。 結果として得られる JSON 配列には、重複するアカウントが含まれます。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
 
     ```KQL
     SecurityEvent  
@@ -319,7 +319,7 @@ lab:
 
     >**注:** 結果の "空の行" には、SigninLogs の集計数が表示されます。
 
-1. 次のステートメントは、ワイルドカードを使用して複数のテーブルの和集合を求める **union** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
+1. 次のステートメントは、ワイルドカードを使用して複数のテーブルの和集合を求める **union** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、 **[実行]** を選択します。 
 
     ```KQL
     union App*  
@@ -407,7 +407,7 @@ lab:
 
     ```KQL
     SigninLogs 
-    | extend AuthDetails =  todynamic(AuthenticationDetails) 
+    | extend AuthDetails =  parse_json(AuthenticationDetails) 
     | extend AuthMethod =  AuthDetails[0].authenticationMethod 
     | extend AuthResult = AuthDetails[0].["authenticationStepResultDetail"] 
     | project AuthMethod, AuthResult, AuthDetails 
@@ -417,7 +417,7 @@ lab:
 
     ```KQL
     SigninLogs 
-    | mv-expand AuthDetails = todynamic(AuthenticationDetails) 
+    | mv-expand AuthDetails = parse_json(AuthenticationDetails) 
     | project AuthDetails
     ```
 
@@ -427,7 +427,7 @@ lab:
 
     ```KQL
     SigninLogs 
-    | mv-apply AuthDetails = todynamic(AuthenticationDetails) on
+    | mv-apply AuthDetails = parse_json(AuthenticationDetails) on
     (where AuthDetails.authenticationMethod == "Password")
     ```
 
