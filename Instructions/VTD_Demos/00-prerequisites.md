@@ -1,12 +1,12 @@
 
-# <a name="microsoft-security-operations-analyst"></a>Microsoft Security Operations Analyst
+# Microsoft Security Operations Analyst
 講師用準備ガイド
 
-## <a name="purpose"></a>目的 
+## 目的
 
-このドキュメントは、''脅威に対する防御とクラウド環境の保護'' のための Microsoft Security Virtual Training Day を教える準備をしている発表者向けです。 この資料は SC-200:Microsoft Security Operations Analyst 認定コースのサブセットです。
+このドキュメントは、`Defend Against Threats with Extended Detection and Response` と `Configure Security Operations Using Microsoft Sentinel` のための Microsoft セキュリティ仮想トレーニング デーを教える準備をしているプレゼンターを対象としています。 この資料は SC-200:Microsoft Security Operations Analyst 認定コースのサブセットです。
 
-## <a name="demo-prerequisites"></a>デモの前提条件
+## デモの前提条件
 
 このコースのラボでは、Microsoft 365 E5ライセンスのテナントと、Azureサブスクリプションの両方が必要です。
 
@@ -16,13 +16,13 @@
 * ラボの手順は、[SC-200 Microsoft Learning Github](https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Instructions/VTD_Demos/) リポジトリにあります。
 * デモに使用するコンピューターに新しい Microsoft Edge ブラウザーがインストールされていることを確認してください。
 
-## <a name="activate-azure-pass"></a>Activate Azure Pass
+## Activate Azure Pass
 
-## <a name="deploy-defender-for-endpoint"></a>Defender for Endpoint のデプロイ
+## Defender for Endpoint のデプロイ
 
-### <a name="obtain-your-microsoft-365-credentials"></a>Microsoft 365 資格情報の取得
+### Microsoft 365 資格情報の取得
 
-ラボを起動すると、無料のトライアル テナントを利用して Microsoft Virtual Lab 環境にアクセスできるようになります。 このテナントには自動的に一意のユーザー名とパスワードが割り当てられます。 Microsoft Virtual Lab 環境で Azure と Microsoft 365 にサインインするには、このユーザー名とパスワードを取得する必要があります。 
+ラボを起動すると、無料のトライアル テナントを利用して Microsoft Virtual Lab 環境にアクセスできるようになります。 このテナントには自動的に一意のユーザー名とパスワードが割り当てられます。 Microsoft Virtual Lab 環境で Azure と Microsoft 365 にサインインするには、このユーザー名とパスワードを取得する必要があります。
 
 このコースは、学習パートナーが複数の認証済みラボ ホスティング プロバイダーのいずれかを使用して実施することもあり、お使いになっているテナントに関連のあるテナント ID を取得する実際の手順はラボ ホスティング プロバイダーに応じて異なります。 このため、コース内での当該情報の取得方法については、講師が必要な指示を行います。 後ほど使用できるよう以下の情報に留意してください。
 
@@ -30,14 +30,11 @@
     - **テナント パスワード。** これは、ラボ ホスティング プロバイダーの提供する管理者アカウント向けのパスワードです。
     
 
-### <a name="initialize-microsoft-defender-for-endpoint"></a>Microsoft Defender for Endpoint の初期化
+### Microsoft Defender for Endpoint の初期化
 
 このタスクでは、Microsoft Defender for Endpoint の初期化を行います。
 
-
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
-
-1. Microsoft Edge ブラウザーを開いて、"edge ブラウザー更新" を検索し、新しい Microsoft Edge ブラウザーをダウンロードしてインストールします。 この手順は、ホスティングされている仮想マシンで確実に Microsoft Edge の最新版を実行する上で重要です。 新しいMicrosoft Edge ブラウザーを起動します。
 
 1. Edge ブラウザーで、 https://security.microsoft.com) の Microsoft 365 Defender ポータルに移動します。
 
@@ -45,35 +42,33 @@
 
 1. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者のテナント パスワードをコピーして貼り付け、**サインイン**します。
 
-**注**: "このセクションにアクセスできません" というメッセージが表示されたら、5 分待ってから再びお試しください。  アクセス ルールでテナントを広める必要があるかもしれません。
+**[Microsoft 365 Defender]** ポータルのナビゲーション メニューで、左側の **[ホーム]** を選択します。
 
-1. Microsoft 365 Defender ポータルの左側のメニュー セクションで、[設定] まで下にスクロールします。
+    >**Note:** You may need to scroll all the way to the menu top.
 
-1. [設定] で、[エンドポイント] を選択します。
+1. **[ホーム]** ポータル ページに、 **[Microsoft 365 Defender へようこそ]** が表示されます。
 
-1. [全般] セクションに [データ保有期間] の選択肢が表示されます。
+1. **[Microsoft 365 Defender を有効にする]** というメッセージが示された **Microsoft 365 Defender** ラベルが付いたタイルが見つかるまで、タイルを下にスクロールします。
+
+    >**ヒント:** タイルの右下に表示されるはずです。
+
+1. **[新しい機能を有効にする]** というボタンを選択します。
+
+1. ページの上部に ''*読み込んで初期化しています*'' というメッセージが一時的に表示されてから、コーヒー マグの画像と ''**お待ちください。データ用の新しいスペースを準備し、それらを接続しています**'' というメッセージが表示されます。 完了するまで約 5 分かかります。 ''*ページは開いたままにしてください。これは次のラボで必要になるので、必ず完了させるようにしてください。* ''
+
+    >**メモ:** "お待ちください。 データ用の新しいスペースを準備し、それらを接続しています。" メッセージが表示されないか、または [設定] > [Microsoft 365 Defender] > [アカウント] ページが開きますが "Failed to load data storage location (データ ストレージの場所を読み込めませんでした)" というメッセージが表示される場合、 後でもう一度お試しください。[全般] メニューから [アラート サービスの設定] を選択するか、ナビゲーション メニューに移動し、[資産] セクションまで下にスクロールして [デバイス] を選択します。
+
+1. 新しいスペースが正常に完了すると、アカウント、電子メール通知、アラート サービス設定、アクセス許可とロールおよび Streaming API の Microsoft 365 Defender [全般] 設定が表示されます。 **[プレビュー機能]** もオンになります。
 
 **注**:ホストされているラボ環境では、データ ストレージの場所を選択する必要があります。 また、このトレーニング テナントが管理されている場所に適した地域にある必要があります。 [データ保有期間] の長さは引き続き選択できますが、必須ではありません。
 
-1. [エンドポイント]、[全般] で、[高度な機能] を選択します。
+1. **[設定]** で **[エンドポイント]** を選択します。
 
-1. 機能のリストを下にスクロールし、プレビュー機能が **[オン]** であることを確認します。
+1. デバイス管理セクションで **[オンボーディング]** を選択します。
 
-1. そうでない場合は、スライダーを **[オン]** の位置に移動し、 **[ユーザー設定の保存]** を選択します。  
+    >**メモ:** 左側のメニュー バーの **[アセット]** セクションからデバイスのオンボードを実行することもできます。 [アセット] を展開し、[デバイス] を選択します。 [デバイス インベントリ] ページで、[コンピューター] と [モバイル] が選択された状態で、 **[デバイスのオンボード]** まで下にスクロールします。 そうすると、 **[設定] > [エンドポイント]** ページが表示されます。
 
-**注**:セットアップは**完了**します。  次のタスクではデバイスのオンボードを行います。  
-
-### <a name="onboard-a-device"></a>デバイスのオンボード
-
-このタスクでは、デバイスを Microsoft Defender for Endpoint にオンボードします。
-
-1. Microsoft 365 Defender ポータル (https://security.microsoft.com) ) に移動し、現在ポータルにいない場合は、**テナントの電子メール**資格情報を使用してログインします。
-
-1. 左側のメニュー バーで **[設定]** を選択します。
-
-1. **[エンドポイント]** を選択し、[デバイス管理] セクションで **[オンボード]** を選択します。
-
-1. デバイスのオンボード領域で **[パッケージのダウンロード]** ボタンを選択します。
+1. [1. オンボード デバイス] 領域で、デプロイ方法ドロップダウンにローカル スクリプト (最大 10 デバイス) が表示されていることを確認し、**[オンボーディング パッケージのダウンロード]** ボタンを選択します。
 
 1. ダウンロードされた zip ファイルをローカル フォルダーに抽出します (［ドキュメント］ フォルダーなど)。
 
@@ -90,7 +85,7 @@
 **注** デバイスがポータルに表示されるまでに最高 5 分かかることがあります。
 
 
-### <a name="configure-role"></a>ロールの構成
+### ロールの構成
 
 このタスクでは、デバイス グループで使用するロールを設定します。
 
@@ -115,7 +110,7 @@
 
 1. **[保存]** を選択します。
 
-### <a name="configure-device-groups"></a>デバイス グループの構成
+### デバイス グループの構成
 
 このタスクでは、アクセス コントロールと自動化の設定が可能なデバイス グループを構成します。
 
@@ -147,32 +142,34 @@
 
 1. これで、先ほど作成した "Regular" と "グループに属していないデバイス (既定)" という 2 つのデバイス グループが同じ修復レベルで表示されます。
 
+<!--- 
+## Deploy sample alerts for Demo in Module 3
 
-## <a name="deploy-sample-alerts-for-demo-in-module-3"></a>モジュール 3 でデモのサンプル アラートをデプロイする
+In this task, you will load sample security alerts and review the alert details.
 
-このタスクでは、サンプルのセキュリティアラートを読み込み、アラートの詳細を確認します。
+1. In the Edge browser, open the Azure portal at https://portal.azure.com.
 
-1. Edge ブラウザーで Azure portal (https://portal.azure.com) を開きます。
+1. In the **Sign in** dialog box, copy and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
 
-1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
+1. In the **Enter password** dialog box, copy and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
 
-1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
+1. In the Search bar of the Azure portal, type *Defender*, then select **Microsoft Defender for Cloud**.
 
-1. Azure portal の検索バーに「*Defender*」と入力し、**[Microsoft Defender for Cloud]** を選択します。
+1. In the **Getting Started** menu the default selection is **Upgrade**, select or **Skip** for now.
 
-1. **[作業の開始]** メニューの既定の選択肢は **[アップグレード]** です。これを選択するか、今は**スキップ**します。
+1. Select **Security alerts** in the portal menu.
 
-1. ポータルメニューで **[セキュリティアラート]** を選択します。
+1. Select **Sample Alerts** from the command bar.
 
-1. コマンド バーから **[サンプルアラート]** を選択します。
+1. In the Create sample alerts (Preview) pane make sure your subscription is selected.  Make sure all sample alerts are selected and select **Create sample alerts**.  
 
-1. サンプルアラートの作成（プレビュー）ペインで、サブスクリプションが選択されていることを確認します。  すべてのサンプルアラートが選択されていることを確認し、**[サンプルアラートの作成]** を選択します。  
+**Note** This may take a few minutes to complete. --->
 
-**注**: これは完了するまでに数分かかる場合があります。
-
-## <a name="deploy-microsoft-sentinel-workspace-for-demo-in-module-4"></a>モジュール 4 でデモ用の Microsoft Sentinel ワークスペースをデプロイする
+## モジュール 4 でデモ用の Microsoft Sentinel ワークスペースをデプロイする
 
 このタスクでは、Microsoft Sentinel ワークスペースを作成します。
+
+ >**注:** 次のデモでは、Azure Pass またはその他の Azure サブスクリプションがアクティブである必要があります。
 
 1. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
@@ -180,7 +177,7 @@
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. **[+ 作成]** を選択します。
 
@@ -204,9 +201,9 @@
 
 1. 新しく作成したワークスペースが表示されたら、それを選択し、**[追加]** を選択します。
 
-## <a name="create-data-connectors-for-microsoft-sentinel"></a>Microsoft Sentinel 用のデータ コネクタを作成する
+## Microsoft Sentinel 用の Content Hub ソリューションとデータ コネクタをデプロイする
 
-### <a name="task-1-access-the-microsoft-sentinel-workspace"></a>タスク 1:Microsoft Sentinel ワークスペースにアクセスする。
+### タスク 1:Microsoft Sentinel ワークスペースにアクセスする
 
 このタスクでは、Microsoft Sentinel ワークスペースにアクセスします。
 
@@ -220,187 +217,366 @@
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
-### <a name="task-2-connect-the-azure-active-directory-connector"></a>タスク 2:Azure Active Directory コネクタを接続する
+### タスク 2: Azure Activity データ コネクタを接続する。
 
-このタスクでは、Azure アクティビティ データ コネクタを接続します。
+このタスクでは、*Azure Activity* データ コネクタを接続します。
 
-1. 構成領域で、**[データ コネクタ]** を選択します。  データ コネクタ ページで、リストから**Azure Active Directory** タイルを選択します。
+1. Microsoft Sentinel の左側のメニューで、 *[コンテンツ管理]* セクションまで下にスクロールし、 **[コンテンツ ハブ]** を選択します。
 
-1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
+1. *[コンテンツ ハブ]* で、「**Azure Activity**」ソリューションを検索し、一覧から選択します。
 
-1. 構成領域から **[サインイン ログ]** と **[監査ログ]** オプションを選択し、**[変更の適用]** を選択します。
+1. *Microsoft Defender for Cloud* ソリューション ページで、 **[インストール]** を選択します。
 
-### <a name="task-3-connect-the-azure-active-directory-identity-protection-connector"></a>タスク 3:Azure Active Directory Identity Protection コネクタを接続する
+1. インストールが完了したら、 **[管理]** を選択します
 
-このタスクでは、Azure Active Directory Identity Protection コネクタを接続します。
+    >**注:** *Azure Activity* ソリューションでは、*Azure Activity* データ コネクタ、12 個の分析ルール、14 個のハンティング クエリ、1 つのブックがインストールされます。
 
-1. [データ コネクタ] タブで、リストから **[Azure Active Directory Identity Protection]** コネクタを選択します。
+1. *Azure Activity* データ コネクタを選択し、 **[コネクタ ページを開く]** を選択します。
 
-1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
+1. *[構成]* 領域の *[手順]* タブで、"2. 診断設定の新しい..." まで下にスクロールし、 **[[Azure Policy の割り当て] ウィザードの起動>]** を選択します。
 
-1. **[接続]** を選択します。
+1. **[基本]** タブで、 **[スコープ]** の下にある省略記号ボタン [...] を選択し、ドロップダウン リストから [Azure Pass - スポンサーシップ] サブスクリプションを選択して、 **[選択]** をクリックします。
 
-### <a name="task-4-connect-the-microsoft-defender-for-cloud-connector"></a>タスク 4:Microsoft Defender for Cloud コネクタを接続する。
+1. **[パラメーター]** タブを選び、 **[プライマリ Log Analytics ワークスペース]** ドロップダウン リストから自分のワークスペースを選びます。 このアクションにより、Log Analytics ワークスペースに情報を送信するサブスクリプション構成が適用されます。
 
-このタスクでは、Microsoft Defender for Cloud コネクタを接続します。
+1. **[修復]** タブを選択し、 **[修復タスクの作成]** チェック ボックスをオンにします。 このアクションにより、既存の Azure リソースにポリシーが適用されます。
 
-1. [データ コネクタ] タブで、リストから **[Microsoft Defender for Cloud]** コネクタを選択します。
+1. **[確認と作成]** ボタンを選択して構成を確認します。
 
-1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
+1. **[作成]** を選択して完了します。
 
-1. 接続オプションを確認します。 接続しない。 これは情報提供のみを目的としています。
+### タスク 3: Azure で Windows 仮想マシンを作成する
 
-### <a name="task-5-connect-the-microsoft-defender-for-cloud-apps-connector"></a>タスク 5:Microsoft Defender for Cloud Apps コネクタを接続する。
+このタスクでは、Azure で Windows 仮想マシンを作成します。
 
-このタスクでは、Microsoft Defender for Cloud Apps コネクタを接続します。
+1. 管理者として **WIN1** 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
-1. [データ コネクタ] タブで、リストから **[Microsoft Defender for Cloud Apps]** コネクタを選択します。
+1. Microsoft Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
-1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
+1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
-1. **[構成]** セクションの **[手順]** タブで、 **[アラート]** を選択してから、 **[変更の適用]** を選択します。
+1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナント パスワード**をコピーして貼り付け、**[サインイン]** を選択します。
 
-### <a name="task-6-connect-the-microsoft-defender-for-office-365-connector"></a>タスク 6:Microsoft Defender for Office 365 に接続する
+1. **[+ リソースの作成]** を選択します。 **ヒント:** 既に Azure Portal にいた場合は、上部のバーから *[Microsoft Azure]* を選択してホームに移動する必要があることがあります。
 
-このタスクでは、Microsoft Defender for Office 365 コネクタを接続します。
+1. **[サービスとマーケットプレースの検索]** ボックスに「*Windows 10*」と入力し、ドロップダウン リストから **[Microsoft Window 10]** を選択します。
 
-1. [データ コネクタ] タブで、一覧から **[Microsoft Defender for Office 365]** コネクタを選択します。
+1. **Microsoft Window 10** のボックスをオンにします。
 
-1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
+1. [プラン] ドロップダウン リストを開き、 **[Windows 10 Enterprise バージョン 22H2]** を選択します。**
 
-1. **[接続]** を選択します。
+1. **[事前設定された構成で開始する]** を選択して続行します。
 
-### <a name="task-7-connect-the-microsoft-defender-for-identity-connector"></a>タスク 7:Microsoft Defender for forIdentity コネクタに接続する
+1. **[開発/テスト]** を選択してから、**[VM の作成を続行する]** を選びます。
 
-このタスクでは、Microsoft Defender for Identity コネクタを接続します。
+1. [リソース グループ] で **[新規作成]** を選択し、[名前] に「`RG-AZWIN01`」と入力して **[OK]** を選択します。**
 
-1. [データ コネクタ] タブで、一覧から **[Microsoft Defender for Identity]** コネクタを選択します。
+    >**注:**  これは、追跡目的の新しいリソース グループとなります。 
 
-1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
+1. [仮想マシン名] に「`AZWIN01`」と入力します。**
 
-1. 接続オプションを確認します。 接続しない。 これは情報提供のみを目的としています。
+1. *[リージョン]* の既定値は **[(米国) 米国東部]** のままにします。
 
-### <a name="task-8-connect-the-microsoft-defender-for-endpoint-connector"></a>タスク 8:Microsoft Defender for Endpointコネクタに接続する
+1. 下にスクロールして、仮想マシンの [イメージ] を確認します。** 空の場合は、 **[Windows 10 Enterpriseバージョン 22H2]** を選択します。
 
-このタスクでは、Microsoft Defender for Endpoint コネクタを接続します。
+1. 仮想マシンの [サイズ] を確認します。** 空の場合は、 **[すべてのサイズを表示]** を選択し、 *[Azure ユーザーが最もよく使用]* で最初の VM サイズを選択し、 **[選択]** を選択します。
 
-1. [データ コネクタ] タブで、一覧から **[Microsoft Defender for Endpoint]** コネクタを選択します。
+    >**注:** 次のメッセージが表示される場合: *This image is not supported for Azure Automanage. To disable this feature,navigate to the Management tab. Otherwise, select a supported image.* (このイメージは Azure Automanage ではサポートされていません。この機能を無効にするには、[管理] タブに移動してください。それ以外の場合は、サポートされているイメージを選択してください。) [管理] タブに移動し、"Automanage" を無効にします。 その後、作成プロセスは成功するようになります。
 
-1. [コネクタ情報] ブレードで [コネクタ ページを開く] を選択します。
+1. 下にスクロールし、選んだ [ユーザー名] を入力します。** **ヒント:** admin や root のような予約語は避けてください。
 
-1. **[接続]** を選択します。
+1. 任意の ''*パスワード*'' を入力します。 **ヒント:** テナント パスワードを再利用する方が簡単な場合があります。 これはリソース タブにあります。
 
-### <a name="task-9-connect-the-microsoft-365-defender-connector"></a>タスク 9:Microsoft 365 Defender コネクタを接続する
+1. ページの下部まで下にスクロールし、*[ライセンス]* の下にあるチェックボックスをオンにして、対象ライセンスがあることを確認します。
 
-このタスクでは、Microsoft 365 Directory コネクタを接続します。
+1. **[確認と作成]** を選択し、検証に合格するまで待ちます。
 
-1. [データ コネクタ] タブで、一覧から **[Microsoft 365 Defender]** コネクタを選択します。
+    >**注:** "ネットワーク" 検証エラーがある場合は、そのタブを選び、その内容を確認してから、 **[確認と作成]** をもう一度選びます。**
 
-1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
+1. **［作成］** を選択します リソースが作成されるのを待ちますこれには数分かかることがあります。
 
-1. Microsoft Defender for Endpointのすべてのチェックボックスを選択します。
+### タスク 4: Azure Windows 仮想マシンを接続する
 
-1. **[変更の適用]** を選択します。
+このタスクでは、Azure Windows 仮想マシンを Microsoft Sentinel に接続します。
 
-### <a name="task-3-connect-a-non-azure-windows-machine"></a>タスク 3:非 Azure Windows マシンを接続する。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
-このタスクでは、非 Azure Windows 仮想マシンを Microsoft Sentinel に接続します。
+1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
-1. 管理者として、次のパスワードを使用して WIN2 仮想マシンにログインします:**Pa55w.rd**。  
+1. 1. Microsoft Sentinel の左側のメニューで、 *[コンテンツ管理]* セクションまで下にスクロールし、 **[コンテンツ ハブ]** を選択します。
 
-1. ブラウザを開き、新しいMicrosoft Edgeブラウザーを検索、ダウンロード、およびインストールします。 新しいMicrosoft Edge ブラウザーを起動します。
+1. *[コンテンツ ハブ]* で、「**Windows セキュリティ イベント**」ソリューションを検索し、一覧から選択します。
 
-1. ブラウザーを開き、ご自身の資格情報を使用して Azure Portal (https://portal.azure.com ) にログインします。
+1. "Windows セキュリティ イベント" のソリューション ページで、 **[インストール]** を選択します。**
 
-1. Azure Portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
+1. インストールが完了したら、 **[管理]** を選択します
 
-1. Microsoft Sentinel ワークスペースを選択します。
+    >**注:** "Windows セキュリティ イベント" ソリューションでは、"AMA を使用した Windows セキュリティ イベント" と "レガシ エージェントを使用したセキュリティ イベント" データ コネクタの両方がインストールされます。** ** ** さらに、2 つのブック、20 個の分析ルール、43 個のハンティング クエリがインストールされます。
 
-1. [データ コネクタ] タブで、リストから **[レガシ エージェントを使用したセキュリティ イベント]** コネクタを選択します。
+1. "AMA を使用した Windows セキュリティ イベント" データ コネクタを選択し、コネクタ情報ブレードの **[コネクタ ページを開く]** を選択します。**
 
-1. [コネクタ情報] ブレードで **[コネクタ ページを開く]** を選択します。
+1. *[構成]* セクションの *[手順]* タブで、 **[データ収集ルールの作成]** を選択します。
 
-1. ストリーミングするイベントの選択領域で、**[すべてのイベント]** を選択し、**[変更の適用]** を選択します。
+1. ルール名に「**AZWINDCR**」と入力して、 **[次へ: リソース]** を選択します。
 
-1. **[非 Azure Windows マシンにエージェントをインストールする]** を選択します。
+1. **[+ リソースの追加]** を選択し、作成した仮想マシンを選択します。
 
-**注:**  Windows仮想マシンへのエージェントのインストールと非Azure　Windowsマシンへのエージェントのインストールの手順が逆になる場合があります。 リンクは、テキストが逆になっている場合でも、適切な場所に移動します。
+1. **RG-AZWIN01** を展開し、**AZWIN01** を選択します。
 
-1. **[Azure 以外の Windows マシンのエージェントをダウンロードしてインストールする]** を選択します。 
+1. **[適用]** を選んでから、 **[次へ: 収集]** を選びます。
 
-1. **Windows エージェントのダウンロード (64 ビット)** のリンクを選択します。
+1. 別のセキュリティ イベント コレクション オプションを確認します。 [すべてのセキュリティ イベント] のままにして、 **[次へ: 確認と作成]** を選びます。**
 
-1. ダウンロードした.exeファイルを実行し、確認と表示される可能性のあるユーザーアカウント制御プロンプトを実行します。
+1. **[作成]** を選んで、データ収集ルールを保存します。
 
-1. ウェルカム ダイアログで **[次へ]** を選択します。
+1. 少し待ってから **[更新]** を選択すると、新しいデータ収集規則が一覧表示されます。
 
-1. [Microsoft ソフトウェアライセンス条項] ページで **[同意する]** を選択します。  宛先プロンプトで、**[次へ]** を選択します。
+### タスク 5: Azure Arc をインストールしてオンプレミス サーバーに接続する
 
-1. [エージェントのセットアップ オプション] プロンプトで、**[Azure ログ分析 (OMS) にエージェントを接続する]** オプションを選択し、**[次へ]** を選択します。
+このタスクでは、オンボードを簡単にするために、オンプレミスのサーバーに Azure Arc をインストールします。
 
-1. ブラウザで、エージェントの管理ページから**ワークスペースID**をコピーし、ダイアログのワークスペースIDに貼り付けます。 
+>**重要:** 次の手順は、以前に作業していたものとは異なるマシンで行います。 仮想マシン名の参照を探します。
 
-1. ブラウザで、エージェントの管理ページから主キーをコピーし、ダイアログの**主キー**に貼り付けます。 
+1. 管理者として **WINServer** 仮想マシンにログインします。パスワードは **Passw0rd!** です。 です (必要な場合)。  
 
-1. **[次へ]** を選択します。
+1. Microsoft Edge ブラウザーを開き、Azure portal (https://portal.azure.com ) に移動します。
 
-1. [Microsoft Update] ページで、**[次へ]** を選択します。
+1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
-2. その後、 **[インストール]** を選択します。
+1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
-### <a name="task-4-install-and-collect-sysmon-logs"></a>タスク 4:Sysmonログをインストールして収集します。
+1. Azure portal の検索バーに「*Arc*」と入力し、**[Azure Arc]** を選択します。
 
-このタスクでは、Sysmonログをインストールして収集します。
+1. ナビゲーション ウィンドウの **[インフラストラクチャ]** の下にある **[マシン]** を選択します
 
-引き続きWIN2 仮想マシンに接続する必要があります。  次の手順では、既定構成でSysmonをインストールします。  実稼働マシンで使用するSysmonのコミュニティベースの構成を調査する必要があります
+1. **[+ Add/Create] (+ 追加/作成)** を選択し、 **[Add a machine] (マシンの追加)** を選択します。
 
-1. ブラウザーで、https://docs.microsoft.com/sysinternals/downloads/sysmon に移動します。
+1. [単一サーバーの追加] セクションから **[スクリプトの生成]** を選択します。
 
-1. **Sysmonのダウンロード**を選択して、ページからSysmonをダウンロードします。
+1. *[前提条件]* タブに目を通してから、 **[次へ]** を選択して続行します。
 
-1. ダウンロードしたファイルを開き、ファイルを新しいディレクトリc：\ sysmonに抽出します。
+1. *[Azure Arc を使用してサーバーを追加する]* ページで、 *[プロジェクトの詳細]* で先ほど作成したリソース グループを選択します。 **ヒント:** *RG-Defender*
 
-1. WindowsのWIN2タスクバーの検索ボックスに*コマンド*を入力します。  検索結果には、コマンドプロンプトアプリが表示されます。  コマンドプロンプトアプリを右クリックし、**管理者として実行**を選択します。  表示されるユーザー アカウント制御のプロンプトを確認します。
+    >**注:**  リソース グループをまだ作成していない場合は、別のタブを開き、リソース グループを作成して最初からやり直します。
 
-1. *cd \sysmon* と入力します
+1. *[サーバーの詳細]* と *[接続方法]* のオプションを確認します。 既定値のままにして **[次へ]** を選択し、[タグ] タブに移動します。
 
-1. *notepad sysmon.xml* と入力して、新しいファイルを作成します。
+1. 使用可能な既定のタグを確認します。 **[次へ]** を選択して、[スクリプトのダウンロードと実行] タブに移動します。
 
-1. ブラウザーでタブを開き、https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml に移動します。
+1. 下にスクロールし、 **[ダウンロード]** ボタンを選択します。 **ヒント:** ブラウザーでダウンロードがブロックされた場合は、ブラウザーでダウンロードを許可するように対処してください。 Edge ブラウザーで、必要に応じて省略記号ボタン ([...]) を選択し、**[保存]** を選択します。
 
-1. そのファイルの内容を Github から先ほど作成した sysmon.xml メモ帳ファイルにコピーしてファイルを保存します。
+1. Windows の [スタート] ボタンを右クリックし、**[Windows PowerShell (管理者)]** を選択します。
 
-1. コマンド プロンプトで、「sysmon.exe -accepteula -i sysmon.xml」と入力して Enter キーを押します
+1. UAC プロンプトが表示された場合は、「*Administrator*」を "ユーザー名" として、「*Passw0rd!*」を "パスワード" として入力します。
 
-1. ブラウザーで Azure portal (https://portal.azure.com ) に移動します。 
+1. 「cd C:\Users\Administrator\Downloads」と入力します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
+    >**重要:** このディレクトリがない場合は、ほとんどの場合、間違ったマシンを使用していることを意味します。 タスク 4 の先頭に戻り、WINServer に変更してやり直します。
 
-1. Microsoft Sentinel で、[構成] 領域から **[設定]** を選択し、 **[ワークスペース設定]** タブを選択します。
+1. *Set-ExecutionPolicy -ExecutionPolicy Unrestricted* を入力しEnterキーを押します。
 
-1. Microsoft Sentinel ワークスペースが選択されていることを確認してください。
+1. [すべてにはい] の場合は「**A**」を入力し、Enter キーを押します。
 
-1. [設定] で、**[エージェント構成]** を選択します。
+1. 「*.\OnboardingScript.ps1*」と入力し、Enter キーを押します。  
 
-1. **[Windows イベント ログ]** タブを選択します。
+    >**重要:** *用語 .\OnboardingScript.ps1 が認識されません...* というエラーが表示された場合は、タスク 4 を WINServer 仮想マシンで行っていることを確認してください。 他の問題として、複数回ダウンロードしたためにファイルの名前が変更された可能性があります。実行中のディレクトリで *".\OnboardingScript (1).ps1"* またはその他のファイル番号を検索してください。
 
-1. **[Windows イベント ログの追加]** ボタンを選択します。
+1. **R** を入力して 1 回実行し、Enter キーを押します (これには数分かかる場合があります)。
 
-1. "ログ名" フィールドに「**Microsoft-Windows-Sysmon/Operational**」と入力します。
+1. セットアップ プロセスにより、Azure Arc エージェントを認証するための新しい Edge ブラウザー タブが開きます。 ご自分の管理者アカウントを選択し、"認証が完了しました" というメッセージが表示されるまで待ってから、Windows PowerShell ウィンドウに戻ります。
+
+1. インストールが完了したら、スクリプトをダウンロードした Azure portal ページに戻り、 **[閉じる]** を選択します。 **[Azure Arc を使用してサーバーを追加]** を閉じて、Azure Arc の **[マシン]** ページに戻ります。
+
+1. WINServer サーバー名が表示され、[状態] が *[接続済み]* になるまで **[更新]** を選択します。
+
+    >**注:** これには数分かかることがあります。
+
+
+### タスク 6: オンプレミスのサーバーを保護する
+
+このタスクでは、Azure Arc に接続された非 Azure Windows 仮想マシンを、Microsoft Sentinel に追加します。  
+
+   >**注:** "AMA を使用した Windows セキュリティ イベント" データ コネクタには非 Azure デバイス用の Azure Arc が必要です。**
+
+1. Microsoft Sentinel ワークスペースの "AMA を使用した Windows セキュリティ イベント" データ コネクタの構成にいることを確認します。**
+
+1. **[手順]** タブの *[構成]* セクションで、"鉛筆" アイコンを選択して **AZWINDCR** の "データ収集ルール" を編集します。** **
+
+1. **[次へ: リソース]** 、 **[+ リソースの追加]** の順に選択します。
+
+1. 作成したリソース グループを展開して、**WINServer** を選びます。
+
+    >**重要:** WINServer が表示されない場合は、このサーバーに Azure Arc をインストールしたラーニング パス 3、演習 1、タスク 4 を参照してください。
 
 1. **[適用]** を選択します。
 
-## <a name="conduct-attacks"></a>攻撃を実施する
+1. **[次へ: 収集]** 、 **[次へ: 確認と作成]** の順に選択します。
 
-### <a name="task-1-attack-windows-configured-with-defender-for-endpoint"></a>タスク 1:Defender for Endpoint によって構成した Windows を攻撃します。
+1. *[検証に成功しました]* が表示されたら、 **[作成]** を選択します。
+
+
+<!--- ### Task 4: Connect the Microsoft Defender for Cloud connector.
+
+In this task, you will connect the Microsoft Defender for Cloud connector.
+
+1. From the Data Connectors tab, select the **Microsoft Defender for Cloud** connector from the list.
+
+1. Select **Open connector page** on the connector information blade.
+
+1. Review the Connecting Options. Don't connect. This is for informational purposes only.
+
+### Task 5: Connect the Microsoft Defender for Cloud Apps connector.
+
+In this task, you will connect theMicrosoft Defender for Cloud Apps connector.
+
+1. From the Data Connectors Tab, select the **Microsoft Defender for Cloud Apps** connector from the list.
+
+1. Select **Open connector page** on the connector information blade.
+
+1. In the **Instructions** tab in the **Configuration** section, select **Alerts** and then select **Apply Changes**.
+
+### Task 6: Connect the Microsoft Defender for Office 365 connector.
+
+In this task, you will connect the Microsoft Defender for Office 365 connector.
+
+1. From the Data Connectors tab, select the **Microsoft Defender for Office 365** connector from the list.
+
+1. Select **Open connector page** on the connector information blade.
+
+1. Select **Connect**.
+
+### Task 7: Connect the Microsoft Defender for Identity connector.
+
+In this task, you will connect the Microsoft Defender for Identity connector.
+
+1. From the Data Connectors Tab, select the **Microsoft Defender for Identity** connector from the list.
+
+1. Select **Open connector page** on the connector information blade.
+
+1. Review the Connecting Options. Don't connect. This is for informational purposes only.
+
+### Task 8: Connect the Microsoft Defender for Endpoint connector.
+
+In this task, you will connect the Microsoft Defender for Endpoint connector.
+
+1. From the Data Connectors Tab, select the **Microsoft Defender for Endpoint** connector from the list.
+
+1. Select Open connector page on the connector information blade.
+
+1. Select **Connect**.
+
+### Task 9: Connect the Microsoft 365 Defender connector.
+
+In this task, you will connect the Microsoft 365 Defender connector.
+
+1. From the Data Connectors Tab, select the **Microsoft 365 Defender** connector from the list.
+
+1. Select **Open connector page** on the connector information blade.
+
+1. Select all the checkboxes for Microsoft Defender for Endpoint.
+
+1. Select **Apply Changes**. 
+
+### Task 3: Connect a non-Azure Windows Machine.
+
+In this task, you will connect a non-Azure Windows virtual machine to Microsoft Sentinel.
+
+1. Login to WIN2 virtual machine as Admin with the password: **Pa55w.rd**.  
+
+1. Open the browser, search for, download, and install the new Microsoft Edge browser. Start the new Edge browser.
+
+1. Open a browser and log into the Azure Portal at https://portal.azure.com with your credentials.
+
+1. In the Search bar of the Azure Portal, type *Sentinel*, then select **Microsoft Sentinel**.
+
+1. Select your Microsoft Sentinel Workspace.
+
+1. From the Data Connectors tab, select the **Security Events via Legacy Agent** connector from the list.
+
+1. Select **Open connector page** on the connector information blade.
+
+1. In the Select which events to stream area, select **All Events**, then select **Apply Changes**.
+
+1. Select the **Install agent on a non-Azure Windows  Machine**.
+
+**Note:** The instructions for Install agent on a Windows Virtual Machine and Install agent on a non-Azure Windows Machine may be reversed. The links take you to the proper location even with the reversed text.
+
+1. Select **Download & install agent for non-Azure Windows machines**. 
+
+1. Select the link for **Download Windows Agent (64 bit)**.
+
+1. Run the .exe file that is downloaded and confirm and User Account Control prompt that may appear.
+
+1. Select **Next** on the Welcome dialog.
+
+1. Select **I Agree** on the Microsoft Software License Terms page.  On the Destination prompt select **Next**.
+
+1. On the Agent Setup Options prompt, select **Connect the agent to Azure Log Analytics (OMS)** option, then select **Next**.
+
+1. In the browser, copy the **Workspace ID** from the Agents Management page and paste into the Workspace ID in the dialog. 
+
+1. In the browser, copy the **Primary key** from the Agents Management page and paste into the Primary key in the dialog. 
+
+1. Select **Next**.
+
+1. Select **Next** on the Microsoft Update page.
+
+2. Then select **Install**.
+
+### Task 4: Install and collect Sysmon logs.
+
+In this task, you will install and collect Sysmon logs.
+
+You should still be connected to the WIN2 virtual machine.  The following instructions will install Sysmon with the default configuration.  You should research community based configurations for Sysmon to be used on production machines.
+
+1. In the browser, go to https://docs.microsoft.com/sysinternals/downloads/sysmon
+
+1. Download Sysmon from the page by select **Download Sysmon**.
+
+1. Open the downloaded file and extract the files to a new directory c:\sysmon
+
+1. In the Windows Taskbar for WIN2 search box, enter *command*.  The search results will show command prompt app.  Right-click on the command prompt app and select **Run as Administrator**.  Confirm any User Account Control prompts that appear.
+
+1. Enter *cd \sysmon*
+
+1. type *notepad sysmon.xml* to create a new file.
+
+1. Open a tab in the browser and navigate to: https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml
+
+1. Copy the contents of that file from Github to the sysmon.xml notepad file you just created and save the file.
+
+1. In the command prompt type the following and press enter:
+    sysmon.exe -accepteula -i sysmon.xml
+
+1. In the browser, navigate to the Azure portal at https://portal.azure.com 
+
+1. In the Search bar of the Azure portal, type *Sentinel*, then select **Microsoft Sentinel**.
+
+1. In Microsoft Sentinel, select **Settings** from the Configuration area and then select **Workspace settings** tab.
+
+1. Make sure your Microsoft Sentinel Workspace is selected.
+
+1. Select **Agents configuration** in Settings.
+
+1. Select the **Windows Event logs** tab.
+
+1. Select **Add windows event log** button.
+
+1. Enter **Microsoft-Windows-Sysmon/Operational** in the Log name field.
+
+1. Select **Apply**. --->
+
+## 攻撃を実施する
+
+### タスク 1:Defender for Endpoint で構成された Windows を攻撃する
 
 このタスクでは、Microsoft Defender for Endpoint が構成されているホストに対して攻撃を実行します。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
+1. 管理者として `WIN1` 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
 1. タスク バーの検索で、*Command* と入力します。  検索結果にコマンド プロンプトが表示されます。  コマンド プロンプトを右クリックして、 **[管理者として実行]** を選択します。 表示されるユーザー アカウント制御のプロンプトを確認します。
 
@@ -410,12 +586,20 @@ cd \
 mkdir temp
 cd temp
 ```
-1. 攻撃 1 -次のコマンドをコピーして実行します。
+
+1. 次のコマンドをコピーして実行します。
 
 ```
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
 
+### タスク 2: C2 (コマンドと制御) 攻撃を作成する
+
+1. 管理者として `WIN1` 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
+
+1. タスク バーの検索で、*Command* と入力します。  検索結果にコマンド プロンプトが表示されます。  コマンド プロンプトを右クリックして、 **[管理者として実行]** を選択します。 表示されるユーザー アカウント制御のプロンプトを確認します。
+1. 
+1. 
 1. 攻撃 2 - 次のコマンドをコピーして実行します。
 
 ```
@@ -490,31 +674,24 @@ powershell
 **注:**  解決エラーが表示されます。 これは通常の動作で、エラーではありません。
 このコマンド/パワーシェルスクリプトをバックグラウンドで実行します。 ウィンドウを閉じないでください。  コマンドは、数時間ログエントリを生成する必要があります。  このスクリプトの実行中に次のタスクや次の演習に進むことができます。  このタスクで作成したデータは、後で脅威の捜索ラボで使用します。  このプロセスでは、大量のデータや処理を作成することはありません。
 
-### <a name="task-2-attack-windows-configured-with-sysmon"></a>タスク 2:Sysmon で構成された攻撃ウィンドウ
+### タスク 2: Azure Monitor エージェント (AMA) で構成された攻撃ウィンドウ
 
 このタスクでは、セキュリティ イベント コネクタが構成され、Sysmon が構成されているホストに対して攻撃を実行します。
 
-1. 管理者として、次のパスワードを使用して WIN2 仮想マシンにログインします:**Pa55w.rd**。  
+1. 前に作成した `AZWIN01` 仮想マシンを選択します。  
 
-1. タスクバーの検索で、*CMD* と入力します。  検索結果にコマンド プロンプトが表示されます。  コマンド プロンプトを右クリックして、 **[管理者として実行]** を選択します。
+1. 左側のメニューで **[操作]** まで下にスクロールし、 **[コマンドの実行]** を選択します
 
-1. コマンドプロンプトで、各行の後に Enter キーを押して、各行にコマンドを入力します。
-```
-cd \
-mkdir temp
-cd \temp
-```
+1. **[コマンドの実行]** ペインで、 **[RunPowerShellScript]** を選択します
 
-1. 攻撃 1 -次のコマンドをコピーして実行します。
+1. 以下のコマンドをコピーして、`PowerShell Script` フォームへの管理アカウントの作成をシミュレートし、 **[実行]** を選択します
 
-```
-REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
-```
+    ```CommandPrompt
+    net user theusernametoadd /add
+    net user theusernametoadd ThePassword1!
+    net localgroup administrators theusernametoadd /add
+    ```
 
-1. 攻撃 2 - このコマンドをコピーして実行し、各行の後に Enter キーを押して各行にコマンドを入力します。
+>**注**: 1 行にコマンドが 1 つだけあることを確認してください。ユーザー名を変更するとコマンドを再実行できます。
 
-```
-net user theusernametoadd /add
-net user theusernametoadd ThePassword1!
-net localgroup administrators theusernametoadd /add
-```
+1. `Output` ウィンドウに `The command completed successfully` が 3 回表示されます
