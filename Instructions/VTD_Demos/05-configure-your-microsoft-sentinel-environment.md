@@ -1,14 +1,14 @@
-# <a name="module-5-configure-your-microsoft-sentinel-environment"></a>モジュール 5 Microsoft Sentinel 環境を構成する
+# モジュール 5 Microsoft Sentinel 環境を構成する
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
 
-## <a name="explore-the-microsoft-sentinel-interface"></a>Microsoft Sentinel インターフェイスを調べる
+## Microsoft Sentinel インターフェイスを調べる
 
 1. [前提条件のセクション](00-prerequisites.md#deploy-azure-sentinel-workspace-for-demo-in-module-4)を完了したときに以前に作成した Microsoft Sentinel インスタンスに戻ります。
 
 1. 新しく作成された Microsoft Sentinel ワークスペースをナビゲートして、ユーザーインターフェイスオプションに慣れてください。
 
-## <a name="create-a-watchlist"></a>ウォッチリストを作成する。
+## ウォッチリストを作成する
 
 このタスクでは、ウォッチリストを作成します。
 
@@ -58,7 +58,7 @@ _GetWatchlist('HighValueHosts')
 
 独自のKQLステートメントで_GetWatchlist（ 'HighValueHosts'）を使用して、リストにアクセスできるようになりました。 参照する列は*Hostname*になります。
 
-## <a name="create-a-threat-indicator"></a>脅威インジケーターを作成する。
+## 脅威インジケーターを作成する。
 
 このタスクでは、インジケーターを作成します。
 
@@ -91,4 +91,4 @@ ThreatIntelligenceIndicator
 ThreatIntelligenceIndicator 
 | project DomainName
 ```
-## <a name="you-have-completed-the-demo"></a>デモが完了しました。
+## デモが完了しました。

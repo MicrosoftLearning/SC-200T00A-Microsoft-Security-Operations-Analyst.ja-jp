@@ -1,10 +1,10 @@
-# <a name="module-2-demo---mitigate-attacks-with-microsoft-defender-for-endpoint"></a>モジュール 2 デモ - Microsoft Defender for Endpoint を使用した攻撃の軽減
+# モジュール 2 デモ - Microsoft Defender for Endpoint を使用した攻撃の軽減
 
 
 
-**注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
+**注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。
 
-## <a name="simulated-attacks"></a>シミュレーション攻撃
+## シミュレーション攻撃
 
 このタスクでは、シミュレーション攻撃を 1 回行って、Microsoft Defender for Endpoint の機能を確認します。
 
@@ -22,4 +22,4 @@
     1. [インシデント] ページを開き、**[インシデントの管理]** をクリックします。 **[インシデントの解決]** をクリックして、アクティブなアラートをすべて解決します。
 
 
-## <a name="you-have-completed-the-demo"></a>デモが完了しました。
+## デモが完了しました
