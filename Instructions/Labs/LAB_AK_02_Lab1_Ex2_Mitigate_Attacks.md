@@ -8,7 +8,7 @@ lab:
 
 ## ラボのシナリオ
 
-![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex2.png)
+![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex2_10_19.png)
 
 あなたは Microsoft Defender for Endpoint を実装している企業で働いているセキュリティ運用アナリストです。 あなたの上司は、いくつかのデバイスをオンボードして、セキュリティ オペレーション (SecOps) チームの応答手順で必要な変更に関する情報を提供しようとしています。
 
@@ -53,7 +53,7 @@ Defender for Endpoint の攻撃緩和機能を確認するため、シミュレ�
 
 1. 新しいブラウザー タブで、 **[シミュレーションの実行]** という名前のセクション (5 ページの手順 2 から) を見つけ、次の手順に従って攻撃を実行します。 **ヒント:** シミュレーション ファイル *RS4_WinATP-Intro-Invoice.docm* は、ポータルに戻り、 **[Get simulation file](シミュレーション ファイルの取得)** ボタンを選択して、前の手順で選択した **[Read the walkthrough](チュートリアルを読み取る)** の下に表示されます。 
 
-1. 最後の 3 つの手順を繰り返して、"自動調査 (ファイルレス攻撃)" という別のチュートリアルを実行します。**
+<!--- 1. Repeat the last 3 steps to run another tutorial, *Automated investigation (fileless attack)*. This is no longer working due to win1 AV --->
 
 
 ### タスク 3: 攻撃を調査する
