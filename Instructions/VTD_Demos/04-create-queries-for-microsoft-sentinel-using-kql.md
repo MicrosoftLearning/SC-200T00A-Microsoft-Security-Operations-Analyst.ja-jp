@@ -1,31 +1,55 @@
-# <a name="module-4-create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>モジュール 4 Kusto 照会言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
+# モジュール 4 Kusto 照会言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
 
-## <a name="access-the-kql-testing-area"></a>KQLテストエリアにアクセスします。
+## KQL テスト領域にアクセスする
 
 このタスクでは、KQLステートメントの記述を練習できるLog Analytics環境にアクセスします。
 
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
-2. ブラウザーで https://aka.ms/lademo にアクセスします。 MOD管理者の資格情報を使用してログインします。 
+1. ブラウザーで https://aka.ms/lademo にアクセスします。 MOD管理者の資格情報を使用してログインします。 
 
-3. 画面左側のタブのリストから使用可能なテーブルを調べます。
+1. 画面左側のタブのリストから使用可能なテーブルを調べます。
 
-4. クエリエディタで、次のクエリを入力し、実行 ボタンを選択します。  下部のウィンドウにクエリ結果が表示されます。
+1. クエリエディタで、次のクエリを入力し、実行 ボタンを選択します。  下部のウィンドウにクエリ結果が表示されます。
 
     ```KQL
     SecurityEvent
     ```
 
-5. 最初のレコードの横にある **[>]** を選択して、行の情報を展開します。
+1. 最初のレコードの横にある **[>]** を選択して、行の情報を展開します。
 
-### <a name="task-2-run-basic-kql-statements"></a>タスク 2:基本的なKQL ステートメントを実行する
+### タスク 2:基本的なKQL ステートメントを実行する
 
 このタスクでは 基本的なKQL ステートメントを作成します。
 
-1. 次のステートメントは、letステートメントを使用して変数をデモンストレーションする方法を示しています。 クエリウィンドウで、次のステートメントを、入力し、**[実行]** を選択します。 
+1. `search` 演算子を使用すると、複数テーブルまたは複数列の検索エクスペリエンスが得られます。 次のクエリは、`search` 演算子の使用方法を示しています。
 
+```KQL
+search "err" 
+
+search in (SecurityEvent,SecurityAlert,A*) "err"
+```
+
+1. `where` 演算子は、述語の条件を満たす行のサブセットにテーブルをフィルター処理します。 次のクエリは、`where` 演算子の使用方法を示しています。
+
+```KQL
+SecurityEvent | where EventID in (4624, 4625)
+
+SecurityEvent 
+| where TimeGenerated > ago(1d) 
+
+SecurityEvent 
+| where TimeGenerated > ago(1h) and EventID == "4624" 
+
+SecurityEvent 
+| where TimeGenerated > ago(1h) 
+| where EventID == 4624 
+| where AccountType =~ "user" 
+```
+
+1. 次のステートメントは、`let` ステートメントを使用して変数を宣言する方法を示しています。 クエリウィンドウで、次のステートメントを、入力し、**[実行]** を選択します。 
 
 ```KQL
 let timeOffset = 7d;
@@ -35,8 +59,7 @@ SecurityEvent
 | where EventID != discardEventId
 ```
 
-1. 次のステートメントは、letステートメントを使用して動的リストを宣言する方法を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
-
+1. 次のステートメントは、`let` ステートメントを使用して動的リストを宣言する方法を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
 
 ```KQL
 let suspiciousAccounts = datatable(account: string) [
@@ -46,7 +69,7 @@ let suspiciousAccounts = datatable(account: string) [
 SecurityEvent | where Account in (suspiciousAccounts)
 ```
 
-1. 次のステートメントは、クエリウィンドウに表示されるクエリ時間範囲内のレコードをすべてのテーブルと列で検索する方法を示しています。 このスクリプトを実行する前に、クエリ ウィンドウで、時間範囲を「最後の時間」に変更します。 次のステートメントを入力し、**[実行]** を選択します。 
+1. 次のステートメントは、クエリウィンドウに表示されるクエリ時間範囲内のレコードをすべてのテーブルと列で検索する方法を示しています。 このスクリプトを実行する前に、クエリ ウィンドウで、時間範囲を「最後の時間」に変更します。 次のステートメントを入力し、**[実行]** を選択します。
 
 ```KQL
 search "err"
@@ -54,7 +77,7 @@ search "err"
 
 **警告:** 次のスクリプトのために、必ず時間範囲を "過去 24 時間" に戻してください。
 
-### <a name="create-visualizations-in-kql-with-the-render-operator"></a>レンダー演算子を使用してKQLでビジュアライゼーションを作成します
+### レンダー演算子を使用してKQLでビジュアライゼーションを作成します
 
 このタスクでは,KQLステートメントを使用した視覚化の生成を使用します
 
@@ -66,7 +89,7 @@ SecurityEvent
 | render barchart
 ```
 
-2. 次のステートメントは、時系列で結果を視覚化するレンダリング関数を示しています。
+1. 次のステートメントは、時系列で結果を視覚化するレンダリング関数を示しています。
 
 bin() 関数では、指定のビン サイズの整数の倍数になるように値を切り捨てます。  summarize by ... と組み合わせてよく使用されます。値のセットが分散している場合、その値は特定の値の小さなセットにグループ化されます。  生成された時系列と render 演算子へのパイプを timechart の種類と結合することで、時系列を視覚化できます。 クエリ ウィンドウ内 次のステートメントを入力し、**[実行]** を選択します。 
 
@@ -76,5 +99,4 @@ SecurityEvent
 | render timechart
 ```
 
-## <a name="you-have-completed-the-demo"></a>デモが完了しました。
-
+## デモが完了しました

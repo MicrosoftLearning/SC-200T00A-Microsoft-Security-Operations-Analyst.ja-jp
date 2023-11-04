@@ -52,21 +52,23 @@ lab:
 
 このタスクでは、Microsoft Sentinel でプレイブックとして使用されるロジック アプリを作成します。
 
-1. Microsoft Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
+1. Microsoft Edge ブラウザーで、[Microsoft Sentinel on GitHub](https://github.com/Azure/Azure-Sentinel) に移動します。
 
-1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
+<!--- the Azure portal at https://portal.azure.com.
 
-1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
+1. In the **Sign in** dialog box, copy and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
+1. In the **Enter password** dialog box, copy and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
 
-1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
+1. In the Search bar of the Azure portal, type *Sentinel*, then select **Microsoft Sentinel**.
 
-1. ページの左側にある *[コンテンツ管理]* 領域の下にある **[コミュニティ]** ページを選択します。
+1. Select your Microsoft Sentinel Workspace you created earlier.
 
-1. 右側のペインで、 **[コミュニティのコンテンツをオンボードする]** リンクを選択します。 これにより、Microsoft Sentinel GitHub コンテンツ用の Microsoft Edge ブラウザーの新しいタブが開きます。 **ヒント:** リンクを表示するには、右にスクロールする必要がある場合があります。 または、代わりにこの [GitHub の Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel) リンクに従います。
+1. Select the **Community** page under the *Content management* area on the left side of the page.
 
-1. **Solutions** フォルダーを選択します。
+1. On the right pane, select the **Onboard community content** link. This opens a new tab in the Microsoft Edge Browser for Microsoft Sentinel GitHub content. **Hint:** You might need to scroll right to see the link. Alternatively, follow this link instead: [Microsoft Sentinel on GitHub](https://github.com/Azure/Azure-Sentinel). --->
+
+1. 下にスクロールして、**Solutions** フォルダーを選択します。
 
 1. 次に、''**SentinelSOARessentials**'' フォルダー、''**Playbooks**'' フォルダーの順に選択します。
 
@@ -98,9 +100,9 @@ lab:
 
 1. プレイブックが表示されない場合は、コマンド バーの **[最新の情報に更新]** を選んでください。 前の手順で作成したプレイブックが、**Microsoft Sentinel インシデント**の *[トリガーの種類]* で表示されます。
 
-1. **PostMessageTeams** というプレイブック名を選びます。
+1. **PostMessageTeams-OnIncident** というプレイブック名を選択します。
 
-1. *PostMessageTeams* の Logic App ページで、コマンド メニューの **[編集]** を選択してください。
+1. *PostMessageTeams-OnIncident* の Logic App ページで、コマンド メニューの **[編集]** を選択します。
 
     >**注:** 場合によっては、ページを更新する必要があります。
 
