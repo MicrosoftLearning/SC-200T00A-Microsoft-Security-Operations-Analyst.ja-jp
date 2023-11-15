@@ -10,7 +10,7 @@ lab:
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 あなたはスケジュール済みおよび Microsoft セキュリティ分析ルールを既に作成しています。  Azure DevOps リポジトリで分析ルールを一元化する必要があります。  次に、Sentinel を Azure DevOps リポジトリに接続し、コンテンツをインポートします。 
 
->                **メモ:** このラボをご自分のペースでクリックして進めることができる、 **[ラボの対話型シミュレーション](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Use%20repositories%20in%20Microsoft%20Sentinel)** が用意されています。 対話型シミュレーションとホストされたラボの間に若干の違いがある場合がありますが、示されている主要な概念とアイデアは同じです。 
+>**メモ:** このラボをご自分のペースでクリックして進めることができる、 **[ラボの対話型シミュレーション](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Use%20repositories%20in%20Microsoft%20Sentinel)** が用意されています。 対話型シミュレーションとホストされたラボの間に若干の違いがある場合がありますが、示されている主要な概念とアイデアは同じです。 
 
 
 ### タスク 1:分析ルールを作成してエクスポートする
