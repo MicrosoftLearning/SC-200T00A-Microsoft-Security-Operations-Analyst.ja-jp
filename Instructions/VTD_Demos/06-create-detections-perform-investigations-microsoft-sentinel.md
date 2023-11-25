@@ -18,7 +18,7 @@
 
 1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
-1. `Microsoft Sentinel` で、`Threat management` メニュー セクションに移動し、 **[インシデント]** を選択します
+1. `Microsoft Sentinel` で、`Threat management` メニュー セクションに移動し、**[インシデント]** を選択します
 
 1. 作成した `NRT` ルールで構成した `Severity` と `Title` に一致するインシデントが表示されます
 

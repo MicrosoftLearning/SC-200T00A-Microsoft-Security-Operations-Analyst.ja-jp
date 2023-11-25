@@ -129,7 +129,7 @@
 
 1. **[次へ]** を選択します。
 
-1. . [デバイス] タブの OS 条件で、**[Windows 10]** を選択し、**[次へ]** を選択します。
+1.   [デバイス] タブの OS 条件で、**[Windows 10]** を選択し、**[次へ]** を選択します。
 
 1. [デバイスのプレビュー] タブで、**[プレビューを表示]** を選択して、WIN1 仮想マシンを表示します。 **[次へ]** を選択します。 
 **ヒント:** プレビューの一覧に仮想マシンが表示されない場合は、戻って、OS 条件として *[なし]* も選択してください。 VM のデータはまだ設定されていません。
@@ -169,7 +169,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 このタスクでは、Microsoft Sentinel ワークスペースを作成します。
 
- >**注:** 次のデモでは、Azure Pass またはその他の Azure サブスクリプションがアクティブである必要があります。
+ >**注:**  次のデモでは、Azure Pass またはその他の Azure サブスクリプションがアクティブである必要があります。
 
 1. Edge ブラウザーで、Azure portal (https://portal.azure.com ) に移動します。
 
@@ -221,7 +221,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
-### タスク 2: Azure Activity データ コネクタを接続する。
+### タスク 2:Azure Activity データ コネクタを接続する
 
 このタスクでは、*Azure Activity* データ コネクタを接続します。
 
@@ -241,7 +241,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. **[基本]** タブで、 **[スコープ]** の下にある省略記号ボタン [...] を選択し、ドロップダウン リストから [Azure Pass - スポンサーシップ] サブスクリプションを選択して、 **[選択]** をクリックします。
 
-1. **[パラメーター]** タブを選び、 **[プライマリ Log Analytics ワークスペース]** ドロップダウン リストから自分のワークスペースを選びます。 このアクションにより、Log Analytics ワークスペースに情報を送信するサブスクリプション構成が適用されます。
+1. **[パラメーター]** タブを選び、**[プライマリ Log Analytics ワークスペース]** ドロップダウン リストから自分のワークスペースを選びます。 このアクションにより、Log Analytics ワークスペースに情報を送信するサブスクリプション構成が適用されます。
 
 1. **[修復]** タブを選択し、 **[修復タスクの作成]** チェック ボックスをオンにします。 このアクションにより、既存の Azure リソースにポリシーが適用されます。
 
@@ -249,7 +249,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. **[作成]** を選択して完了します。
 
-### タスク 3: Azure で Windows 仮想マシンを作成する
+### タスク 3:Azure で Windows 仮想マシンを作成する
 
 このタスクでは、Azure で Windows 仮想マシンを作成します。
 
@@ -299,7 +299,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. **［作成］** を選択します リソースが作成されるのを待ちますこれには数分かかることがあります。
 
-### タスク 4: Azure Windows 仮想マシンを接続する
+### タスク 4:Azure Windows 仮想マシンを接続する
 
 このタスクでは、Azure Windows 仮想マシンを Microsoft Sentinel に接続します。
 
@@ -335,7 +335,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 少し待ってから **[更新]** を選択すると、新しいデータ収集規則が一覧表示されます。
 
-### タスク 5: Azure Arc をインストールしてオンプレミス サーバーに接続する
+### タスク 5:Azure Arc をインストールしてオンプレミス サーバーに接続する
 
 このタスクでは、オンボードを簡単にするために、オンプレミスのサーバーに Azure Arc をインストールします。
 
@@ -396,7 +396,7 @@ In this task, you will load sample security alerts and review the alert details.
     >**注:** これには数分かかることがあります。
 
 
-### タスク 6: オンプレミスのサーバーを保護する
+### タスク 6:オンプレミスのサーバーを保護する
 
 このタスクでは、Azure Arc に接続された非 Azure Windows 仮想マシンを、Microsoft Sentinel に追加します。  
 
@@ -576,7 +576,7 @@ You should still be connected to the WIN2 virtual machine.  The following instru
 
 このタスクでは、Microsoft Defender for Endpoint が構成されているホストに対して攻撃を実行します。
 
-1. 管理者として `WIN1` 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
+1. 管理者として、次のパスワードを使用して `WIN1` 仮想マシンにログインします: **Pa55w.rd**。  
 
 1. タスク バーの検索で、*Command* と入力します。  検索結果にコマンド プロンプトが表示されます。  コマンド プロンプトを右クリックして、 **[管理者として実行]** を選択します。 表示されるユーザー アカウント制御のプロンプトを確認します。
 
@@ -593,9 +593,9 @@ cd temp
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
 
-### タスク 2: C2 (コマンドと制御) 攻撃を作成する
+### タスク 2:C2 (コマンドと制御) 攻撃を作成する
 
-1. 管理者として `WIN1` 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
+1. 管理者として、次のパスワードを使用して `WIN1` 仮想マシンにログインします: **Pa55w.rd**。  
 
 1. タスク バーの検索で、*Command* と入力します。  検索結果にコマンド プロンプトが表示されます。  コマンド プロンプトを右クリックして、 **[管理者として実行]** を選択します。 表示されるユーザー アカウント制御のプロンプトを確認します。
 1. 
@@ -674,17 +674,17 @@ powershell
 **注:**  解決エラーが表示されます。 これは通常の動作で、エラーではありません。
 このコマンド/パワーシェルスクリプトをバックグラウンドで実行します。 ウィンドウを閉じないでください。  コマンドは、数時間ログエントリを生成する必要があります。  このスクリプトの実行中に次のタスクや次の演習に進むことができます。  このタスクで作成したデータは、後で脅威の捜索ラボで使用します。  このプロセスでは、大量のデータや処理を作成することはありません。
 
-### タスク 2: Azure Monitor エージェント (AMA) で構成された攻撃ウィンドウ
+### タスク 2:Azure Monitor エージェント (AMA) で構成された攻撃ウィンドウ
 
 このタスクでは、セキュリティ イベント コネクタが構成され、Sysmon が構成されているホストに対して攻撃を実行します。
 
 1. 前に作成した `AZWIN01` 仮想マシンを選択します。  
 
-1. 左側のメニューで **[操作]** まで下にスクロールし、 **[コマンドの実行]** を選択します
+1. 左側のメニューで **[操作]** まで下にスクロールし、**[コマンドの実行]** を選択します
 
-1. **[コマンドの実行]** ペインで、 **[RunPowerShellScript]** を選択します
+1. **[コマンドの実行]** ペインで、**[RunPowerShellScript]** を選択します
 
-1. 以下のコマンドをコピーして、`PowerShell Script` フォームへの管理アカウントの作成をシミュレートし、 **[実行]** を選択します
+1. 以下のコマンドをコピーして、`PowerShell Script` フォームへの管理アカウントの作成をシミュレートし、**[実行]** を選択します
 
     ```CommandPrompt
     net user theusernametoadd /add
@@ -692,6 +692,6 @@ powershell
     net localgroup administrators theusernametoadd /add
     ```
 
->**注**: 1 行にコマンドが 1 つだけあることを確認してください。ユーザー名を変更するとコマンドを再実行できます。
+>**注**:1 行にコマンドが 1 つだけあることを確認してください。ユーザー名を変更するとコマンドを再実行できます。
 
 1. `Output` ウィンドウに `The command completed successfully` が 3 回表示されます
