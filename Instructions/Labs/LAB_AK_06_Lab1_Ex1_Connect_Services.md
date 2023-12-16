@@ -55,9 +55,9 @@ lab:
 
 1. インストールが完了したら、 **[管理]** を選択します
 
-    >**注:** *Microsoft Defender for Cloud* ソリューションでは、*Microsoft Defender for Cloud* データ コネクタと分析ルールがインストールされます。
+    >**注:** *Microsoft Defender for Cloud* ソリューションでは、*サブスクリプション ベースの Microsoft Defender for Cloud (レガシ)* データ コネクタ、*テナント ベースの Microsoft Defender for Cloud (プレビュー)* データ コネクタ、および分析ルールがインストールされます。
 
-1. *Microsoft Defender for Cloud* データ コネクタを選択し、 **[コネクタ ページを開く]** を選択します。
+1. *サブスクリプション ベースの Microsoft Defender for Cloud (レガシ)* データ コネクタ チェックボックスを選択し、**[コネクタ ページを開く]** を選択します。
 
 1. *[構成]* セクションの *[手順]* タブで、"Azure Pass - スポンサーシップ" サブスクリプションのチェック ボックスを**オン**にし、 **[状態]** オプションを右側にスライドさせます。
 
