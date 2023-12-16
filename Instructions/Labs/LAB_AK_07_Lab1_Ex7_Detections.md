@@ -208,7 +208,7 @@ lab:
    |自動化ルール名|SecurityEvent Local Administrators User Add|
    |トリガー|インシデント作成時|
    |アクション |プレイブックを実行する|
-   |playbook |PostMessageTeams-OnAlert|
+   |playbook |PostMessageTeams-OnIncident|
 
    >**注:** プレイブックに既にアクセス許可を割り当てているため、使用可能になります。
 
