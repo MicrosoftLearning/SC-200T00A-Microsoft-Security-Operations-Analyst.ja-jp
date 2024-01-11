@@ -1,8 +1,8 @@
-# <a name="module-7---threat-hunting-in-microsoft-sentinel"></a>モジュール 7 - Microsoft Sentinel での脅威ハンティング
+# モジュール 7 - Microsoft Sentinel での脅威ハンティング
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
 
-## <a name="create-a-hunting-query"></a>ハンティング クエリの作成
+## ハンティング クエリの作成
 
 このタスクでは、捜索クエリを作成し、結果をブックマークして、ライブ ストリームを作成します。
 
@@ -14,7 +14,7 @@
 
 1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントのパスワード**をコピーして貼り付け、 **[サインイン]** を選択します。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力し、**[Microsoft Sentinel]** を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
@@ -113,4 +113,4 @@ DeviceEvents | where TimeGenerated >= ago(lookback)
 
 1. **[ライブストリームに追加]** を選択します。
 
-## <a name="you-have-completed-the-demo"></a>デモが完了しました。
+## デモが完了しました。
