@@ -581,97 +581,97 @@ You should still be connected to the WIN2 virtual machine.  The following instru
 1. タスク バーの検索で、*Command* と入力します。  検索結果にコマンド プロンプトが表示されます。  コマンド プロンプトを右クリックして、 **[管理者として実行]** を選択します。 表示されるユーザー アカウント制御のプロンプトを確認します。
 
 1. コマンドプロンプトで、各行の後に Enter キーを押して、各行にコマンドを入力します。
-```
-cd \
-mkdir temp
-cd temp
-```
+
+    ```CommandPrompt
+    cd \
+    mkdir temp
+    cd temp
+    ```
 
 1. 次のコマンドをコピーして実行します。
 
-```
-REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
-```
+    ```CommandPrompt
+    REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
+    ```
 
 ### タスク 2:C2 (コマンドと制御) 攻撃を作成する
 
 1. 管理者として、次のパスワードを使用して `WIN1` 仮想マシンにログインします: **Pa55w.rd**。  
 
 1. タスク バーの検索で、*Command* と入力します。  検索結果にコマンド プロンプトが表示されます。  コマンド プロンプトを右クリックして、 **[管理者として実行]** を選択します。 表示されるユーザー アカウント制御のプロンプトを確認します。
-1. 
-1. 
+
 1. 攻撃 2 - 次のコマンドをコピーして実行します。
 
-```
-notepad c2.ps1
-```
+    ```CommandPrompt
+    notepad c2.ps1
+    ```
+
 **[はい]** を選択して新しいファイルを作成し、以下の PowerShell スクリプトを c2.ps1 にコピーして **[保存]** を選択します。
 
-**注** 仮想マシンへの貼り付けには長さの制限がある場合があります。  これを 3 つのセクションに貼り付けて、すべてのスクリプトが仮想マシンに貼り付けられるようにします。  スクリプトがメモ帳c2.ps1ファイル内のこれらの手順のように見えることを確認してください。
+>**注:**  仮想マシンへの貼り付けには長さの制限がある場合があります。  これを 3 つのセクションに貼り付けて、すべてのスクリプトが仮想マシンに貼り付けられるようにします。  スクリプトがメモ帳c2.ps1ファイル内のこれらの手順のように見えることを確認してください。
 
-```
-
-
-param(
-    [string]$Domain = "microsoft.com",
-    [string]$Subdomain = "subdomain",
-    [string]$Sub2domain = "sub2domain",
-    [string]$Sub3domain = "sub3domain",
-    [string]$QueryType = "TXT",
-        [int]$C2Interval = 8,
-        [int]$C2Jitter = 20,
-        [int]$RunTime = 240
-)
-
-
-$RunStart = Get-Date
-$RunEnd = $RunStart.addminutes($RunTime)
-
-$x2 = 1
-$x3 = 1 
-Do {
-    $TimeNow = Get-Date
-    Resolve-DnsName -type $QueryType $Subdomain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
-
-    if ($x2 -eq 3 )
-    {
-        Resolve-DnsName -type $QueryType $Sub2domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
-        
-        $x2 = 1
-
-    }
-    else
-    {
-        $x2 = $x2 + 1
-    }
+    ```PowerShell
     
-    if ($x3 -eq 7 )
-    {
-
-        Resolve-DnsName -type $QueryType $Sub3domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
-
-        $x3 = 1
+    param(
+        [string]$Domain = "microsoft.com",
+        [string]$Subdomain = "subdomain",
+        [string]$Sub2domain = "sub2domain",
+        [string]$Sub3domain = "sub3domain",
+        [string]$QueryType = "TXT",
+            [int]$C2Interval = 8,
+            [int]$C2Jitter = 20,
+            [int]$RunTime = 240
+    )
+    
+    
+    $RunStart = Get-Date
+    $RunEnd = $RunStart.addminutes($RunTime)
+    
+    $x2 = 1
+    $x3 = 1 
+    Do {
+        $TimeNow = Get-Date
+        Resolve-DnsName -type $QueryType $Subdomain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
+    
+        if ($x2 -eq 3 )
+        {
+            Resolve-DnsName -type $QueryType $Sub2domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
+            
+            $x2 = 1
+    
+        }
+        else
+        {
+            $x2 = $x2 + 1
+        }
         
+        if ($x3 -eq 7 )
+        {
+    
+            Resolve-DnsName -type $QueryType $Sub3domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
+    
+            $x3 = 1
+            
+        }
+        else
+        {
+            $x3 = $x3 + 1
+        }
+    
+    
+        $Jitter = ((Get-Random -Minimum -$C2Jitter -Maximum $C2Jitter) / 100 + 1) +$C2Interval
+        Start-Sleep -Seconds $Jitter
     }
-    else
-    {
-        $x3 = $x3 + 1
-    }
-
-
-    $Jitter = ((Get-Random -Minimum -$C2Jitter -Maximum $C2Jitter) / 100 + 1) +$C2Interval
-    Start-Sleep -Seconds $Jitter
-}
-Until ($TimeNow -ge $RunEnd)
-
-```
+    Until ($TimeNow -ge $RunEnd)
+    ```
 
 コマンドプロンプトで、次のように入力し、各行の後に Enter キーを押して各行にコマンドを入力します。
-```
-powershell
-.\c2.ps1
-```
-**注:**  解決エラーが表示されます。 これは通常の動作で、エラーではありません。
+
+    ```PowerShell
+    .\c2.ps1
+    ```
+
+>**注:**  解決エラーが表示されます。 これは通常の動作で、エラーではありません。
 このコマンド/パワーシェルスクリプトをバックグラウンドで実行します。 ウィンドウを閉じないでください。  コマンドは、数時間ログエントリを生成する必要があります。  このスクリプトの実行中に次のタスクや次の演習に進むことができます。  このタスクで作成したデータは、後で脅威の捜索ラボで使用します。  このプロセスでは、大量のデータや処理を作成することはありません。
 
 ### タスク 2:Azure Monitor エージェント (AMA) で構成された攻撃ウィンドウ
@@ -692,6 +692,6 @@ powershell
     net localgroup administrators theusernametoadd /add
     ```
 
->**注**: 1 行にコマンドが 1 つだけあることを確認してください。ユーザー名を変更するとコマンドを再実行できます。
+    >**注**: 1 行にコマンドが 1 つだけあることを確認してください。ユーザー名を変更するとコマンドを再実行できます。
 
 1. `Output` ウィンドウに `The command completed successfully` が 3 回表示されます

