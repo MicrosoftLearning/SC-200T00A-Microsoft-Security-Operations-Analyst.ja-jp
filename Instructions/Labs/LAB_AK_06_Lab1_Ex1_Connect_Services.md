@@ -51,9 +51,11 @@ lab:
 
 1. *[コンテンツ ハブ]* で、「**Microsoft Defender for Cloud**」ソリューションを検索し、一覧から選択します。
 
-1. *Microsoft Defender for Cloud* ソリューション ページで、 **[インストール]** を選択します。
+1. *Microsoft Defender for Cloud* ソリューションの詳細ページで、**[インストール]** を選択します。
 
-1. インストールが完了したら、 **[管理]** を選択します
+1. インストールが完了したら、**Microsoft Defender for Cloud** ソリューションを検索して選択します。
+
+1. *Microsoft Defender for Cloud* ソリューションの詳細ページで、**[管理]** を選択します
 
     >**注:** *Microsoft Defender for Cloud* ソリューションでは、*サブスクリプション ベースの Microsoft Defender for Cloud (レガシ)* データ コネクタ、*テナント ベースの Microsoft Defender for Cloud (プレビュー)* データ コネクタ、および分析ルールがインストールされます。
 
@@ -65,7 +67,7 @@ lab:
 
 1. [状態] が **[接続済み]** になり、[双方向の同期] が [有効] になるはずです。** **
 
-1. 下スクロールし、 *[インシデントの作成 - 推奨]* 領域で、 *[この接続済みサービスで生成されたすべてのアラートからインシデントを自動的に作成する]* が **[有効]** になっていることを確認します。
+    <!--- 1. Scroll down and under the *Create incidents - Recommended!* area, verify that *Create incidents automatically from all alerts generated in this connected service* is **Enabled**. --->
 
 ### タスク 3: Azure Activity データ コネクタを接続する
 

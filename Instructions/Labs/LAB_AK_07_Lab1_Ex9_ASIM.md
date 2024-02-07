@@ -12,11 +12,9 @@ lab:
 
 あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 特定の Windows レジストリ イベントに対して ASIM パーサーをモデル化する必要があります。 これらの簡略化されたパーサーは、[Advanced Security Information Model (ASIM) レジストリ イベント正規化スキーマのリファレンス](https://docs.microsoft.com/en-us/azure/sentinel/registry-event-normalization-schema)に従って、後で最終処理されます。
 
-
 >**メモ:** このラボをご自分のペースでクリックして進めることができる、 **[ラボの対話型シミュレーション](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20Advanced%20Security%20Information%20Model%20Parsers)** が用意されています。 対話型シミュレーションとホストされたラボの間に若干の違いがある場合がありますが、示されている主要な概念とアイデアは同じです。 
 
-
-### タスク 1: レジストリ スキーマ ASIM パーサーをデプロイする。 
+### タスク 1:レジストリ スキーマ ASIM パーサーをデプロイする
 
 このタスクでは、Microsoft Sentinel GitHub リポジトリからレジストリ スキーマ パーサーをデプロイします。
 
@@ -32,11 +30,11 @@ lab:
 
 1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
-1. ページの左側にある *[コンテンツ管理]* 領域の下にある **[コミュニティ]** ページを選択します。
+1. Edge ブラウザーで、新しいタブを開き (Ctrl+T)、Microsoft Sentinel GitHub ASIM ページ (<https://github.com/Azure/Azure-Sentinel/tree/master/ASIM>) に移動します。
 
-1. 右側のペインで、 **[コミュニティのコンテンツをオンボードする]** リンクを選択します。 これにより、Microsoft Sentinel GitHub コンテンツ用の Edge ブラウザーの新しいタブが開きます。 **ヒント:** リンクを表示するには、右にスクロールする必要がある場合があります。 または、代わりにこの [GitHub の Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel) リンクに従います。
+    <!--- 1. On the right pane, select the **Onboard community content** link. This will open a new tab in the Edge Browser for Microsoft Sentinel GitHub content. **Hint:** You might need to scroll right to see the link. Alternatively, follow this link instead: [Microsoft Sentinel on GitHub](https://github.com/Azure/Azure-Sentinel). --->
 
-1. **ASIM** フォルダーを選択します。 ここでは、すべての ASIM パーサーを含むテンプレートをデプロイできますが、レジストリ スキーマのみに重点を置きます。
+    >**注:**  **ASIM** フォルダーでは、すべての ASIM パーサーを含むテンプレートをデプロイできますが、ここではレジストリ スキーマにのみ焦点を当てます。
 
 1. 下にスクロールし、 **[レジストリ]** の横にある **[Azure にデプロイ]** ボタンを選択します。
 
@@ -48,9 +46,7 @@ lab:
 
 1. **[作成]** を選択してテンプレートをデプロイします。 さまざまなリソースの名前に注目してください。
 
-1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
-
-1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
+1. デプロイが完了したら、*[Microsoft Sentinel]* タブに戻ります。
 
 1. 左側のメニューの *[全般]* で、 **[ログ]** を選択します。
 
@@ -58,13 +54,13 @@ lab:
 
 1. **[関数]** タブ ([テーブル] と [クエリ] タブの横にある) を選択します。 **ヒント:** タブを選択するには、省略記号アイコン **(...)** を選ぶ必要がある場合があります。
 
-1. **[Worspace 関数]** を展開します。 名前が、先ほどデプロイしたテンプレートに対応していることに注目してください。
+1. **[ワークスペース関数]** を展開します。 名前が、先ほどデプロイしたテンプレートに対応していることに注目してください。
 
-1. **vimRegistryEventMicrosoftSecurityEvents** ''*ワークスペース パーサー*'' をポイントし、 **[関数コードの読み込み]** を選択します。
+1. **vimRegistryEventMicrosoftSecurityEvents** "ワークスペース パーサー" にカーソルを合わせてから、**[関数コードの読み込み]** を選択します。**
 
 1. イベント ID 4657 を解析している KQL を確認し、Microsoft Sentinel ワークスペース内のデータの分析を簡略化します。
 
-1. クエリを**実行**します。 結果やエラーは表示されないはずです。これは検証のみを目的としています。
+1. クエリを**実行**します。 これは検証のみを目的としているため、結果やエラーは表示されないはずです。
 
 1. *[スキーマとフィルター]* ブレードに戻り、ここで **inRegistry** ''*統一パーサー*'' をポイントし、 **[関数コードの読み込み]** を選択します。
 
@@ -74,6 +70,4 @@ lab:
 
 1. この統一パーサーを、分析ルールまたはハンティング クエリに使用できるようになりました。
 
-
 ## 演習 10 に進む
-
