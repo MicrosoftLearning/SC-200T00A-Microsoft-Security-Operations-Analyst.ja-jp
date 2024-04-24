@@ -1,12 +1,12 @@
 ---
 demo:
-  title: 'デモ: ARM テンプレートのデプロイ'
-  module: 'Module 1: Exploring Azure Resource Manager'
+    title: 'Demo: Deploying an ARM Template'
+    module: 'Module 1: Exploring Azure Resource Manager'
 ---
 
-# <a name="demo-deploying-an-arm-template"></a>デモ: ARM テンプレートのデプロイ
+# Demo: Deploying an ARM Template
 
-## <a name="instructions"></a>手順
+## Instructions
 
 1. Quisque dictum convallis metus, vitae vestibulum turpis dapibus non.
 
