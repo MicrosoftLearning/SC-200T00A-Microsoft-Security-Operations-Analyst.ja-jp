@@ -33,21 +33,13 @@ lab:
 
 1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
-1. ナビゲーション メニューから [分析] を選択します。
-
-1. *[Microsoft Defender for Cloud に基づいてインシデントを作成する]* をルール テンプレートから選択します。
-
-1. ルール情報ペインで **[ルールの作成]** を選ぶか、省略記号 (...) と **[+ ルールの作成]** を選びます。
-
-1. 分析ルール ウィザードで、 **[次へ: 自動応答]** を選択してから、 **[次へ: 確認と作成]** を選択します。
-
-1. **[保存]** を選択します。
+1. 次のタスクに進みます。
 
 ### タスク 2: Microsoft Defender for Cloud データ コネクタを接続する
 
 このタスクでは、Microsoft Defender for Cloud データ コネクタを接続します。
 
-1. Microsoft Sentinel の左側のメニューで、 *[コンテンツ管理]* セクションまで下にスクロールし、 **[コンテンツ ハブ]** を選択します。
+1. Microsoft Sentinel の左側のメニューで、 **[コンテンツ管理]** セクションまで下にスクロールし、 **[コンテンツ ハブ]** を選択します。
 
 1. *[コンテンツ ハブ]* で、「**Microsoft Defender for Cloud**」ソリューションを検索し、一覧から選択します。
 
@@ -57,7 +49,7 @@ lab:
 
 1. *Microsoft Defender for Cloud* ソリューションの詳細ページで、**[管理]** を選択します
 
-    >**注:** *Microsoft Defender for Cloud* ソリューションでは、*サブスクリプション ベースの Microsoft Defender for Cloud (レガシ)* データ コネクタ、*テナント ベースの Microsoft Defender for Cloud (プレビュー)* データ コネクタ、および分析ルールがインストールされます。
+    >**注:** *Microsoft Defender for Cloud* ソリューションでは、*サブスクリプション ベースの Microsoft Defender for Cloud (レガシ)* データ コネクタ、*テナント ベースの Microsoft Defender for Cloud (プレビュー)* データ コネクタ、および分析ルールがインストールされます。 テナントに複数のサブスクリプションがある場合、*テナント ベースの Microsoft Defender for Cloud (プレビュー)* データ コネクタが使用されます。
 
 1. *サブスクリプション ベースの Microsoft Defender for Cloud (レガシ)* データ コネクタ チェックボックスを選択し、**[コネクタ ページを開く]** を選択します。
 
