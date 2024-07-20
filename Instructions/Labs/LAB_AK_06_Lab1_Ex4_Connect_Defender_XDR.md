@@ -12,6 +12,8 @@ lab:
 
 あなたは、Microsoft Defender XDR と Microsoft Sentinel の両方を展開した会社で働いているセキュリティ運用アナリストです。 Microsoft Sentinel を Defender XDR に接続する統合セキュリティ運用プラットフォームを準備する必要があります。 次の手順では、Defender XDR コンテンツ ハブ ソリューションをインストールし、Defender XDR データ コネクタを Microsoft Sentinel に展開します。
 
+>**重要:** Azure の Microsoft Sentinel ポータルと Microsoft Defender XDR 内の Sentinel には機能の違いがあることに注意してください **[ポータルの機能の違い](https://learn.microsoft.com/azure/sentinel/microsoft-sentinel-defender-portal#capability-differences-between-portals)**。
+
 ### タスク 1:Defender XDR を接続する
 
 このタスクでは、Microsoft Defender XDR コネクタを展開します。
