@@ -46,7 +46,7 @@ lab:
 
 このタスクでは、Azure DevOps リポジトリを作成します。
 
-1. ブラウザーで別のタブを開き、(https://aexprodcus1.vsaex.visualstudio.com/me?mkt=en-US) に移動します。
+1. ブラウザーで別のタブを開き、(<https://aexprodcus1.vsaex.visualstudio.com/me?mkt=en-US>) に移動します。
 
 1. *[We need a few more details](詳細情報をいくつか入力する必要があります)* ページで、 **[続行]** を選びます。
 
