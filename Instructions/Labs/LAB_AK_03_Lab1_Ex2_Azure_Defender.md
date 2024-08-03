@@ -23,7 +23,7 @@ lab:
 
 1. 管理者として **WIN1** 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
-1. Microsoft Edge ブラウザーで、Azure portal を (https://portal.azure.com)) で開きます。
+1. Microsoft Edge ブラウザーで、Azure portal (<https://portal.azure.com>) を開きます。
 
 1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
