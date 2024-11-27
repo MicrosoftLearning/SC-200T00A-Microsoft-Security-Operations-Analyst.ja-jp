@@ -2,7 +2,7 @@
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。
 
-## Microsoft Defender ポータルを使用する
+## Microsoft Defender ポータルを使う
 
 このタスクでは、Microsoft 365 Defender ポータルの機能について理解します。
 
