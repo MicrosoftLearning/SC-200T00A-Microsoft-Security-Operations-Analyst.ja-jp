@@ -22,8 +22,6 @@ lab:
 
 1. Microsoft Edge ブラウザーで、Azure portal (<https://portal.azure.com> ) に移動します。
   
-    >**注:** ラボの *[ユーザー名]* と *[パスワード]* で **[リソース]** タブを選択してください。 このラボの **<LabUser-XXXXXXXX@LODSPRODXXX.onmicrosoft.com>** アカウントを使用します。
-
 1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
 1. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者のテナント パスワードをコピーして貼り付け、**サインイン**します。
@@ -56,7 +54,7 @@ lab:
 
 1. Close the Defender plans page by selecting the 'X' on the upper right of the page to go back to the **Environment settings**. --->
 
-### タスク 3: Microsoft Defender for Cloud ダッシュボードについて
+### タスク 2: Microsoft Defender for Cloud ダッシュボードについて
 
 1. Microsoft Azure portal の検索バーに「*Defender*」と入力し、**[Microsoft Defender for Cloud]** を選択します。
 

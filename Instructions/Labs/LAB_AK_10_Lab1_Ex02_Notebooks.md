@@ -22,6 +22,8 @@ lab:
 
 このタスクでは、Microsoft Sentinel で Notebooks を使用する方法について説明します。
 
+>**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な *Content Hub* ソリューションがインストールされています。
+
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
 1. Microsoft Edge ブラウザーで、Azure portal (<https://portal.azure.com> ) に移動します。
@@ -32,7 +34,7 @@ lab:
 
 1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
-1. Microsoft Sentinel ワークスペースを選択します。
+1. Microsoft Sentinel **defenderWorkspace** を選択します。
 
 1. Microsoft Sentinel ワークスペースで、 *[脅威の管理]* 領域の下にある **[ノートブック]** を選択します。
 

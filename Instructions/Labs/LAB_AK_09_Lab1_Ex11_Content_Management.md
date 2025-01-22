@@ -18,6 +18,8 @@ lab:
 
 このタスクでは、Microsoft Sentinel でエンティティ行動分析を有効にします。
 
+>**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な *Content Hub* ソリューションがインストールされています。
+
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
 1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、 **[次へ]** を選択します。
@@ -26,7 +28,7 @@ lab:
 
 1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
-1. Microsoft Sentinel ワークスペースを選択します。
+1. Microsoft Sentinel **defenderWorkspace** を選択します。
 
 1. 左側のブレードの [構成] 領域で **[分析]** を選びます。**
 
