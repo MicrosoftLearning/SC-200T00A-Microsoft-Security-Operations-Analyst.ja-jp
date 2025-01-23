@@ -20,6 +20,8 @@ lab:
 
 このタスクでは、Microsoft Sentinel ワークスペースにアクセスします。
 
+>**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な*コンテンツ ハブ* ソリューションがインストールされています。
+
 1. 管理者として **WIN1** 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
 1. Microsoft Edge ブラウザーを開きます。
@@ -32,7 +34,7 @@ lab:
 
 1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
-1. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
+1. Microsoft Sentinel **defenderWorkspace** を選択します。
 
 1. 次のタスクに進みます。
 
@@ -40,13 +42,11 @@ lab:
 
 このタスクでは、Microsoft Defender for Cloud データ コネクタを接続します。
 
-1. Microsoft Sentinel の左側のメニューで、 **[コンテンツ管理]** セクションまで下にスクロールし、 **[コンテンツ ハブ]** を選択します。
+   >**重要:** 双方向同期を*有効にする*には、ラーニング パス 5、演習 1、タスク 1 を確認し、*Microsoft Defender for Cloud* ナビゲーション メニューから **[セットアップ]** を選択して、対象となるすべての Azure サブスクリプションがオンボードされていることを確認してください。
+
+1. Microsoft Sentinel ナビゲーション メニューで、**[コンテンツ管理]** セクションまで下にスクロールし、**[コンテンツ ハブ]** を選択します。
 
 1. *[コンテンツ ハブ]* で、「**Microsoft Defender for Cloud**」ソリューションを検索し、一覧から選択します。
-
-1. *Microsoft Defender for Cloud* ソリューションの詳細ページで、**[インストール]** を選択します。
-
-1. インストールが完了したら、**Microsoft Defender for Cloud** ソリューションを検索して選択します。
 
 1. *Microsoft Defender for Cloud* ソリューションの詳細ページで、**[管理]** を選択します
 
@@ -56,8 +56,6 @@ lab:
 
 1. *[構成]* セクションの *[手順]* タブで、"Azure Pass - スポンサーシップ" サブスクリプションのチェック ボックスを**オン**にし、 **[状態]** オプションを右側にスライドさせます。
 
-    >**注:** 切断に戻る場合は、ラーニング パス 3、演習 1、タスク 1 を確認して、アカウントに適切なアクセス許可を割り当ててください。
-
 1. [状態] が **[接続済み]** になり、[双方向の同期] が [有効] になるはずです。** **
 
     <!--- 1. Scroll down and under the *Create incidents - Recommended!* area, verify that *Create incidents automatically from all alerts generated in this connected service* is **Enabled**. --->
@@ -66,13 +64,11 @@ lab:
 
 このタスクでは、*Azure Activity* データ コネクタを接続します。
 
-1. Microsoft Sentinel の左側のメニューで、 *[コンテンツ管理]* セクションまで下にスクロールし、 **[コンテンツ ハブ]** を選択します。
+1. Microsoft Sentinel ナビゲーション メニューで、*[コンテンツ管理]* セクションまで下にスクロールし、**[コンテンツ ハブ]** を選択します。
 
 1. *[コンテンツ ハブ]* で、「**Azure Activity**」ソリューションを検索し、一覧から選択します。
 
-1. *[Azure Activity]* ソリューション ページで、 **[インストール]** を選択します。
-
-1. インストールが完了したら、 **[管理]** を選択します
+1. *[Azure アクティビティ]* ソリューションの詳細ページで、**[管理]** を選択します。
 
     >**注:** *Azure Activity* ソリューションでは、*Azure Activity* データ コネクタ、12 個の分析ルール、14 個のハンティング クエリ、1 つのブックがインストールされます。
 

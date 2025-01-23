@@ -20,6 +20,8 @@ lab:
 
 このタスクでは、Microsoft Sentinel のデプロイに含まれているレジストリ スキーマ パーサーを確認します。
 
+>**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な*コンテンツ ハブ* ソリューションがインストールされています。
+
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
 1. Microsoft Edge ブラウザーで、Azure portal (<https://portal.azure.com> ) に移動します。
@@ -30,7 +32,7 @@ lab:
 
 1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
-1. Microsoft Sentinel ワークスペースを選択します。
+1. Microsoft Sentinel **defenderWorkspace** を選択します。
 
 <!--- 1. In the Edge browser, open a new tab (Ctrl+T) and navigate to the Microsoft Sentinel GitHub ASIM page <https://github.com/Azure/Azure-Sentinel/tree/master/ASIM>.
 
@@ -50,7 +52,7 @@ lab:
 
 1. After the deployment completes return to the *Microsoft Sentinel* tab. --->
 
-1. 左側のメニューの *[全般]* で、 **[ログ]** を選択します。
+1. ナビゲーション メニューの *[全般]* セクションで **[ログ]** を選択します。
 
 1. 必要に応じて **[>>]** を選択して、 *[スキーマとフィルター]* ブレードを開きます。
 

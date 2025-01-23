@@ -22,6 +22,8 @@ Microsoft Sentinel を使用すると、データ全体に対してカスタム 
 
 このタスクでは、Microsoft Sentinel ブック テンプレートを調べます。
 
+>**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な *Content Hub* ソリューションがインストールされています。
+
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
 1. Edge ブラウザーで、Azure portal (<https://portal.azure.com> ) に移動します。
@@ -32,7 +34,7 @@ Microsoft Sentinel を使用すると、データ全体に対してカスタム 
 
 1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
-1. Microsoft Sentinel ワークスペースを選択します。
+1. Microsoft Sentinel **defenderWorkspace** を選択します。
 
 1. ナビゲーション メニューの *[脅威管理]* セクションの下で **[ブック]** を選択します。
 

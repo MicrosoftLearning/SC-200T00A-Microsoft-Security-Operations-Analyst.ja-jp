@@ -66,81 +66,81 @@ lab:
 
 1. **［作成］** を選択します リソースが作成されるのを待ちますこれには数分かかることがあります。
 
-### タスク 2: オンプレミスのサーバーに Azure Arc をインストールする
+<!--- ### Task 2: Install Azure Arc on an On-Premises Server
 
-このタスクでは、オンボードを簡単にするために、オンプレミスのサーバーに Azure Arc をインストールします。
+In this task, you install Azure Arc on an on-premises server to make onboarding easier.
 
->**重要:** 次の手順は、以前に作業していたものとは異なるマシンで行います。 仮想マシン名の参照を探します。
+>**Important:** The next steps are done in a different machine than the one you were previously working. Look for the Virtual Machine name references.
 
-1. 管理者として **WINServer** 仮想マシンにログインします。パスワードは **Passw0rd!** です。 必要に応じて。  
+1. Log in to **WINServer** virtual machine as Administrator with the password: **Passw0rd!** if necessary.  
 
-1. Microsoft Edge ブラウザーを開き、Azure portal (<https://portal.azure.com> ) に移動します。
+1. Open the Microsoft Edge browser and navigate to the Azure portal at <https://portal.azure.com>.
 
-1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
+1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
 
-1. **[パスワードの入力]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード**をコピーして貼り付け、**[サインイン]** を選択します。
+1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
 
-1. Azure portal の検索バーに「*Arc*」と入力し、**[Azure Arc]** を選択します。
+1. In the Search bar of the Azure portal, type *Arc*, then select **Azure Arc**.
 
-1. ナビゲーション ウィンドウの **[Azure Arc リソース]** の下にある **[マシン]** を選択します
+1. In the navigation pane under **Azure Arc resources** select **Machines**
 
-1. **[+ Add/Create] (+ 追加/作成)** を選択し、 **[Add a machine] (マシンの追加)** を選択します。
+1. Select **+ Add/Create**, then select **Add a machine**.
 
-1. [単一サーバーの追加] セクションから **[スクリプトの生成]** を選択します。
+1. Select **Generate script** from the "Add a single server" section.
 
-1. *[Azure Arc を使用してサーバーを追加する]* ページで、 *[プロジェクトの詳細]* で先ほど作成したリソース グループを選択します。 **ヒント:** *RG-Defender*
+1. In the *Add a server with Azure Arc* page, select the Resource group you created earlier under *Project details*. **Hint:** *RG-Defender*
 
-    >**注:**  リソース グループをまだ作成していない場合は、別のタブを開き、リソース グループを作成して最初からやり直します。
+    >**Note:** If you haven't already created a resource group, open another tab and create the resource group and start over.
 
-1. *[リージョン]* でドロップダウン リストから **[(米国) 米国東部]** を選びます。
+1. For *Region*, select **(US) East Us** from the drop-down list.
 
-1. *[サーバーの詳細]* と *[接続方法]* のオプションを確認します。 既定値のままにして **[次へ]** を選択し、[タグ] タブに移動します。
+1. Review the *Server details* and *Connectivity method* options. Keep the default values and select **Next** to get to the Tags tab.
 
-1. 使用可能な既定のタグを確認します。 **[次へ]** を選択して、[スクリプトのダウンロードと実行] タブに移動します。
+1. Review the default available tags. Select **Next** to get to the Download and run script tab.
 
-1. 下にスクロールし、 **[ダウンロード]** ボタンを選択します。 **ヒント:** ブラウザーでダウンロードがブロックされた場合は、ブラウザーでダウンロードを許可するように対処してください。 Microsoft Edge ブラウザーで、必要に応じて省略記号ボタン ([...]) を選択し、**[保存]** を選択します。
+1. Scroll down and select the **Download** button. **Hint:** if your browser blocks the download, take action in the browser to allow it. In Microsoft Edge Browser, select the ellipsis button (...) if needed and then select **Keep**.
 
-1. Windows の [スタート] ボタンを右クリックし、**[Windows PowerShell (管理者)]** を選択します。
+1. Right-click the Windows Start button and select **Windows PowerShell (Admin)**.
 
-1. UAC プロンプトが表示された場合は、「*Administrator*」を "ユーザー名" として、「*Passw0rd!*」を "パスワード" として入力します。
+1. Enter *Administrator* for "Username" and *Passw0rd!* for "Password" if you get a UAC prompt.
 
-1. 「cd C:\Users\Administrator\Downloads」と入力します。
+1. Enter: cd C:\Users\Administrator\Downloads
 
-    >**重要:** このディレクトリがない場合は、ほとんどの場合、間違ったマシンを使用していることを意味します。 タスク 4 の先頭に戻り、WINServer に変更してやり直します。
+    >**Important:** If you do not have this directory, most likely means that you are in the wrong machine. Go back to the beginning of Task 4 and change to WINServer and start over.
 
-1. *Set-ExecutionPolicy -ExecutionPolicy Unrestricted* を入力しEnterキーを押します。
+1. Type *Set-ExecutionPolicy -ExecutionPolicy Unrestricted* and press enter.
 
-1. [すべてにはい] の場合は「**A**」を入力し、Enter キーを押します。
+1. Enter **A** for Yes to All and press enter.
 
-1. 「*.\OnboardingScript.ps1*」と入力し、Enter キーを押します。  
+1. Type *.\OnboardingScript.ps1* and press enter.  
 
-    >**重要:** *用語 .\OnboardingScript.ps1 が認識されません...* というエラーが表示された場合は、タスク 4 を WINServer 仮想マシンで行っていることを確認してください。 他の問題として、複数回ダウンロードしたためにファイルの名前が変更された可能性があります。実行中のディレクトリで *".\OnboardingScript (1).ps1"* またはその他のファイル番号を検索してください。
+    >**Important:** If you get the error *"The term .\OnboardingScript.ps1 is not recognized..."*, make sure you are doing the steps for Task 4 in the WINServer virtual machine. Other issue might be that the name of the file changed due to multiple downloads, search for *".\OnboardingScript (1).ps1"* or other file numbers in the running directory.
 
-1. **R** を入力して 1 回実行し、Enter キーを押します (これには数分かかる場合があります)。
+1. Enter **R** to Run once and press enter (this may take a couple minutes).
 
-1. セットアップ プロセスにより、Azure Arc エージェントを認証するための新しい Microsoft Edge ブラウザー タブが開きます。 ご自分の管理者アカウントを選択し、"認証が完了しました" というメッセージが表示されるまで待ってから、Windows PowerShell ウィンドウに戻ります。
+1. The setup process opens a new Microsoft Edge browser tab to authenticate the Azure Arc agent. Select your admin account, wait for the message "Authentication complete" and then go back to the Windows PowerShell window.
 
-1. インストールが完了したら、スクリプトをダウンロードした Azure portal ページに戻り、 **[閉じる]** を選択します。 **[Azure Arc を使用してサーバーを追加]** を閉じて、Azure Arc の **[マシン]** ページに戻ります。
+1. When the installation finishes, go back to the Azure portal page where you downloaded the script and select **Close**. Close the **Add servers with Azure Arc** to go back to the Azure Arc **Machines** page.
 
-1. WINServer サーバー名が表示され、[状態] が *[接続済み]* になるまで **[更新]** を選択します。
+1. Select **Refresh** until WINServer server name appears and the Status is *Connected*.
 
-    >**注:** これには数分かかることがあります。
+    >**Note:** This could take a couple of minutes. --->
 
-### タスク 3: Azure Windows 仮想マシンを接続する
+### タスク 2:Azure Windows 仮想マシンを接続する
 
 このタスクでは、Azure Windows 仮想マシンを Microsoft Sentinel に接続します。
 
+>**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な*コンテンツ ハブ* ソリューションがインストールされています。
+
 1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
-1. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
+1. Microsoft Sentinel **defenderWorkspace** を選択します。
 
-1. 1. Microsoft Sentinel の左側のメニューで、 *[コンテンツ管理]* セクションまで下にスクロールし、 **[コンテンツ ハブ]** を選択します。
+1. Microsoft Sentinel の左側ナビゲーション メニューで、*[コンテンツ管理]* セクションまで下にスクロールし、**[コンテンツ ハブ]** を選択します。
 
 1. *[コンテンツ ハブ]* で、「**Windows セキュリティ イベント**」ソリューションを検索し、一覧から選択します。
 
-1. "Windows セキュリティ イベント" のソリューション ページで、 **[インストール]** を選択します。**
-
-1. インストールが完了したら、 **[管理]** を選択します
+1. *Windows セキュリティ イベント* のソリューション ページで、**[管理]** を選択します。
 
     >**注:** "Windows セキュリティ イベント" ソリューションでは、"AMA を使用した Windows セキュリティ イベント" と "レガシ エージェントを使用したセキュリティ イベント" データ コネクタの両方がインストールされます。** ** ** さらに、2 つのブック、20 個の分析ルール、43 個のハンティング クエリがインストールされます。
 

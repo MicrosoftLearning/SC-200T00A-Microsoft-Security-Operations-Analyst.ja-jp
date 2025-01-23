@@ -24,6 +24,8 @@ lab:
 
 このタスクでは、前の演習の最初の攻撃の検出を作成します。
 
+>**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な *Content Hub* ソリューションがインストールされています。
+
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
 1. Edge ブラウザーで、Azure portal (<https://portal.azure.com> ) に移動します。
@@ -34,7 +36,7 @@ lab:
 
 1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
-1. Microsoft Sentinel ワークスペースを選択します。
+1. Microsoft Sentinel **defenderWorkspace** を選択します。
 
 1. [全般] セクションで **[ログ]** を選びます。**
 
