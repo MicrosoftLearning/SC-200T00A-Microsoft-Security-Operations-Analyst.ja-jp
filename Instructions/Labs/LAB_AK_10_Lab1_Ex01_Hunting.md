@@ -14,9 +14,13 @@ lab:
 
 >**重要:** ラーニング パス #10 のラボ演習は、*スタンドアロン*環境にあります。 ラボを完了せずに終了する場合は、構成を再実行する必要があります。
 
->**注:** 前のラーニング パスの「*攻撃を実行する*」ラボ演習で作成したログ データは、演習 5 で**攻撃 3** を WIN1 サーバー上で再実行しないと、このラボでは使用できません。
+>**注:** ラーニング パス 9 ラボ演習で作成したログ データは、演習 5 のタスク 1 と 2、および演習 6 の WIN1 サーバーでの*攻撃 3* を再実行しないと、このラボでは使用できません。 次のリンクを選択することで、これらの手順を新しいブラウザー タブで開くことができます。
 
-### このラボの推定所要時間: 30 分
+**[ラボ 09 演習 5](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex05_Attacks.html)**
+
+**[ラボ 09 演習 6](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex06_Perform_Attacks.html)**
+
+### このラボの推定所要時間: 40 分
 
 ### タスク 1:ハンティング クエリの作成
 
