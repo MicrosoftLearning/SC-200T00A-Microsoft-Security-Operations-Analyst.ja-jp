@@ -57,7 +57,6 @@ lab:
     net localgroup administrators theusernametoadd /add
     ```
 
-
 ### タスク 3: DNS を使用したコマンド アンド コントロール攻撃
 
 1. 次のコマンドをコピーして実行し、C2 サーバーに対する DNS クエリをシミュレートするスクリプトを作成します。
