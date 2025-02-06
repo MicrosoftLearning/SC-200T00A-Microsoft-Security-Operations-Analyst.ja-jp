@@ -42,7 +42,7 @@ lab:
 
 このタスクでは、Microsoft Defender for Cloud データ コネクタを接続します。
 
-   >**重要:** 双方向同期を*有効にする*には、ラーニング パス 5、演習 1、タスク 1 を確認し、*Microsoft Defender for Cloud* ナビゲーション メニューから **[セットアップ]** を選択して、対象となるすべての Azure サブスクリプションがオンボードされていることを確認してください。
+   <!--- >>**Important:** To *Enable* Bi-directional sync, please rerun  **[Lab 05 Exercise 1](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_05_Lab1_Ex01_Enable_MDC.html)**, Task 2, and select **Setup** from the *Microsoft Defender for Cloud* navigation menu to verify all eligible Azure subscriptions are onboarded. --->
 
 1. Microsoft Sentinel ナビゲーション メニューで、**[コンテンツ管理]** セクションまで下にスクロールし、**[コンテンツ ハブ]** を選択します。
 
@@ -54,9 +54,15 @@ lab:
 
 1. *サブスクリプション ベースの Microsoft Defender for Cloud (レガシ)* データ コネクタ チェックボックスを選択し、**[コネクタ ページを開く]** を選択します。
 
-1. *[構成]* セクションの *[手順]* タブで、"Azure Pass - スポンサーシップ" サブスクリプションのチェック ボックスを**オン**にし、 **[状態]** オプションを右側にスライドさせます。
+1. *[構成]* セクションで、*MOC Subscription-XXXXXXXXXXX* のチェックボックスを**オン**にし、**[接続]** リンクを選択するか、**[状態]** オプションを右にスライドします。
 
-1. [状態] が **[接続済み]** になり、[双方向の同期] が [有効] になるはずです。** **
+1. 双方向の同期を有効にするには、**[すべてのサブスクリプションに対して Microsoft Defender を有効にする]** リンクを選択します。
+
+1. *[Microsoft Defender for Cloud] - [はじめに]* ページで、*MOC Subscription-XXXXXXXXXXX* のチェック ボックスがオンで、*[Microsoft Defender プラン]* が *[オン - 部分的 (試用期間は残り 30 日です)]* になっている必要があります。
+
+1. 右上隅の **[X] (閉じる)** ボタンを選択して、*[はじめに]* ページを閉じます。 *Microsoft Defender for Cloud* の構成ページに戻るはずです。
+
+1. *MOC Subscription-XXXXXXXXXXX* の *[状態]* が **[接続済み]** になり、*[双方向の同期]* が *[有効]* になっているはずです。
 
     <!--- 1. Scroll down and under the *Create incidents - Recommended!* area, verify that *Create incidents automatically from all alerts generated in this connected service* is **Enabled**. --->
 
@@ -76,7 +82,7 @@ lab:
 
 1. *[構成]* 領域の *[手順]* タブで、"2. 診断設定の新しい..." まで下にスクロールし、 **[[Azure Policy の割り当て] ウィザードの起動>]** を選択します。
 
-1. **[基本]** タブで、 **[スコープ]** の下にある省略記号ボタン [...] を選択し、ドロップダウン リストから [Azure Pass - スポンサーシップ] サブスクリプションを選択して、 **[選択]** をクリックします。
+1. **[基本]** タブで、**[スコープ]** の下にある省略記号ボタン ([...]) を選択し、ドロップダウン リストから *MOC Subscription-XXXXXXXXXXX* サブスクリプションを選択して、**[選択]** をクリックします。
 
 1. **[パラメーター]** タブを選択し、 **[プライマリ Log Analytics ワークスペース]** ドロップダウン リストから自分の *uniquenameDefender* ワークスペースを選択します。 このアクションにより、Log Analytics ワークスペースに情報を送信するサブスクリプション構成が適用されます。
 
