@@ -20,7 +20,7 @@ lab:
 
 1. 新しい Microsoft Edge ブラウザーを起動します。
 
-1. Microsoft Edge ブラウザーで、(<https://security.microsoft.com>) の Microsoft Defender XDR ポータルに移動します。
+1. Microsoft Edge ブラウザーで、Microsoft Defender XDR ポータル (<https://security.microsoft.com>) にアクセスします。
 
 1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
@@ -30,7 +30,9 @@ lab:
 
 1. **[その他のリソース]** ペインで、*[Microsoft Purview ポータル]* タイルの **[開く]** ボタンを選択します。
 
-1. Microsoft Purview ポータルが開くと、*新しい Microsoft Purview ポータル*に関するメッセージが画面に表示されます。 データ フローの開示条件とプライバシーに関する声明に同意する選択肢を選択し、**[今すぐ試す]** を選択します。
+1. Microsoft Purview ポータルが開くと、*コンプライアンス ポータルが廃止された*ことを示すメッセージが表示されます。 このメッセージはタイムアウトになり、新しい *Microsoft Purview ポータル*にリダイレクトされます。
+
+1. *"新しい Microsoft Purview ポータルへようこそ"* というメッセージで、データ フロー開示の条件とプライバシーに関する声明に同意する選択肢を選択し、**[今すぐ試す]** を選択します。
 
     ![[ようこそ新しい Microsoft Purview ポータルへ] 画面のスクリーンショット。](../Media/welcome-purview-portal.png)
 
