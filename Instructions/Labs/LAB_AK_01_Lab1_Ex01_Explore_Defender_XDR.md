@@ -35,7 +35,7 @@ lab:
 
 1. 新しい Microsoft Edge ブラウザーを起動します。
 
-1. Microsoft Edge ブラウザーで、(<https://security.microsoft.com>) の Microsoft Defender XDR ポータルに移動します。
+1. Microsoft Edge ブラウザーで、Microsoft Defender XDR ポータル (<https://security.microsoft.com>) にアクセスします。
 
 1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
