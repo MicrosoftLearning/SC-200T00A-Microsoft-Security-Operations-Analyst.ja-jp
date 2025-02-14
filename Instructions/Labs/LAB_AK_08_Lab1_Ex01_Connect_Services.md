@@ -58,13 +58,15 @@ lab:
 
 1. 双方向の同期を有効にするには、**[すべてのサブスクリプションに対して Microsoft Defender を有効にする]** リンクを選択します。
 
+    >**注:** リンクを表示するには、右にスクロールする必要がある場合があります。
+
 1. *[Microsoft Defender for Cloud] - [はじめに]* ページで、*MOC Subscription-XXXXXXXXXXX* のチェック ボックスがオンで、*[Microsoft Defender プラン]* が *[オン - 部分的 (試用期間は残り 30 日です)]* になっている必要があります。
 
 1. 右上隅の **[X] (閉じる)** ボタンを選択して、*[はじめに]* ページを閉じます。 *Microsoft Defender for Cloud* の構成ページに戻るはずです。
 
 1. *MOC Subscription-XXXXXXXXXXX* の *[状態]* が **[接続済み]** になり、*[双方向の同期]* が *[有効]* になっているはずです。
 
-    <!--- 1. Scroll down and under the *Create incidents - Recommended!* area, verify that *Create incidents automatically from all alerts generated in this connected service* is **Enabled**. --->
+    >**注:** 場合によっては、ページを更新する必要があります。
 
 ### タスク 3: Azure Activity データ コネクタを接続する
 
