@@ -113,7 +113,7 @@ lab:
     |自動化ルール名|Startup RegKey|
     |トリガー|インシデント作成時|
     |アクション |プレイブックを実行する|
-    |playbook |PostMessageTeams-OnIncident|
+    |playbook |Defender_XDR_Ransomware_Playbook_SecOps-Tasks|
 
     >**注:** プレイブックに既にアクセス許可を割り当てているため、使用可能になります。
 
