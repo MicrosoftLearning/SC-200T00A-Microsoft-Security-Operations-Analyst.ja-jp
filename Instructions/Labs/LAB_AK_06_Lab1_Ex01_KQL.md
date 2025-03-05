@@ -40,7 +40,7 @@ lab:
 
 1. 結果の最大数 (30,000) に達していることに注意してください。
 
-1. クエリ ウィンドウで *[時間の範囲]* を **[過去 30 分間]** に変更します。
+1. クエリ ウィンドウで、*[時間の範囲]* を **[過去 7 日間]** に変更します。
 
 1. 最初のレコードの横にある **[>]** を選択して、行の情報を展開します。
 
@@ -76,26 +76,26 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     ```
 
     >**注:** *[時間の範囲]* には、TimeGenerated 列でフィルター処理しているため、 *[クエリで設定]* が表示されます。
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID == 4624
+    | where TimeGenerated > ago(7d) and EventID == 4624
     ```
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | where EventID == 4624  
     | where AccountType =~ "user"
     ```
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID in (4624, 4625)
+    | where TimeGenerated > ago(7d) and EventID in (4624, 4625)
  
     ```
 
@@ -117,7 +117,7 @@ lab:
       @"NT AUTHORITY\SYSTEM"
     ];
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | where Account in (suspiciousAccounts)
     ```
 
@@ -139,7 +139,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) 
+    | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
     ```
@@ -148,7 +148,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) 
+    | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
     | order by StartDir desc, Process asc
@@ -158,7 +158,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) 
+    | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
     | order by StartDir desc, Process asc 
@@ -169,7 +169,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) 
+    | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
     | order by StartDir desc, Process asc 
@@ -184,7 +184,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID == 4688  
+    | where TimeGenerated > ago(7d) and EventID == 4688  
     | summarize count() by Process, Computer
     ```
 
@@ -192,7 +192,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID == 4624  
+    | where TimeGenerated > ago(7d) and EventID == 4624  
     | summarize cnt=count() by AccountType, Computer
     ```
 
@@ -200,7 +200,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | summarize dcount(IpAddress)
     ```
 
@@ -256,7 +256,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | where EventID == 4624  
     | summarize make_list(Account) by Computer
     ```
@@ -265,7 +265,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | where EventID == 4624  
     | summarize make_set(Account) by Computer
     ```
@@ -279,7 +279,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | summarize count() by Account
     | render barchart
     ```
@@ -288,7 +288,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | summarize count() by bin(TimeGenerated, 1m)
     | render timechart
     ```
@@ -300,7 +300,7 @@ lab:
 
 >**重要:** *SigninLogs* テーブルのエントリが削除されたため、このラボで使用する LA デモ環境では、次のクエリの一部で*現在結果が生成されません*。 ただし、KQL クエリは重要な概念とユース ケースを示しているため、時間をかけて確認してください。
 
-1. クエリ ウィンドウで、 **[時間の範囲]** を **[過去 1 時間]** に変更します。 この結果、次のステートメントの結果が制限されます。
+1. クエリ ウィンドウで、**[時間の範囲]** を **[過去 7 日間]** に変更します。 この結果、次のステートメントの結果が制限されます。
 
 1. 次のステートメントは、2 つ以上のテーブルを取得し、すべての行を返す **union** 演算子を示しています。 結果を渡す方法、およびパイプ文字によってどのような影響があるかを理解することは重要です。 クエリ ウィンドウで、次のステートメントを入力し、クエリごとに **[実行]** を個別に選択して、結果を確認します。
 
@@ -352,7 +352,7 @@ lab:
 
     >**重要:** 結合で指定した最初のテーブルが、左テーブルと見なされます。 **join** 演算子の後のテーブルが右テーブルです。 テーブルの列を操作する場合、$ left.Columnnameと$ right.Column nameは、参照されるテーブルの列を区別するためのものです。 **join** 演算子では、すべての型 (flouter、inner、innerunique、leftanti、leftantisemi、leftouter、leftsemi、rightanti、rightantisemi、rightouter、rightsemi) がサポートされます。
 
-1. クエリ ウィンドウで、 **[時間の範囲]** を **[過去 24 時間]** に戻します。
+1. クエリ ウィンドウで、**[時間の範囲]** を **[過去 7 日間]** のままにすることができます。
 
 ### タスク 6: KQLで文字列データを操作する
 
