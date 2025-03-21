@@ -10,6 +10,20 @@ lab:
 
 あなたは、Microsoft Defender XDR と Microsoft Purview を実装している会社で働いているセキュリティ運用アナリストです。 あなたは、It コンプライアンス チームの同僚が Purview 監査 (Standard) と Purview 監査 (Premium) の両方を構成するのを支援しています。 同僚の目的は、医療施設ネットワークに存在する患者データへのあらゆるアクセスと変更が正確にログに記録されて、健康データ保護規則を確実に満たすようにすることです。
 
+>[警告] エラー メッセージが表示され、この演習で監査記録を開始できない場合は、次の手順を回避策として使用してください。
+>
+>1. Windows 検索フォームに「*PowerShell*」と入力して管理者特権の PowerShell セッションを開いてから、**[管理者として実行]** を選択します。
+>1. `Install-Module -Name ExchangeOnlineManagement` を実行して ExchangeOnlineManagement モジュールをインストールします
+>1. `Connect-ExchangeOnline` を実行して ExchangeOnlineManagement に接続します
+>1. メッセージが表示されたら、ラボ ホスティング プロバイダーから管理者のユーザー名とパスワードを入力してログインします。
+>1. 監査が有効になっているかどうかを確認するには、`Get-AdminAuditLogConfig | FL UnifiedAuditLogIngestionEnabled` を実行します
+>1. false の場合、監査ログはオフになります。
+>1. 監査を有効にするには、`Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true` を実行します
+>1. 組織内でスクリプトを実行できないというエラーが表示された場合は、`Enable-OrganizationCustomization` を実行します
+>1. もう一度 `Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true` の実行をお試しください
+>1. 監査が有効になっていることを確認するには、`Get-AdminAuditLogConfig | FL UnifiedAuditLogIngestionEnabled` を実行します
+>1. 完了したら、`Disconnect-ExchangeOnline` を実行してセッションを終了します
+
 ### このラボの推定所要時間: 15 分
 
 ### タスク 1: Purview 監査ログを有効にする
