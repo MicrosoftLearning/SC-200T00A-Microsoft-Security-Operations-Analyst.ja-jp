@@ -12,9 +12,14 @@ lab:
 
 あなたは、Microsoft Sentinel を実装しようとしている会社で働いているセキュリティ運用アナリストです。 悪意のあるアクティビティを検索し、視覚化を表示し、脅威ハンティングを実行するためにログ データ分析を行う責任があります。 ログ データのクエリを実行するには、Kusto クエリ言語 (KQL) を使用します。
 
->**注:** Microsoft の*セキュア フューチャー イニシアティブ* (SFI) に従い、場所、ユーザー名、IP アドレス、リソース ID など、*個人を特定できる情報* (PII) と考えられるすべての情報 は、*SigninLogs* などの LA デモ テーブルから削除されています。 この結果、一部のクエリで *"結果が見つかりませんでした"* というメッセージが出る場合があります。
+>**重要:** このラボで使用される Log Analytics ワークスペース [LA Demo](https://aka.ms/lademo) は移行中です。 環境にアクセスできない場合や、エラー メッセージが表示される場合は、Microsoft Sentinel がデプロイされた独自の Azure サブスクリプションでクエリを実行してみてもかまいません。 Azure サブスクリプションをお持ちでない場合は、開始する前に [無料アカウント](https://azure.microsoft.com/free/?azure-portal=true) を作成してください。
 
->**重要:** このラボでは、多くの KQL スクリプトを Microsoft Sentinel に入力する必要があります。 これらのスクリプトは、このラボの最初にファイルで提供されます。 また、 <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles> からダウンロードすることもできます。
+>**注:** このラボで Log Analytics ワークスペース [LA Demo](https://aka.ms/lademo) を使用する場合は、クエリ ウィンドウでカスタムの時間範囲を設定する必要があります。 カスタムの時間範囲を 2025 年 4 月 1 日に設定することをお勧めします。
+
+<!--- 
+>**Note:** Per Microsoft's *Secure Future Initiative* (SFI), any information that could be considered *Personally Identifiable Information* (PII), such as locations, usernames, IP addresses, resource IDs etc.. have been removed from the LA Demo tables such as *SigninLogs*. This may produce *No results were found* messages for some queries. --->
+
+>**ヒント:** このラボでは、多くの KQL スクリプトを Microsoft Sentinel に入力する必要があります。 これらのスクリプトは、このラボの最初にファイルで提供されます。 また、 <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles> からダウンロードすることもできます。
 
 ### このラボの推定所要時間: 60 分
 
