@@ -13,7 +13,8 @@ lab:
 この演習では、Microsoft Security Copilot の*最初の実行エクスペリエンス*を確認し、1 つのセキュリティ コンピューティング ユニット (SCU) で Copilot をプロビジョニングします。
 
 >**注:** この演習の環境は、製品から生成されたシミュレーションです。 シミュレーションには制限があるため、ページ上のリンクが有効にならない場合があり、指定されたスクリプトに該当しないテキストベースの入力はサポートされない場合があります。 "This feature is not available within the simulation" (この機能はシミュレーション内では使用できません) というポップアップ メッセージが表示されます。 これが発生したら、[OK] を選択し、演習の手順を続行してください。  
-> :::image type="content" source="../Media/simulation-pop-up-error.png" alt-text="この機能がシミュレーション内で使用できないことを示すポップアップ画面のスクリーンショット。":::
+
+![ポップアップ エラー メッセージ](../Media/simulation-pop-up-error.png)
 
 ### このラボの推定所要時間: 45 分
 
@@ -34,7 +35,7 @@ lab:
 
 Azure でユーザー アクセス管理者ロールが割り当てられたら、Copilot の SKU をプロビジョニングするために必要なアクセス権をユーザーに割り当てることができます。  この演習では、関連する手順のみを示すために、必要なアクセス権を自分自身に割り当てます。  以下の手順に従って、プロセスを実行します。
 
-1. 次のリンクを選択して、シミュレートされた環境を開きます。**[Azure portal](https://app.highlights.guide/start/6373500f-1f10-4584-a14e-ca0b4aa7399f?link=1&token=40f793d4-2956-40a4-b11a-6b3d4f92557f&azure-portal=true)**。
+1. 次のリンクを選択して、シミュレートされた環境を開きます。**[Azure portal](https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&link=1&azure-portal=true)**。
 
 1. まず、Azure リソースのアクセス管理を有効にします。 この設定にアクセスするには:
     1. Azure portal から **Microsoft Entra ID** を選択します。
@@ -65,7 +66,7 @@ Azure でユーザー アクセス管理者ロールが割り当てられたら�
 
 この演習では、Security Copilot を使用して容量をプロビジョニングします。 Security Copilot を初めて開くと、ウィザードが組織の容量を設定する手順をガイドしてくれます。
 
-1. 次のリンクを選んで、シミュレートされた環境を開きます。**[Microsoft Security Copilot](https://app.highlights.guide/start/6373500f-1f10-4584-a14e-ca0b4aa7399f?link=0&token=40f793d4-2956-40a4-b11a-6b3d4f92557f&azure-portal=true)**。
+1. 次のリンクを選んで、シミュレートされた環境を開きます。**[Microsoft Security Copilot](https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**。
 
 1. ウィザードの手順に従い、**[作業の開始]** を選択します。
 1. このページでは、セキュリティ容量を設定します。 以下に示すフィールドについては、情報アイコンを選択して詳細を確認できます。
@@ -101,7 +102,7 @@ Azure でユーザー アクセス管理者ロールが割り当てられたら�
 
 このタスクでは、ホーム メニューから確認を始めます。
 
-1. 次のリンクを選んで、シミュレートされた環境を開きます。**[Microsoft Security Copilot](https://app.highlights.guide/start/2cac767e-42c4-4058-afbb-a9413aac461d?link=0&token=40f793d4-2956-40a4-b11a-6b3d4f92557f&azure-portal=true)**。
+1. 次のリンクを選んで、シミュレートされた環境を開きます。**[Microsoft Security Copilot](https://app.highlights.guide/start/7608581a-ee3a-4fe0-be03-309a58b78c60?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**。
 
 1. **メニュー** アイコン ![ホーム メニュー アイコン](../Media/home-menu-icon.png) (ハンバーガー アイコンと呼ばれることもあります) を選択します。
 
@@ -212,7 +213,7 @@ Azure でユーザー アクセス管理者ロールが割り当てられたら�
 
 #### サブタスク 1: インシデントの概要とガイド付き応答について調べる
 
-1. 次のリンクを選択して、シミュレートされた環境を開きます。**[Microsoft Defender ポータル](https://app.highlights.guide/start/f4f590f6-8937-40f9-91ec-632de546ab98?token=40f793d4-2956-40a4-b11a-6b3d4f92557f&azure-portal=true)**。
+1. 次のリンクを選択して、シミュレートされた環境を開きます。**[Microsoft Defender ポータル](https://app.highlights.guide/start/be8a91c3-3979-4048-ad38-fd38deaf7117?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**。
 
 1. Microsoft Defender ポータルから:
     1. **[調査と対応]** を展開します。
