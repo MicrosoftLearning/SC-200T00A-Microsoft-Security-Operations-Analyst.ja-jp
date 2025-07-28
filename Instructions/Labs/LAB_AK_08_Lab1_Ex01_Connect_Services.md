@@ -10,7 +10,7 @@ lab:
 
 ![ラボの概要。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex1.png)
 
-あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 組織には、Microsoft 365、Microsoft 365 Defender、Azure リソース、Azure 以外の仮想マシンなどからのデータがあります。最初に、Microsoft のソースに接続します。
+あなたは Microsoft Sentinel を実装した企業で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 組織には、Microsoft 365、Microsoft Defender XDR、Azure リソース、Azure 以外の仮想マシンなどからのデータがあります。最初に、Microsoft のソースに接続します。
 
 >**重要:** ラーニング パス #8 のラボ演習は、*スタンドアロン*環境にあります。 ラボを完了せずに終了する場合は、構成を再実行する必要があります。
 
@@ -20,7 +20,7 @@ lab:
 
 このタスクでは、Microsoft Sentinel ワークスペースにアクセスします。
 
->**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な*コンテンツ ハブ* ソリューションがインストールされています。
+>**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な *Content Hub* ソリューションがインストールされています。
 
 1. 管理者として **WIN1** 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
@@ -42,27 +42,27 @@ lab:
 
 このタスクでは、Microsoft Defender for Cloud データ コネクタを接続します。
 
-   <!--- >>**Important:** To *Enable* Bi-directional sync, please rerun  **[Lab 05 Exercise 1](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_05_Lab1_Ex01_Enable_MDC.html)**, Task 2, and select **Setup** from the *Microsoft Defender for Cloud* navigation menu to verify all eligible Azure subscriptions are onboarded. --->
-
 1. Microsoft Sentinel ナビゲーション メニューで、**[コンテンツ管理]** セクションまで下にスクロールし、**[コンテンツ ハブ]** を選択します。
 
 1. *[コンテンツ ハブ]* で、「**Microsoft Defender for Cloud**」ソリューションを検索し、一覧から選択します。
 
-1. *Microsoft Defender for Cloud* ソリューションの詳細ページで、**[管理]** を選択します
+1. Microsoft Defender for Cloud ソリューションの詳細ページで、**[管理]** を選択します。
 
     >**注:** *Microsoft Defender for Cloud* ソリューションでは、*サブスクリプション ベースの Microsoft Defender for Cloud (レガシ)* データ コネクタ、*テナント ベースの Microsoft Defender for Cloud (プレビュー)* データ コネクタ、および分析ルールがインストールされます。 テナントに複数のサブスクリプションがある場合、*テナント ベースの Microsoft Defender for Cloud (プレビュー)* データ コネクタが使用されます。
 
 1. *サブスクリプション ベースの Microsoft Defender for Cloud (レガシ)* データ コネクタ チェックボックスを選択し、**[コネクタ ページを開く]** を選択します。
 
-1. *[構成]* セクションで、*MOC Subscription-XXXXXXXXXXX* のチェックボックスを**オン**にし、**[接続]** リンクを選択するか、**[状態]** オプションを右にスライドします。
+1. *[構成]* セクションで、*[MOC Subscription-XXXXXXXXXXX]* のチェック ボックスをオンにし **[接続]** リンクを**選択**します。
 
 1. 双方向の同期を有効にするには、**[すべてのサブスクリプションに対して Microsoft Defender を有効にする]** リンクを選択します。
 
     >**注:** リンクを表示するには、右にスクロールする必要がある場合があります。
 
-1. *[Microsoft Defender for Cloud] - [はじめに]* ページで、*MOC Subscription-XXXXXXXXXXX* のチェック ボックスがオンで、*[Microsoft Defender プラン]* が *[オン - 部分的 (試用期間は残り 30 日です)]* になっている必要があります。
+1. *[Microsoft Defender for Cloud - はじめに]* ページでは、*[MOC Subscription-XXXXXXXXXXX]* のチェック ボックスがオンになっていて、*Microsoft Defender プラン* は、*[オフ (残り 30 日間)]* と表示されている必要があります。
 
 1. 右上隅の **[X] (閉じる)** ボタンを選択して、*[はじめに]* ページを閉じます。 *Microsoft Defender for Cloud* の構成ページに戻るはずです。
+
+1. **[状態]** オプションを右にスライドします。
 
 1. *MOC Subscription-XXXXXXXXXXX* の *[状態]* が **[接続済み]** になり、*[双方向の同期]* が *[有効]* になっているはずです。
 
@@ -70,7 +70,7 @@ lab:
 
 ### タスク 3: Azure Activity データ コネクタを接続する
 
-このタスクでは、*Azure Activity* データ コネクタを接続します。
+このタスクでは、*Azure アクティビティ* データ コネクタを接続します。
 
 1. Microsoft Sentinel ナビゲーション メニューで、*[コンテンツ管理]* セクションまで下にスクロールし、**[コンテンツ ハブ]** を選択します。
 
@@ -90,9 +90,9 @@ lab:
 
 1. **[パラメーター]** タブを選択し、 **[プライマリ Log Analytics ワークスペース]** ドロップダウン リストから自分の *uniquenameDefender* ワークスペースを選択します。 このアクションにより、Log Analytics ワークスペースに情報を送信するサブスクリプション構成が適用されます。
 
-1. **[修復]** タブを選択し、 **[修復タスクの作成]** チェック ボックスをオンにします。 このアクションにより、既存の Azure リソースにポリシーが適用されます。
+1. **[修復]** タブを選択し、 **[修復タスクを作成する]** チェック ボックスをオンにします。 このアクションにより、既存の Azure リソースにポリシーが適用されます。
 
-1. **[確認と作成]** ボタンを選択して構成を確認します。
+1. **[確認および作成]** ボタンを選択して構成を確認します。
 
 1. **[作成]** を選択して完了します。
 
