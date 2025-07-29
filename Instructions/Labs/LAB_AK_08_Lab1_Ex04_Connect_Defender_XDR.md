@@ -22,7 +22,7 @@ lab:
 
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
-1. Microsoft Edge ブラウザーで、次のリンクを選択して、シミュレートされた環境を開きます: [Azure Portal]( https://app.highlights.guide/start/1c894b46-4b0a-40cb-b0f0-1e1c86c615f3?token=16d48b6c-eace-4a1f-8050-098d29d23a89)。
+1. Microsoft Edge ブラウザーで、次のリンクを選択して、シミュレートされた環境を開きます: **[Azure portal]( https://app.highlights.guide/start/1c894b46-4b0a-40cb-b0f0-1e1c86c615f3?token=16d48b6c-eace-4a1f-8050-098d29d23a89)**。
 
 1. Azure portal の [ホーム] ページで、**[Microsoft Sentinel]** アイコンを選択します。**
 
