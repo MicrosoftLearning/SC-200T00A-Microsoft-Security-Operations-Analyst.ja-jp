@@ -6,7 +6,7 @@
 
 このタスクでは、シミュレートされた攻撃を 2 回行って、Microsoft Defender for Endpoint の機能を確認します。
 
-1. ブラウザーで Microsoft Defender XDR ポータルにまだアクセスしていない場合は、テナントの管理者としてログインして、https://security.microsoft.com) の Microsoft Defender XDR に移動します。
+1. ブラウザーで Microsoft Defender XDR ポータルにまだアクセスしていない場合は、Microsoft Defender XDR (<https://security.microsoft.com>) に移動し、テナントの管理者としてログインします。
 
 "WIN1" で "PowerShell" を使って "シミュレートされた" 攻撃を実行し、Microsoft Defender for Endpoint の機能を確認します。******
 

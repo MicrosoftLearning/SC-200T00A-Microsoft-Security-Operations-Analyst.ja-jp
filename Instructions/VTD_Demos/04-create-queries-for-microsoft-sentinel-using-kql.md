@@ -1,16 +1,22 @@
 # モジュール 4 Kusto 照会言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
 
-**注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。 
+<!--- **Note** Successful completion of this demo depends on completing all of the steps in the  [Pre-requisites document](00-prerequisites.md). --->
+
+>**重要:** このラボのクエリは、Zava (以前の Alpine Ski House) デモ環境で実行することをお勧めします。 「ラボ 06 - [Kusto 照会言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_06_Lab1_Ex01_KQL.html/)」では、代わりに SC-200 ラボ環境を使います。 後者のデプロイには 30 分必要です。
 
 ## KQL テスト領域にアクセスする
 
-このタスクでは、KQLステートメントの記述を練習できるLog Analytics環境にアクセスします。
+このタスクでは、KQL ステートメントの記述を練習できる Microsoft Sentinel Log Analytics 環境にアクセスします。
 
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
 
-1. ブラウザーで https://aka.ms/lademo にアクセスします。 MOD管理者の資格情報を使用してログインします。 
+1. ブラウザーで <https://security.microsoft.com> にアクセスします。 Zava または Alpine Ski House のユーザー資格情報を使ってログインします。
 
-1. 画面左側のタブのリストから使用可能なテーブルを調べます。
+1. 左側のナビゲーション ウィンドウで **[調査と対応]** セクションを展開します。
+
+1. **[ハンティング]** セクションを展開して、**[高度なハンティング]** を選びます。
+
+1. 画面左側の [スキーマ] タブに一覧表示されている使用可能なテーブルを調べます。** *Microsoft Sentinel* のテーブルと *Security and Audit* のテーブルに注意します。
 
 1. クエリエディタで、次のクエリを入力し、実行 ボタンを選択します。  下部のウィンドウにクエリ結果が表示されます。
 
@@ -25,6 +31,8 @@
 このタスクでは 基本的なKQL ステートメントを作成します。
 
 1. `search` 演算子を使用すると、複数テーブルまたは複数列の検索エクスペリエンスが得られます。 次のクエリは、`search` 演算子の使用方法を示しています。
+
+    > **注:**  `search` 演算子はリソースを多用します。 [時間の範囲] を [過去 3 時間] に制限し、*limit | 100* を使います。****
 
 ```KQL
 search "err" 
