@@ -130,10 +130,10 @@ lab:
 1. 次のステートメントは、**let** ステートメントを使用して *変数* を宣言する方法を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。
 
     ```KQL
-    let timeOffset = 1h;
+    let timeOffset = 10m;
     let discardEventID = 4688;
     SecurityEvent_CL
-    | where TimeGenerated > ago(timeOffset*2) and TimeGenerated < ago(timeOffset)
+    | where TimeGenerated > ago(timeOffset*60) and TimeGenerated < ago(timeOffset)
     | where EventID_s != discardEventID
     ```
 
@@ -189,14 +189,14 @@ lab:
     | summarize dcount(IpAddress)
     ```
 
-1. 次のステートメントは、同じアカウントに対する複数のアプリケーション間での無効パスワード エラーを検出するルールです。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。
+1. 次のステートメントは、同じアカウントに対する複数のアプリケーション間での "ユーザー アカウントが無効になっています" エラーを検出するルールです。** クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。
 
     ```KQL
     let timeframe = 30d;
     let threshold = 1;
     SigninLogs_CL
     | where TimeGenerated >= ago(timeframe)
-    | where ResultDescription has "Invalid password"
+    | where ResultDescription has "User account is disabled"
     | summarize applicationCount = dcount(AppDisplayName_s) by UserPrincipalName_s, IPAddress
     | where applicationCount >= threshold
     ```
@@ -309,10 +309,10 @@ lab:
 
     >**注:**  結果の '空の行' は、SigninLogs_CL の集計数を示します。
 
-1. 次のステートメントは、ワイルドカードを使用して複数のテーブルの和集合を求める **union** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。 
+1. 次のステートメントは、ワイルドカードを使用して複数のテーブルの和集合を求める **union** 演算子を示しています。 クエリ ウィンドウで、次のステートメントを入力し、**[実行]** を選択します。
 
     ```KQL
-    union App*  
+    union Sec*  
     | summarize count() by Type
     ```
 
