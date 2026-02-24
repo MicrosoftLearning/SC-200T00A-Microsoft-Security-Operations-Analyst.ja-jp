@@ -171,7 +171,7 @@ Microsoft Sentinel をワークスペースにデプロイします。
 1. 以下の KQL ステートメントを実行します。
 
     ```KQL
-    ThreatIntelligenceIndicator
+    ThreatIntelIndicators
     ```
 
     >**注:** インジケーターが表示されるまで、最大 5 分かかる場合があります。
@@ -179,7 +179,7 @@ Microsoft Sentinel をワークスペースにデプロイします。
 1. 結果を右にスクロールして、DomainName 列を表示します。 次の KQL ステートメントを実行して、DomainName 列だけを表示することもできます。
 
     ```KQL
-    ThreatIntelligenceIndicator 
+    ThreatIntelIndicators
     | project DomainName
     ```
 
