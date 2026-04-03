@@ -2,6 +2,10 @@
 lab:
   title: 演習 1 - Microsoft Security Copilot のユース ケースを探索する
   module: Learning Path 2 - Mitigate threats using Microsoft Security Copilot
+  description: この演習では、Microsoft Security Copilot のスタンドアロン エクスペリエンスのランディング ページにあるすべての主要なランドマークについて確認します。
+  duration: 15 minutes
+  level: 200
+  islab: true
 ---
 
 # ラーニング パス 2 - ラボ 1 - 演習 1 - Microsoft Security Copilot を探索する

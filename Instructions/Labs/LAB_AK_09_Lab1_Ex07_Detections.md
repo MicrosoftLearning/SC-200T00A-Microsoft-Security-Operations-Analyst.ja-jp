@@ -2,6 +2,10 @@
 lab:
   title: 演習 7 - 検出を作成する
   module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
+  description: このタスクでは、前の演習の最初の攻撃の検出を作成します。
+  duration: 30 minutes
+  level: 300
+  islab: true
 ---
 
 # ラーニング パス 9 - ラボ 1 - 演習 7 - 検出を作成する

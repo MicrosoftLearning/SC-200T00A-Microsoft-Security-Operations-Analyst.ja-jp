@@ -2,6 +2,10 @@
 lab:
   title: 演習 1 ‐ Microsoft セキュリティ規則を変更する
   module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
+  description: このタスクでは、Microsoftセキュリティルールを有効化します。
+  duration: 10 minutes
+  level: 300
+  islab: true
 ---
 
 # ラーニング パス 9 - ラボ 1 - 演習 1 - Microsoft セキュリティ規則を変更する

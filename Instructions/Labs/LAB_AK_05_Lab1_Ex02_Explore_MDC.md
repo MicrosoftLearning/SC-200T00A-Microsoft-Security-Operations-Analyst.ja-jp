@@ -2,6 +2,13 @@
 lab:
   title: 演習 2 ‐ Microsoft Defender for Cloud を使用して脅威を軽減する
   module: Learning Path 5 - Mitigate threats using Microsoft Defender for Cloud
+  description: あなたは、Microsoft Defender for Cloud を実装している企業で働くセキュリティ運用アナリストです。 Microsoft Defender for Cloud が生成する推奨事項とセキュリティ アラートに対応する必要があります。
+  duration: 15 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Microsoft Defender
+    - Microsoft Defender for Cloud
 ---
 
 # ラーニング パス 5 ‐ ラボ 1 ‐ 演習 2 ‐ Microsoft Defender for Cloud を使用して脅威を軽減する

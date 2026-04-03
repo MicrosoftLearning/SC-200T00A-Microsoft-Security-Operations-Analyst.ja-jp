@@ -2,6 +2,13 @@
 lab:
   title: 演習 1 - Microsoft Defender for Endpoint のデプロイ
   module: Learning Path 4 - Mitigate threats using Microsoft Defender for Endpoint
+  description: あなたは Microsoft Defender for Endpoint を実装している企業で働いているセキュリティ運用アナリストです。 あなたの上司は、いくつかのデバイスをオンボードして、セキュリティ オペレーション (SecOps) チームの応答手順で必要な変更に関する情報を提供しようとしています。
+  duration: 30 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Microsoft Defender
+    - Microsoft Defender for Endpoint
 ---
 
 # ラーニング パス 4: ラボ 1: 演習 1: Microsoft Defender for Endpoint のデプロイ
@@ -98,7 +105,7 @@ lab:
 
     |アクセス許可グループ|説明|
     |---|---|
-    |セキュリティ運用|日常業務を管理し、インシデントや勧告に対応する|
+    |Security Operations|日常業務を管理し、インシデントや勧告に対応する|
 
 1. *[セキュリティ運用]* のポップアップ ページで **[すべての読み取りおよび管理アクセス許可]** オプション ボタンを選択します。
 

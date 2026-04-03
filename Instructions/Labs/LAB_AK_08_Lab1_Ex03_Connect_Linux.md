@@ -2,6 +2,14 @@
 lab:
   title: 演習 3 - データ コネクタを使用して Microsoft Sentinel に Linux ホストを接続する
   module: Learning Path 8 - Connect logs to Microsoft Sentinel
+  description: このタスクでは、AMA 経由の Common Event Format (CEF) データ コネクタを使用して Linux ホストを Microsoft Sentinel に接続します。 また、イベントを収集するデータ収集ルール (DCR) も作成します。 AZURE Arc は、DCR を作成するために必要に応じて、この Linux ホストにプレインストールされています。
+  duration: 30 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure Arc
+    - Microsoft Sentinel
 ---
 
 # ラーニング パス 8 - ラボ 1 - 演習 3 - データ コネクタを使用して Microsoft Sentinel に Linux ホストを接続する

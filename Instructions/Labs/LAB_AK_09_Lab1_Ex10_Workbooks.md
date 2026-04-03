@@ -2,6 +2,10 @@
 lab:
   title: 演習 10 - ブックを作成する
   module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
+  description: このタスクでは、高度な視覚化を備えた新しいワークブックを作成します。
+  duration: 30 minutes
+  level: 200
+  islab: true
 ---
 
 # ラーニング パス 9 - ラボ 1 - 演習 10 - ワークブックの作成

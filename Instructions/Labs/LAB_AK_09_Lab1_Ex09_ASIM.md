@@ -2,6 +2,13 @@
 lab:
   title: 演習 9 - ASIM パーサーを作成する
   module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
+  description: あなたは Microsoft Sentinel を実装した企業で働いているセキュリティ運用アナリストです。 特定の Windows レジストリ イベントに対して ASIM パーサーをモデル化する必要があります。 これらのパーサーは、「Advanced Security Information Model (ASIM) レジストリ イベント正規化スキーマのリファレンス」に従って、後で最終処理されます。
+  duration: 30 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Microsoft Sentinel
+    - Windows
 ---
 
 # ラーニング パス 9 - ラボ 1 - 演習 9 - ASIM パーサーをデプロイする

@@ -2,6 +2,14 @@
 lab:
   title: 演習 11 - Microsoft Sentinel でリポジトリを使用する
   module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
+  description: このタスクでは、Azure DevOps リポジトリを作成します。
+  duration: 30 minutes
+  level: 100
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure DevOps
+    - Microsoft Sentinel
 ---
 
 # ラーニング パス 9 - ラボ 1 - 演習 11 - Microsoft Sentinel でリポジトリを使用する

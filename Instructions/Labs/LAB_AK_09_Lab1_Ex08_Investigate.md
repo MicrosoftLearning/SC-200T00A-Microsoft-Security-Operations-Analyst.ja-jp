@@ -2,6 +2,10 @@
 lab:
   title: 演習 8 - インシデントを調査する
   module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
+  description: このタスクでは、インシデントを調査します。
+  duration: 30 minutes
+  level: 200
+  islab: true
 ---
 
 # ラーニング パス 9: ラボ 1: 演習 8: インシデントを調査する

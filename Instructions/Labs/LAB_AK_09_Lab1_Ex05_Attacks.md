@@ -2,6 +2,14 @@
 lab:
   title: 演習 5 - シミュレートされた攻撃を実行するための準備をする
   module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
+  description: このタスクでは、オンプレミスのサーバーを Azure サブスクリプションに接続します。 Azure Arc は、このサーバーにプレインストールされています。 後で Microsoft Sentinel で検出と調査を行うシミュレートされた攻撃を実行するために、サーバーは次の演習で使用されます。
+  duration: 30 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure Arc
+    - Microsoft Sentinel
 ---
 
 # ラーニング パス 9 - ラボ 1 - 演習 5 - シミュレートされた攻撃を実行するための準備をする
@@ -88,7 +96,7 @@ lab:
 
 1. **[次へ: 収集]** を選択し、*[すべてのセキュリティ イベント]* を選択したままにします。
 
-1. **確認と作成** をクリックします。
+1. **[次へ: 確認と作成]** を選択します。
 
 1. *[検証に成功しました]* が表示されたら、 **[作成]** を選択します。
 

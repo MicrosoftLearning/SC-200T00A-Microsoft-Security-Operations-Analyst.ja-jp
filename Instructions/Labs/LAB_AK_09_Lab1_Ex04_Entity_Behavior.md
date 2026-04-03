@@ -2,6 +2,12 @@
 lab:
   title: 演習 4 - エンティティの行動分析を調べる
   module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
+  description: このタスクでは、Microsoft Sentinel でエンティティ行動分析を調べます。
+  duration: 15 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Microsoft Sentinel
 ---
 
 # ラーニング パス 9 - ラボ 1 - 演習 4 - エンティティの行動分析を調べる

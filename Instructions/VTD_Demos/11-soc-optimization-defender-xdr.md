@@ -1,3 +1,15 @@
+---
+lab:
+  title: モジュール 11 - Microsoft Defender XDR を使用した SOC 最適化
+  description: このタスクでは、SOC 最適化の機能を調べて、推奨された最適化アクションを実行します。
+  duration: 40 minutes
+  level: 100
+  islab: false
+  primarytopics:
+    - Microsoft Defender
+    - Microsoft Defender XDR
+---
+
 # モジュール 11 - Microsoft Defender XDR を使用した SOC 最適化
 
 >**注** この演習の環境は、製品から生成されたシミュレーションです。 シミュレーションには制限があるため、ページ上のリンクが有効にならない場合があり、指定されたスクリプトに該当しないテキストベースの入力はサポートされない場合があります。 "This feature is not available within the simulation" (この機能はシミュレーション内では使用できません) というポップアップ メッセージが表示されます。 これが発生したら、[OK] を選択し、演習の手順を続行してください。  

@@ -2,6 +2,12 @@
 lab:
   title: '演習 1: Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する'
   module: Learning Path 6 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
+  description: あなたは、Microsoft Sentinel を実装しようとしている会社で働いているセキュリティ運用アナリストです。 悪意のあるアクティビティを検索し、視覚化を表示し、脅威ハンティングを実行するためにログ データ分析を行う責任があります。 ログ データのクエリを実行するには、Kusto クエリ言語 (KQL) を使用します。
+  duration: 15 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Microsoft Sentinel
 ---
 
 # ラーニング パス 6 - ラボ 1 - 演習 1 - Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する

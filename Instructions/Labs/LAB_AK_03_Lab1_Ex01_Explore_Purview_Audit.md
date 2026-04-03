@@ -2,6 +2,14 @@
 lab:
   title: 演習 1 - Microsoft Purview 監査ログについて調べる
   module: Learning Path 3 - Mitigate threats using Microsoft Purview
+  description: あなたは、Microsoft Defender XDR と Microsoft Purview を実装している会社で働いているセキュリティ運用アナリストです。 あなたは、It コンプライアンス チームの同僚が Purview 監査 (Standard) と Purview 監査 (Premium) の両方を構成するのを支援しています。 同僚の目的は、医療施設ネットワークに存在する患者データへのあらゆるアクセスと変更が正確にログに記録されて、健康データ保護規則を確実に満たすようにすることです。
+  duration: 20 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Microsoft Defender
+    - Microsoft Defender XDR
+    - Microsoft Purview
 ---
 
 # ラーニング パス 3 - ラボ 1 - 演習 1 - Microsoft Purview 監査ログについて調べる

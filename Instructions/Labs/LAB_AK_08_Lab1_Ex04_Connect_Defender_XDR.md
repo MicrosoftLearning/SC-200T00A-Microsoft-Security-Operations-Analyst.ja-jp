@@ -2,6 +2,14 @@
 lab:
   title: 演習 4 - データ コネクタを使用して Defender XDR を Microsoft Sentinel に接続する
   module: Learning Path 8 - Connect logs to Microsoft Sentinel
+  description: このタスクでは、Microsoft Defender XDR コネクタを展開します。
+  duration: 78 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Microsoft Defender
+    - Microsoft Defender XDR
+    - Microsoft Sentinel
 ---
 
 # ラーニング パス 8 - ラボ 1 - 演習 4 - データ コネクタを使用して Defender XDR を Microsoft Sentinel に接続する
