@@ -182,11 +182,11 @@ Microsoft Sentinel をワークスペースにデプロイします。
 
     >**注:** インジケーターが表示されるまで、最大 5 分かかる場合があります。
 
-1. 結果を右にスクロールして、DomainName 列を表示します。 次の KQL ステートメントを実行して、DomainName 列だけを表示することもできます。
+1. 結果を右にスクロールすると、ObservableValue 列が表示されます。 次の KQL ステートメントを実行して、ObservableValue 列だけを表示することもできます。
 
     ```KQL
     ThreatIntelIndicators
-    | project DomainName
+    | project ObservableValue
     ```
 
 ### タスク 6: ログ保持期間の構成
