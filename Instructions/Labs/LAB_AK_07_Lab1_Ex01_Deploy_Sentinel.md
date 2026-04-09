@@ -2,6 +2,12 @@
 lab:
   title: 演習 1 - Microsoft Sentinel 環境を構成する
   module: Learning Path 7 - Configure your Microsoft Sentinel environment
+  description: あなたは、Microsoft Sentinel を実装しようとしている会社で働いているセキュリティ運用アナリストです。 コストを最小限に抑え、コンプライアンス規制を満たし、セキュリティ チームが日常の職務を遂行するのに最も管理しやすい環境を提供するという会社の要件を満たすように、Microsoft Sentinel 環境を設定する責任があります。
+  duration: 30 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Microsoft Sentinel
 ---
 
 # ラーニング パス 7 - ラボ 1 - 演習 1 - Microsoft Sentinel 環境を構成する
@@ -176,11 +182,11 @@ Microsoft Sentinel をワークスペースにデプロイします。
 
     >**注:** インジケーターが表示されるまで、最大 5 分かかる場合があります。
 
-1. 結果を右にスクロールして、DomainName 列を表示します。 次の KQL ステートメントを実行して、DomainName 列だけを表示することもできます。
+1. 結果を右にスクロールすると、ObservableValue 列が表示されます。 次の KQL ステートメントを実行して、ObservableValue 列だけを表示することもできます。
 
     ```KQL
     ThreatIntelIndicators
-    | project DomainName
+    | project ObservableValue
     ```
 
 ### タスク 6: ログ保持期間の構成

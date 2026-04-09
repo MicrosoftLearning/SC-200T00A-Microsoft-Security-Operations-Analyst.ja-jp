@@ -2,6 +2,16 @@
 lab:
   title: 演習 1 - データ コネクタを使用して Microsoft Sentinel にデータを接続する
   module: Learning Path 8 - Connect logs to Microsoft Sentinel
+  description: あなたは Microsoft Sentinel を実装した企業で働いているセキュリティ運用アナリストです。 組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。 組織には、Microsoft 365、Microsoft Defender XDR、Azure リソース、Azure 以外の仮想マシンなどからのデータがあります。最初に、Microsoft のソースに接続します。
+  duration: 20 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Azure
+    - Microsoft 365
+    - Microsoft Defender
+    - Microsoft Defender XDR
+    - Microsoft Sentinel
 ---
 
 # ラーニング パス 8: ラボ 1: 演習 1: データ コネクタを使用して Microsoft Sentinel にデータを接続する

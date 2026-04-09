@@ -2,6 +2,13 @@
 lab:
   title: 演習 1 - Microsoft Defender for Cloud の有効化
   module: Learning Path 5 - Mitigate threats using Microsoft Defender for Cloud
+  description: あなたは、Microsoft Defender for Cloud を使用してクラウド ワークロード保護を実装している企業に勤務するセキュリティ運用アナリストです。 このラボでは、Microsoft Defender for Cloud を有効にします。
+  duration: 25 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Microsoft Defender
+    - Microsoft Defender for Cloud
 ---
 
 # ラーニング パス 5 - ラボ 1 - 演習 1 - Microsoft Defender for Cloud の有効化

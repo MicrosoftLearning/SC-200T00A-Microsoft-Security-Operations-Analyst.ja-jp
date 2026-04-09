@@ -2,6 +2,14 @@
 lab:
   title: 演習 1 - Microsoft Defender XDR の確認
   module: Learning Path 1 - Mitigate threats using Microsoft Defender XDR
+  description: あなたは Microsoft Defender XDR を実装している企業で働くセキュリティ オペレーション アナリストです。 まず、Exchange Online Protection (EOP) と Microsoft Defender for Office 365 で使用されている事前設定されたセキュリティ ポリシーを割り当てます。
+  duration: 5 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Microsoft Defender
+    - Microsoft Defender XDR
+    - Office 365
 ---
 
 # ラーニング パス 1 - ラボ 1 - 演習 1 - Microsoft Defender XDR の確認

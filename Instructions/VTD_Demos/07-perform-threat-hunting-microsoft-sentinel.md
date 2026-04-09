@@ -1,3 +1,14 @@
+---
+lab:
+  title: モジュール 7 - Microsoft Sentinel での脅威ハンティング
+  description: このタスクでは、捜索クエリを作成し、結果をブックマークして、ライブ ストリームを作成します。
+  duration: 20 minutes
+  level: 100
+  islab: false
+  primarytopics:
+    - Microsoft Sentinel
+---
+
 # モジュール 7 - Microsoft Sentinel での脅威ハンティング
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。

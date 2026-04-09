@@ -1,3 +1,14 @@
+---
+lab:
+  title: モジュール 1 - Microsoft 365 Defender を使用して脅威を軽減する
+  description: このタスクでは、Microsoft 365 Defender ポータルの機能について理解します。
+  duration: 10 minutes
+  level: 300
+  islab: false
+  primarytopics:
+    - Microsoft 365
+---
+
 # モジュール 1 - Microsoft 365 Defender を使用して脅威を軽減する
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。

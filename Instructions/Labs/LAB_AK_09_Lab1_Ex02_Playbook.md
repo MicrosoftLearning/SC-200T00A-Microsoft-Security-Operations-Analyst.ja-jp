@@ -2,6 +2,12 @@
 lab:
   title: 演習 2 - プレイブックを作成する
   module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
+  description: これで、Microsoft Sentinel にプレイブックとオートメーション ルールが作成されました。
+  duration: 110 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Microsoft Sentinel
 ---
 
 # ラーニング パス 9 - ラボ 1 - 演習 2 - Microsoft Sentinel のプレイブックを作成する
@@ -18,7 +24,7 @@ lab:
 
 このタスクでは、Microsoft Sentinel でプレイブックとして使用されるロジック アプリを作成します。
 
->**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な *Content Hub* ソリューションがインストールされています。
+>**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な*コンテンツ ハブ* ソリューションがインストールされています。
 
 1. 管理者として WIN1 仮想マシンにサインインします。パスワードは **Pa55w.rd** です。  
 

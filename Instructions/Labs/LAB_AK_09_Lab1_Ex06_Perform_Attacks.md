@@ -1,8 +1,7 @@
 ---
-lab:
-  title: 演習 6 - 攻撃を実施する
-  module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
----
+ラボ: タイトル: 演習 6 - 攻撃モジュールを実施する: ラーニング パス 9 - Microsoft Sentinel の説明を使用して検出を作成し、調査を実行する: このタスクでは、Azure Arc に接続され、Azure Monitor エージェントが構成されているているホストに対して、攻撃を実行します。
+所要時間: 30 分 レベル: 300 islab: true
+  ---
 
 # ラーニング パス 9 - ラボ 1 - 演習 6 - 攻撃を実施する
 

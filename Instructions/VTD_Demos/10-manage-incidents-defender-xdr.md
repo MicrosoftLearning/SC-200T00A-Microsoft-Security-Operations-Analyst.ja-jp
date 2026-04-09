@@ -1,3 +1,15 @@
+---
+lab:
+  title: モジュール 10 - Microsoft Defender XDR でインシデントを管理する
+  description: このタスクでは、インシデントの調査、対応アクション、コラボレーション機能など、Microsoft Defender XDR のインシデント管理機能について調べます。
+  duration: 82 minutes
+  level: 200
+  islab: false
+  primarytopics:
+    - Microsoft Defender
+    - Microsoft Defender XDR
+---
+
 # モジュール 10 - Microsoft Defender XDR でインシデントを管理する
 
 ## Microsoft Defender XDR でインシデントを管理する

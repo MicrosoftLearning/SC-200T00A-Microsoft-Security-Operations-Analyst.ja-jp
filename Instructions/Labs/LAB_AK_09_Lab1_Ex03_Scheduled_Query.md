@@ -2,6 +2,12 @@
 lab:
   title: 演習 3 - テンプレートからスケジュールされたクエリを作成する
   module: Learning Path 9 - Create detections and perform investigations using Microsoft Sentinel
+  description: このタスクでは、Azure Activity データ コネクタを接続します。
+  duration: 45 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
 ---
 
 # ラーニング パス 9 - ラボ 1 - 演習 3 - テンプレートからスケジュールされたクエリを作成する
@@ -16,7 +22,7 @@ lab:
 
 ### このラボの推定所要時間: 45 分
 
->**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な *Content Hub* ソリューションがインストールされています。
+>**注:** Microsoft Sentinel は、**defenderWorkspace** という名前で Azure サブスクリプションに事前にデプロイされており、必要な*コンテンツ ハブ* ソリューションがインストールされています。
 
 <!--- >>**Important:** To sucessfully complete this task you wil need to rerun Task 3 of **[Lab 08 Exercise 1](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_08_Lab1_Ex01_Connect_Services.html)** to connect the Azure Activity data connector. --->
 

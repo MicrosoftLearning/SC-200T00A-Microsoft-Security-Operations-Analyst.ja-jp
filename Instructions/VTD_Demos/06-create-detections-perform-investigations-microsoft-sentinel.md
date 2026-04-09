@@ -1,3 +1,14 @@
+---
+lab:
+  title: モジュール 6 Microsoft Sentinel を使用して検出を作成し、調査を実行する
+  description: このタスクでは、NRT (ほぼリアルタイム) 分析クエリ ルールを作成します。
+  duration: 20 minutes
+  level: 300
+  islab: false
+  primarytopics:
+    - Microsoft Sentinel
+---
+
 # モジュール 6 Microsoft Sentinel を使用して検出を作成し、調査を実行する
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。

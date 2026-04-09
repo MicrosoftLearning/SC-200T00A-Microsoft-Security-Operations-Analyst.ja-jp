@@ -1,3 +1,14 @@
+---
+lab:
+  title: モジュール 4 Kusto 照会言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
+  description: このタスクでは、KQL ステートメントの記述を練習できる Microsoft Sentinel Log Analytics 環境にアクセスします。
+  duration: 30 minutes
+  level: 300
+  islab: false
+  primarytopics:
+    - Microsoft Sentinel
+---
+
 # モジュール 4 Kusto 照会言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
 
 <!--- **Note** Successful completion of this demo depends on completing all of the steps in the  [Pre-requisites document](00-prerequisites.md). --->

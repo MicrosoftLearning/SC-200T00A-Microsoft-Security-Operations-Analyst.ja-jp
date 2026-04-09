@@ -2,6 +2,13 @@
 lab:
   title: 演習 4 - Microsoft Defender for Endpoint を使用した攻撃の軽減
   module: Learning Path 4 - Mitigate threats using Microsoft Defender for Endpoint
+  description: Defender for Endpoint の攻撃の軽減機能を確認するために、デバイスのオンボーディングが成功したことを確認し、そのプロセス中に発生したアラートとインシデントを調査します。
+  duration: 30 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Microsoft Defender
+    - Microsoft Defender for Endpoint
 ---
 
 # ラーニング パス 4: ラボ 1: 演習 2: Microsoft Defender for Endpoint を使用した攻撃の軽減
@@ -56,7 +63,7 @@ Defender for Endpoint の攻撃の軽減機能を確認するために、デバ�
 
 1. Microsoft Defender XRD ポータルで、左側のメニュー バーから **[インシデントとアラート]** を選択した後、**[インシデント]** を選択します
 
-1. フィルターの右側にある **[X]** を選択して、"*アラートの重大度*" フィルターをクリアします。
+    >**注:** インシデントが表示されない場合は、フィルターの右側にある **[X]** を選択して、[アラートの重大度] または [優先度スコア] フィルターをクリアしてみてください。****
 
 1. *1 つのエンドポイント上の実行インシデント*という名前の新しいインシデントが右側のペインに表示されます。 インシデント名を選択して詳細を読み込みます。
 

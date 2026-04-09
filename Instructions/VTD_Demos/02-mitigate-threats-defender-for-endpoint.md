@@ -1,3 +1,15 @@
+---
+lab:
+  title: モジュール 2 デモ - Microsoft Defender for Endpoint を使用した攻撃の軽減
+  description: このタスクでは、シミュレートされた攻撃を 2 回行って、Microsoft Defender for Endpoint の機能を確認します。
+  duration: 34 minutes
+  level: 200
+  islab: false
+  primarytopics:
+    - Microsoft Defender
+    - Microsoft Defender for Endpoint
+---
+
 # モジュール 2 デモ - Microsoft Defender for Endpoint を使用した攻撃の軽減
 
 **注**: このデモを正常に完了するには、[前提条件ドキュメント](00-prerequisites.md)のすべての手順を完了する必要があります。
