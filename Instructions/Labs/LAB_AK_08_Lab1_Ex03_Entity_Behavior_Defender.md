@@ -44,17 +44,15 @@ lab:
 
 1. **[設定]** を選択し、**[Microsoft Sentinel]** を選択します。
 
-1. **sentinelworkspace-01** ワークスペースを選択します。
+    <!--- 1. Select the **sentinelworkspace-01** workspace.
 
-1. ポップアウト ウィンドウで、**[エンティティ行動分析]** セクションを選択して展開します。
+    1. In the popout window, select and expand the **Entity behavior analytics** section. --->
 
-1. **[UEBA の構成]** を選択します。
+1. **UEBA** を選択します。
 
 1. [UEBA (ユーザー/エンティティ行動分析)] ページの [UEBA] タブで、UEBA 機能が有効化されていることを確認し、接続されているデータ ソースを確認します。********
 
-1. ページの上部にある階層リンクを使用して Microsoft Sentinel の設定ページに戻ります。****
-
-1. **sentinelworkspace-01** ワークスペースを選択します。
+1. *Microsoft Sentinel* の [設定] メニューの上部にある SIEM ワークスペースで、**sentinelworkspace-01** ワークスペースを選択します。
 
 1. [設定] ページで、下にスクロールして [異常] セクションを展開します。**** 
 
