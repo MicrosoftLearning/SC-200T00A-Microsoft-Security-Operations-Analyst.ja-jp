@@ -3,7 +3,7 @@ lab:
   title: '演習 1: Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する'
   module: Learning Path 5 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
   description: あなたは、Microsoft Sentinel を実装しようとしている会社で働いているセキュリティ運用アナリストです。 悪意のあるアクティビティを検索し、視覚化を表示し、脅威ハンティングを実行するためにログ データ分析を行う責任があります。 ログ データのクエリを実行するには、Kusto クエリ言語 (KQL) を使用します。
-  duration: 30 minutes
+  duration: 45 minutes
   level: 300
   islab: true
   primarytopics:
@@ -21,37 +21,13 @@ lab:
 
 >**重要:** ラーニング パス #5 のラボ演習は、*スタンドアロン*環境にあります。 ラボを完了する前に終了した場合は、構成手順をもう一度実行し直す必要があります。
 
->**注:** Microsoft Sentinel が **SentinelWorkspace-01** という名前でお使いの Azure サブスクリプションに事前にデプロイされるため、このラボ プロファイルの完全なビルドには 15 分以上かかります。
+<!--- >**Note:** This lab profile takes >15 minutes to fully build as Microsoft Sentinel is being predeployed in your Azure subscription with the name **SentinelWorkspace-01**. --->
 
 <!--- >**Tip:** This lab involves entering many KQL scripts into Microsoft Sentinel. The scripts were provided in a file at the beginning of this lab. An alternate location to download them is:  <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles> --->
 
-### このラボの推定所要時間: 60 分
+### このラボの推定所要時間: 45 分
 
-### タスク 1:KQL テスト領域を準備する
-
-このタスクでは、Marketplace から **Microsoft Sentinel Training Lab Solution** をインストールします。これにより、KQL ステートメントの記述の練習に使用できるサンプル データが Log Analytics ワークスペースに読み込まれます。
-
-1. 管理者として **WIN1** 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
-
-1. Microsoft Edge ブラウザーで Azure portal (`https://portal.azure.com`) にアクセスし、割り当てられた資格情報を使ってログインします。
-
-1. Azure 検索バーに「**Microsoft Sentinel Training Lab Solution**」と入力し、結果からそれを選びます。
-
-    >**ヒント:** Marketplace セクションに表示されます。
-
-1. **Microsoft Sentinel Training Lab Solution** のページで **[作成]** を選んでソリューションをインストールします。
-
-1. **Create Microsoft Sentinel Training Lab Solution** のページで、**SentinelStatic** リソース グループと **SentinelWorkspace-01** ワークスペースを選びます。
-
-1. **[確認と作成]** を選んでソリューションをデプロイします。
-
-1. 検証が完了したら、**[作成]** を選んでソリューションをデプロイします。
-
-    >**注:**  ソリューションが完全にデプロイされて、すべてのリソースが使用可能になるまで、約 10 分かかります。
-
-1. デプロイが完了するまで待ち、階層リンク ナビゲーションから **[ホーム]** を選びます。
-
-### タスク 2: Defender XDR で KQL を使用してログ データのクエリを実行する
+### タスク 1: Defender XDR で KQL を使用してログ データのクエリを実行する
 
 1. Microsoft Edge ブラウザーで、Defender XDR (`https://security.microsoft.com`) に移動します。
 
@@ -81,7 +57,7 @@ lab:
 
 1. "タイムライン可視化" グラフを折りたたんで画面領域を増やし、最初のレコードの横にある **[>]** まで下にスクロールして、行の情報を展開します。**
 
-### タスク 3:基本的なKQL ステートメントを実行する
+### タスク 2:基本的なKQL ステートメントを実行する
 
 このタスクでは 基本的なKQL ステートメントを構築します。
 
@@ -166,7 +142,7 @@ lab:
     LowActivityAccounts | where Account_s contains "sql"
     ```
 
-### タスク 4:Summarize演算子を使用してKQLで結果を分析する
+### タスク 3:Summarize演算子を使用してKQLで結果を分析する
 
 このタスクでは、データを集計する KQL ステートメントを構築します。 **summarize** は、**by** グループ列別に行をグループ化し、各グループの集計を計算します。
 
@@ -260,7 +236,7 @@ lab:
     | summarize make_set(Account_s) by Computer
     ```
 
-### タスク 5:レンダー演算子を使用してKQLでビジュアライゼーションを作成します
+### タスク 4:レンダー演算子を使用してKQLでビジュアライゼーションを作成します
 
 このタスクでは、KQL ステートメントによる視覚化の生成を使用します。
 
@@ -282,7 +258,7 @@ lab:
     | render timechart
     ```
 
-### タスク 6:KQL で複数のテーブル用のステートメントを作成する
+### タスク 5:KQLでマルチテーブルステートメントを作成する
 
 このタスクでは、マルチテーブル KQL ステートメントを構築します。
 
@@ -340,7 +316,7 @@ lab:
 
 1. *[クエリ]* ウィンドウで先に設定した **[カスタムの時間範囲]** は、そのままにすることができます。
 
-### タスク 7:KQL で文字列データを処理する
+### タスク 6: KQLで文字列データを操作する
 
 このタスクでは、KQL ステートメントを使用して構造化および非構造化文字列フィールドを操作します。
 
