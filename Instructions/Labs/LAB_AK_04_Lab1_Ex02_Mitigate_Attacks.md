@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 演習 4 - Microsoft Defender for Endpoint を使用した攻撃の軽減
+  title: 演習 2 - Microsoft Defender for Endpoint を使用した攻撃の軽減
   module: Learning Path 4 - Mitigate threats using Microsoft Defender for Endpoint
   description: Defender for Endpoint の攻撃の軽減機能を確認するために、デバイスのオンボーディングが成功したことを確認し、そのプロセス中に発生したアラートとインシデントを調査します。
   duration: 30 minutes
