@@ -3,7 +3,7 @@ lab:
   title: 演習 1 - Microsoft Security Copilot のユース ケースを探索する
   module: Learning Path 2 - Mitigate threats using Microsoft Security Copilot
   description: この演習では、Microsoft Security Copilot のスタンドアロン エクスペリエンスのランディング ページにあるすべての主要なランドマークについて確認します。
-  duration: 15 minutes
+  duration: 20 minutes
   level: 200
   islab: true
 ---
@@ -14,321 +14,349 @@ lab:
 
 あなたが所属する組織が、セキュリティ運用アナリストの効率と能力を向上させて、セキュリティの成果を改善したいと考えています。 その目標をサポートするために、CISO のオフィスでは Microsoft Security Copilot の展開がその目標に向けた重要なステップであると判断しました。 組織のセキュリティ管理者として、あなたは、Copilot を設定する必要があります。
 
-この演習では、Microsoft Security Copilot の*最初の実行エクスペリエンス*を確認し、1 つのセキュリティ コンピューティング ユニット (SCU) で Copilot をプロビジョニングします。
+<!--- In this exercise, you go through the *first run experience* of Microsoft Security Copilot to provision Copilot with one security compute unit (SCU). --->
 
 >**注:** この演習の環境は、製品から生成されたシミュレーションです。 シミュレーションには制限があるため、ページ上のリンクが有効にならない場合があり、指定されたスクリプトに該当しないテキストベースの入力はサポートされない場合があります。 "This feature is not available within the simulation" (この機能はシミュレーション内では使用できません) というポップアップ メッセージが表示されます。 これが発生したら、[OK] を選択し、演習の手順を続行してください。  
 
-![ポップアップ エラー メッセージ](../Media/simulation-pop-up-error.png)
+### このラボの推定所要時間: 20 分
 
-### このラボの推定所要時間: 45 分
+Security Copilot は Microsoft Defender XDR と連携して、セキュリティ インシデントの調査と対応を支援します。 このユニットでは、インシデントのコンテキスト理解から特定の成果物の分析や詳細な調査の実行までのインシデント調査の完全なワークフローを、2 つの対話型ガイドで進めます。
 
-### タスク 1: Microsoft Security Copilot をプロビジョニングする
+## インシデントのコンテキストと活動を調査する
 
-この演習では、Avery Howard としてログインし、Microsoft Entra でグローバル管理者ロールが付与されています。 Azure portal とMicrosoft Security Copilot の両方で作業します。
+Microsoft Defender XDR で、資産のセキュリティ侵害や多数のアラートを伴う複雑なインシデントが特定されると、攻撃の発生場所や進行の経緯を特定するのが難しいことがあります。 Security Copilot はインシデント活動を要約し、関連するイベントを結びつけ、重要なことに集中できるようガイド付きの対応を提供します。
 
-この演習の所要時間は約 **15** 分です。
+所要時間約 10 分のこのインタラクティブ ガイドでは、Microsoft Defender XDR でセキュリティ インシデントを調査します。 インシデントやアラートの要約をレビューし、関連するエンティティを分析し、Security Copilot のインサイトを使って調査を進めます。
 
->**注:** ラボの指示に従って、シミュレートされた環境へのリンクを開く必要がある場合、その指示と演習環境を同時に表示できるように、通常、そのリンクは新しいブラウザー ウィンドウで開くことをお勧めします。 これを行うには、マウスを右クリックしてオプションを選択します。
+開始するには、下の画像を選択してください。
 
-ユーザーが Copilot の使用を開始する前に、管理者は容量をプロビジョニングして割り当てる必要があります。 容量をプロビジョニングするには:
+[![Defender XDR インタラクティブ ガイドのセキュリティ インシデント調査のサムネイル。](../Media/investigate-security-incidents-thumbnail.png)](https://microsoftlearning.github.io/click-throughs/docs/IG/interactive-guide-investigate-security-incidents-in-microsoft-defender-web/story.html?azure-portal=true)
 
-- Azure サブスクリプションが必要です。
-- 少なくとも、リソース グループ レベルで Azure 所有者または Azure 共同作成者である必要があります。
+## 成果物を分析し、詳細な調査に切り替える
 
-このタスクでは、適切なロールのアクセス許可があることを確認するプロセスについて説明します。 まず、Azure リソースへのアクセス管理を有効にします。
+インシデントのコンテキスト全体を理解したら、次のステップは個々のアラートを分析し、特定の成果物を調査することです。 Security Copilot はアラートの詳細の確認、デバイスやユーザーのコンテキストのレビュー、リスクの特定を、おすすめのアクションでサポートします。
 
-Azure でユーザー アクセス管理者ロールが割り当てられたら、Copilot の SKU をプロビジョニングするために必要なアクセス権をユーザーに割り当てることができます。  この演習では、関連する手順のみを示すために、必要なアクセス権を自分自身に割り当てます。  以下の手順に従って、プロセスを実行します。
+所要時間約 10 分のこのインタラクティブ ガイドでは、Microsoft Defender XDR でアラートを分析して調査を続けます。 アラートの詳細をレビューし、デバイスやユーザーのコンテキストを確認し、詳細な調査の支援に Security Copilot を使用します。
 
-1. ユーザー アクセス管理者ロールがアカウントに割り当てられていることを確認します。
+開始するには、下の画像を選択してください。
 
-1. 次のリンクを選択して、シミュレートされた環境を開きます: <https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&link=1&azure-portal=true>。
+[![Defender XDR インタラクティブ ガイドの成果物の分析と調査のサムネイル。](../Media/analyze-artifacts-thumbnail.png)](https://microsoftlearning.github.io/click-throughs/docs/IG/interactive-guide-analyze-artifacts-investigations-in-defender-web/story.html?azure-portal=true)
+
+
+
+<!--- ![Pop-up error message](../Media/simulation-pop-up-error.png)
+
+### Estimated time to complete this lab: 45 minutes
+
+### Task 1: Provision Microsoft Security Copilot
+
+For this exercise, you're logged in as Avery Howard and you have the global administrator role in Microsoft Entra. You'll work in both the Azure portal and Microsoft Security Copilot.
+
+This exercise should take approximately **15** minutes to complete.
+
+>**Note:**
+> When a lab instruction calls for opening a link to the simulated environment, it is generally recommended that you open the link in a new browser window so that you can simultaneously view the instructions and the exercise environment. To do so, select the right mouse key and select the option.
+
+Before users can start using Copilot, admins need to provision and allocate capacity. To provision capacity:
+
+- You must have an Azure subscription.
+- You need to be an Azure owner or Azure contributor, at a resource group level, as a minimum.
+
+In this task, you walk through the process of ensuring you have the appropriate role permissions. This starts by enabling access management for Azure resources.
+
+Once you're assigned the User Access Administrator role in Azure, you can assign a user the necessary access to provision SCUs for Copilot.  For the purpose of this exercise only, which is to show you the steps involved,  you will be assigning yourself the necessary access.  The steps that follow will guide you through the process.
+
+1. Ensure you have the User Access Administrator role assigned to your account.
+
+1. Open the simulated environment by selecting this link: <https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&link=1&azure-portal=true>.
 
     <!--- Open the simulated environment by selecting this link: **[Azure portal](https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&link=1&azure-portal=true)**.--->
 
-1. まず、Azure リソースのアクセス管理を有効にします。 この設定にアクセスするには:
-    1. Azure portal から **Microsoft Entra ID** を選択します。
-    1. 左側のナビゲーション パネルで、**[管理]** を展開します。
-    1. 左側のナビゲーション パネルから下にスクロールし、**[プロパティ]** を選択します。
-    1. **[Azure リソースのアクセス管理]** のトグル ボタンを有効にしてから、**[保存]** を選択します。
+   <!--- 1. You'll start by enabling Access management for Azure resources. To access this setting:
+       1. From the Azure portal, select **Microsoft Entra ID**.
+       2. From the left navigation panel, expand **Manage**.
+       3. From the left navigation panel, scroll down and select **Properties**.
+       4. Enable the toggle switch for **Access management for Azure resources**, then select **Save**.
 
-1. これで、ディレクトリ内のすべてのリソースを表示し、任意のサブスクリプションまたは管理グループにアクセス権を割り当てることができるようになりました。Azure サブスクリプションの所有者ロールを自分に割り当てます。
-    1. ページの上部にある青いバナーから **[Microsoft Azure]** を選択して、Azure portal のランディング ページに戻ります。
-    1. **[サブスクリプション]** を選択し、一覧にあるサブスクリプションから **[Woodgrove - GTP Demos (Exernal/Sponsored)]\(Woodgrove - GTP デモ (外部/スポンサー)\)** を選択します。
-    1. **[アクセス制御 (IAM)]** を選択します。
-    1. **[追加]**、**[ロールの割り当ての追加]** の順に選択します。
-    1. [ロール] タブで、**[Privileged administrator roles]\(特権管理者ロール\)** を選択します。
-    1. **[所有者]** を選択し、**[次へ]** を選択します。
-    1. **[+ メンバーの選択]** を選択します。
-    1. Avery Howard がこの一覧の最初の名前です。名前の右側にある **+** を選択します。  Avery Howard は、選択されたメンバーの下に表示されるようになりました。 **[選択]** ボタンを選択し、**[次へ]** を選択します。
-    1. **[Allow user to assign all roles except privileged administrator roles, Owner, UAA, RBAC (Recommended)]\(特権管理者ロール、所有者、UAA、RBAC を除くすべてのロールをユーザーに割り当てることを許可する (推奨)\)** を選択します。
-    1. **[レビューと割り当て]** を選択し、最後にもう一度 **[レビューと割り当て]** を選択します。
+   2. Now that you can view all resources and assign access in any subscription or management group in the directory, assign yourself the Owner role for the Azure subscription.
+       1. From the blue banner on the top of the page, select **Microsoft Azure** to return to the landing page of the Azure portal.
+       2. Select **Subscriptions** then select the subscription listed **Woodgrove - GTP Demos (Exernal/Sponsored)**.
+       3. Select **Access control (IAM)**.
+       4. Select **Add**, then **Add role assignment**.
+       5. From the Role tab, select **Privileged administrator roles**.
+       6. Select **Owner**, then select **Next**.
+       7. Select **+ Select members**.
+       8. Avery Howard is the first name on this list, select the **+** to the right of the name.  Avery Howard is now listed under selected members. Select the **Select** button, then select **Next**.
+       9. Select **Allow user to assign all roles except privileged administrator roles, Owner, UAA, RBAC (Recommended)**.
+       10. Select **Review + assign**, then select **Review + assign** one last time.
 
-これで、Azure サブスクリプションの所有者として、Copilot 内で容量をプロビジョニングできるようになりました。
+   As an owner to the Azure subscription, you'll now be able to provision capacity within Copilot.
 
-#### サブタスク 1: 容量をプロビジョニングする
+   #### Sub-task 1: Provision capacity
 
-このタスクでは、組織の容量をプロビジョニングする手順を確認します。 容量のプロビジョニングには以下の 2 つの選択肢があります。
+   In this task, you go through the steps of provisioning capacity for your organization. There are two options for provisioning capacity:
 
-- Security Copilot 内で容量をプロビジョニングする (推奨)
-- Azure を通して容量をプロビジョニングする
+   - Provision capacity within Security Copilot (recommended)
+   - Provision capacity through Azure
 
-この演習では、Security Copilot を使用して容量をプロビジョニングします。 Security Copilot を初めて開くと、ウィザードが組織の容量を設定する手順をガイドしてくれます。
+   For this exercise, you provision capacity through Security Copilot. When you first open Security Copilot, a wizard guides you through the steps in setting up capacity for your organization.
 
-1. 次のリンクを選んで、シミュレートされた環境を開きます。**[Microsoft Security Copilot](https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**。
+   1. Open the simulated environment by selecting this link: **[Microsoft Security Copilot](https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**.
 
-1. ウィザードの手順に従い、**[作業の開始]** を選択します。
-1. このページでは、セキュリティ容量を設定します。 以下に示すフィールドについては、情報アイコンを選択して詳細を確認できます。
-    1. Azure サブスクリプション:ドロップダウンから **[Woodgrove - GTP デモ (外部/スポンサー)]** を選択します。
-    1. リソース グループ: ドロップダウンから **[RG-1]** を選択します。
-    1. 容量名:容量名を入力します。
-    1. プロンプト評価の場所 [Geo]:ドロップダウンから、リージョンを選択します。
-    1. [If this location has too much traffic, allow Copilot to evaluate prompts anywhere in the world (recommended for optimal performance)]\(この場所のトラフィックが多すぎる場合は、Copilot が世界中のどこでもプロンプトを評価できるようにします (最適なパフォーマンスを得るために推奨されます)\) オプションを選択するかどうかを選択できます。
-    1. 容量リージョンは、選択した場所に基づいて設定されます。
-    1. セキュリティ コンピューティング:このフィールドには、必要最小限の SCU 単位 (1) が自動的に設定されます。 フィールドの値は **1** のままにします。
-    1. **[使用条件を読み、理解し、同意したことを確認します]** ボックスをオンにします。
-    1. ページの右下隅にある **[続行]** を選択します。
+   2. Follow the steps in the Wizard, select **Get started**.
+   3. On this page, you set up your security capacity. For any of the fields listed below, you can select the information icon for more information.
+       1. Azure subscription: From the drop-down, select **Woodgrove - GTP Demos (External/Sponsored)**.
+       2. Resource group: From the drop-down, select **RG-1**.
+       3. Capacity name: Enter a capacity name.
+       4. Prompt evaluation location [Geo]: From the drop-down, select your region.
+       5. You can choose whether you want to select the option, "If this location has too much traffic, allow Copilot to evaluate prompts anywhere in the world (recommended for optimal performance).
+       6. Capacity region is set based on location selected.
+       7. Security compute: This field is automatically populated with the minimum required SCU units, which is 1. Leave  field with the value of **1**.
+       8. Select the box, **"I acknowledge that I have read, understood, and agree to the Terms and Conditions**.
+       9. Select **Continue** on the bottom right corner of the page.
 
-1. ウィザードには、顧客データの保存場所に関する情報が表示されます。 表示される地域は、[プロンプト評価] フィールドで選択した地域に基づいています。 **[続行]** を選択します。
+   4. The wizard displays information about where your customer data will be stored. The region displayed is based on the region you selected in the Prompt evaluation field. Select **Continue**.
 
-1. Copilot の改善に役立つオプションを選択できます。 設定に基づいてトグルを選択できます。  **[続行]** を選択します。
+   5. You can select options to help improve Copilot. You can select the toggle based on your preferences.  Select **Continue**.
 
-1. 初期セットアップの一環として、Copilot の既定では、全員に共同作成者アクセス権が付与され、全体管理者とセキュリティ管理者は Copilot 所有者に追加されます。 運用環境では、初期セットアップが完了したら、Copilot にアクセスできるユーザーを変更できます。 **[続行]** を選択します。
-1. 準備が完了しました **[完了]** を選びます。
-1. 次の演習ではラボのような環境への別のリンクを使用するため、ブラウザー タブを閉じます。
+   6. As part of the initial setup, Copilot provides contributor access to everyone by default and includes Global administrators and Security administrators as Copilot owners. In your production environment, you can change who has access to Copilot, once you've completed the initial setup. Select **Continue**.
+   7. You're all set! Select **Finish**.
+   8. Close the browser tab, as the next exercise will use a separate link to the lab-like environment.
 
-### タスク 2: Microsoft Security Copilot のスタンドアロン エクスペリエンスについて調べる
+   ### Task 2: Explore the Microsoft Security Copilot standalone experience
 
-組織のセキュリティ管理者が Copilot をプロビジョニングしました。 あなたはチームの上級アナリストであるため、管理者はあなたを Copilot 所有者として追加し、ソリューションについてよく理解しておくように求めました。
+   The security administrator for your organization provisioned Copilot. Since you're the senior analyst on the team, the administrator added you as a Copilot owner and asked you to familiarize yourself with the solution.
 
-この演習では、Microsoft Security Copilot のスタンドアロン エクスペリエンスのランディング ページにあるすべての主要なランドマークについて確認します。
+   In this exercise, you explore all the key landmarks in the landing page of the standalone experience of Microsoft Security Copilot.
 
-あなたは Avery Howard としてログインしており、Copilot 所有者ロールが付与されています。 Microsoft Security Copilot のスタンドアロン環境で作業します。
+   You're logged in as Avery Howard and have the Copilot owner role. You'll work in the standalone experience of Microsoft Security Copilot.
 
-この演習の所要時間は約 **15** 分です。
+   This exercise should take approximately **15** minutes to complete.
 
-#### サブタスク 1: メニュー オプションについて調べる
+   #### Sub-task 1: Explore the menu options
 
-このタスクでは、ホーム メニューから確認を始めます。
+   In this task, you start your exploration in the home menu.
 
-1. 次のリンクを選んで、シミュレートされた環境を開きます。**[Microsoft Security Copilot](https://app.highlights.guide/start/7608581a-ee3a-4fe0-be03-309a58b78c60?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**。
+   9. Open the simulated environment by selecting this link: **[Microsoft Security Copilot](https://app.highlights.guide/start/7608581a-ee3a-4fe0-be03-309a58b78c60?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**.
 
-1. **メニュー** アイコン ![ホーム メニュー アイコン](../Media/home-menu-icon.png) (ハンバーガー アイコンと呼ばれることもあります) を選択します。
+   10. Select the **Menu** icon ![home menu icon](../Media/home-menu-icon.png), which is sometimes referred to as the hamburger icon.
 
-1. **[マイ セッション]** を選び、使用できるオプションをメモしておきます。
-    1. 最新のセッションを表示するには、[最近] を選びます
-    1. フィルターを選び、使用できるオプションをメモしてから、フィルターを閉じます。
-    1. ホーム メニュー アイコンを選んでホーム メニューを開きます。
+   11. Select **My sessions** and note the available options.
+       1. Select recent to view the most recent sessions
+       2. Select filter and note the available options, then close the filer.
+       3. Select the home menu icon to open the home menu.
 
-1. **[プロンプトブック ライブラリ]** を選びます。
-    1. [マイ プロンプトブック] を選びます。 以降のタスクでは、プロンプトブックについて詳しく説明します。
-    1. Woodgrove を選びます。
-    1. [Microsoft] を選択します。
-    1. フィルターを選んで使用できるオプションを表示し、次に [X] を選んで閉じます。
-    1. ホーム メニュー アイコンを選んでホーム メニューを開きます。
+   12. Select **Promptbook library**.
+       1. Select My promptbooks. A subsequent task dives deeper into promptbooks.
+       2. Select Woodgrove.
+       3. Select Microsoft.
+       4. Select filter to view the available options, then select the X to close.
+       5. Select the home menu icon to open the home menu.
 
-1. [ホーム] メニューの **[所有者の設定]** を選択します。** これらの設定は、Copilot の所有者が使用できます。 Copilot の共同作成者は、これらのメニュー オプションにアクセスできません。
-    1. [ファイルをアップロードできるユーザー] のドロップダウンを選び、使用できるオプションを表示します。
+   13. From the *Home* menu, select **Owner settings**. These settings are available to you as a Copilot owner. A Copilot contributor does not have access to these menu options.
+       1. Select the drop-down for who can upload files to view the available options.
 
-1. [ホーム] メニューに戻り、プラグインに関するオプションはどのようなものかを調べます。****
-    1. [プラグインの設定] を選択すると [自分のカスタム プラグインを追加し、管理できるのは誰ですか?] という項目があり、選択可能なオプションを見ることができます。**
-    1. [組織内の全員のカスタム プラグインを追加および管理できるユーザー] のドロップダウンを選び、使用できるオプションを表示します。 [自分自身のカスタム プラグインを追加および管理できるユーザー] が所有者のみに設定されている場合、このオプションは淡色表示になることに注意してください。
-    1. [Security Copilot が Microsoft 365 サービスのデータにアクセスすることを許可する] の横にある情報アイコンを選択します。  Microsoft Purview プラグインを使用する場合は、この設定を有効にする必要があります。 この設定は後の演習で使用します。
+   14. Return to the *Home* menu and explore the *Plugin* options:
+       1. Select the *Plugin settings* for Who can add and manage their own custom plugins to view the available options.
+       2. Select drop-down for Who can add and manage custom plugins for everyone in the organization to view the available options. Note, this option is greyed out if Who can add and manage their own custom plugins is set to owners only.
+       3. Select the information icon next to "Allow Security Copilot to access data from your Microsoft 365 Services."  This setting must be enabled if you want to use the Microsoft Purview plugin. You'll work with this setting in a later exercise.
 
-1. **[ロールの割り当て]** を選びます。
-    1. [メンバーの追加] を選んでから閉じます。
-    1. 所有者を展開します。
-    1. 共同作成者を展開します。
-    1. ホーム メニュー アイコンを選んでホーム メニューを開きます。
+   15. Select **Role assignment**.
+       1. Select Add members, then close.
+       2. Expand owner.
+       3. Expand contributor.
+       4. Select the home menu icon to open the home menu.
 
-1. **[利用状況の監視]** を選びます。
-    1. 日付フィルターを選び、使用できるオプションを表示します。
-    1. ホーム メニュー アイコンを選んでホーム メニューを開きます。
+   16. Select **Usage monitoring**.
+       1. Select the date filter to view available options.
+       2. Select the home menu icon to open the home menu.
 
-1. **設定**を選択します。
-    1. 基本設定を選びます。 下にスクロールして、使用できるオプションを表示します。
-    1. データとプライバシーを選びます。
-    1. 詳細 を選択します。
-    1. [X] を選んで基本設定ウィンドウを閉じます。
+   17. Select **Settings**.
+       1. Select preferences. Scroll down to view available options.
+       2. Select data and privacy.
+       3. Select About.
+       1. Select the X to close the preferences window.
 
-1. ホーム メニューの左下にある **Woodgrove** と表示されている場所を選択します。
-    1. このオプションを選択すると、テナントが表示されます。 これはテナント スイッチャーと呼ばれます。 この場合、使用できるテナントは Woodgrove だけです。
-    1. **[ホーム]** を選択してランディング ページに戻ります。
+   18. Select where it says **Woodgrove** at the bottom left of the home menu.
+       1. When you select this option, you see your tenants. This is referred to as the tenant switcher. In this case, Woodgrove is the only available tenant.
+       2. Select the **Home** to return to the landing page.
 
-#### サブタスク 2: 最近のセッションへのアクセスについて調べる
+   #### Sub-task 2: Explore access to recent sessions
 
-ランディング ページの中央には、最近のセッションを表すカードがあります。
+   In the center of the landing page, there are cards representing your most recent sessions.
 
-1. 一番大きなカードが最後のセッションです。 セッション カードのタイトルを選ぶと、そのセッションに移動します。
-1. **[すべてのセッションを表示]** を選び、[マイ セッション] ページに移動します。
-1. ホーム メニュー アイコンの横にある **[Microsoft Copilot for Security]** を選択して、ランディング ページに戻ります。
+   19. The largest card is your last session. Selecting the title of any session card takes you to that session.
+   20. Select **View all sessions** to go to the My sessions page.
+   21. Select **Microsoft Copilot for Security**, next to the home menu icon, to return to the landing page.
 
-#### サブタスク 3: プロンプトブックへのアクセスについて調べる
+   #### Sub-task 3: Explore access to promptbooks
 
-次のセクションの Copilot ランディング ページでは、プロンプトブックを中心に説明します。 ランディング ページには、一部の Microsoft セキュリティ プロンプトブックのタイルが表示されます。 ここでは、プロンプトブックとプロンプトブック ライブラリへのアクセスについて調べます。 以降の演習では、プロンプトブックの作成と実行について説明します。
+   The next section of the Copilot landing page revolves around promptbooks. The landing page shows tiles for some Microsoft security promptbooks. Here you explore access to promptbooks and the promptbook library. In a subsequent exercise, you explore creating and running a promptbook.
 
-1. [プロンプトブック] ボタンを選択します。**
+   1. Select the *Promptbooks* button.
 
-1. 各タイルには、プロンプトブックのタイトル、簡単な説明、プロンプトの数、実行アイコンが表示されます。 プロンプトブック タイルのいずれかのタイトルを選び、そのプロンプトブックを開きます。 たとえば、**脆弱性の影響評価**を選びます。
-    1. 選んだプロンプトブックのウィンドウには、プロンプトブックの作成者、タグ、簡単な説明、プロンプトブックの実行に必要な入力、プロンプトの一覧などの情報が表示されます。
-    1. プロンプトブックと使用できるオプションに関する情報を確認します。 このシミュレーションでは、新しいセッションを開始することはできません。これは、後続の演習で行います。 
-    1. **[X]** を選んでウィンドウを閉じます。
+   2. Each tile shows the title of the promptbook, a brief description, the number of prompts, and a run icon. Select the title of any of the promptbook tiles to open that promptbook. Select **Vulnerability impact assessment**, as an example.
+       1. The window for the selected promptbook provides information, including who created the promptbook, tags, a brief description, inputs required to run the promptbook, and a listing of the prompts.
+       2. Note the information about the promptbook and the available options. For this simulation you can't start a new session, you'll do that in a subsequent exercise. 
+       1. Select **X** to close the window.
 
-1. **[プロンプトブック ライブラリを表示]** を選びます。
-    1. 自分が所有するプロンプトブックを表示するには、[マイ プロンプトブック] を選びます。
-    1. Woodgrove (架空の組織名) が所有するプロンプトブックのリストを表示するには、Woodgrove を選びます。
-    1. Microsoft が所有または開発した組み込みのプロンプトブックを表示するには、Microsoft を選びます。
-    1. フィルター アイコンを選択します。 ここでは、ブックに割り当てられたタグに基づいてフィルター処理できます。 [新しいフィルター] タブで [X] を選び、フィルター ウィンドウを閉じます。
-    1. ホーム メニュー アイコンの横にある **[Microsoft Copilot for Security]** を選択して、ランディング ページに戻ります。
+   3. Select **View the promptbook library**.
+       1. To view promptbooks that you own, select My promptbooks.
+       2. Select Woodgrove for a listing of promptbooks owned by Woodgrove, the name of a fictitious organization.
+       1. To view built-in, Microsoft owned/developed promptbooks, select Microsoft.
+       1. Select the filter icon. Here you can filter based on tags assigned to the workbook. Close the filter window by selecting the X in the New filter tab.
+       2. Select **Microsoft Copilot for Security**, next to the home menu icon, to return to the landing page.
 
-#### サブタスク 4: プロンプト バーのプロンプト アイコンとソース アイコンについて調べる
+   #### Sub-task 4: Explore the prompts and sources icon in the prompt bar
 
-ページの下部中央にプロンプト バーがあります。 プロンプト バーには、このタスクで確認するプロンプトとソースのアイコンが含まれています。 後続の演習では、入力をプロンプト バーに直接入力します。
+   At the bottom center of the page is the prompt bar. The prompt bar includes the prompts and sources icon, which you explore in this task. In subsequent exercises you'll enter inputs directly in the prompt bar.
 
-1. プロンプト バーから、プロンプト アイコンを選択して組み込みのプロンプトまたはプロンプトブックを選択できます。 **プロンプト アイコン** ![プロンプト アイコン](../Media/prompt-icon.png) を選択します。
-    1. **[すべてのプロンプトブックを表示]** を選びます
-        1. スクロールして、使用できるプロンプトブックをすべて表示します。
-        1. 戻るには、検索バーの横にある**戻る矢印**を選びます。
-    1. **[すべてのシステム機能を表示]** を選択します。 一覧には、使用できるすべてのシステム機能が表示されます (これらの機能は、実際には実行可能なプロンプトです)。 多くのシステム機能は特定のプラグインに関連付けられているため、対応するプラグインが有効な場合にのみ一覧表示されます。
-        1. スクロールして、使用できるプロンプトブックをすべて表示します。
-        1. 戻るには、検索バーの横にある**戻る矢印**を選びます。
+   4. From the prompt bar, you can select the prompts icon to select a built-in prompt or a promptbook. Select the **prompts icon** ![prompts icon](../Media/prompt-icon.png).
+       1. Select **See all promptbooks**
+           1. Scroll to view all the available promptbooks.
+           2. Select the **back-arrow** next to the search bar to go back.
+       2. Select **See all system  capabilities**. The list shows all available system capabilities (these capabilities are in effect prompts that you can run). Many system capabilities are associated with specific plugins and as such will only be listed if the corresponding plugin is enabled.
+           1. Scroll to view all the available promptbooks.
+           2. Select the **back-arrow** next to the search bar to go back.
 
-1. **ソース アイコン** ![ソース アイコン](../Media/sources-icon.png) を選択します。
-    1. ソース アイコンをクリックすると、[ソースの管理] ウィンドウが開きます。 ここから、プラグインまたはファイルにアクセスできます。 既定では、**[プラグイン]** タブが選択されています。
-        1. すべてのプラグインを表示するか、有効なプラグイン (オン)、または無効なプラグイン (オフ) を表示するかを選びます。
-        1. Microsoft プラグイン、Microsoft 以外のプラグイン、カスタム プラグインの一覧を展開または折りたたみます。
-        1. 一部のプラグインではパラメーターの構成が必要です。 Microsoft Sentinel プラグインの **[設定]** ボタンを選択して、設定ウィンドウを表示します。 **[キャンセル]** を選んで設定ウィンドウを閉じます。 別の演習では、プラグインを構成します。
-    1. まだ [ソースの管理] ウィンドウが表示されているはずです。 **[ファイル]** を選択します。
-        1. 説明を確認します。
-        1. ファイルをアップロードして、Copilot でナレッジ ベースとして使用できます。 後続の演習では、ファイルのアップロードを操作します。
-        1. **[X]** を選び、[ソースの管理] ウィンドウを閉じます。
+   5. Select the **sources icon** ![sources icon](../Media/sources-icon.png).
+       1. The sources icon opens the manage sources window. From here, you can access Plugins or Files. The **Plugins** tab is selected by default.
+           1. Select whether you want to view all plugins, those that are enabled (on), or those that are disabled (off).
+           2. Expand/collapse list of Microsoft, non-Microsoft, and custom plugins.
+           3. Some plugins require configuring parameters. Select the **Set up** button for the Microsoft Sentinel plugin, to view the settings window. Select **cancel** to close the settings window. In a separate exercise, you configure the plugin.
+       2. You should still be in the Manage sources window. Select **Files**.
+           1. Review the description.
+           2. Files can be uploaded and used as a knowledge base by Copilot. In a subsequent exercise, you'll work with file uploads.
+           3. Select **X** to close the manage sources window.
 
-#### サブタスク 5: ヘルプ機能について調べる
+   #### Sub-task 5:  Explore the help feature
 
-ウィンドウの右下隅にはヘルプ アイコンがあり、ドキュメントに簡単にアクセスして、一般的な問題の解決策を見つけることができます。 適切なロールのアクセス許可がある場合は、ヘルプ アイコンから Microsoft サポート チームにサポート ケースを送信することもできます。
+   At the bottom right corner of the window is the help icon where you can easily access documentation and find solutions to common problems. From the help icon, you also submit a support case to the Microsoft support team if you have the appropriate role permissions.
 
-1. **ヘルプ (?)** アイコンを選択します。
-    1. **[ドキュメント]** を選択します。 これを選択すると、新しいブラウザー タブが開き、Microsoft Security Copilot ドキュメントが表示されます。 Microsoft Security Copilot ブラウザー タブに戻ります。
-    1. **[ヘルプ]** を選択します。
-        1. Security Copilot にアクセスできる人は誰でも、ヘルプ アイコンを選択してから [ヘルプ] タブを選ぶことで、セルフ ヘルプ ウィジェットにアクセスできます。ここで、問題について何かを入力すると、一般的な問題の解決策を見つけることができます。
-        1. サービス サポート管理者またはヘルプデスク管理者の最小限のロールを持つユーザーは、Microsoft サポート チームにサポート ケースを送信できます。 このロールを持っている場合、ヘッドセット アイコンが表示されます。 連絡先のサポート ページを閉じます。
+   6. Select the **Help (?)** icon.
+       1. Select **Documentation**. This selection opens a new browser tab to the Microsoft Security Copilot documentation. Return to the Microsoft Security Copilot browser tab.
+       1. Select **Help**.
+           1. Anyone with access to Security Copilot can access the self help widget by selecting the help icon then selecting the Help tab. Here you can find solutions to common problems by entering something about the problem.
+           2. Users with a minimum role of Service Support Administrator or Helpdesk Administrator role can submit a support case to the Microsoft support team. If you have this role, a headset icon is displayed. Close the contact support page.
 
-### タスク 3: Microsoft Security Copilot の埋め込みエクスペリエンスについて調べる
+   ### Task 3: Explore the Microsoft Security Copilot embedded experience
 
-この演習では、Microsoft Defender XDR でのインシデントについて調べます。 調査の一環として、インシデントの概要、デバイスの概要、スクリプト分析など、Microsoft Copilot in Microsoft Defender XDR の主な機能について調べます。 また、調査をスタンドアロン エクスペリエンスに切り替えて、調査の詳細を仕事仲間と共有する方法としてピン ボードを使います。
+   In this exercise, you investigate an incident in Microsoft Defender XDR. As part of the investigation, you explore the key features of Microsoft Copilot in Microsoft Defender XDR, including incident summary, device summary, script analysis, and more. You also pivot your investigation to the standalone experience and use the pin board as a way to share details of your investigation with your colleagues.
 
-あなたは Avery Howard としてログインしており、Copilot 所有者ロールが付与されています。 Microsoft Defender で、新しい統合セキュリティ オペレーション プラットフォームを使用して作業し、Microsoft Defender XDR の埋め込み Copilot 機能にアクセスします。 演習の最後の方で、Microsoft Security Copilot のスタンドアロン エクスペリエンスに切り替えます。
+   You're logged in as Avery Howard and have the Copilot owner role. You'll work in Microsoft Defender, using the new unified security operations platform, to access the embedded Copilot capabilities in Microsoft Defender XDR. Towards the end of the exercise, you pivot to the standalone experience of Microsoft Security Copilot.
 
-この演習の所要時間は約 **30** 分です。
+   This exercise should take approximately **30** minutes to complete.
 
-#### サブタスク 1: インシデントの概要とガイド付き応答について調べる
+   #### Sub-task 1: Explore Incident summary and guided responses
 
-1. 次のリンクを選択して、シミュレートされた環境を開きます。**[Microsoft Defender ポータル](https://app.highlights.guide/start/be8a91c3-3979-4048-ad38-fd38deaf7117?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**。
+   7. Open the simulated environment by selecting this link: **[Microsoft Defender portal](https://app.highlights.guide/start/be8a91c3-3979-4048-ad38-fd38deaf7117?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**.
 
-1. Microsoft Defender ポータルから:
-    1. **[調査と対応]** を展開します。
-    1. **[インシデントとアラート]** を展開します。
-    1. **[インシデント]** を選択します。
+   8. From the Microsoft Defender portal:
+       1. Expand **Investigation & response**.
+       2. Expand  **Incidents & alerts**.
+       3. Select **Incidents**.
 
-1. 一覧から、**インシデント ID が 185856** で、[人間が操作するランサムウェア攻撃が侵害された資産から開始された (攻撃の中断)] という名前の最初のインシデントを選びます。
+   9. Select the first incident in the list, **Incident Id: 185856** named Human-operated ransomware attack was launched from a compromised asset (attack disruption).
 
-1. これは複雑なインシデントです。 Defender XDR からは大量の情報が提供されますが、アラートが 50 個もあると、どこに注目すればよいかわかりにくい場合があります。 インシデント ページの右側に表示される Copilot によって自動的に生成された **[インシデントの概要]** は、注目する場所と対応を判断するのに役立ちます。 **もっと見る**を選択します。
-    1. Copilot の概要では、最初のアクセス、横移動、回収、資格情報へのアクセス、流出など、このインシデントがどのように進行したかが説明されています。 特定のデバイスが識別されたこと、PsExec ツールを使って実行可能ファイルが起動されたことなどが示されています。
-    1. これらの項目をすべて活用して、さらに詳しく調査できます。 この後のタスクでは、これらのいくつかを調べます。
+   10. This is a complex incident. Defender XDR provides a great deal of information, but with 50 alerts it can be a challenge to know where to focus. On the right side of the incident page, Copilot automatically generates an **Incident summary** that helps guide your focus and response. Select **See more**.
+       1. Copilot's summary describes how this incident has evolved, including initial access, lateral movement, collection, credential access and exfiltration. It identifies specific devices, indicates that the PsExec tool was used to launch executable files, and more.
+       1. These are all items you can leverage for further investigation. You explore some of these in subsequent tasks.
 
-1. Copilot パネルを下にスクロールすると、概要のすぐ下に **[ガイド付き応答]** があります。 ガイド付き応答では、トリアージ、封じ込め、調査、修復をサポートするアクションが推奨されます。
-    1. トリアージ カテゴリの最初の項目では、このインシデントが分類されます。 **[分類]** を選んでオプションを表示します。 他のカテゴリのガイド付き応答を確認します。
-    1. *[概要]* の上の **[状態]** ボタンを選んで、**[完了]** でフィルター処理します。 完了した 4 つのアクティビティは、*[攻撃の中断]* というラベルで示されています。 自動攻撃中断は、進行中の攻撃を封じ込め、組織の資産への影響を制限し、セキュリティ チームが攻撃を完全に修復するための時間が増えるように設計されています。
-1. 次のタスクで使うので、インシデント ページは開いたままにしてください。
+   11. Scroll down on the Copilot panel and just beneath the summary are **Guided responses**. Guided responses recommend actions in support of triage, containment, investigation, and remediation.
+       1. The first item in the triage category it to Classify this incident. Select **Classify** to view the options. Review the guided responses in the other categories.
+       2. Select the **Status** button above the *Summary* and filter on **Completed**. Four completed activities show labeled as *Attack Disruption*. Automatic attack disruption is designed to contain attacks in progress, limit the impact on an organization's assets, and provide more time for security teams to remediate the attack fully.
+   12. Keep the incident page open, you'll use it in the next task.
 
-#### サブタスク 2: デバイスと ID の概要について調べる
+   #### Sub-task 2:  Explore device and identity summary
 
-1. インシデントのページの *[攻撃ストーリー]* タブで、アラートを下までスクロールして **[疑わしい RDP セッション]** アラートを選択します。
+   1. From the incident page, on the *Attack story* tab, scroll down through the alerts and select the **Suspicious RDP session** alert.
 
-1. Copilot によって自動的に生成される**アラートの概要**では、詳細な分析のための豊富な情報が提供されます。 たとえば、概要では、不審なアクティビティ、データ収集アクティビティ、資格情報アクセス、マルウェア、検出のアクティビティなどが特定されています。
+   2. Copilot  automatically generates an **Alert summary**, which provides a wealth of information for further analysis. For example, the summary identifies suspicious activity, it identifies data collection activities, credential access, malware, discovery activities, and more.
 
-1. ページには多くの情報があるので、このアラートをもっとわかりやすくするため、**[アラート ページを開く]** を選びます。 これは、アラート ページの 3 番目のパネルの、インシデント グラフの横のアラート タイトルの下にあります。
+   3. There's a lot of information on the page, so to get a better view of this alert, select **Open alert page**. It's on the third panel on the alert page, next to the incident graph and below the alert title.
 
-1. ページの上部には、デバイス **parkcity-win10v** のカードがあります。 省略記号を選んでオプションに注目してください。 **[要約]** を選びます。 Copilot によって**デバイスの概要**が生成されます。 大事なことですが、デバイスの概要にアクセスする方法はいくつもあり、この方法は便利な方法の 1 つにすぎません。 概要では、デバイスが VM であること、デバイスの所有者、Intune ポリシーに対するコンプライアンスの状態などが示されます。
+   4. On the top of the page, is card for the device **parkcity-win10v**. Select the ellipses and note the options. Select **Summarize**. Copilot generates a **Device summary**. It's worth noting that there are many ways you can access device summary and this way is just one convenient method. The summary shows the device is a VM, identifies the owner of the device, it shows its compliance status against Intune policies, and more.
 
-1. デバイス カードの横には、デバイスの所有者用のカードがあります。 **PARKCITY\jonaw** を選びます。 アラートの詳細が表示されているページの 3 番目のパネルが更新されて、アカウント エグゼクティブであり、Microsoft Entra ID リスクとインサイダー リスクの重大度が高に分類されているユーザー Jonathan Wolcott に関する情報が提供されます。 Copilot のインシデントとアラートの概要から学んだことを考えると、これらは驚くことではありません。 省略記号を選択し、**[要約]** を選択して Copilot によって生成された ID の概要を取得します。
+   5. Next to the device card is a card for the owner of the device. Select **PARKCITY\jonaw**. The third panel on the page updates from showing details of the alert to providing information about the user Jonathan Wolcott, an account executive, whose Microsoft Entra ID risk and Insider risk severity are classified as high. These aren't surprising given what you've learned from the Copilot incident and alert summaries. Select the ellipses then select  **Summarize** to obtain an identity summary generated by Copilot.
 
-1. 次のタスクで使うので、アラート ページは開いたままにしてください。
+   6. Keep the alert page open, you'll use it in the next task.
 
-#### サブタスク 3: スクリプト分析を調べる
+   #### Sub-task 3:  Explore script analysis
 
-1. アラートのストーリーに焦点を当ててみましょう。 メインパネルのアラートにある **[最大化 ![最小化] アイコン](../Media/maximize-icon.png)** ("partycity\jonaw" とラベル付けされたカードのすぐ下) を選択すると、プロセスツリーをより詳細に表示できます。 ビューを最大化すると、このインシデントのそれまでの経過がはっきりわかるようになります。 多くの行の項目で、powershell.exe がスクリプトを実行したことが示されています。 ユーザー Jonathan Wolcott はアカウント エグゼクティブなので、PowerShell スクリプトの実行は、このユーザーが定期的に実行する可能性が高いものではないと考えるのが妥当です。
+   7. Let's Focus on the alert story. Select **Maximize ![maximize icon](../Media/maximize-icon.png)**, located on the main panel of the alert, just beneath the card labeled 'partycity\jonaw' to get a better view of the process tree. From maximized view, you begin to get a clearer view of how this incident came to be. Many line items indicate that powershell.exe executed a script. Since the user Jonathan Wolcott is an account executive, it's reasonable to assume that executing PowerShell scripts isn't something this user is likely to be doing regularly.
 
-1. **powershell.exe execute a script** の最初のインスタンスを展開します。これは、4:57:11 AM というタイムスタンプを示すものです。 Copilot には、スクリプトを分析する機能があります。 **[分析]** を選択します。
-    1. Copilot はスクリプトの分析を生成し、それがフィッシングの試みであるか、Web ベースの悪用の提供に使われている可能性があることを示唆します。
-    1. **[コードの表示]** を選びます。 コードでは、無力化された URL が示されます。
+   8. Expand the first instance of **powershell.exe execute a script**, it's the one showing the timestamp of 4:57:11 AM. Copilot has the capability to analyze scripts. Select **Analyze**.
+       1. Copilot generates an analysis of the script and suggests it could be a phishing attempt or used to deliver a web-based exploit.
+       2. Select **Show code**. The code shows a defanged URL.
 
-1. powershell.exe がスクリプトを実行したことを示す項目は他にもいくつかあります。 **powershell.exe -EncodedCommand...** というラベルが付いたものを展開します。元のスクリプトは Base 64 でエンコードされていましたが、Defender によってデコードされています。 デコードされたバージョンで、**[分析]** を選びます。 分析では、この攻撃で使われたスクリプトの巧妙な部分が強調されています。
+   9. There are several other items that indicate powershell.exe executed a script. Expand the one labeled **powershell.exe -EncodedCommand...**. The original script was base 64 encoded, but Defender has decoded that for you. For the decoded version, select **Analyze**. The analysis highlights the sophistication of the script used in this attack.
 
-1. Copilot のスクリプト分析には、[コードの表示] と [MITRE 手法の表示] のボタンがあります
+   10. In the Copilot Script analysis, you have buttons for Show code and Show MITRE techniques
 
-1. **[MITRE 手法の表示]** ボタンを選択して、次のラベルのリンクを選択します。T1105: イングレス ツール トランスファー
+   11. Select the **Show MITRE Techniques** button and select the link labeled: T1105: Ingress Tool Transfer
 
-1. これにより、手法について詳述した *MITRE | ATT&CK* サイトのページが開きます。
+   12. This opens the *MITRE | ATT&CK* site page describing the technique in detail.
 
-1. **[X]** (Copilot パネルの左側にある [X]) を選んで、アラート ストーリー ページを閉じます。 次に、階層リンクを使ってインシデントに戻ります。 **[人間が操作するランサムウェア攻撃が侵害された資産から開始された (攻撃の中断)]** を選びます。
+   13. Close the alert story page by selecting the **X** (the X that is to the left of Copilot panel). Now use the breadcrumb to return to the incident. Select **Human-operated ransomware attack was launched from a compromised asset (attack disruption)**.
 
-#### サブタスク 4: ファイルの分析を調べる
+   #### Sub-task 4:  Explore file analysis
 
-1. インシデント ページに戻ります。 アラートの概要で、Copilot は 'Mimikatz' マルウェアに関連付けられているファイル mimikatz.exe を特定しました。 Defender XDR のファイル分析機能を使って、他に得られる分析情報を確認できます。 いくつかの方法でファイルにアクセスできます。 ページの上部にある **[証拠と対応]** タブを選びます。
+   14. You're back at the incident page. In the alert summary, Copilot identified the file mimikatz.exe, which is associated with the 'Mimikatz' malware. You can use the file analysis capability in Defender XDR to see what other insights you can get. There are several ways to access files. From the top of the page, select the **Evidence and Response** tab.
 
-1. 画面の左側で、**[ファイル]** を選びます。
-1. **mimikatz.exe** という名前のエンティティを含む最初の項目を一覧から選択します。
-1. 開いたウィンドウで **[ファイル ページを開く]** を選びます。
-1. Copilot アイコンを選択 (ファイル分析が自動で開かない場合) すると、Copilot でファイル分析が生成されます。
-1. Copilot が生成した詳細なファイル分析を確認します。
-1. [ファイル] ページを閉じ、階層リンクを使用してインシデントに戻ります。 **[人間が操作するランサムウェア攻撃が侵害された資産から開始された (攻撃の中断)]** を選びます。
+   15. From the left side of the screen select **Files**.
+   16. Select the first item from the list with the entity named **mimikatz.exe**.
+   17. From the window that opens, select **Open file page**.
+   18. Select the Copilot icon (if File analysis doesn’t automatically open), and Copilot generates a File analysis.
+   19. Review the detailed file analysis that Copilot generates.
+   20. Close the File page and use the breadcrumb to return to the incident. Select **Human-operated ransomware attack was launched from a compromised asset (attack disruption)**.
 
-#### サブタスク 5: スタンドアロン エクスペリエンスに切り替える
+   #### Sub-task 5: Pivot to the standalone experience
 
-このタスクは複雑であり、より多くの上級アナリストの関与が必要です。 このタスクでは、調査に焦点を当て、Defender インシデント プロンプトブックを実行して、他のアナリストが調査を開始できるようにします。 応答をピン ボードにピン留めし、調査に役立つチームのより高度なメンバーと共有できる、この調査へのリンクを生成します。
+   This task is complex and requires the involvement of more senior analysts. In this task, you pivot your investigation and run the Defender incident promptbook so the other analysts have a running start on the investigation. You pin responses to the pin board and generate a link to this investigation that you can share with more advanced members of the team to help investigate.
 
-1. ページの上部にある **[攻撃ストーリー]** タブを選んで、インシデント ページに戻ります。
+   21. Return to the incident page by selecting the **Attack story** tab from the top of the page.
 
-1. Copilot のインシデント概要の横にある省略記号を選んで、**[Security Copilot で開く]** を選びます。
+   22. Select the ellipses next to Copilot's Incident summary and select **Open in Security Copilot**.
 
-1. スタンドアロン エクスペリエンスで Copilot が開き、インシデントの概要が表示されます。 さらにプロンプトを実行することもできます。 この場合は、インシデントのプロンプトブックを実行します。 **プロンプト アイコン** ![プロンプト アイコン](../Media/prompt-icon.png) を選択します。 
-    1. **[すべてのプロンプトブックを表示]** を選びます。
-    1. **[Microsoft 365 Defender のインシデント調査]** を選びます。
-    1. プロンプトブック ページが開き、Defender インシデント ID の指定を求められます。 「**185856**」と入力してから、**[送信]** を選びます。
-    1. 指定した情報を確認します。 スタンドアロン エクスペリエンスに切り替えて、プロンプトブックを実行すると、調査で、有効になっているプラグインに基づいて、Defender XDR だけでなく、より広範なセキュリティ ソリューションの機能を呼び出すことができます。
+   23. Copilot opens in the standalone experience and shows the incident summary. You can also run more prompts. In this case, you'll run the promptbook for an incident. Select the **prompt icon** ![prompt icon](../Media/prompt-icon.png). 
+       1. Select **See all promptbooks**.
+       2. Select **Microsoft 365 Defender incident investigation**.
+       3. The promptbook page opens and asks for the Defender Incident ID. Enter **185856** then select **Submit**.
+       4. Review the information provided. By pivoting to the standalone experience and running the promptbook, the investigation is able to invoke capabilities from a broader set security solution, beyond just Defender XDR, based on the plugins enabled.
 
-1. ピン留めアイコンの横にある **ボックス アイコン ![ ボックス アイコン](../Media/box-icon.png)** を選択して、プロンプトおよび対応する応答をすべて選択し、次に**ピン アイコン ![ ピン アイコン](../Media/pin-icon.png)**を選択して、それらの応答をピン ボードに保存します。
+   24. Select the **box icon ![box icon](../Media/box-icon.png)** next to the pin icon to select all the prompts and the corresponding responses, then select the **Pin icon ![pin icon](../Media/pin-icon.png)** to save those responses to the pin board.
 
-1. ピンボードが自動的に開きます。 ピン ボードには、保存されたプロンプトと応答が、それぞれの概要と共に保持されます。 ピン ボードを開く / 閉じる操作は、**ピン ボード アイコン ![ ピン ボード アイコン](../Media/pinboard-icon.png)** を選択することで行えます。
+   25. The pin board opens automatically. The pin board holds your saved prompts and responses, along with a summary of each one. You can open and close the pin board by selecting the **pin board icon ![pin board icon](../Media/pinboard-icon.png)**.
 
-1. ページの上部にある **[共有]** を選んでオプションを表示します。 リンクまたはメールを通してインシデントを共有すると、Copilot アクセス権を持つ組織内のユーザーがこのセッションを表示できます。 **[X]** を選んでウィンドウを閉じます。
+   26. From the top of the page, select **Share** to view your options. By sharing the incident via a link or email, people in your organization with Copilot access can view this session. Close the window by selecting the **X**.
 
-#### サブ タスク 6: KQL クエリを作成して実行する
+   #### Sub-task 6: Create and run a KQL query
 
-次は、Copilot を使用して、Defender XDR の高度な追求で使用するための KQL (Kusto 照会言語) クエリを作成します。
+   Next, we'll use Copilot to help us create a KQL (Kusto Query Language) query to use with Advanced hunting in Defender XDR.
 
-1. 引き続きスタンドアロンの Security Copilot で、プロンプト フォームに次のプロンプトを入力します。*Based on this incident, create a query to proactively hunt for this type of malware attack.Use the woodgrove-loganalyticsworkspace.*
+   27. While still in standalone Security Copilot, enter the following prompt in the prompt form:
+   *Based on this incident, create a query to proactively hunt for this type of malware attack. Use the woodgrove-loganalyticsworkspace.*
 
-1. プロンプト送信のアイコンを押して、プロンプトを実行します。
-Copilot は高度な追求のために自然言語を KQL に選択します。
+   28. Press the Submit prompt icon to run your prompt.
+   Copilot chooses Natural language to KQL for advanced hunting.
 
-1. Copilot は KQL のクエリと応答を次のように生成します。
+   29. Copilot generates a KQL query and a response:
 
-    1. Kusto クエリの説明を読みます。
+       1. Read through the Explanation of the Kusto Query.
 
-    1. Kusto クエリの内容をレビューします。 これは、KQL を使い始めたばかりの場合には非常に有用です。
+       2. Review the Breakdown of the Kusto Query. This is very helpful if you’re just getting started with KQL.
 
-1. Copilot で生成された KQL クエリをコピーして、Defender XDR ポータルに戻ります。
-***書式設定の問題を減らすため、クエリはメモ帳または別のエディターに先にコピーすることをお勧めします。***
+   30. Copy the KQL query Copilot generated and return to the Defender XDR portal.
+   ***It's recommended that you copy the query into Notepad or another editor first to reduce formatting problems***.
 
-1. Defender XDR ではまだ [調査と対応] のセクションが開いているはずです。 ナビゲーション メニューで、**[ハンティング]** を選択してから、**[高度な追求]** を選択します。
+   31. Defender XDR should still have the Investigations & response section open. Select **Hunting** and then **Advanced hunting** from the navigation menu.
 
-1. [高度な追求] で、**[新規クエリ+]** を選択して新しいウィンドウを開き、Copilot で生成された KQL クエリをフォームに貼り付けます。
-***書式設定の問題を減らすため、クエリはメモ帳または別のエディターに先にコピーすることをお勧めします。***
+   32. In Advanced hunting, select the **New query +** to open a new window and paste the KQL query generated by Copilot into the form.
+   ***It's recommended that you copy the query into Notepad or another editor first to reduce formatting problems***.
 
-1. KQL クエリを実行したら、Copilot に戻ってクエリの検索条件を絞るか、[高度な追求] クエリ ページの Copilot アイコンを選択してハンティングのクエリを微調整します。
+   33. After running the KQL query, you can return to Copilot to refine the query or select the Copilot icon on the Advanced hunting query page to fine-tune hunting queries.
 
-1. ブラウザーのタブを閉じてシミュレーションを終了できます。
+   34. You can now close the browser tab to exit the simulation.--->
 
 ## まとめと追加リソース
 
