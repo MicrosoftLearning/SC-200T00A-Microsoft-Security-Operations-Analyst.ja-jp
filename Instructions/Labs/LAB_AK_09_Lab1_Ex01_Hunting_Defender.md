@@ -79,7 +79,7 @@ lab:
 
 1. 管理者として **WIN1** 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
-1. Microsoft Edge ブラウザーで、`https://security.microsoft.com` の Microsoft Defender XDR ポータルに移動します。
+1. Microsoft Edge ブラウザーで、Defender XDR (`https://security.microsoft.com`) に移動します。
 
 1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
@@ -207,15 +207,13 @@ lab:
 
 1. Microsoft Defender ナビゲーション メニューで、下にスクロールし、**[調査と対応]** セクションを展開します。
 
-1. **[ハンティング]** セクションを展開して、**[高度な追求]** を選びます。
+1. **[ハンティング]** セクションを展開して、**[高度なハンティング]** を選びます。
+
+    >**重要:** 最初に KQL クエリをメモ帳に貼り付けて、そこから *[新しいクエリ 1]* ログ ウィンドウにコピーしてエラーを回避してください。
 
 1. [新しいクエリ] スペースに以下の KQL ステートメントを入力します。**
 
-   >**重要:** 最初に KQL クエリをメモ帳に貼り付けて、そこから *[新しいクエリ 1]* ログ ウィンドウにコピーしてエラーを回避してください。
-
-   >**注:** "security.microsoft.com は次のことを求めています。 クリップボードにコピーしたテキストや画像の参照"。というメッセージが表示されたら、**矢印**を選択します。
-
-    ```Kusto
+    ```KQL
     let lookback = 2d; 
     SecurityEvent
     | where TimeGenerated >= ago(lookback) 
@@ -223,6 +221,8 @@ lab:
     | extend PwshParam = trim(@"[^/\\]*powershell(.exe)+" , CommandLine) 
     | project TimeGenerated, Computer, SubjectUserName, PwshParam    
     ```
+
+    >**注:** "security.microsoft.com は次のことを求めています。 クリップボードにコピーしたテキストや画像の参照"。というメッセージが表示されたら、**矢印**を選択します。
 
 1. コマンド バーで、**[クエリの実行]** を選択します。
 
