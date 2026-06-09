@@ -24,46 +24,6 @@ lab:
 
 Microsoft Sentinel を Microsoft Defender XDR にオンボードする方法を理解するには、シミュレートされた演習、**[Microsoft Sentinel を Defender XDR に接続する](https://learn.microsoft.com/training/modules/integrate-microsoft-defender-xdr-with-microsoft-sentinel/simulation-exercise-deploy-sentinel-to-defender)** の手順を実行します。
 
-  <!---### Task 1 - Explore Microsoft Sentinel settings in Defender XDR --->
-    
-   <!---1. Log in to **WIN1** virtual machine as Admin with the password: **Pa55w.rd**.
-        
-            1. In the Microsoft Edge browser, navigate to Defender XDR at <https://security.microsoft.com>.
-          
-            1. In the **Sign in** dialog box, copy, and paste in the tenant Email account for the admin username provided by your lab hosting provider and then select **Next**.
-        
-            1. In the **Enter password** dialog box, copy, and paste in the admin's tenant password provided by your lab hosting provider and then select **Sign in**.
-        
-                >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) instead of a password.
-           
-            1. In the Microsoft Defender navigation menu, scroll down and expand the **System** section.
-        
-            1. Select **Settings**, and then select **Microsoft Sentinel**.
-        
-            1. In the *SIEM workspaces*, *Workspaces* pane, the **SentinelWorkspace-01** workspace is listed as Primary and shows a *Connected* Status.
-        
-            1. Select the **SentinelWorkspace-01** to open the workspace settings options.
-        
-            1. Expand each of the different sections to explore the available configuration options.
-        
-            >**Warning:** Do not select the *Disconnect* or *Remove Microsoft Sentinel* icon links. Doing so can impact the functionality of your environment. --->
-
-   <!---### Task 2 - Configure data retention --->
-
-   <!---1. While still on the  workspace settings options page, expand **Log Analytics settings**, and select the **Configure Log Analytics workspace** link.
-
-        1. This opens a new browser tab to the Azure portal's Log Analytics workspace settings for the **SentinelWorkspace-01**.
-        
-        1. Scroll down the navigation menu and expand the *Settings* section, then select **Usage and estimated costs**.
-        
-        1. Select **Data retention** from the menu items.
-        
-        1. Change data retention period to **180 days**.
-        
-        1. Select **OK**.
-        
-        1. Return to the Microsoft Defender XDR browser tab, and close the workspace settings options page. --->
-
 ### タスク 1: ウォッチリストを作成する
 
 このタスクでは、Microsoft Sentinel でウォッチリストを作成します。
