@@ -1,7 +1,7 @@
 ---
 lab:
   title: 演習 1 - Microsoft Sentinel で脅威ハンティングを実行する
-  module: Learning Path 10 - Perform threat hunting in Microsoft Sentinel
+  module: Learning Path 9 - Perform threat hunting in Microsoft Sentinel
   description: ラーニング パス 9 のラボ演習で作成したログ データは、次の前提条件タスクを再実行しないとこのラボでは使用できません。
   duration: 60 minutes
   level: 300

@@ -1,7 +1,7 @@
 ---
 lab:
   title: 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
-  module: Learning Path 10 - Perform threat hunting in Microsoft Sentinel
+  module: Learning Path 9 - Perform threat hunting in Microsoft Sentinel
   description: このタスクでは、Microsoft Sentinel で Notebooks を使用する方法について説明します。
   duration: 40 minutes
   level: 300
