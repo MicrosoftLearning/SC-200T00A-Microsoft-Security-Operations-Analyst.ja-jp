@@ -22,7 +22,11 @@ lab:
 
 ### 省略可能なタスク - Microsoft Sentinel を Microsoft Defender XDR に接続する
 
-Microsoft Sentinel を Microsoft Defender XDR にオンボードする方法を理解するには、シミュレートされた演習、**[Microsoft Sentinel を Defender XDR に接続する](https://learn.microsoft.com/training/modules/integrate-microsoft-defender-xdr-with-microsoft-sentinel/simulation-exercise-deploy-sentinel-to-defender)** の手順を実行します。
+この対話型ガイドでは、完了までに約 10 分かかりますが、新しい Microsoft Sentinel ワークスペースを Defender XDR にオンボードします。
+
+開始するには、下の画像を選択してください。
+
+[![Microsoft Sentinel を Defender XDR に接続するためのサムネイルです。](../Media/interactive-guide-sentinel-new.png)](https://microsoftlearning.github.io/click-throughs/docs/IG/interactive_guide_connect_microsoft_sentinel_with_microsoft_defender_xdr_web/story.html?azure-portal=true)
 
 ### タスク 1: ウォッチリストを作成する
 
