@@ -3,7 +3,7 @@ lab:
   title: 演習 1 - Microsoft Purview 監査ログについて調べる
   module: Learning Path 3 - Mitigate threats using Microsoft Purview
   description: あなたは、Microsoft Defender XDR と Microsoft Purview を実装している会社で働いているセキュリティ運用アナリストです。 あなたは、It コンプライアンス チームの同僚が Purview 監査 (Standard) と Purview 監査 (Premium) の両方を構成するのを支援しています。 同僚の目的は、医療施設ネットワークに存在する患者データへのあらゆるアクセスと変更が正確にログに記録されて、健康データ保護規則を確実に満たすようにすることです。
-  duration: 20 minutes
+  duration: 15 minutes
   level: 200
   islab: true
   primarytopics:
@@ -38,17 +38,15 @@ lab:
 
 このタスクでは、Microsoft 365 セキュリティ ポータルで Exchange Online Protection (EOP) と Microsoft Defender for Office 365 の事前設定セキュリティ ポリシーを割り当てます。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
+1. 提供された資格情報を使用して管理者として **WIN1** 仮想マシンにサインインします。
 
-1. 新しい Microsoft Edge ブラウザーを起動します。
-
-1. Microsoft Edge ブラウザーで、Microsoft Defender XDR ポータル (<https://security.microsoft.com>) にアクセスします。
+1. **Microsoft Edge** ブラウザーを開き、**Microsoft Defender XDR** (`https://security.microsoft.com`) に移動します。
 
 1. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
 1. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーの提供した管理者のテナント パスワードをコピーして貼り付け、**サインイン**します。
 
-1. ナビゲーション メニューから **[その他のリソース]** を選択します。
+1. ナビゲーション メニューで *[オペレーショナル テクノロジ]* を展開し、**[その他のリソース]** を選択します。
 
 1. **[その他のリソース]** ペインで、*[Microsoft Purview ポータル]* タイルの **[開く]** ボタンを選択します。
 

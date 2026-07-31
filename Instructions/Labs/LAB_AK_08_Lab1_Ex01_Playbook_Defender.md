@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 演習 2 - プレイブックを作成する
+  title: 演習 1 - プレイブックを作成する
   module: Learning Path 8 - Create detections and perform investigations using Microsoft Sentinel
   description: これで、Microsoft Sentinel にプレイブックとオートメーション ルールが作成されました。
   duration: 30 minutes
@@ -24,13 +24,11 @@ lab:
 
 このタスクでは、Microsoft Sentinel でプレイブックとして使用されるロジック アプリを作成します。
 
->**注:** Microsoft Sentinel は既に、**sentinelworkspace-01** という名前で事前デプロイされて Microsoft Defender XDR にオンボードされており、必要な *Content Hub* ソリューションがインストール済みです。
+>**注:** Microsoft Sentinel は、**Sentinelworkspace-01** という名前で Microsoft Defender XDR に事前にデプロイされてオンボードされており、必要な "コンテンツ ハブ" ソリューションもインストールされています。**
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
+1. 提供された資格情報を使用して管理者として **WIN1** 仮想マシンにサインインします。
 
-1. Microsoft Edge ブラウザーを開きます。
-
-1. Edge ブラウザーで、Defender XDR (`https://security.microsoft.com`) に移動します。
+1. **Microsoft Edge** ブラウザーを開き、**Microsoft Defender XDR** (`https://security.microsoft.com`) に移動します。
 
 1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
@@ -40,29 +38,25 @@ lab:
 
 1. Microsoft Defender のナビゲーション メニューで、下スクロールして **[Microsoft Sentinel]** セクションを展開します。
 
-1. *[コンテンツ管理]* セクションを展開して **[Content Hub]** を選択します。
+1. **[コンテンツ管理]** セクションを展開して **[コンテンツ ハブ]** を選択します。
 
-1. 検索バー内で「**Sentinel SOAR Essentials**」を検索します。
+1. 検索ボックスに「**Sentinel SOAR Essentials**」と入力します。
 
-1. 結果に表示されたソリューションを選択します。
+1. 結果から、**[Sentinel SOAR Essentials]** ソリューションを選択し、**[管理]** を選択します。
 
-1. ソリューションの詳細内で、**[管理]** を選択します。
-
-1. **Defender_XDR_Ransomware_Playbook_for_SecOps_Tasks** プレイブックを見つけて名前を選択します。
+1. **[Defender_XDR_Ransomware_Playbook_for_SecOps-Tasks]** プレイブックを見つけて、そのプレイブック名を選択します。
 
 1. **"インシデント タスク - SecOps 用 Microsoft Defender XDR ランサムウェア プレイブック"** テンプレートを選択します。
 
 1. 詳細ペインで **[プレイブックの作成]** を選択します。
 
-1. [リソース グループ] は **SentinelStatic** を選択して [OK] を選択します。
+1. [リソース グループ] では、**[SentinelStatic]**、**[OK]** の順に選択します。
 
-1. プレイブック名から **for** と余分な*アンダースコア*を削除します (64 文字の制限を超えないように)。 **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** という名前になるはずです。
+1. プレイブック名を編集して *for* と余分な*アンダースコア*を削除します (64 文字の制限を超えないようにします)。 **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** という名前になるはずです。
 
-1. **接続**を選択します。
+1. **[次へ: 接続 >]** を選択し、既定のオプションを確認します。
 
-1. **[次へ: 確認と作成]** を選択します。
-
-1. 次に **[プレイブックの作成]** を選択します。
+1. **[次へ: 確認と作成]** を選択して詳細を確認し、**[プレイブックの作成]** を選択します。
 
     >**注:**  次のタスクに進む前に、デプロイが完了するまで待機します。
 
@@ -74,25 +68,25 @@ lab:
 
 1. 前のタスクが完了すると、*[Defender_XDR_Ransomware_Playbook_SecOps-Tasks | ロジック アプリ デザイナー]* ページが表示されるはずです。 そうでない場合は、次のステップ 2 から 7 までを実行してください。
 
-1. Azure portal の検索バーに「Sentinel」と入力してから、[Microsoft Sentinel] を選択します。
+1. Azure portal の検索バーに「*Sentinel*」と入力してから、**[Microsoft Sentinel]** を選択します。
 
 1. Microsoft Sentinel ワークスペースを選択します。
 
-1. [構成] エリアで [自動化] を選択したあと、 *[アクティブなプレイブック]* タブを選択します。
+1. [構成] 領域から **[自動化]** を選択し、 **[アクティブなプレイブック]** タブを選択してください。****
 
-1. プレイブックが表示されない場合は、コマンド バーの [最新の情報に更新] を選択します。 前の手順で作成したプレイブックが表示されるはずです。
+1. プレイブックが表示されない場合は、コマンド バーから **[最新の情報に更新]** を選択します。 前のステップで作成したプレイブックが表示されます。
 
 1. **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** というプレイブック名リンクを選択します。
 
-1. **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** の [ロジック アプリ デザイナー] ページで、コマンド メニューの [編集] を選択します。
+1. **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** の **[ロジック アプリ デザイナー]** ページで、コマンド メニューの **[編集]** を選択します。
 
     >**注:** 場合によっては、ページを更新する必要があります。
 
-1. "最初" のブロックの [Microsoft Sentinel インシデント] を選択します。
+1. **Microsoft Sentinel incident** というラベルの付いた最初のブロックを選択します。
 
 1. **[接続の変更]** リンクを選択します。
 
-1. 接続の一覧を下にスクロールし、**[新規追加]** を選択して、**[サインイン]** を選択します。 新しいウィンドウで、メッセージが表示されたら、Azure サブスクリプション管理者の資格情報を選択します。 ブロックの最後の行に "Connected to your-Student-username" と表示されるはずです。
+1. 接続の一覧を下にスクロールし、**[新規追加]**、**[サインイン]** の順に選択します。 新しいウィンドウで、メッセージが表示されたら、Azure サブスクリプション管理者の資格情報を選択します。 ブロックの最後の行に "Connected to your-Student-username" と表示されます。
 
     <!--- 1. Below within the logic split (+ sign), select Add an action to incident.--->
 
@@ -110,7 +104,7 @@ lab:
 
 1. *[トリガー]* を **[インシデント作成時]** のままにします。
 
-1. **[+ 追加]** を選択して、*条件 ([AND])* を選択します。
+1. **[+ 追加]** を選択して、**条件 ([AND])** を選択します。
 
 1. ドロップダウンから **[方針]** を選択します。
 
@@ -133,6 +127,8 @@ lab:
 1. ドロップダウン リストから、**Defender_XDR_Ransomware_Playbook_SecOps_Tasks** というプレイブックを選択します。
 
 1. 下部にある **[適用]** を選択します。
+
+   > **注:** **[新しい自動化ルールの作成]** ウィンドウは、ルール作成後に自動的に閉じます。 ウィンドウが閉じない場合は、**[X]** を選択して閉じます。
 
 これで、Microsoft Sentinel にプレイブックとオートメーション ルールが作成されました。
 

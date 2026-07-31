@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 演習 2 - Microsoft Sentinel でのノートブックを使用した脅威ハンティング
+  title: 演習 2 - Microsoft Defender XDR での Microsoft Sentinel でのノートブックを使用した脅威ハンティング
   module: Learning Path 9 - Perform threat hunting in Microsoft Sentinel
   description: このタスクでは、Microsoft Sentinel で Notebooks を使用する方法について説明します。
   duration: 40 minutes
@@ -14,7 +14,7 @@ lab:
     - Data lake
 ---
 
-# ラーニング パス 09 - ラボ 1 - 演習 2 - Microsoft Sentinel でのデータ レイク ノートブックを使用した脅威ハンティング
+# ラーニング パス 9 - ラボ 1 - 演習 2 - Microsoft Sentinel でのデータ レイク ノートブックを使用した脅威の追求
 
 ## ラボのシナリオ
 
@@ -34,9 +34,9 @@ lab:
 
 >**注:** Visual Studio Code は既にラボ VM にインストールされています。 あらかじめ Visual Studio Code、Jupyter Notebook、Python コーディングの経験を積んでおくことをお勧めします。
 
-1. 管理者として **WIN1** 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
+1. 提供された資格情報を使用して **WIN1** 仮想マシンにサインインします。
 
-1. Microsoft Edge ブラウザーで、Defender XDR (`https://security.microsoft.com`) に移動します。
+1. **Microsoft Edge** ブラウザーで、**Microsoft Defender XDR** (`https://security.microsoft.com`) に移動します。
 
 1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
@@ -46,11 +46,11 @@ lab:
 
 1. Microsoft Defender のナビゲーション メニューで、下スクロールして **[Microsoft Sentinel]** セクションを展開します。
 
-1. Microsoft Sentinel の *[データ レイク探索]* を展開して **[ノートブック]** を選択します。
+1. Microsoft Sentinel で、**[データ レイク探索]** を展開して **[ノートブック]** を選択します。
 
 1. *[ノートブック]* ページには、データ レイク Jupyter ノートブックを使用するために実行するステップのリストが表示され、利用できるリソースへのリンクもあります。
 
-1. Windows 検索バーに「**Visual Studio Code**」と入力し、検索結果の Visual Studio Code アイコンを選択します。
+1. Windows 検索バーに「**Visual Studio Code**」と入力し、検索結果の **Visual Studio Code** アイコンを選択します。
 
     >**注:** 特に指定がない限り、常に *Microsoft* が発行した拡張機能をインストールしてください。
 
@@ -98,27 +98,27 @@ lab:
 
 1. MCP サーバーの認証の画面が表示されたら、**[許可]** を選択し、自分のラボ資格情報をもう一度選択します。
 
-2. 結果またはクエリ候補が MCP サーバーから返された後の任意の時点で、結果や提案をまとめたノートブックを作成するよう依頼してみてください。
+1. 結果またはクエリ候補が MCP サーバーから返された後の任意の時点で、結果や提案をまとめたノートブックを作成するよう依頼してみてください。
 
-3. ノートブックを作成するかどうかを尋ねる画面が表示されたら、**[許可]** を選択します。
+1. ノートブックを作成するかどうかを尋ねる画面が表示されたら、**[許可]** を選択します。
 
-4. **Microsoft Sentinel** 拡張機能にサインインさせるかどうかを尋ねる画面が表示されたら、**[許可]** を選択し、自分のラボ資格情報をもう一度選択します。
+1. **Microsoft Sentinel** 拡張機能にサインインさせるかどうかを尋ねる画面が表示されたら、**[許可]** を選択し、自分のラボ資格情報をもう一度選択します。
 
-5. Jupyter Notebook が作成されたら、コード セルとマークダウン セルを確認します。
+1. Jupyter Notebook が作成されたら、コード セルとマークダウン セルを確認します。
 
-6. このノートブックを保存するには、右下にある **[保持]** を選択します。
+1. このノートブックを保存するには、右下にある **[保持]** を選択します。
 
-7. 左側のメニュー バーから **Microsoft Sentinel** (様式化された "S") アイコンを選択します。
+1. 左側のメニュー バーから **Microsoft Sentinel** (様式化された "S") アイコンを選択します。
 
-8. **[LAKE TABLES]** セクションで、**SentinelWorkspace-01** テーブルを展開してから **Security & Audits** テーブルを展開します。
+1. **[LAKE TABLES]** セクションで、**SentinelWorkspace-01** テーブルを展開してから **Security & Audits** テーブルを展開します。
 
     >**注:** 必要に応じて、ラボの資格情報を使用してサインインします。
 
-9. *SecurityEvent* テーブルのスキーマが表示されます。
+1. *SecurityEvent* テーブルのスキーマが表示されます。
 
-10. **[NOTEBOOK SAMPLES]** セクションで、[Tutorials] を展開し、**01_GettingStartedwithSentineldatalake** チュートリアル ノートブックを選択します。**
+1. **[NOTEBOOK SAMPLES]** セクションで、[Tutorials] を展開し、**01_GettingStartedwithSentineldatalake** チュートリアル ノートブックを選択します。****
 
-11. この Jupyter Notebook が開いたら、さまざまなタブ、コード セル、マークダウン セルを確認します。
+1. この Jupyter Notebook が開いたら、さまざまなタブ、コード セル、マークダウン セルを確認します。
 
 >**注:** コード セルを実行してもかまいませんが、このラボでは実行する必要はありません。 コード セルを実行する前に、"カーネル" を選択する必要があります。** *Microsoft Sentinel* カーネルを選択し、推奨される "小規模プール (12 仮想コア)" の python3 を使用してください。** 時間が許すかぎり、トレーナーが手助けします。
 

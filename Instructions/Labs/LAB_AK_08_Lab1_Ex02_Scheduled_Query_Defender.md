@@ -25,45 +25,13 @@ lab:
 
 >**注:** Microsoft Sentinel は既に、あなたの Azure サブスクリプション内に **sentinelworkspace-01** という名前で事前デプロイされており、*Azure Activity* ソリューションとデータ コネクタのインストールと接続が完了しています。
 
-<!--- To successfully complete this task you will need to complete the following prerequisite tasks.
-
-### Prerequisite task: Connect the Azure Activity data connector
-
-In this task, you will connect the *Azure Activity* data connector.
-
-1. In the Microsoft Sentinel navigation menu, scroll down to the *Content management* section and select **Content Hub**.
-
-1. In the *Content hub*, search for the **Azure Activity** solution and select it from the list.
-
-1. On the *Azure Activity* solution details page select **Manage**.
-
-1. Select the *Azure Activity* Data connector and select **Open connector page**.
-
-1. In the *Configuration* area under the *Instructions* tab, scroll down to "2. Connect your subscriptions...", and select **Launch Azure Policy Assignment Wizard>**.
-
-1. In the **Basics** tab, select the ellipsis button (...) under **Scope** and select your *MOC Subscription-XXXXXXXXXXX* subscription from the drop-down list and click **Select**.
-
-    >**Note:** *Do not* select an optional Resource Group.
-
-1. Select the **Parameters** tab, choose your *sentinelworkspace-01* workspace from the **Primary Log Analytics workspace** drop-down list. This action will apply the subscription configuration to send the information to the Log Analytics workspace.
-
-1. Select the **Remediation** tab and select the **Create a remediation task** checkbox. This action will apply the policy to existing Azure resources.
-
-1. Select the **Review + Create** button to review the configuration.
-
-1. Select **Create** to finish.
-
-1. Please wait for the *Azure Activity* data connector to display a *Connected* status before proceeding. --->
-
 ### タスク 1: スケジュールされたクエリ ルールを作成する
 
 このタスクでは、*Microsoft Sentinel 分析のスケジュールされたクエリ ルール*を作成します。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd**。  
+1. 提供された資格情報を使用して管理者として **WIN1** 仮想マシンにサインインします。
 
-1. Microsoft Edge ブラウザーを開きます。
-
-1. Edge ブラウザーで、Defender XDR (`https://security.microsoft.com`) に移動します。
+1. **Microsoft Edge** ブラウザーを開き、**Microsoft Defender XDR** (`https://security.microsoft.com`) に移動します。
 
 1. **[サインイン]** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール** アカウントをコピーして貼り付け、**[次へ]** を選択します。
 
@@ -73,23 +41,23 @@ In this task, you will connect the *Azure Activity* data connector.
 
 1. Microsoft Defender のナビゲーション メニューで、下スクロールして **[Microsoft Sentinel]** セクションを展開します。
 
-1. **[構成]** セクションを展開して **[分析]** を選択します。
+1. **[構成]** セクションを展開して、**[分析]** を選択します。
 
-1. コマンド バーの [規則のテンプレート] タブにいることを確認し、 **[New CloudShell User] (新しい CloudShell ユーザー)** 規則を検索します。**
+1. **[分析]** ページで、**[ルール テンプレート]** タブを選択し、「**新しい CloudShell ユーザー**」を検索します。
 
-1. ルールの概要ブレードで、 *[データ ソース: Azure アクティビティ]* の下にある緑色のアイコンを調べて、データを受信していることを確認します。
+1. **[新しい CloudShell ユーザー]** ルールを選択して、[ルールの詳細] ペインを開きます。 [データ ソース: Azure アクティビティ] の下にある緑色のアイコンを調べて、データを受信していることを確認します。**
 
-    >**注:** 接続状態として表示されておらず、上記の*前提条件タスク*を実行した場合は、プロセスが完了するまで長く待つ必要がある場合があります。
+    > **注:** データ ソースが接続済みとして表示されていないが、上記の "前提条件タスク" を完了している場合、プロセスが完了するまで長時間待つことが必要なことがあります。**
 
-1. **[ルールの作成]** を選んで続けます。
+1. **[ルールの作成]** を選択します。
 
-1. 分析ルール ウィザードの [全般] タブで、[重大度] を **[中]** に変更します。** **
+1. 分析ルール ウィザードの [全般] タブで、[重大度] を **[中]** に変更します。**** **
 
 1. **[次へ: ルール ロジックを設定 >]** ボタンを選択します。
 
 1. ルール クエリで、 **[クエリ結果の表示]** を選びます。 結果やエラーは表示されないはずです。
 
-1. 右上の **[X]** を選択して *[ログ]* ウィンドウを閉じ、 **[OK]** を選択して変更を破棄して保存し、ウィザードに戻ります。
+1. 右上の **[X]** を選択して **[ログ]** ウィンドウを閉じ、 **[OK]** を選択して変更を破棄して保存し、ウィザードに戻ります。
 
 1. 下にスクロールし、 *[クエリのスケジュール設定]* で次のように設定します。
 
@@ -100,19 +68,17 @@ In this task, you will connect the *Azure Activity* data connector.
 
     >**注:**  同じデータに対して意図的に多くのインシデントを生成しています。 これにより、ラボはこれらのアラートを使用できるようになります。
 
-1. *[アラートのしきい値]* 領域では、アラートですべてのイベントを登録するため、値はそのままにしておきます。
+1. **[アラートのしきい値]** 領域では、アラートですべてのイベントを登録するため、値はそのままにしておきます。
 
-1. *[イベントのグループ化]* 領域では、 **[すべてのイベントを単一のアラートにグループ化する]** オプションを選択したままにしておきます。これは、クエリから、上記の指定されたアラートのしきい値よりも多くの結果が返される場合に限り、実行するたびに単一のアラートを生成する必要があるためです。
+1. **[イベントのグループ化]** 領域では、 **[すべてのイベントを単一のアラートにグループ化する]** オプションを選択したままにしておきます。これは、クエリから、上記の指定されたアラートのしきい値よりも多くの結果が返される場合に限り、実行するたびに単一のアラートを生成する必要があるためです。
 
 1. 下部にある **[次: インシデント設定 >]** ボタンを選択します。
 
-1. *[インシデント設定]* タブで、既定のオプションを確認します。
+1. **[インシデント設定]** タブで、既定のオプションを確認します。
 
 1. 下部にある **[次: 自動応答 >]** ボタンを選択します。
 
-1. **[次へ: 確認と作成 >]** ボタンを選択します。
-  
-1. **[保存]** を選択します。
+1. **[次へ: 確認と作成 >]** ボタンを選択し、詳細を確認してから **[保存]** を選択します。
 
 ### タスク 2: 新しいルールを編集する
 
@@ -120,9 +86,9 @@ In this task, you will connect the *Azure Activity* data connector.
 
 1. **[構成]** セクションを展開して **[分析]** を選択します。
 
-1. コマンド バーの *[アクティブな規則]* タブにいることを確認したうえで、**[新しい CloudShell ユーザー]** 規則を選択します。
+1. コマンド バーの **[アクティブな規則]** タブにいることを確認したうえで、**[新しい CloudShell ユーザー]** 規則を選択します。
 
-1. この規則を右クリックし、*ポップアップ* メニューから **[編集]** を選択します。
+1. この規則を右クリックし、**ポップアップ** メニューから **[編集]** を選択します。
 
 1. **[次へ: ルール ロジックを設定 >]** ボタンを選択します。
 
@@ -130,7 +96,7 @@ In this task, you will connect the *Azure Activity* data connector.
 
 1. 下部にある **[次: 自動応答 >]** ボタンを選択します。
 
-1. *[オートメーション ルール]* の下の *[自動応答]* タブで、**[新規追加]** を選択します。
+1. **[オートメーション ルール]** の下の **[自動応答]** タブで、**[新規追加]** を選択します。
 
 1. *[Automation ルール名]* には、「**Tier 2**」と入力し、ご自分の**学生 ID** を付け加えてください。 これは、作成されたインシデントを特定するのに役立ちます。
 
@@ -140,12 +106,10 @@ In this task, you will connect the *Azure Activity* data connector.
 
 1. *[注文]* にスクロールして、「**1**」を入力してください。
 
-1. **[適用]** を選択します
+1. **適用**を選択します。
 
-1. **[次へ: 確認と作成 >]** ボタンを選択します。
+1. **[次へ: 確認と作成 >]** ボタンを選択し、詳細を確認してから **[保存]** を選択します。
   
-1. **[保存]** を選択します。
-
 ### タスク 3: 新しいルールをテストする
 
 このタスクでは、新しくスケジュールされたクエリ ルールをテストします。 まず、Azure portal で *Cloud Shell* を有効にします。これで、前のタスクで作成したルールがトリガーされてインシデントが生成されます。
@@ -162,13 +126,13 @@ In this task, you will connect the *Azure Activity* data connector.
 
 1. Azure portal のメニュー バーで、*Cloud Shell* に対応するアイコン **>_** を選びます。 ディスプレイの解像度が低すぎる場合は、最初に省略記号アイコン **[...]** の選択が必要な場合があります。
 
-1. *[Azure Cloud Shell へようこそ]* ウィンドウで **[PowerShell]** を選択します。
+1. **[Azure Cloud Shell へようこそ]** ウィンドウで **[PowerShell]** を選択します。
 
-1. *[作業の開始]* ページで、**[ストレージ アカウントのマウント]** を選択し、*[ストレージ アカウント サブスクリプション]* ドロップダウン メニュー項目から適切な **[Azure サブスクリプション]** を選択し、**[適用]** ボタンを選択します。
+1. **[作業の開始]** ページで、**[ストレージ アカウントのマウント]** を選択し、*[ストレージ アカウント サブスクリプション]* ドロップダウン メニュー項目から適切な **[Azure サブスクリプション]** を選択し、**[適用]** ボタンを選択します。
 
     >**重要:***[ストレージ アカウントは必要ありません]* オプション ボタンのオプションは選択しないでください。 これは、インシデントの作成が失敗する原因になります。
 
-1. *[ストレージ アカウントのマウント]* ページで、**[自動でストレージ アカウントを作成します]** を選択した後、**[次へ]** を選択します。
+1. **[ストレージ アカウントのマウント]** ページで、**[自動でストレージ アカウントを作成します]** を選択した後、**[次へ]** を選択します。
 
 1. Cloud Shell がプロビジョニングされるまで待った後、Azure Cloud Shell ウィンドウを閉じます。
 
@@ -178,7 +142,9 @@ In this task, you will connect the *Azure Activity* data connector.
 
 1. Defender XDR (`https://security.microsoft.com`) に戻ります。
 
-1. Microsoft Defender ナビゲーション メニューで、下にスクロールし、*[調査と対応]* セクションを展開します。 次に、[インシデントとアラート] セクションを展開して **[インシデント]** を選択します。**
+1. Microsoft Defender ナビゲーション メニューで、下にスクロールし、**[調査と対応]** セクションを展開します。 
+
+1. **[インシデントとアラート]** セクションを展開し、**[インシデント]** を選択します。
 
 1. 新しく作成したインシデントが表示されます。
 
